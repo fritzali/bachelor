@@ -1,8 +1,27 @@
-\documentclass{scrarticle}
-
-\usepackage[libertine]{newtx}
-\usepackage{fancyhdr}
+\input{header.tex}
 
 \begin{document}
-    This is a test of how math such as $E = mc^2$ looks.
+
+	\input{design/front.tex}
+
+	\pagenumbering{gobble}
+
+	\input{content/abstract.tex}
+	\input{content/acknowledgements.tex}
+	\input{content/abbreviations.tex}
+
+	\tableofcontents
+
+	\newpage
+	\pagenumbering{arabic}
+
+	\input{content/introduction.tex}
+	\input{content/methods.tex}
+	\input{content/results.tex}
+	\input{content/discussion.tex}
+
+	\input{content/appendix.tex}
+
+	\printbibliography{}
+
 \end{document}
