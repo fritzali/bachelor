@@ -21,11 +21,11 @@ Code for creating decent looking figures.
 
 ### [Slides](https://github.com/frtzzzzz/bachelor/tree/main/slides)
 
-Presentations of progress and results.
+Presentations for documentation of progress and results.
 
 ### [Thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis)
 
-Main document for describing procedures and results of this research.
+Core document for describing procedures and findings of this research.
 
 ## Contact
 
