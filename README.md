@@ -7,23 +7,23 @@ at [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) wit
 
 Topics are sorted into the following categories.
 
-### Literature
+### [Literature](https://github.com/frtzzzzz/bachelor/tree/main/literature)
 
 Bibliography files with a short explanation for each reference.
 
-### Notes
+### [Notes](https://github.com/frtzzzzz/bachelor/tree/main/notes)
 
 Jupyter notebooks for testing coding tasks and visualisation.
 
-### Plots
+### [Plots](https://github.com/frtzzzzz/bachelor/tree/main/plots)
 
 Code for creating decent looking figures.
 
-### Slides
+### [Slides](https://github.com/frtzzzzz/bachelor/tree/main/slides)
 
 Presentations of progress and results.
 
-### Thesis
+### [Thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis)
 
 Main document for describing procedures and results of this research.
 
