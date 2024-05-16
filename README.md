@@ -5,7 +5,7 @@ at [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) wit
 
 ## Sections
 
-Topics are categorized as follows:
+Topics are sorted into the following categories.
 
 ### Literature
 
