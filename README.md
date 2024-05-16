@@ -1,11 +1,11 @@
 # Neutrinos via Charm Decays in Astrophysical Sources
 
 This repository contains most relevant works I created to obtain the degree **Bachelor of Science in Physics** at 
-[Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) with external supervision at [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/)
+[Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) with external supervision at [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/).
 
 ## Sections
 
-Topics are sorted into the following categories.
+Topics are sorted into the following categories:
 
 ### [Literature](https://github.com/frtzzzzz/bachelor/tree/main/literature)
 
@@ -21,11 +21,11 @@ Code for creating decent looking figures.
 
 ### [Slides](https://github.com/frtzzzzz/bachelor/tree/main/slides)
 
-Presentations for documentation of progress and results.
+Ongoing presentation of progress and results.
 
 ### [Thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis)
 
-Core document for describing procedures and findings of this research.
+Core document describing procedures and findings of this research.
 
 ## Contact
 
