@@ -24,7 +24,7 @@ Ongoing presentation of progress and results.
 
 #### [Thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis)
 
-Core document describing procedures and findings of this research.
+Document describing procedures and findings of this research.
 
 ### Contact
 
