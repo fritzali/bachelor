@@ -14,7 +14,7 @@ Bibliography files with a short explanation for each reference.
 
 #### [Notes](https://github.com/frtzzzzz/bachelor/tree/main/notes)
 
-Jupyter notebooks for testing coding tasks and visualisation.
+Jupyter notebooks for testing and visualisation.
 
 #### [Plots](https://github.com/frtzzzzz/bachelor/tree/main/plots)
 
