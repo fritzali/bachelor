@@ -17,6 +17,4 @@ at [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) wit
 
 ## Contact
 
-Fritz Ali Agildere
-[fritz.agildere@udo.edu](mailto:fritz.agildere@udo.edu)
-[fa@tp4.ruhr-uni-bochum.de](mailto:fa@tp4.ruhr-uni-bochum.de)
+Fritz Ali Agildere ([fritz.agildere@udo.edu](mailto:fritz.agildere@udo.edu))
