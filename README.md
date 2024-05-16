@@ -5,15 +5,27 @@ at [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) wit
 
 ## Sections
 
+Topics are categorized as follows:
+
 ### Literature
+
+Bibliography files with a short explanation for each reference.
 
 ### Notes
 
+Jupyter notebooks for testing coding tasks and visualisation.
+
 ### Plots
+
+Code for creating decent looking figures.
 
 ### Slides
 
+Presentations of progress and results.
+
 ### Thesis
+
+Main document for describing procedures and results of this research.
 
 ## Contact
 
