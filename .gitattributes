@@ -1,2 +1,2 @@
 *.ipynb linguist-generated
-*.sql linguist-detectable
+*.sql linguist-detectable=true
