@@ -4,8 +4,7 @@ This repository contains most relevant works I created in order to obtain the de
 [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) with external supervision at
 [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/research-pat.php).
 
-<img src="plots/logos/rubo.svg" height="48">
-<img src="plots/logos/phbo.svg" height="48">
+<img src="plots/logos/rubo.svg" height="48"><img src="plots/logos/phbo.svg" height="48">
 <img src="plots/logos/tp4.svg" height="48">
 <img src="plots/logos/tudo.svg" height="48">
 <img src="plots/logos/phdo.svg" height="48">
