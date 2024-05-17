@@ -1,9 +1,9 @@
 ## Neutrinos via Charm Decays in Astrophysical Sources
 
 This repository contains most relevant works I created in order to obtain the degree **Bachelor of Science in Physics** at
-<img src="plots/logos/tudo.svg" height="12"> <img src="plots/logos/phdo.svg" height="11"> <img src="plots/logos/e5b.svg" height="13">
+<img src="plots/logos/tudo.svg" height="12"> <img src="plots/logos/e5b.svg" height="13">
 [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) with external supervision at
-<img src="plots/logos/rubo.svg" height="12"><img src="plots/logos/phbo.svg" height="10"><img src="plots/logos/tp4.svg" height="14">
+<img src="plots/logos/rubo.svg" height="14"> <img src="plots/logos/tp4.svg" height="15">
 [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/research-pat.php).
 
 Topics are sorted into the following categories:
