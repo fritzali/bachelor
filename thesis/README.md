@@ -4,4 +4,19 @@ This directory arranges and formats the contents of all my work into one coheren
 
 It is structured as follows:
 
-
+* Titlepage
+* Abstract
+* Abbreviations
+* Contents
+	* Introduction
+	* Background
+		* Particle Physics
+		* Multimessenger Astronomy
+		* Astrophysical Sources
+	* Results
+	* Conclusion
+	* References
+	* Acknowledgements
+	* Appendix
+* Figures
+* Tables
