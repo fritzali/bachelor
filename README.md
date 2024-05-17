@@ -2,7 +2,7 @@
 
 This repository contains most relevant works I created in order to obtain the degree **Bachelor of Science in Physics** at
 [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) 
-<img src="plots/logos/tudo.svg" height="12"> <img src="plots/logos/phdo.svg" height="12"> <img src="plots/logos/e5b.svg" height="12">
+<img src="plots/logos/tudo.svg" height="12"> <img src="plots/logos/phdo.svg" height="11"> <img src="plots/logos/e5b.svg" height="13">
 with external supervision at [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/research-pat.php).
 
 
