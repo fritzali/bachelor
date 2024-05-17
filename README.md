@@ -4,7 +4,12 @@ This repository contains most relevant works I created in order to obtain the de
 [Technische Universität Dortmund](https://app.physik.tu-dortmund.de/en/) with external supervision at
 [Ruhr Universität Bochum](http://www.tp4.ruhr-uni-bochum.de/research-pat.php).
 
-![TU Logo](plots/logos/tudo.svg)
+![Ruhr Universität Bochum Logo](plots/logos/rubo.svg)
+![Fakultät Physik Bochum Logo](plots/logos/phbo.svg)
+![Astroteilchenphysik Bochum Logo](plots/logos/tp4.svg)
+![Technische Universität Dortmund Logo](plots/logos/tudo.svg)
+![Fakultät Physik Dortmund Logo](plots/logos/phdo.svg)
+![Astroteilchenphysik Dortmund Logo](plots/logos/e5b.svg)
 
 Topics are sorted into the following categories:
 
