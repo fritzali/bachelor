@@ -1,0 +1,7 @@
+authors:
+  - family-names: Agildere
+    given-names: Fritz Ali
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "Neutrinos from Charm Decays in Astrophysical Sources"
+version: 0.0.1
