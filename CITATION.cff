@@ -1,20 +1,16 @@
 cff-version: 1.2.0
 message: Please cite this work as below.
 authors:
-- family-names: "Agildere"
-  given-names: "Fritz Ali"
-  country: "DE"
-  email: "fritz.agildere@udo.edu"
-  orcid: "https://orcid.org/0009-0007-6155-2756"
-title: "Neutrinos from Charm Decays in Astrophysical Sources"
-url: "https://github.com/fritzali/bachelor"
+- family-names: Agildere
+  given-names: Fritz Ali
+  email: fritz.agildere@udo.edu
+  orcid: https://orcid.org/0009-0007-6155-2756
+title: Bachelor Thesis
+url: https://github.com/fritzali/bachelor
 preferred-citation:
   type: generic
   authors:
-  - family-names: "Agildere"
-    given-names: "Fritz Ali"
-    country: "DE"
-    email: "fritz.agildere@udo.edu"
-    orcid: "https://orcid.org/0009-0007-6155-2756"
-  title: "Neutrinos from Charm Decays in Astrophysical Sources"
+  - family-names: Agildere
+    given-names: Fritz Ali
+  title: "Neutrinos via Charm Decays in Astrophysical Sources"
   year: 2024
