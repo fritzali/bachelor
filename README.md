@@ -30,4 +30,4 @@ Document describing procedures and findings of this research.
 
 Fritz Ali Agildere
 ([fritz.agildere@udo.edu](mailto:fritz.agildere@udo.edu))
-<a href="https://orcid.org/0009-0007-6155-2756"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_128x128.png" width="24" height="24" /></a>
+<a href="https://orcid.org/0009-0007-6155-2756"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_128x128.png" width="12" height="12" /></a>
