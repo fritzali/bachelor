@@ -6,6 +6,6 @@ authors:
     given-names: "Fritz Ali"
     orcid: "https://orcid.org/0009-0007-6155-2756"
 cff-version: "1.2.0"
-message: "If you use this work, please cite it using these metadata."
+message: "Please cite this work using these metadata."
 title: "Neutrinos from Charm Decays in Astrophysical Sources"
 type: "generic"
