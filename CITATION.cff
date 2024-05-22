@@ -3,9 +3,12 @@ message: Please cite this work as below.
 authors:
 - family-names: Agildere
   given-names: Fritz Ali
+title: Bachelor Thesis
+contact:
+- family-names: Agildere
+  given-names: Fritz Ali
   email: fritz.agildere@udo.edu
   orcid: https://orcid.org/0009-0007-6155-2756
-title: Bachelor Thesis
 url: https://github.com/fritzali/bachelor
 preferred-citation:
   type: generic
