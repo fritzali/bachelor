@@ -8,3 +8,5 @@ References are sorted into the following types:
 #### Books
 
 #### Papers
+
+- Carpio (2020) &nbsp; *estimation of contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
