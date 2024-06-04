@@ -7,6 +7,9 @@ References are sorted into the following types:
 
 #### Books
 
+- Jackson (1999) &nbsp; *standard reference for students at the graduate level*
+
 #### Papers
 
+- Alvarez (2004) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
 - Carpio (2020) &nbsp; *estimation of contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
