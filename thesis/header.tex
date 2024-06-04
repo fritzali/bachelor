@@ -8,6 +8,8 @@
 
 \RedeclareSectionCommands[toclinefill=\hfill]{section,subsection}
 
+\setcounter{tocdepth}{1}
+
 \usepackage[libertine]{newtx}
 
 \usepackage[
@@ -17,11 +19,13 @@
 
 \usepackage[aux]{rerunfilecheck}
 
-\setcounter{tocdepth}{1}
-
 \usepackage[
 	backend=biber,
+	bibstyle=phys,
+	citestyle=numeric-comp,
 ]{biblatex}
+\addbibresource{../literature/books.bib}
+\addbibresource{../literature/papers.bib}
 
 \usepackage[english,
 			unicode,
