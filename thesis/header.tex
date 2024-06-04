@@ -1,4 +1,8 @@
-\documentclass{scrreprt}
+\documentclass[
+	parskip=half,
+	open=any,
+	cleardoublepage=plain,
+]{scrreprt}
 
 \setkomafont{disposition}{\normalfont}
 
@@ -6,7 +10,14 @@
 
 \usepackage[libertine]{newtx}
 
-\usepackage{fancyhdr}
+\usepackage[
+	automark,
+	autooneside=false,
+]{scrlayer-scrpage}
+
+\usepackage[aux]{rerunfilecheck}
+
+\setcounter{tocdepth}{1}
 
 \usepackage[
 	backend=biber,
@@ -17,4 +28,7 @@
 			pdfusetitle,
 			pdfcreator={},
 			pdfproducer={},
-			hidelinks]{hyperref}
+			hidelinks
+]{hyperref}
+
+\usepackage{microtype}

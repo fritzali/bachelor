@@ -1,27 +1,36 @@
 \input{header.tex}
 
+\input{design/head.tex}
+
 \begin{document}
 
 	\input{design/front.tex}
 
-	\pagenumbering{gobble}
+	\newpage\pagenumbering{gobble}
 
 	\input{content/abstract.tex}
-	\input{content/acknowledgements.tex}
 	\input{content/abbreviations.tex}
 
 	\tableofcontents
+	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
 
-	\newpage
-	\pagenumbering{arabic}
+	\newpage\pagenumbering{arabic}
 
 	\input{content/introduction.tex}
-	\input{content/methods.tex}
+	\input{content/background.tex}
 	\input{content/results.tex}
-	\input{content/discussion.tex}
-
-	\input{content/appendix.tex}
+	\input{content/conclusion.tex}
 
 	\printbibliography{}
+
+	\input{content/acknowledgements.tex}
+	\input{content/appendix.tex}
+
+	\newpage\pagenumbering{gobble}
+
+	\renewcommand{\listfigurename}{Figures}\listoffigures
+	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
+	\renewcommand{\listtablename}{Tables}\listoftables
+	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
 
 \end{document}
