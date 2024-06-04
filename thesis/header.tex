@@ -19,6 +19,8 @@
 
 \usepackage[aux]{rerunfilecheck}
 
+\usepackage[american]{babel}
+
 \usepackage[
 	backend=biber,
 	bibstyle=science,
@@ -26,6 +28,7 @@
 	date=year,
 	doi=true,
 	url=false,
+	sorting=none,
 ]{biblatex}
 \addbibresource{../literature/books.bib}
 \addbibresource{../literature/papers.bib}
@@ -35,7 +38,7 @@
 			pdfusetitle,
 			pdfcreator={},
 			pdfproducer={},
-			hidelinks
+			hidelinks,
 ]{hyperref}
 
 \usepackage{microtype}
