@@ -14,9 +14,9 @@ It is structured as follows:
 		* Multimessenger Astronomy
 		* Astrophysical Sources
 	* Results
-	* Conclusion
-	* References
+	* Conclusion & Outlook
 	* Acknowledgements
 	* Appendix
+ 	* Bibliography
 * Figures
 * Tables
