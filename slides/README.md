@@ -1,3 +1,3 @@
 ## Slides
 
-This document contains materials meant to document and summarize the [thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis) as presentations given at the involved institutions.
+This directory contains materials meant to document and summarize the [thesis](https://github.com/frtzzzzz/bachelor/tree/main/thesis) as presentations given at the involved institutions.
