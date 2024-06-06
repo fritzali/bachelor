@@ -7,7 +7,8 @@ References are sorted into the following types:
 
 #### Books
 
-- Jackson (1999) &nbsp; *standard reference for students at the graduate level*
+- Haskell (2018) &nbsp; *discussion on superfluidity and superconductivity inside neutron stars*
+- Jackson (1999) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
 
 #### Papers
 
