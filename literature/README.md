@@ -12,4 +12,4 @@ References are sorted into the following types:
 #### Papers
 
 - Alvarez (2004) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
-- Carpio (2020) &nbsp; *estimation of contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
+- Carpio (2020) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
