@@ -58,7 +58,7 @@
 }
 \DeclareFieldFormat{edition}{%
 	\ifinteger{#1}
-		{#1\adddot~\bibcplstring{edition}}
+		{\bibcplstring{edition}~#1}
 		{#1}%
 }
 \DeclareFieldFormat[inproceedings]{booktitle}{#1}
