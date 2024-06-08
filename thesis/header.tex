@@ -12,6 +12,7 @@
 \renewcommand{\frac}[2]{\genfrac{}{}{0.55pt}{0}{#1}{#2}}
 
 \input{amend/luatex-round-rule-endcaps}
+\input{amend/table-of-contents-dotting}
 
 \setkomafont{disposition}{\normalfont}
 
@@ -42,7 +43,9 @@
 \definecolor{TUDO}{RGB}{99,154,0}
 
 \usepackage[
-	colorlinks,
+	allcolors=RUB,
+	citecolor=TUDO,
+	colorlinks=true,
 	english,
 	pdfusetitle,
 	pdfcreator={},
