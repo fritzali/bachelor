@@ -1,67 +1,67 @@
-\ProvidesFile{science.bbx}[2018/10/18 v1.2 biblatex bibliography style]
+\ProvidesFile{style.bbx}
 
-% Load the standard style to avoid copy-pasting unnecessary material
 \RequireBibliographyStyle{numeric-comp}
 
-% Additional options
 \newtoggle{bbx:articletitle}
-\DeclareBibliographyOption{articletitle}[true]{%
-  \settoggle{bbx:articletitle}{#1}%
+\DeclareBibliographyOption{articletitle}[true]{
+	\settoggle{bbx:articletitle}{#1}
 }
 
-% Alter settings that carry through from biblatex
 \ExecuteBibliographyOptions{
-  articletitle  = false ,
-  doi           = false ,
-  giveninits            ,
-  maxnames      = 5     ,
-  maxcitenames  = 2     ,
-  urldate       = year  ,
-  useprefix             ,
+	articletitle=false,
+	autocite=superscript,
+	date=year,
+	doi=true,
+	eprint=true,
+	giveninits,
+	isbn=true,
+	maxnames=20,
+	maxcitenames=2,
+	url=false,
+	useprefix,
 }
 
-% Modify the name format
 \DeclareNameFormat{default}{%
-  \nameparts{#1}%
-  \usebibmacro{name:given-family}
-    {\namepartfamily}
-    {\namepartgiveni}
-    {\namepartprefix}
-    {\namepartsuffix}%
-  \usebibmacro{name:andothers}%
+	\nameparts{#1}%
+	\usebibmacro{name:given-family}
+		{\namepartfamily}
+		{\namepartgiveni}
+		{\namepartprefix}
+		{\namepartsuffix}%
+	\usebibmacro{name:andothers}%
 }
 
 \renewbibmacro*{name:andothers}{%
-  \ifboolexpr{
-    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
-    and
-    test \ifmorenames
-  }
-    {%
-      \ifnumgreater{\value{liststop}}{1}
-        {\finalandcomma}
-        {}%
-      \andothersdelim
-      \bibstring[\mkbibemph]{andothers}%
-    }
-    {}%
+	\ifboolexpr{
+		test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+		and
+		test \ifmorenames
+	}
+		{%
+			\ifnumgreater{\value{liststop}}{1}
+				{\finalandcomma}
+				{}%
+			\andothersdelim
+			\bibstring[\mkbibemph]{andothers}%
+		}
+		{}%
 }
 
-% Field formats for the bibliography environment
+\DeclareFieldFormat{pages}{#1}
+
 \DeclareFieldFormat{labelnumberwidth}{#1\adddot}
 
-% Custom field formats 
 \DeclareFieldFormat{edition}{%
-  \ifinteger{#1}
-    {\bibstring{edition}~#1}
-    {#1}%
+	\ifinteger{#1}
+		{#1\adddot~\bibcplstring{edition}}
+		{#1}%
 }
 \DeclareFieldFormat[inproceedings]{booktitle}{#1}
 \DeclareFieldFormat{doi}{%
-  DOI\space
-  \ifhyperref
-    {\href{https://doi.org/#1}{\nolinkurl{#1}}}
-    {\nolinkurl{#1}}%
+	DOI\addcolon\space
+	\ifhyperref
+		{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+		{\nolinkurl{#1}}%
 }
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[proceedings]{title}{#1}
@@ -71,134 +71,129 @@
 \DeclareFieldFormat{urldate}{#1}
 \DeclareFieldFormat[article,periodical]{volume}{\mkbibbold{#1}}
 
-% Simple modifications to punctuation, etc.
 \renewcommand*{\finalnamedelim}{%
-  \ifcurrentname{labelname}
-    {%
-      \ifnumgreater{\value{liststop}}{2}
-        {\finalandcomma}
-        {}%
-      \addspace
-      \bibstring{and}%
-      \space
-    }
-    {\multinamedelim}%
+	\ifcurrentname{labelname}
+		{%
+			\ifnumgreater{\value{liststop}}{2}
+				{\finalandcomma}
+				{}%
+			\addspace
+			\bibstring{and}%
+			\space
+		}
+		{\multinamedelim}%
 }
 \renewcommand*\intitlepunct{\addspace}
 \renewcommand*\newunitpunct{\addcomma\space}
 
-% Bibliography strings
 \NewBibliographyString{presentedat}
 
 \DefineBibliographyStrings{english}{
-  editor      = Ed\adddot                 ,
-  editors     = Eds\adddot                ,
-  patentus    = US Patent                 ,
-  presentedat = presented at the\addspace ,
+	editor=Editor\addspace,
+	editors=Editors\addspace,
+	patentus=Patent,
+	presentedat=at\addspace,
 }
 
-% Bibliography macros
 \renewbibmacro*{event+venue+date}{%
-  \printfield{eventtitle}%
-  \ifboolexpr{
-    test {\iffieldundef{venue}}
-    and
-    test {\iffieldundef{eventyear}}
-  }
-    {}
-    {%
-      \printfield{venue}%
-      \newunit
-      \iffieldundef{eventyear}
-        {%
-          \printdate
-          \clearfield{year}%
-        }
-        {%
-          \printeventdate
-          \clearfield{eventyear}%
-        }%
-    }%
-  \newunit
+	\printfield{eventtitle}%
+	\ifboolexpr{
+		test {\iffieldundef{venue}}
+		and
+		test {\iffieldundef{eventyear}}
+	}
+		{}
+		{%
+			\printfield{venue}%
+			\newunit
+			\iffieldundef{eventyear}
+				{%
+					\printdate
+					\clearfield{year}%
+				}
+				{%
+					\printeventdate
+					\clearfield{eventyear}%
+				}%
+		}%
+	\newunit
 }
 
 \renewbibmacro*{institution+location+date}{%
-  \ifboolexpr{
-    test {\iflistundef{institution}}
-    and
-    test {\iflistundef{location}}
-    and
-    test {\iffieldundef{edition}}
-    and
-    test {\iffieldundef{date}}
-  }
-    {}
-    {%
-      \nopunct
-      \printtext[parens]{%                     
-        \printlist{institution}%
-        \newunit
-        \printlist{location}%
-        \newunit
-        \printfield{edition}%
-        \newunit
-        \usebibmacro{date}%
-      }%
-    }%
+	\ifboolexpr{
+		test {\iflistundef{institution}}
+		and
+		test {\iflistundef{location}}
+		and
+		test {\iffieldundef{edition}}
+		and
+		test {\iffieldundef{date}}
+	}
+		{}
+		{%
+			\nopunct
+			\printtext[parens]{%                     
+				\printlist{institution}%
+				\newunit
+				\printlist{location}%
+				\newunit
+				\printfield{edition}%
+				\newunit
+				\usebibmacro{date}%
+			}%
+		}%
 }
 
 \renewbibmacro*{journal+issuetitle}{%
-  \usebibmacro{journal}%
-  \setunit*{\addspace}%
-  \iffieldundef{series}
-    {}
-    {%
-      \newunit
-      \printfield{series}%
-      \setunit{\addspace}%
-    }%
-  \printfield{volume}%
-  \newunit
-  \usebibmacro{issue}%
-  \newunit
+	\usebibmacro{journal}%
+	\setunit*{\addspace}%
+	\iffieldundef{series}
+		{}
+		{%
+			\newunit
+			\printfield{series}%
+			\setunit{\addspace}%
+		}%
+	\printfield{volume}%
+	\newunit
+	\usebibmacro{issue}%
+	\newunit
 }
 
 \renewbibmacro*{publisher+location+date}{%
-  \ifboolexpr{
-    test {\iflistundef{publisher}}
-    and
-    test {\iflistundef{location}}
-    and
-    test {\iffieldundef{edition}}
-    and
-    test {\iffieldundef{date}}
-  }
-    {}
-    {%
-      \nopunct
-      \printtext[parens]{%                     
-        \printlist{publisher}%
-        \newunit
-        \printlist{location}%
-        \newunit
-        \printfield{edition}%
-        \newunit
-        \usebibmacro{date}%
-      }%
-    }%
+	\ifboolexpr{
+		test {\iflistundef{publisher}}
+		and
+		test {\iflistundef{location}}
+		and
+		test {\iffieldundef{edition}}
+		and
+		test {\iffieldundef{date}}
+	}
+		{}
+		{%
+			\nopunct
+			\printtext[parens]{%                     
+				\printlist{publisher}%
+				\newunit
+				\printlist{location}%
+				\newunit
+				\printfield{edition}%
+				\newunit
+				\usebibmacro{date}%
+			}%
+		}%
 }
 
 \renewbibmacro*{url+urldate}{%
-  \iffieldundef{url}
-    {}
-    {%
-      \printtext[parens]{%
-        \usebibmacro{urldate}%
-        \setunit*{\addsemicolon\space}%
-         \usebibmacro{url}%
-     }}}
-
-\DeclareFieldFormat{pages}{#1}
+	\iffieldundef{url}
+		{}
+		{%
+			\printtext[parens]{%
+				\usebibmacro{urldate}%
+				\setunit*{\addsemicolon\space}%
+				\usebibmacro{url}%
+		}}}
 
 % New bibliography drivers, using the required order of fields. These
 % are mainly copied from standard.bbx then modified.
