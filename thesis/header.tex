@@ -4,13 +4,22 @@
 	parskip=half,
 ]{scrreprt}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+
+\renewcommand{\frac}[2]{\genfrac{}{}{0.55pt}{0}{#1}{#2}}
+
+\input{extension/luatex-round-rule-endcaps}
+
 \setkomafont{disposition}{\normalfont}
 
 \RedeclareSectionCommands[toclinefill=\hfill]{section,subsection}
 
 \setcounter{tocdepth}{1}
 
-\usepackage[libertine]{newtx}
+\usepackage{libertinus}
 
 \usepackage[
 	automark,
@@ -33,28 +42,29 @@
 \addbibresource{../literature/books.bib}
 \addbibresource{../literature/papers.bib}
 
-\usepackage{xpatch}
-\xpatchbibdriver{article}
-  {\usebibmacro{date}%
-   \newunit\newblock
-   \usebibmacro{doi+eprint+url}}
-  {\usebibmacro{doi+eprint+url}%
-   \newunit\newblock
-   \usebibmacro{date}}
-  {}{}
-
 \usepackage{xcolor}
 \definecolor{RUB}{RGB}{0,53,96}
 \definecolor{TUDO}{RGB}{99,154,0}
 
-
-\usepackage[english,
-			unicode,
-			pdfusetitle,
-			pdfcreator={},
-			pdfproducer={},
-			colorlinks,
-%			hidelinks,
+\usepackage[
+	colorlinks,
+	english,
+	pdfusetitle,
+	pdfcreator={},
+	pdfproducer={},
+	unicode,
 ]{hyperref}
+
+\usepackage[
+	locale=US,
+	per-mode=reciprocal,
+	print-unity-mantissa=false,
+	print-zero-exponent=true,
+	scientific-notation=true,
+	separate-uncertainty=true,
+]{siunitx}
+\DeclareSIUnit\erg{erg}
+\DeclareSIUnit\esu{esu}
+\DeclareSIUnit\gauss{G}
 
 \usepackage{microtype}
