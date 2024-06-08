@@ -51,6 +51,11 @@
 
 \DeclareFieldFormat{labelnumberwidth}{#1\adddot}
 
+\DeclareFieldFormat{chapter}{%
+	\ifinteger{#1}
+		{\bibcplstring{chapter}~#1}
+		{#1}%
+}
 \DeclareFieldFormat{edition}{%
 	\ifinteger{#1}
 		{#1\adddot~\bibcplstring{edition}}
@@ -70,6 +75,14 @@
 \DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat{urldate}{#1}
 \DeclareFieldFormat[article,periodical]{volume}{\mkbibbold{#1}}
+
+\renewbibmacro*{chapter+pages}{%
+  \printfield{chapter}%
+  \setunit{\bibpagespunct}%
+  \printfield{eid}%
+  \setunit{\bibpagespunct}%
+  \printfield{pages}%
+  \newunit}
 
 \renewcommand*{\finalnamedelim}{%
 	\ifcurrentname{labelname}
