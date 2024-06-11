@@ -1,4 +1,4 @@
 \makeatletter
 	\renewcommand\@dotsep{0.5}
-	\renewcommand\@pnumwidth{1.1ex}
+	\renewcommand\@pnumwidth{5pt}
 \makeatother
