@@ -9,6 +9,7 @@
 	\newpage\pagenumbering{gobble}
 
 	\input{content/abstract.tex}
+	\input{content/acknowledgements.tex}
 	\input{content/abbreviations.tex}
 
 	\tableofcontents
@@ -18,10 +19,11 @@
 
 	\input{content/introduction.tex}
 	\input{content/background.tex}
+	\input{content/methods.tex}
 	\input{content/results.tex}
 	\input{content/conclusion.tex}
 
-	\input{content/acknowledgements.tex}
+	\renewcommand{\thesection}{\Alph{section}}
 	\input{content/appendix.tex}
 
 	\printbibliography[heading=bibintoc]
