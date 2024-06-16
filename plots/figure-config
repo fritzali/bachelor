@@ -1,0 +1,20 @@
+backend : pgf
+
+figure.figsize : 5.78 , 3.57
+
+figure.constrained_layout.use : True
+figure.constrained_layout.w_pad : 0.11 
+figure.constrained_layout.h_pad : 0.11
+
+font.family : serif
+
+font.size : 10
+legend.fontsize : small
+xtick.labelsize : 9
+ytick.labelsize : 9
+
+pgf.rcfonts : False
+
+text.usetex : True
+pgf.texsystem : lualatex
+pgf.preamble : \input{header-matplotlib.tex}
