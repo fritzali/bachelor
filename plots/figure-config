@@ -1,20 +1,28 @@
-backend : pgf
+axes.prop_cycle : cycler('color', ['olivedrab', 'steelblue', 'firebrick', 'goldenrod'])
 
-figure.figsize : 5.78 , 3.57
+backend : pgf
 
 figure.constrained_layout.use : True
 figure.constrained_layout.w_pad : 0.11 
 figure.constrained_layout.h_pad : 0.11
 
+figure.dpi : 600
+figure.figsize : 8 , 5
+
 font.family : serif
-
 font.size : 10
-legend.fontsize : small
-xtick.labelsize : 9
-ytick.labelsize : 9
 
+legend.fontsize : small
+legend.frameon : False
+
+pgf.preamble : \input{header-matplotlib.tex}
 pgf.rcfonts : False
+pgf.texsystem : lualatex
 
 text.usetex : True
-pgf.texsystem : lualatex
-pgf.preamble : \input{header-matplotlib.tex}
+
+xtick.labelsize : 9
+xtick.minor.visible : True
+
+ytick.labelsize : 9
+ytick.minor.visible : True
