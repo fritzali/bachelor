@@ -10,6 +10,6 @@ FORCE:
 
 .PHONY: all clean
 
-build/main: code figure-config Makefile main.py header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): MATPLOTLIBRC=figure-config python main.py
+build/main: code Makefile main.py style.rc header.tex | build
+	TEXINPUTS=$$(pwd): MATPLOTLIBRC=style.rc python main.py
 	touch build/main

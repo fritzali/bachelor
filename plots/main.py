@@ -1,4 +1,4 @@
-#import matplotlib as mpl
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.constants as const
@@ -13,8 +13,8 @@ plt.plot(arr2, label='log')
 plt.plot(arr3, label='exp')
 plt.plot(arr4, label='sqrt')
 
-plt.xlabel(r'$x \mathrel{/} $')
-plt.ylabel(r'$y \mathrel{/} $')
+plt.xlabel(r'$t$ / s')
+plt.ylabel(r'$\dot{\phi}_\nu$ / GeV$^{-1}$s$^{-1}$cm$^{-2}$')
 
 plt.legend()
 
