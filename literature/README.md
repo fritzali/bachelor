@@ -14,5 +14,6 @@ References are sorted into the following types:
 
 - Alvarez (2004) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
 - Carpio (2020) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
+- Fagundes (2012) &nbsp; *model independent parametrization for ratio of elastic to total cross section in hadron scattering*
 - Li (2012) &nbsp; *overview of vacuum and force free as well as resisitve magnetosphere solutions on local and global scales*
 - Thompson (1993) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
