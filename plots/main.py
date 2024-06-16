@@ -6,4 +6,5 @@ import scipy.constants as const
 arr = np.logspace(0, 1, 1000)
 plt.plot(arr)
 plt.savefig('build/test.pdf')
+plt.savefig('build/test.jpg')
 plt.close()
