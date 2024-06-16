@@ -1,0 +1,9 @@
+name: bachelor
+channels:
+ - conda-forge
+dependencies:
+ - jupyter
+ - matplotlib
+ - numpy
+ - python
+ - scipy

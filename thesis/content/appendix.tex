@@ -6,6 +6,25 @@
 \section{Reference Frames}
 \label{sec:frames}
 
+Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or
+independent from the choice of coordinate system altogether. One widely adopted formulation uses the Mandelstam variables
+\begin{align*}
+	s &= (p_1 + p_2)^2 \\
+	t &= (p_1 - p_3)^2 \\
+	u &= (p_1 - p_4)^2
+\end{align*}
+to assign different channels to scattering processes via the squared momentum carried by the exchanged mediating particle.
+Implied in this context is the Minkowski inner product, making the above quantities manifestly Lorentz invariant.
+
+When working with parametrizations defined for use in different subdisciplines it often becomes necessary to convert from
+center of mass energies $\sqrt{s}\,$ to the energy $E$ of a projectile in the target rest frame. With $E^2 = \bm{P}^2 c^2 + M^2 c^4$
+as well as momenta $P = (E, \bm{P}\,)$ and $p = (m c^2 , 0)$ one finds
+\begin{equation*}
+	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 = 2E m c^2 + m^2 c^4 + M^2 c^4
+\end{equation*}
+for the invariant mass. This relation is typically approximated as $s = 2E m c^2$ at high energies.
+
+
 \section{Cross Sections}
 \label{sec:cross}
 
@@ -19,6 +38,9 @@
 
 \section{Spectral Distributions}
 \label{sec:spectral}
+
+\section{Implementation}
+\label{sec:implementation}
 
 \section{Pulsar Spindown}
 \label{sec:spindown}
