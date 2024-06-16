@@ -6,7 +6,6 @@ figure.constrained_layout.use : True
 figure.constrained_layout.w_pad : 0.11 
 figure.constrained_layout.h_pad : 0.11
 
-figure.dpi : 300
 figure.figsize : 6.00 , 3.75
 
 font.family : serif
