@@ -1,5 +1,7 @@
 \documentclass[
+	captions=tableheading,
 	cleardoublepage=plain,
+	numbers=noendperiod,
 	open=any,
 	parskip=half,
 ]{scrreprt}
@@ -9,16 +11,17 @@
 \usepackage{mathtools}
 \usepackage{unicode-math}
 
-\renewcommand{\frac}[2]{\genfrac{}{}{0.5pt}{0}{#1}{#2}}
+\renewcommand*{\frac}[2]{\genfrac{}{}{0.5pt}{0}{#1}{#2}}
+\renewcommand*{\TOCLineLeaderFill}{\hfill}
 
 \counterwithout{equation}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
 
 \input{amend/luatex-round-rule-endcaps}
 \input{amend/table-of-contents-dotting}
 
 \setkomafont{disposition}{\normalfont}
-
-\RedeclareSectionCommands[toclinefill=\hfill]{section,subsection}
 
 \setcounter{tocdepth}{1}
 
@@ -69,4 +72,5 @@
 \DeclareSIUnit\esu{esu}
 \DeclareSIUnit\gauss{G}
 
+\usepackage{booktabs}
 \usepackage{microtype}
