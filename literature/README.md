@@ -22,6 +22,6 @@ References are sorted into the following types:
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
 - [Koers (2006)](https://arxiv.org/abs/hep-ph/0611219) &nbsp; *distributions of secondary pions and kaons in energetic proton proton collisions*
 - [Li (2012)](https://arxiv.org/abs/1107.0979) &nbsp; *overview of vacuum and force free as well as resisitve magnetosphere solutions on local and global scales*
-- [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *ratio of kaon to pion cross sections in proton collisions*
-- [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *ratio of kaon to pion cross sections in beryllium collisions*
+- [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
+- [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
