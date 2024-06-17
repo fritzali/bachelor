@@ -13,8 +13,8 @@ plt.plot(arr2, label='log')
 plt.plot(arr3, label='exp')
 plt.plot(arr4, label='sqrt')
 
-plt.xlabel(r'$t$ / s')
-plt.ylabel(r'$E_\nu^2\dot{\phi}_\nu$ / G$\kern0.5pt$e$\kern-0.5pt$V$\kern1pt$s$^{-1}$cm$^{-2}$')
+plt.xlabel(r'$t$ $\kern+1.0pt$/ s')
+plt.ylabel(r'$E_\nu^2\dot{\phi}_\nu$ $\kern+1.0pt$/ G$\kern+0.5pt$e$\kern-0.5pt$V$\kern1pt$s$^{-1}$cm$^{-2}$')
 
 plt.legend()
 
