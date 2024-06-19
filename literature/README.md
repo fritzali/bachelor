@@ -25,3 +25,7 @@ References are sorted into the following types:
 - [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
 - [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
+
+#### Particle Data Group
+
+- [PDG (2022)](https://academic.oup.com/ptep/article/2022/8/083C01/6651666) &nbsp; *review of particle physics and cosmology summarizing experimental data as well as hypothetical constraints*
