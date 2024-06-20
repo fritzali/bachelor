@@ -12,6 +12,7 @@
 \usepackage{mathtools}
 \usepackage{unicode-math}
 
+\renewcommand*\footnoterule{}
 \renewcommand*{\frac}[2]{\genfrac{}{}{0.5pt}{0}{#1}{#2}}
 \renewcommand*{\TOCLineLeaderFill}{\hfill}
 
@@ -66,9 +67,6 @@
 \usepackage[
 	locale=US,
 	per-mode=reciprocal,
-	print-unity-mantissa=false,
-	print-zero-exponent=true,
-	scientific-notation=true,
 	separate-uncertainty=true,
 ]{siunitx}
 \DeclareSIUnit\erg{erg}
@@ -79,6 +77,7 @@
 
 \usepackage{caption}
 \captionsetup{width=0.9\linewidth}
+\setcapindent{5ex}
 
 \usepackage{float}
 \floatplacement{figure}{htbp}
