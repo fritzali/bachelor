@@ -115,19 +115,20 @@ for the inclusive $pp \rightarrow cX$ production.
 \section{Stochastic Acceleration}
 \label{sec:stochastic}
 
-$N = N_0 p^k$
-
-$E = E_0 f^k$
-
-$\ln(x^k) = k\ln(x)$
-
+Due to its wide applicability in different astrophysical scenarios, probabilistic collisions are often viewed as one of
+the more plausible mechanisms responsible for accelerating cosmic rays to high energies. The general case is described in
+\cite{Longair_2011} and supposes that for each collision, particles gain energy proportional to a constant factor $\eta$ and
+remain in the region of acceleration with fixed probability $\varsigma$ on average. With initial conditions $N_0$ for the
+particle number and $E_0$ as the mean energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$
+after $k$ collisions. Using $\ln x^k = k\ln x$ in
 \begin{equation*}
-	\frac{\ln (N / N_0)}{\ln (E / E_0)} = \frac{\ln(p)}{\ln(f)}
+	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
 \end{equation*}
-
+eliminates the exponent and by rearranging gives the relation
 \begin{equation*}
-	N = N_0 \left( \frac{E}{E_0} \right)^{\ln(p) / \ln(f)}
+	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
 \end{equation*}
+for the integrated spectrum.
 
 \begin{equation*}
 	\frac{dN}{dE} = \frac{N_0}{E_0} \left( \frac{E}{E_0} \right)^\alpha
@@ -136,8 +137,6 @@ $\ln(x^k) = k\ln(x)$
 \begin{equation*}
 	\alpha = \frac{\ln(p)}{\ln(f)} - 1
 \end{equation*}
-
-\cite{Longair_2011}
 
 $\alpha = -2$
 
