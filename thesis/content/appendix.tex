@@ -134,19 +134,22 @@ ubiquitous feature observed in cosmic ray physics. One obtains
 	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
 	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
 \end{equation*}
-for the differential spectrum where
+for the differential spectrum where the spectral index
 \begin{equation*}
 	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
 \end{equation*}
-defines the spectral index.
+is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definition.
 
-From $\varsigma < 1$ and $\eta > 1$ follows $\alpha + 1 < 0$ as a general constraint.
+The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\beta = v / c$ in a fully ionized gas.
+Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results in
+$\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{-2}$ spectral dependence that
+\cite{Longair_2011} discusses as well. By including nonlinear effects and other interactions, a slightly steeper index
+$\alpha \sim \num{-2.5}$ can be retrieved to more closely match observations.
 
-When considering DSA 
-$\alpha = -2$
-
-$dN / dE \propto E^{-2}$
-
+An energy gain increasing linearly with $\beta$ leads this mechanism to be classified as Fermi type acceleration of first order,
+whereas the second order formulation scales like $\beta^2$ as is the case in the original proposition. Though shocks exceed the
+speed of sound in the local medium, relativistic velocities are typically not reached. Consequently, light speed ratios
+$\beta \ll 1$ mean that lower order processes are much more efficient in reaching high particle energies.
 
 
 \section{Implementation}
