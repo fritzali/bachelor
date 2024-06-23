@@ -17,11 +17,11 @@ to assign different channels in scattering processes via the squared momentum ca
 Implied in this context is the Minkowski inner product, making the above quantities manifestly Lorentz invariant.
 
 When working with parametrizations defined for use in different subdisciplines it often becomes necessary to convert from
-center of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile in the target rest
-frame. With $E^2 = \bm{P}^2 c^2 + M^2 c^4$ as well as momenta $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and
+center of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile in the
+target rest frame. With $E^2 = \bm{P}^2 c^2 + M^2 c^4$ as well as momenta $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and
 $p = (m c^2 \kern-1.0pt , 0)$ one finds
 \begin{equation*}
-	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + m^2 c^4 + M^2 c^4
+	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
 \end{equation*}
 for the invariant mass. This relation is typically approximated as $s = 2E m c^2$ at high energies.
 
@@ -34,6 +34,13 @@ for the invariant mass. This relation is typically approximated as $s = 2E m c^2
 
 \subsection*{Scattering}
 
+\begin{equation*}
+	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
+	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
+\end{equation*}
+
+\input{content/tables/hadron-scattering.tex}
+
 
 
 \subsection*{Production}
@@ -42,6 +49,8 @@ for the invariant mass. This relation is typically approximated as $s = 2E m c^2
 	x_F \kern+1.0pt \frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} (x_F \kern+0.5pt, \kern-0.5pt E_p)
 	= a \kern+0.5pt x_F^b \kern+1.0pt (1 - x_F^m)^n
 \end{equation*}
+
+Feynman scaling variable $x_F = p / P$
 
 \cite{Goncalves_2007}
 
@@ -64,7 +73,7 @@ for the inclusive $pp \rightarrow cX$ production.
 \qty{75}{\percent} nitrogen and \qty{25}{\percent} oxygen $A = \num{14.5}$
 
 \begin{equation*}
-	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_E$}} (x_E \kern+0.5pt, \kern-0.5pt E_p) = \int_{\kern+0.5pt x_E}^1 dz \, z^{-1}
+	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} (x_h \kern+0.5pt, \kern-0.5pt E_p) = \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} (x_c \kern+0.5pt, \kern-0.5pt E_p) \kern+1.0pt D^{\kern+0.5pt h}_c (z)
 \end{equation*}
 
@@ -81,7 +90,7 @@ for the inclusive $pp \rightarrow cX$ production.
 \subsection*{Decay}
 
 \begin{equation*}
-	\tilde{F}_{\kern+1.0pt h \kern+1.0pt \rightarrow \kern+1.0pt \nu \kern+1.0pt} = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
+	\tilde{F}_{\kern+1.0pt h \kern+1.0pt \rightarrow \kern+1.0pt \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
 	- 12\lambda_h^3 a_h + 12\lambda_h^2 y - 6b_h y^2 + 4 y^3 + 12 \lambda_h^2 \ln \bigl((1 - y) / \lambda_h \bigr) \Bigr)
 \end{equation*}
 
@@ -143,18 +152,18 @@ for the differential spectrum where the spectral index
 \begin{equation*}
 	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
 \end{equation*}
-is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definition.
+is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
 
-The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\beta = v / c$ in a fully ionized gas.
-Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results in
-$\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{-2}$ spectral dependence that
-\cite{Longair_2011} discusses as well. By including nonlinear effects and other interactions, a slightly steeper index
-$\alpha \sim \num{-2.5}$ can be retrieved to more closely match observations.
+The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\kern-0.5pt \beta = v / c \kern+1.0pt$ in a
+fully ionized gas. Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results
+in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{-2}$ spectral dependence that
+is discussed by \cite{Longair_2011} as well. A slightly steeper index $\alpha \approx \num{-2.5}$ can be produced when nonlinear
+effects are accounted for to more closely match observations.
 
-An energy gain increasing linearly with $\beta$ leads this mechanism to be classified as Fermi type acceleration of first order,
-whereas the second order formulation scales like $\beta^2$ as is the case in the original proposition. Though shocks exceed the
-speed of sound in the local medium, relativistic velocities are typically not reached. Consequently, light speed ratios
-$\beta \ll 1$ mean that lower order processes are much more efficient in reaching high particle energies.
+Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
+of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
+speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, light speed ratios $\beta \ll 1$ mean
+that lower order processes are much more efficient in reaching high particle energies.
 
 
 
@@ -174,9 +183,9 @@ $\beta \ll 1$ mean that lower order processes are much more efficient in reachin
 In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
 this task allows the general case
 \begin{align*}
-	F(x, y) &= \int dz \: G(x, z) \, H(z, y) \\
+	F(x, y) \kern+1.5pt &= \int_{z_{-}}^{z_{+}} dz \: G(x, z) \, H(z, y) \\
 	\intertext{to be rewritten as a Riemann sum. Assuming $G$ and $H$ are integrable over a given interval,}
-	F_{ij} &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
+	F_{ij} \kern+1.8pt &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
 \end{align*}
 converges to the exact solution for sufficiently small steps. Transforming variables
 \begin{align*}
