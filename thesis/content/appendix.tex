@@ -42,11 +42,14 @@ for the invariant mass. This relation is typically approximated as $s = 2E m c^2
 \input{content/tables/hadron-scattering.tex}
 
 \begin{equation*}
-	\frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
-	\mathfrak{A} \tanh (\gamma_1 + \gamma_2 \ln (s) + \gamma_3 \ln^2 (s))
+	\mathscr{R} = \frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
+	\mathscr{A} \tanh \bigl( \kern+1.0pt \gamma_1 \kern-1.0pt - \gamma_2 \ln (s) + \gamma_3 \ln^2 (s) \bigr)
 \end{equation*}
 
+\input{content/tables/hadron-ratio.tex}
 
+$\sigma_\text{el} + \sigma_\text{inel} = \sigma_\text{tot}$ $\sigma_\text{el} = \mathscr{R} \sigma_\text{inel}$
+$\sigma_\text{inel} = (1 - \mathscr{R}) \sigma_\text{tot}$
 
 \subsection*{Production}
 
@@ -92,6 +95,27 @@ for the inclusive $pp \rightarrow cX$ production.
 
 
 
+\section{Spectral Distributions}
+\label{sec:spectral}
+
+
+
+\subsection*{Pions \& Kaons}
+
+\begin{equation*}
+	F \kern+1.5pt ( x, E_p ) = 4\alpha B x^{\alpha - 1} \left( \frac{1 - x^\alpha}{1 + rx^\alpha (1 - x^\alpha \kern+1.0pt )}
+	\right)^{\kern-1.0pt 4} \left( \frac{1}{1 - x^\alpha} + \frac{r (1 - 2x^\alpha \kern+1.0pt )}{1 + rx^\alpha
+	(1 - x^\alpha \kern+1.0pt )} \right) \left( 1 - \frac{m_0}{x E_p} \right)^{\kern-1.0pt 1/2}
+\end{equation*}
+
+\cite{Kelner_2006}
+
+
+
+\subsection*{Charm}
+
+
+
 \subsection*{Decay}
 
 \begin{equation*}
@@ -105,19 +129,6 @@ for the inclusive $pp \rightarrow cX$ production.
 \end{align*}
 
 \input{content/tables/charm-hadrons.tex}
-
-
-
-\section{Spectral Distributions}
-\label{sec:spectral}
-
-
-
-\subsection*{Pions \& Kaons}
-
-
-
-\subsection*{Charm}
 
 
 
