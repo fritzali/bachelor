@@ -33,7 +33,10 @@
 
 	\renewcommand{\listfigurename}{Figures}\listoffigures
 	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
+	\begingroup
+	\let\clearpage\relax
 	\renewcommand{\listtablename}{Tables}\listoftables
 	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
+	\endgroup
 
 \end{document}
