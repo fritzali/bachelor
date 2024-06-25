@@ -114,10 +114,6 @@ for the inclusive $pp \rightarrow cX$ production.
 
 \subsection*{Charm}
 
-
-
-\subsection*{Decay}
-
 \begin{equation*}
 	\tilde{F}_{\kern+1.0pt h \kern+1.0pt \rightarrow \kern+1.0pt \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
 	- 12\lambda_h^3 a_h + 12\lambda_h^2 y - 6b_h y^2 + 4 y^3 + 12 \lambda_h^2 \ln \bigl((1 - y) / \lambda_h \bigr) \Bigr)
@@ -132,19 +128,39 @@ for the inclusive $pp \rightarrow cX$ production.
 
 
 
-\section{Cooling}
+\section{Cooling \& Decay}
 \label{sec:cooling}
 
 \begin{equation*}
-	\frac{dN}{dx} = -\frac{N}{\lambda} = -n\sigma N
+	\frac{\raisebox{-0.5ex}{$dN$}}{\raisebox{0.5ex}{$dx$}} = -\frac{\raisebox{-0.5ex}{$N$}}{\raisebox{0.5ex}{$\lambda$}}
 \end{equation*}
 
 \begin{equation*}
-	N(x) = N_0 \exp \left( -\frac{x}{\lambda} \right)
+	N(x) = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda$}} \kern+0.5pt \Bigr)
 \end{equation*}
 
 \begin{equation*}
-	N(x) = N_0 \left( 1 - \exp \left( -\frac{x}{\lambda} \right) \right)
+	P(x) = 1 - \kern+1.0pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda$}} \kern+0.5pt \Bigr)
+\end{equation*}
+
+$x = vt$ $v = c$ $t = \Gamma\tau$ $\Gamma = E / m$
+
+$\lambda = (\kappa \sigma n)^{-1}$
+
+$t_\text{dec} = \Gamma\tau$
+
+$t_\text{cl} = \lambda / c$
+
+\begin{equation*}
+	\frac{\raisebox{-0.5ex}{$dN$}}{\raisebox{0.5ex}{$dt$}} = -\frac{\raisebox{-0.5ex}{$N$}}{\raisebox{0.5ex}{$\tau$}}
+\end{equation*}
+
+\begin{equation*}
+	N(t) = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{0.5ex}{$\tau$}} \kern+0.5pt \Bigr)
+\end{equation*}
+
+\begin{equation*}
+	P(t) = 1 - \kern+1.0pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{0.5ex}{$\tau$}} \kern+0.5pt \Bigr)
 \end{equation*}
 
 
