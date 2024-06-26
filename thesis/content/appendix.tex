@@ -30,16 +30,27 @@ for the invariant mass. This relation is typically approximated as $s = 2E m c^2
 \section{Cross Sections}
 \label{sec:cross}
 
+By defining an effective area perpendicular to the velocity vectors of projectiles and targets, cross sections measure
+the probability of collision processes in particle physics. Due to depending on the strength of an interaction, these
+quantities generally scale with energy. Distinct from the integrated case, differential cross sections are usually given
+with respect to some independent variable such as angle or momentum of the particle.
+
 
 
 \subsection*{Scattering}
 
+To model total cross sections in hadron proton scattering, this work uses the formula
 \begin{equation*}
 	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
 	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
 \end{equation*}
+as given in \cite{Belousov_2016} for a universal analytic parametrization of the corresponding amplitudes.
 
 \input{content/tables/hadron-scattering.tex}
+
+Table~\ref{tab:hadron-scattering} lists all adjustable parameters as well as some meson lifetimes relevant for cooling.
+In the context of this approach, the variable $M$ is related to $H = \pi (\hbar c / M)^2$ and
+$s_h = (m_h + m_p + M)^2$ as an effective mass in units of energy.
 
 \begin{equation*}
 	\mathscr{R} = \frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
@@ -211,7 +222,7 @@ effects are accounted for to more closely match observations.
 
 Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
 of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
-speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, light speed ratios $\beta \ll 1$ mean
+speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios $\beta \ll 1$ mean
 that lower order processes are much more efficient in reaching high particle energies.
 
 
