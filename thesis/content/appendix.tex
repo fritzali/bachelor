@@ -40,27 +40,41 @@ with respect to some independent variable such as angle or momentum of the parti
 \subsection*{Scattering}
 
 To model total cross sections in hadron proton scattering, this work uses the formula
-\begin{equation*}
+\begin{equation}
 	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
 	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
-\end{equation*}
+	\label{eqn:hpr1r2}
+\end{equation}
 as given in \cite{Belousov_2016} for a universal analytic parametrization of the corresponding amplitudes.
+
+All adjustable parameters are listed in table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
+cooling. In this approach, the variable $M$ \kern+0.5pt relates to $H \kern+0.5pt = \pi (\hbar c / M)^2$ and
+$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} denote Heisenberg,
+Pomeranchuk and Regge terms which have some qualitative motivation, though the formula itself is primarily a quantitative
+result.
 
 \input{content/tables/hadron-scattering.tex}
 
-Table~\ref{tab:hadron-scattering} lists all adjustable parameters as well as some meson lifetimes relevant for cooling.
-In the context of this approach, the variable $M$ is related to $H = \pi (\hbar c / M)^2$ and
-$s_h = (m_h + m_p + M)^2$ as an effective mass in units of energy.
-
-\begin{equation*}
-	\mathscr{R} = \frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
+Assuming a quasi universal ratio $\mathscr{R}$ between elastic and total hadron cross sections, one obtains the inelastic
+cross section $\sigma_\text{inel} = (1 - \mathscr{R}) \sigma_\text{tot}$ from $\sigma_\text{el} = \mathscr{R} \sigma_\text{tot}$
+and $\sigma_\text{el} + \sigma_\text{inel} = \sigma_\text{tot}$ as a unitarity condition. Provided in \cite{Fagundes_2012} is
+the model independent parametrization
+\begin{equation}
+	\mathscr{R}(s) = \frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
 	\mathscr{A} \tanh \bigl( \kern+1.0pt \gamma_1 \kern-1.0pt - \gamma_2 \ln (s) + \gamma_3 \ln^2 (s) \bigr)
-\end{equation*}
+	\label{eqn:ratio}
+\end{equation}
+with a constant asymptote $\mathscr{A}$ at very high energies. Coefficients are given in table \ref{tab:hadron-ratio} for different
+physical settings. Both equations \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} use units of \unit{\giga\electronvolt\squared} for the $s$ 
+variables.
 
 \input{content/tables/hadron-ratio.tex}
 
-$\sigma_\text{el} + \sigma_\text{inel} = \sigma_\text{tot}$ $\sigma_\text{el} = \mathscr{R} \sigma_\text{inel}$
-$\sigma_\text{inel} = (1 - \mathscr{R}) \sigma_\text{tot}$
+Reference \cite{Fagundes_2013} tests the asymptotic $\sigma(E\kern+1.0pt) \propto \ln^2(E\kern+1.0pt)$ behavior described as a
+theoretical upper bound in \cite{Froissart_1961} via the optical theorem and concludes that it is exceeded somewhat. Additionally,
+a value $\mathscr{A} = 1/3$ as opposed to the classical black disc limit $\mathscr{A} = 1/2$ is suggested.
+
+
 
 \subsection*{Production}
 
