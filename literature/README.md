@@ -19,6 +19,7 @@ References are sorted into the following types:
 - [Carpio (2020)](https://arxiv.org/abs/2007.07945) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
 - [Fagundes (2012)](https://arxiv.org/abs/1112.5115) &nbsp; *model independent parametrization for ratio of elastic to total cross section in hadron scattering*
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
+- [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
 - [Gonçalves (2007)](https://arxiv.org/abs/hep-ph/0607125) &nbsp; *parametrization of charm production differential cross section in proton air interactions*
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
 - [Kniehl (2006)](https://arxiv.org/abs/hep-ph/0607306) &nbsp; *charm hadron fragmentation functions via factorization schemes on leading order calculations*
