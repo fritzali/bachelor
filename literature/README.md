@@ -22,6 +22,7 @@ References are sorted into the following types:
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
 - [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
 - [Gonçalves (2007)](https://arxiv.org/abs/hep-ph/0607125) &nbsp; *parametrization of charm production differential cross section in proton air interactions*
+- [Hillas (1984)](https://ui.adsabs.harvard.edu/abs/1984ARA%26A..22..425H) &nbsp; *constraint on magnetic field strength and size of accelerating region for high energy particles*
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
 - [Kniehl (2006)](https://arxiv.org/abs/hep-ph/0607306) &nbsp; *charm hadron fragmentation functions via factorization schemes on leading order calculations*
 - [Koers (2006)](https://arxiv.org/abs/hep-ph/0611219) &nbsp; *distributions of secondary pions and kaons in energetic proton proton collisions*
