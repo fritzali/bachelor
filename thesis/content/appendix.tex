@@ -91,11 +91,11 @@ as the parametrized differential cross section with components
 	a = a_1 \kern-1.0pt - a_2 \ln\bigl(E_p\bigr) && b = b_1 \kern-1.0pt - b_2 \ln\bigl(E_p\bigr) &&
 	n = n_1 \kern-1.0pt - n_2 \ln\bigl(E_p\bigr)
 \end{align*}
-for which table \ref{tab:charm-production} lists all necessary constants. Here proton energies $E_p$ are defined as viewed by
-air nuclei at rest, while the Feynman scaling variable $x_F \kern+1.0pt = p_c \kern+1.5pt / \kern-0.5pt p_s$ specifies magnitude
-ratios of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the colliding particles.
-Application of appendix \ref{sec:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$ where
-$x_c = \kern+0.2pt E_c \kern+1.0pt / E_p$ in the relevant energy ranges.
+for which table \ref{tab:charm-production} lists all necessary constants. Here proton energies $E_p$ are defined as viewed
+by air nuclei at rest, while the Feynman scaling variable $x_F \kern+1.0pt = p_c \kern+1.5pt / \kern-0.5pt p_s$ specifies
+magnitude ratios of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the
+colliding particles. Application of appendix \ref{sec:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$
+where $x_c = \kern+0.2pt E_c \kern+1.0pt / E_p$ in the relevant energy ranges.
 
 \input{content/tables/charm-production.tex}
 
@@ -104,23 +104,40 @@ As in \cite{Bhattacharya_2015} it is assumed that the cross section scales linea
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) = A^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr)
 \end{equation*}
-for inclusive charm production in proton proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent} nitrogen and
-\qty{25}{\percent} oxygen, one finds $A = \num{14.5}$ for this scaling.
-
+for inclusive charm production in proton proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent}
+nitrogen and \qty{25}{\percent} oxygen, one finds $A = \kern-0.3pt \num{14.5}$ for this scaling. Translation of charm quarks
+to charmed hadrons is achieved with a folding integral
 \begin{equation*}
-	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} (x_h \kern+0.5pt, \kern-0.5pt E_p) = \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
-	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} (x_c \kern+0.5pt, \kern-0.5pt E_p) \kern+1.0pt D^{\kern+0.5pt h}_c (z)
+	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}}
+	\bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) = \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
+	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}}
+	\bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) \kern+1.0pt D^{\kern+0.5pt h}_c (z)
 \end{equation*}
+where $z = E_h \kern+1.0pt / E_c \kern+0.5pt$ and $x_h = E_h \kern+1.0pt / E_p \kern+0.5pt$ as well as
+$x_c = x_h \kern+1.0pt / z$ are fractional energies. Limits for the integration follow from a basic inequality
+$E_h \leq E_c \kern+0.2pt \leq E_p$ to incorporate kinematic constraints. Furthermore, the probability
+of observing any final state $h$ originating from a $c$ quark is encoded in a \emph{Fragmentation Function}
+(\abbrev{FF}) $D^{\kern+0.5pt h}_c (z)$ dependent on the fraction of hadron to charm energy. Reference
+\cite{Metz_2016} addresses the connection between this concept and that of a \emph{Parton Distribution Function}
+(\abbrev{PDF}) among other things. 
 
-
-
+Where a \abbrev{PDF} represents the probability density of finding a parton with given momentum in a color neutral particle,
+probabilities for color neutral states existing inside individual partons are given by the appropriate \abbrev{FF} instead.
+The partons described here are either quarks or gluons, which can be free only asymptotically at high energies due to carrying
+color charges. In this limit, the running coupling of \abbrev{QCD} is small enough for a power series expansion to be a sensible
+approach, leading to the definition of terms such as \abbrev{LO} and \abbrev{NLO} in reference to exponent order. There exist
+different factorization methods to separate these parts from the nonperturbative contributions contained in any \abbrev{PDF} and
+\abbrev{FF} for the constituents of hadrons. By fitting to existing data or perturbative results, models can extrapolate to
+low momentum fractions that have not yet been probed experimentally. A similar procedure has lead \cite{Kniehl_2006} to obtain
 \begin{equation}
 	D^{\kern+0.5pt h}_{c}(z) = \frac{N_h z \kern+1.0pt (1 - z)^{\kern+0.5pt 2}}
 	{\bigl((1 - z)^{\kern+0.5pt 2} + \epsilon_h z \bigl)^{\raisebox{-1.5ex}{$^2$}}}
 	\label{eqn:fragmentation}
 \end{equation}
+with parameters in table \ref{tab:charm-hadrons} from $\kern+0.5pt e^+e^- \kern-0.8pt$ data as the charm hadron \abbrev{FF} used
+throughout this work.
 
-\newpage
+
 
 \section{Spectral Distributions}
 \label{sec:spectral}
