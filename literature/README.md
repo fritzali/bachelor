@@ -9,6 +9,7 @@ References are sorted into the following types:
 
 - [Haskell (2018)](https://arxiv.org/abs/1709.10340) &nbsp; *discussion on superfluidity and superconductivity inside neutron stars*
 - [Jackson (1999)](https://ui.adsabs.harvard.edu/abs/1998clel.book.....J) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
+- [Longair (2011)](https://www.cambridge.org/core/books/high-energy-astrophysics/CF25E2E5FC0EDFC51FCD7846A262C0AE) &nbsp; *astrophysics of high energy phenomena for advanced undergraduate study*
 
 #### Papers
 
@@ -28,6 +29,7 @@ References are sorted into the following types:
 - [Lisovyi (2016)](https://arxiv.org/abs/1509.01061) &nbsp; *verification of fragmentation fits from non perturbative calculation in soft process measurements*
 - [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
 - [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
+- [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
 
 #### Particle Data Group
