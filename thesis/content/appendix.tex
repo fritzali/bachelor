@@ -107,12 +107,13 @@ As in \cite{Bhattacharya_2015} it is assumed that the cross section scales linea
 for inclusive charm production in proton proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent}
 nitrogen and \qty{25}{\percent} oxygen, one finds $A = \kern-0.3pt \num{14.5}$ for this scaling. Translation of charm quarks
 to charmed hadrons is achieved with a folding integral
-\begin{equation*}
+\begin{equation}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}}
 	\bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) = \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}}
 	\bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) \kern+1.0pt D^{\kern+0.5pt h}_c (z)
-\end{equation*}
+	\label{eqn:differential}
+\end{equation}
 where $z = E_h \kern+1.0pt / E_c \kern+0.5pt$ and $x_h = E_h \kern+1.0pt / E_p \kern+0.5pt$ as well as
 $x_c = x_h \kern+1.0pt / z$ are fractional energies. Limits for the integration follow from a basic inequality
 $E_h \leq E_c \kern+0.2pt \leq E_p$ to incorporate kinematic constraints. Furthermore, the probability
@@ -135,28 +136,37 @@ low momentum fractions that have not yet been probed experimentally. A similar p
 	\label{eqn:fragmentation}
 \end{equation}
 with parameters from $\kern+0.5pt e^+e^- \kern-0.8pt$ data in table \ref{tab:charm-hadrons} as the charm hadron \abbrev{FF} used
-throughout this work.
+throughout this work. It is important to note that such functions are invariant under charge conjugation, so that there is no
+differentiation between quark to particle or antiquark to antiparticle processes.
 
 
 
 \section{Spectral Distributions}
 \label{sec:spectral}
 
-
-
-\subsection*{Pions \& Kaons}
-
-\begin{equation*}
-	F \kern+1.5pt ( x, E_p ) = 4\alpha B x^{\alpha - 1} \left( \frac{1 - x^\alpha}{1 + rx^\alpha (1 - x^\alpha \kern+1.0pt )}
-	\right)^{\kern-1.0pt 4} \left( \frac{1}{1 - x^\alpha} + \frac{r (1 - 2x^\alpha \kern+1.0pt )}{1 + rx^\alpha
-	(1 - x^\alpha \kern+1.0pt )} \right) \left( 1 - \frac{m_0}{x E_p} \right)^{\kern-1.0pt 1/2}
-\end{equation*}
-
-\cite{Kelner_2006}
+Constructing spectra $dN_h \kern+0.5pt / dE_h$ from proton injection requires folding of $F_{p \kern+0.8pt \rightarrow h}$ as
+the hadronic distribution for a single $p \kern-0.1pt p \kern+0.9pt$ interaction with the number of protons per energy interval
+given by the function $dN_p \kern+0.6pt / dE_p$ obtained from source specific modelling. An analogous approach can be applied to
+compute neutrino spectra $dN_\nu \kern+0.6pt / dE_\nu$ from $dN_h \kern+0.5pt / dE_h$ via distributions
+$F_{h \kern+0.2pt \rightarrow \nu}$ formulated according to the involved decay modes.
 
 
 
 \subsection*{Charm}
+
+Spectral distributions for charmed hadron production are calculated according to \cite{Carpio_2020} through
+\begin{equation*}
+	F_{p \kern+0.8pt \rightarrow h} \bigl( E_h \kern+0.5pt , \kern-0.5pt E_p \bigr) =
+	E_p^{\kern+0.5pt -1} \sigma_{p \kern-0.1pt p}^{-1} \bigl( E_p \bigr) \kern+1.0pt
+	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} \bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr)
+\end{equation*}
+with $E_h \kern-0.2pt = x_h E_p$ translating between variables. This formula can be understood as a normalization of
+\eqref{eqn:differential} against proton energies and the inelastic $p \kern-0.1pt p \kern+0.9pt$ cross section from appendix
+\ref{sec:cross} to yield hadron numbers per unit energy.
+
+To find decay spectra of charmed hadrons, the same appraoch as in \cite{Carpio_2020} is used by assuming an effective
+energy distribution from three body approximations.
+
 
 \begin{equation*}
 	\tilde{F}_{\kern+1.0pt h \kern+1.0pt \rightarrow \kern+1.0pt \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
@@ -169,6 +179,18 @@ throughout this work.
 \end{align*}
 
 \input{content/tables/charm-hadrons.tex}
+
+
+
+\subsection*{Pions \& Kaons}
+
+\begin{equation*}
+	F \kern+1.5pt ( x, E_p ) = 4\alpha B x^{\alpha - 1} \left( \frac{1 - x^\alpha}{1 + rx^\alpha (1 - x^\alpha \kern+1.0pt )}
+	\right)^{\kern-1.0pt 4} \left( \frac{1}{1 - x^\alpha} + \frac{r (1 - 2x^\alpha \kern+1.0pt )}{1 + rx^\alpha
+	(1 - x^\alpha \kern+1.0pt )} \right) \left( 1 - \frac{m_0}{x E_p} \right)^{\kern-1.0pt 1/2}
+\end{equation*}
+
+\cite{Kelner_2006}
 
 
 
@@ -231,7 +253,7 @@ the more plausible mechanisms responsible for accelerating cosmic rays to high e
 \cite{Longair_2011} and supposes that for each collision, particles gain energy proportional to a constant factor $\eta$ and
 remain in the region of acceleration with fixed probability $\varsigma$ on average. With initial conditions $N_0$ for the
 particle number and $E_0$ as the mean energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$
-after $k$ collisions. Using $\ln x^k = k\ln x$ in
+after $k$ collisions. Using $\ln x^k = k\ln x$~in
 \begin{equation*}
 	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
 \end{equation*}
@@ -255,7 +277,7 @@ The basic case of \abbrev{DSA} considers strong shock fronts moving with velocit
 fully ionized gas. Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results
 in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{-2}$ spectral dependence that
 is discussed by \cite{Longair_2011} as well. A slightly steeper index of $\alpha \approx \num{-2.5}$ can be produced when nonlinear
-effects are accounted for to more closely reproduce measurements.
+effects are accounted for to better reproduce measurements.
 
 Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
 of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
