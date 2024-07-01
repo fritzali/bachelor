@@ -1,0 +1,7 @@
+\makeatletter
+	\everymath{
+		\check@mathfonts
+		\Umathoverbarrule\textstyle=0.5pt
+		\Umathoverbarvgap\textstyle=1.5pt
+	}
+\makeatother
