@@ -148,7 +148,7 @@ Constructing spectra $dN_h \kern+0.5pt / dE_h$ from proton injection requires fo
 the hadronic distribution for a single $p \kern-0.1pt p \kern+0.9pt$ interaction with the number of protons per energy interval
 given by the function $dN_p \kern+0.6pt / dE_p$ obtained from source specific modelling. An analogous approach can be applied to
 compute neutrino spectra $dN_\nu \kern+0.6pt / dE_\nu$ from $dN_h \kern+0.5pt / dE_h$ via distributions
-$F_{h \kern+0.2pt \rightarrow \nu}$ formulated according to the involved decay modes.
+$F_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu}$ formulated according to the involved decay modes.
 
 
 
@@ -164,19 +164,24 @@ with $E_h \kern-0.2pt = x_h E_p$ translating between variables. This formula can
 \eqref{eqn:differential} against proton energies and the inelastic $p \kern-0.1pt p \kern+0.9pt$ cross section from appendix
 \ref{sec:cross} to yield hadron numbers per unit energy.
 
-To find decay spectra of charmed hadrons, the same appraoch as in \cite{Carpio_2020} is used by assuming an effective
-energy distribution from three body approximations.
-
-
+To find neutrino spectra from charmed hadrons, the same approach as in \cite{Carpio_2020} is used, which assumes an effective
+energy distribution approximated by three body decays for the semileptonic channel to a less massive pseudoscalar meson.
+By neglecting lepton masses, one obtains
 \begin{equation*}
-	\tilde{F}_{\kern+1.0pt h \kern+1.0pt \rightarrow \kern+1.0pt \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
+	\tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
 	- 12\lambda_h^3 a_h + 12\lambda_h^2 y - 6b_h y^2 + 4 y^3 + 12 \lambda_h^2 \ln \bigl((1 - y) / \lambda_h \bigr) \Bigr)
 \end{equation*}
+as a distribution with $y = E_\nu \kern+0.6pt / E_h$ and $F_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
+\bigl( E_\nu \kern+1.0pt , \kern-0.5pt E_h \bigr) = \tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
+(y) / E_h$ for conversion.
 
+Hadron specific coefficients for this equation are defined with the parameter
+$\lambda_h = \kern+0.5pt \tilde{s}_h / m_h^2 \kern+0.2pt$ as
 \begin{align*}
 	a_h = 1 - \lambda_h && b_h = 1 - 2\lambda_h &&
 	D_h = 1 - 8 \lambda_h - 12\lambda_h^2 \ln \bigl( \lambda_h \bigr) + 8 \lambda_h^3 - \lambda_h^4
 \end{align*}
+where both mass quantities $s_h$ and $m_h$ are listed in table \ref{tab:charm-hadrons} for reference.
 
 \input{content/tables/charm-hadrons.tex}
 
