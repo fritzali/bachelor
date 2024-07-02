@@ -26,7 +26,7 @@ References are sorted into the following types:
 - [Hillas (1984)](https://ui.adsabs.harvard.edu/abs/1984ARA%26A..22..425H) &nbsp; *constraint on magnetic field strength and size of accelerating region for high energy particles*
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
 - [Kniehl (2006)](https://arxiv.org/abs/hep-ph/0607306) &nbsp; *charm hadron fragmentation functions via factorization schemes on leading order calculations*
-- [Koers (2006)](https://arxiv.org/abs/hep-ph/0611219) &nbsp; *distributions of secondary pions and kaons in energetic proton proton collisions*
+- [Koers (2006)](https://arxiv.org/abs/hep-ph/0611219) &nbsp; *distributions and multiplicities of secondary pions and kaons in energetic proton proton collisions*
 - [Li (2012)](https://arxiv.org/abs/1107.0979) &nbsp; *overview of vacuum and force free as well as resisitve magnetosphere solutions on local and global scales*
 - [Lisovyi (2016)](https://arxiv.org/abs/1509.01061) &nbsp; *verification of fragmentation fits from non perturbative calculation in soft process measurements*
 - [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
