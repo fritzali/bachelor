@@ -1,0 +1,13 @@
+\makeatletter
+	\everymath{
+		\check@mathfonts
+		\Umathoverbarrule\textstyle=0.5pt
+		\Umathoverbarvgap\textstyle=1.5pt
+		\Umathradicalkern\displaystyle=0.22pt
+		\Umathradicalkern\textstyle=0.22pt
+		\Umathradicalrule\displaystyle=0.44pt
+		\Umathradicalrule\textstyle=0.44pt
+		\Umathradicalvgap\displaystyle=0.44pt
+		\Umathradicalvgap\textstyle=0.44pt
+	}
+\makeatother

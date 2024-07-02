@@ -181,12 +181,12 @@ $\lambda_h = \kern+0.5pt \tilde{s}_h / m_h^2 \kern+0.2pt$ as
 	a_h = 1 - \lambda_h && b_h = 1 - 2\lambda_h &&
 	D_h = 1 - 8 \lambda_h - 12\lambda_h^2 \ln \bigl( \lambda_h \bigr) + 8 \lambda_h^3 - \lambda_h^4
 \end{align*}
-where both mass quantities $s_h$ and $m_h$ are listed in table \ref{tab:charm-hadrons} for reference. The assumption of three
+where both $s_h$ and $m_h$ are listed in table \ref{tab:charm-hadrons} for all included charmed hadrons. The assumption of three
 body decays like $D^+ \kern-2.5pt \rightarrow \kern+1.0pt \overline{\kern-1.5pt K \kern+1.0pt}\kern+1.0pt^0 e^+ \nu_e$ can
 be justified by consulting \cite{pdg} for information on the relevant particles and comparing branching ratios, which indicate
 that purely leptonic modes are strongly suppressed. Hadronic channels such as $D^+ \kern-2.5pt \rightarrow \pi^+ \pi^0$ or
-$D^+ \kern-2.5pt \rightarrow K^- \pi^+ \pi^+$ are either very improbable as well or occur at significant rates but do not
-contribute many high energy neutrinos due to pions and kaons being subject to further cooling before decaying to leptons.
+$D^+ \kern-2.5pt \rightarrow K^{\kern+0.5pt -} \pi^+ \pi^+$ are either very improbable as well or occur at significant rates but
+do not contribute many high energy neutrinos due to pions and kaons being subject to further cooling before decaying to leptons.
 By the same logic, secondary muon decay is neglected when determining the neutrino spectrum.
 
 \input{content/tables/charm-hadrons.tex}
@@ -195,7 +195,7 @@ By the same logic, secondary muon decay is neglected when determining the neutri
 
 \subsection*{Pions \& Kaons}
 
-By parametrizing results from event generators, an energy spectrum for neutral pions
+By parametrizing event generator results, a neutral pion production spectrum of the form
 \begin{equation*}
 	\tilde{F}_\pi \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
 	\left( \frac{1 - \kern+0.2pt x_\pi^\alpha}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
@@ -203,7 +203,13 @@ By parametrizing results from event generators, an energy spectrum for neutral p
 	\frac{r (1 - \kern+0.2pt 2x_\pi^\alpha \kern+1.0pt )}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right) \left( 1 - \kern+0.3pt \frac{m_\pi}{\raisebox{1pt}{$x_\pi \kern+1.0pt E_p$}} \right)^{\kern-1.0pt 1/2}
 \end{equation*}
-is found by \cite{Kelner_2006}
+is found in \cite{Kelner_2006} with $m_\pi = \qty{0.135}{\giga\electronvolt}$ from \cite{pdg} in natural units and
+\begin{align*}
+	B = \tilde{B} + C &&
+	\alpha \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{\alpha}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&
+	r \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{r}$}}{\displaystyle\sqrt{C \kern+1.5pt}}
+\end{align*}
+
 
 
 
