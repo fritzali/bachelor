@@ -203,13 +203,30 @@ By parametrizing event generator results, a neutral pion production spectrum of 
 	\frac{r (1 - \kern+0.2pt 2x_\pi^\alpha \kern+1.0pt )}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right) \left( 1 - \kern+0.3pt \frac{m_\pi}{\raisebox{1pt}{$x_\pi \kern+1.0pt E_p$}} \right)^{\kern-1.0pt 1/2}
 \end{equation*}
-is found in \cite{Kelner_2006} with $m_\pi = \qty{0.135}{\giga\electronvolt}$ from \cite{pdg} in natural units and
+is found in \cite{Kelner_2006} with $m_\pi = \qty{0.135}{\giga\electronvolt}$ \cite{pdg} translated to natural units and parameters
 \begin{align*}
-	B = \tilde{B} + C &&
+	&&&& B \kern+0.5pt = \tilde{B} + C &&
 	\alpha \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{\alpha}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&
-	r \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{r}$}}{\displaystyle\sqrt{C \kern+1.5pt}}
+	r \kern+1.0pt = \frac{\raisebox{-1.5pt}{$\tilde{r}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&&&
 \end{align*}
+where a low energy cutoff is enforced via $E_\pi \kern-0.1pt = x_\pi \kern+1.0pt E_p$ in the mass term. From
+\begin{equation*}
+	C = c_1 \kern-0.5pt - \kern+0.5pt c_2 \ln \bigl( E_p \bigr) + \kern+0.5pt  c_3 \ln^2 \bigl( E_p \bigr)
+\end{equation*}
+results a dependence on projectile energy for the shape of this distribution.\newpage
 
+Coefficients are specified in table \ref{tab:pion-spectrum} and recalculated for $E_p \kern+0.5pt$ in \unit{\giga\electronvolt}
+instead of \unit{\tera\electronvolt} units. Under the assumption of a $\smash{\pi^0} \kern-0.5pt$ cross section approximately
+equal to the $\smash{\pi^\pm} \kern-0.5pt$ average and with identical spectra for charged pions, it follows that
+$F_\pi = \tilde{F}_\pi \kern+0.5pt / E_p$ should describe pion production regardless of charge reasonably well
+for the purpose of this work.
+
+\input{content/tables/pion-spectrum.tex}
+
+For a convenient formulation of kaon production, references \cite{Lykasov_2021} and \cite{Lykasov_2022} indicate a constant ratio
+$\pi / K$ at moderately high energies. Similar fractions are retrieved from multiplicities given in \cite{Koers_2006} and lead to
+$F_K \kern+0.5pt / F_\pi = \num{0.12}$ as a simplifying assumption, the validity of which cannot be guaranteed for the application
+at hand. Calculations of kaon spectra still employ this approach but are subject to considerable reservations as a result.
 
 
 
