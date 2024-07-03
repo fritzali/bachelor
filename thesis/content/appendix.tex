@@ -264,9 +264,10 @@ The probability for stopping such a beam constituent then corresponds to the rat
 explicitly $\mathscr{P} = \kern-0.5pt \tilde{\sigma} \kern+0.5pt n \kern+1.5pt dx$ in case of $dx$ as the covered distance.
 Expressing $\tilde{\sigma} = \kappa\sigma$ in terms of the inelastic scattering cross section $\sigma$ and a dimensionless factor
 $\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
-collisions. From this follows a reduction in beam particles $dN \kern-0.1pt = - N \lambda^{-1} dx$ proportional to the total
-projectile number $N \kern+1.0pt$ and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ as the corresponding probability, representing an
-ordinary differential equation of first order. The solution is found to follow an exponential law
+collisions. Multiplying with $\kappa$ includes the ratio of remaining to initital energy, which is taken to be constant. From this
+follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
+count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
+of first order. The solution is found to follow an exponential law
 \begin{equation*}
 	N(x) \kern+0.4pt = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}} \kern+0.5pt \Bigr)
 \end{equation*}
@@ -278,17 +279,32 @@ where $N \kern+1.0pt$ particles remain over some distance $x \kern+0.5pt$ with $
 gives the probability of a particle having been scattered after travelling $x \kern+0.5pt$ length units. Similar steps
 for time instead of distance lead to the well known equation
 \begin{equation*}
-	N(t) \kern+0.4pt =
-	N_0 \exp \Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)} \kern+0.5pt \Bigr)
+	N(t) \kern+0.4pt = N_0 \exp \kern-2.0pt
+	\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
+	\kern+0.5pt \Bigr)\)}
 \end{equation*}
 describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons
 or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
 decays with probability
 \begin{equation*}
-	P(t) = 1 -
-	\kern+1.0pt \exp \Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)} \kern+0.5pt \Bigr)
+	P(t) = 1 - \kern+1.0pt \exp \kern-2.0pt
+	\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
+	\kern+0.5pt \Bigr)\)}
 \end{equation*}
-before a time $t$ has passed.
+before a time $t$ has passed and for $\tau$ as the mean lifetime. Translating this from rest frame to laboratory coordinates defines
+the decay timescale $t_\text{dec} \kern-0.6pt = \kern-0.4pt \varGamma\tau \kern+0.5pt$ with Lorentz factor $\varGamma = E / m$ via
+projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
+$\lambda_\text{dec} \kern-0.5pt = v \kern+1.5pt t_\text{dec}$ where the velocity $v = c$ can be set for highly relativistic particles.
+Additionally, mean free path and cooling distance $\lambda_\text{cool} = (\kappa\sigma n)^{-1}$ refer to exchangeable concepts. Particles
+lose energy in every collision, which is the same as reducing temperature from a thermodynamics perspective.
+
+
+
+Substituting
+like $t / \tau \kern+0.5pt \rightarrow \lambda_\text{cool} \kern+0.5pt / \lambda_\text{dec}$ or equivalently
+$t / \tau \kern+0.5pt \rightarrow \kern+0.3pt t_\text{cool} \kern+0.5pt / t_\text{dec}$ accounts for cooling effects, provided
+$\lambda_\text{dec} \ll d$ holds with $d$ as the size of a homogenous target field to ensure decays happen exclusively inside
+this region. The ratio $t_\text{dec} \kern+0.5pt / t_\text{cool}$ is obtained by rearranging variables, instead of
 
 
 $x = vt$ $v = c$ $t = \Gamma\tau$ $\Gamma = E / m$
@@ -298,10 +314,6 @@ $\lambda = (\kappa \sigma n)^{-1}$
 $t_\text{dec} = \Gamma\tau$
 
 $t_\text{cl} = \lambda / c$
-
-\begin{equation*}
-	\frac{\raisebox{-0.5ex}{$dN$}}{\raisebox{0.5ex}{$dt$}} = -\frac{\raisebox{-0.5ex}{$N$}}{\raisebox{0.5ex}{$\tau$}}
-\end{equation*}
 
 \begin{equation}
 	\mathscr{C} = 
