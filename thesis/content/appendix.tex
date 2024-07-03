@@ -274,7 +274,7 @@ of first order. The solution is found to follow an exponential law
 where $N \kern+1.0pt$ particles remain over some distance $x \kern+0.5pt$ with $N_0$ as the initial amount. Furthermore,
 \begin{equation*}
 	P(x) \kern+0.3pt = 1 -
-	\kern+1.0pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}}\kern+0.5pt \Bigr)
+	\kern+0.9pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}}\kern+0.5pt \Bigr)
 \end{equation*}
 gives the probability of a particle having been scattered after travelling $x \kern+0.5pt$ length units. Similar steps
 for time instead of distance lead to the well known equation
@@ -287,7 +287,7 @@ describing exponential decay. It commonly appears in the context of radioactive 
 or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
 decays with probability
 \begin{equation*}
-	P(t) = 1 - \kern+1.0pt \exp \kern-2.0pt
+	P(t) \kern+0.3pt = 1 - \kern+0.9pt \exp \kern-2.0pt
 	\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
 	\kern+0.5pt \Bigr)\)}
 \end{equation*}
@@ -296,29 +296,18 @@ the decay timescale $t_\text{dec} \kern-0.6pt = \kern-0.4pt \varGamma\tau \kern+
 projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
 $\lambda_\text{dec} \kern-0.5pt = v \kern+1.5pt t_\text{dec}$ where the velocity $v = c$ can be set for highly relativistic particles.
 Additionally, mean free path and cooling distance $\lambda_\text{cool} = (\kappa\sigma n)^{-1}$ refer to exchangeable concepts. Particles
-lose energy in every collision, which is the same as reducing temperature from a thermodynamics perspective.
-
-
-
-Substituting
-like $t / \tau \kern+0.5pt \rightarrow \lambda_\text{cool} \kern+0.5pt / \lambda_\text{dec}$ or equivalently
-$t / \tau \kern+0.5pt \rightarrow \kern+0.3pt t_\text{cool} \kern+0.5pt / t_\text{dec}$ accounts for cooling effects, provided
-$\lambda_\text{dec} \ll d$ holds with $d$ as the size of a homogenous target field to ensure decays happen exclusively inside
-this region. The ratio $t_\text{dec} \kern+0.5pt / t_\text{cool}$ is obtained by rearranging variables, instead of
-
-
-$x = vt$ $v = c$ $t = \Gamma\tau$ $\Gamma = E / m$
-
-$\lambda = (\kappa \sigma n)^{-1}$
-
-$t_\text{dec} = \Gamma\tau$
-
-$t_\text{cl} = \lambda / c$
-
+lose energy in every collision, which is the same as reducing temperature from a thermodynamics perspective. Dividing by the speed of
+light $c$ translates this expression to $t_\text{cool} = (\kappa\sigma n \kern+0.5pt c)^{-1}$ as a cooling timescale. Analogously, the
+distance $\lambda_\text{dec} \kern-0.5pt = c \kern+0.8pt \tau E / m$ can be rewritten as
+$t_\text{dec} \kern-0.6pt = \tau E / m$ in units of time. Substituting into the decay formula yields a cooling factor
 \begin{equation}
-	\mathscr{C} = 
+	\mathscr{C} = 1 - \kern+0.9pt \exp \biggl( -\frac{t_\text{cool}}{\raisebox{0.5ex}{$t_\text{dec}$}} \biggr)
 	\label{eqn:cooling}
 \end{equation}
+which scales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
+This is in some sense a core mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions in high
+energy regimes. While longer lived particles experience significant cooling due to time dilation, charmed hadron decay is prompt
+in comparison.
 
 
 
