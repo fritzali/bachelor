@@ -313,6 +313,9 @@ holds with a target field size $d \kern+0.5pt$ to ensure decays occur exclusive 
 
 
 \newpage\input{amend/special-head}
+
+
+
 \section{High Energy Cutoff}
 \label{sec:cutoff}
 
@@ -347,9 +350,9 @@ one finds
 	E = \Bigl( \kern-1.0pt \bigl( m_p + 2m_e \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
 \end{equation*}
 approximated to $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
-instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mostly through Compton
-downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. As a
-consequence of the multiple competing mechanisms leading to energy losses and momentum isotropization, it is extremely challenging
+instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mainly through Compton
+downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
+the multiple competing mechanisms for energy losses and momentum isotropization, it is as a consequence extremely challenging
 to reliably interpret cosmic ray signals and practically impossible to reconstruct any information about specific sources.
 
 
@@ -357,9 +360,29 @@ to reliably interpret cosmic ray signals and practically impossible to reconstru
 \section{Magnetic Field Scales}
 \label{sec:fields}
 
+Particles carrying electric charge $Q = Ze$ and moving at velocity $v \kern+1.0pt$ orthogonal to a homogenous magnetic field $B$ are
+acted on by the Lorentz force $F = QvB$ resulting in a gyrating motion. This must then be equal to the relativistic centripetal force
+$F = m \varGamma v^2 \kern-0.5pt / R$ on a circular path with $R$ as the Larmor radius. Solving by rearranging and identifying
+$p = m \varGamma v \kern+0.5pt$ leads to
+\begin{equation}
+	R = \frac{p}{\raisebox{0.3ex}{$QB \kern+0.3pt$}}
+	\label{eqn:hillas}
+\end{equation}
+on which a condition $R < D$ with the magnetic field extent $D$ can be placed.
+
+
 \newpage\input{amend/normal-head}
 
-\cite{Hillas_1984} criterion
+
+In case of highly relativistic energies one can write $E = \kern-0.8pt pc$ to replace momentum and obtain an inequality
+$E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophyiscal magnetic fields are not ordered, following
+turbulences travelling through the plasma instead. To incorporate effects of moving scattering centers, a factor
+$\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén velocity is included, giving
+\begin{equation*}
+	E < Ze \kern-0.3pt \beta \kern+0.9pt cBD
+\end{equation*}
+as the Hillas criterion, named after its description in \cite{Hillas_1984} to constrain source region sizes based on prevailing
+magnetic fields for \abbrev{UHECR} acceleration.
 
 
 
@@ -404,6 +427,10 @@ that lower order processes are much more efficient in reaching high particle ene
 
 
 
+\newpage\input{amend/special-head}
+
+
+
 \section{Pulsar Spindown}
 \label{sec:spindown}
 
@@ -424,6 +451,10 @@ that lower order processes are much more efficient in reaching high particle ene
 
 \section{Particle Theory}
 \label{sec:theory}
+
+
+
+\newpage\input{amend/normal-head}
 
 
 
