@@ -9,9 +9,9 @@
 Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or
 independent from the choice of coordinate system altogether. One widely adopted formulation uses the Mandelstam variables
 \begin{align*}
-	s = (p_1 \kern-0.5pt + p_2)^2 &&
-	t = (p_1 \kern-0.5pt - p_3)^2 &&
-	u = (p_1 \kern-0.5pt - p_4)^2
+	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 &&
+	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 &&
+	u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
 \end{align*}
 to assign different channels in scattering processes via the squared momentum carried by the exchanged mediating particle.
 Implied in this context is the Minkowski inner product, making the above quantities manifestly Lorentz invariant.
@@ -322,15 +322,42 @@ proton state. This decays almost immediately to pairs of nucleons and pions, lea
 or $p\gamma \rightarrow \kern+0.2pt p \smash{\pi^0}$ as probable reaction channels and resulting in a change of momentum for the
 produced particles.
 
+For \abbrev{CMB} radiation, a close to perfect black body spectrum has been measured with
+\begin{equation*}
+	\frac{\raisebox{-0.3ex}{$dn$}}{\raisebox{0.15ex}{$d\epsilon$}} (\epsilon) \kern+0.2pt =
+	\frac{\raisebox{-0.3ex}{$\epsilon^2$}}{\pi^2 \hbar^3 c^3 \bigl( e^{\kern+1.0pt \epsilon / k_B T} - 1 \bigr)}
+\end{equation*}
+given by \cite{Gaisser_2016} as the photon density. This predicts that at a temperature $T \kern-0.5pt = \qty{2.725}{\kelvin}$
+significant numbers of photons exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$
+in the \abbrev{CMB} rest frame. To find a threshold in center of mass coordinates, the scalar product is used for
+\begin{equation*}
+	s \kern+0.3pt = \bigl( p_{\kern-0.5pt p} + p_{\kern+0.5pt \gamma} \bigr)^2 =
+	p_{\kern-0.5pt p}^2 + p_{\kern+0.5pt \gamma}^2 + 2 p_{\kern-0.5pt p} p_{\kern+0.5pt \gamma} =
+	m_p^2 \kern+0.8pt c^4 \kern-0.2pt + 2 E \epsilon = \kern-0.2pt M^2c^4
+\end{equation*}
+where $M \kern-0.3pt = m_p + \kern+0.3pt m_\pi$ and $m_\gamma = 0$ as well as head on collisions have been assumed. The solution
+\begin{equation*}
+	E = \Bigl( \kern-1.0pt \bigl( m_p + m_\pi \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
+\end{equation*}
+or roughly $E \kern+1.0pt = \kern-0.5pt \qty{e+11}{\giga\electronvolt}$ for the so called \abbrev{GZK} cutoff. Energies that exceed
+this value when viewed from \abbrev{CMB} coordinates lead to significant losses, making the universe opaque to such protons.
+If pair production $\gamma \kern-0.5pt \rightarrow \smash{e^+ \kern-0.5pt e^-}$ via interaction with a proton is considered,
+one finds
+\begin{equation*}
+	E = \Bigl( \kern-1.0pt \bigl( m_p + 2m_e \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
+\end{equation*}
+approximated to $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
+instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mostly through Compton
+downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. As a
+consequence of the multiple competing mechanisms leading to energy losses and momentum isotropization, it is extremely challenging
+to reliably interpret cosmic ray signals and practically impossible to reconstruct any information about specific sources.
 
 
-\abbrev{CMB} \abbrev{GZK} \cite{Gaisser_2016}
 
-
-
-\newpage\input{amend/normal-head}
 \section{Magnetic Field Scales}
 \label{sec:fields}
+
+\newpage\input{amend/normal-head}
 
 \cite{Hillas_1984} criterion
 
