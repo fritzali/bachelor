@@ -439,24 +439,44 @@ lost. Reference \cite{Alvarez_2004} gives a brief overview of possible radiation
 higher order electromagnetic moments. Because this work is limited in its scope and concerns itself with the acceleration of
 electric charges, a pure magnetic dipole approach will be adopted. For more compact and convenient notation, Gaussian units are used.
 
-Adopting the idealized view in \cite{Deutsch_1955} of stars as sharply bound and uniformly magnetized spheres, one finds
+In an idealized view like \cite{Deutsch_1955} of stars as sharply bound and uniformly magnetized spheres, one finds
 $\mu = \kern-0.1pt R^3 B / 2$ for the external magnetic moment. The parameters $R$ and $B$ measure stellar radius and polar magnetic
 flux density, respectively. In case of a rotating dipole in vacuo,
-\begin{equation*}
-	L = \frac{2\mu^2 \omega^4 \kern-1.0pt \sin^2 \kern-2.0pt \chi}{3c^3}
-\end{equation*}
-is the exact expression for radiant power, derived by many standard sources like \cite{Jackson_1999} as well. A static angle
+\begin{equation}
+	L = \frac{2\mu^2 \omega^4 \kern-1.0pt \sin^2 \kern-2.0pt \chi \kern+1.0pt}{3c^3}
+	\label{eqn:vacuum}
+\end{equation}
+is the exact expression for radiant power derived in \cite{Jackson_1999} as a standard reference, where a static angle
 $\kern-1.0pt \chi \kern+1.0pt$ between the dipole field and rotational axis with angular frequency $\omega$ is assumed. If
 instead a \abbrev{FFE} limit is applied, variational calculations \cite{Gruzinov_2006} and \abbrev{MHD} simulations
 \cite{Spitkovsky_2006} indicate
-\begin{equation*}
+\begin{equation}
 	L = \frac{\mu^2 \omega^4 \raisebox{0.15ex}{\( \bigl(
-	\raisebox{-0.15ex}{\( 1 + \sin^2 \kern-2.0pt \chi \kern+1.0pt \)} \bigr) \)} }{c^3}
-\end{equation*}
+	\raisebox{-0.15ex}{\( 1 \kern-0.7pt + \sin^2 \kern-2.0pt \chi \kern+1.0pt \)} \bigr) \)} }{c^3}
+	\label{eqn:ffe-mhd}
+\end{equation}
+as an appropriate expression of the luminosity. This is likely somewhat more accurate than the previous result, as it has been
+shown by \cite{Goldreich_1969} that the surroundings of a neutron star cannot support a vacuum but must instead be filled with a
+plasma of charge carriers originating from instabilities at the surface. However, one immediately encounters the problem that
+$\bm{E} \cdot \kern-1.0pt \bm{B} = \kern-0.5pt 0$ as a condition of force free magnetospheres prevents particle acceleration. As
+\cite{Li_2012} and \cite{Gralla_2019} discuss, this can be overcome by introducing deviations from such a global solution on local
+scales.
 
-
-
-\newpage\input{amend/normal-head}
+Spindown is described by an exponential energy decay $E = \kern-0.3pt E_0 \kern-0.2pt \exp \kern-2.0pt
+\smash{\bigl( - \kern+0.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}$ with a characteristic timescale
+$t_\text{sd}$ and $\dot{E} = - E / t_\text{sd}$ for the time derivative. Assuming all energy is stored in
+rotational form, the expressions $E = \kern-0.5pt I \kern+0.5pt \omega^2 \kern-1.5pt / 2$ and
+$\dot{E} = \kern-0.5pt I \kern+0.5pt \omega \kern+0.5pt \dot{\omega}$ are also valid with $I \kern+0.5pt$ as the neutron star
+moment of inertia. Equations \eqref{eqn:vacuum} and \eqref{eqn:ffe-mhd} can be generalized as $L = \kern-0.5pt K \omega^4$ by
+using a coefficient $K$ containing all other information except the dipolar $\omega^4$ dependence. Identifying this with the energy
+loss via $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields $L_0 \kern-0.3pt = \kern-0.2pt K \omega_0^4$ as well as
+$\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$ for an expression of
+$t_\text{sd} = I \kern+0.5pt / 2K\omega_0^2$ as the spindown time. It further follows for any $t \kern+0.5pt$ that
+$I \kern+0.5pt \dot{\omega} = -K \omega^3$ must hold. This is a special case of the power law differential equation
+$\dot{\omega} \propto \omega^n$ with $n = 3$ being the braking index characteristic of a rotating magnetic dipole. Separating
+variables and integrating leads to finding
+$\omega = \omega_0 \smash{\bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)^{-1/2}}$
+as the time dependent frequency solution.
 
 
 
@@ -465,10 +485,15 @@ instead a \abbrev{FFE} limit is applied, variational calculations \cite{Gruzinov
 
 Diffusely distributed material in orbit around a central massive object naturally produces disk like structures. This is a
 consequence of gravitational forces being compensated in the radial plane by rotational effects while matter is relatively
-free to collapse in the axial direction. Due to compression and friction during inward spiraling, the disk is heated and
-can emit intense thermal radiation. Settings where such phenomena likely occur are protoplanetary disks
-surrounding newly formed stars or accretion flows on a \abbrev{SMBH} in the galactic core region, among others.
-The following describes some related effects that are for example discussed by \cite{Longair_2011} as well.
+free to collapse in the axial direction. 
+
+
+\newpage\input{amend/normal-head}
+
+
+Compression and friction during inward spiraling heat the disk, thereby emitting intense thermal radiation. Settings where these
+phenomena likely occur are protoplanetary disks surrounding newly formed stars or accretion flows on a \abbrev{SMBH} inside the galactic
+core region, among others. The following describes some related effects that are for example discussed by \cite{Longair_2011} as well.
 
 
 
@@ -515,11 +540,11 @@ Any luminous object radiating with spherical symmetry excerts a pressure
 	P = \frac{\raisebox{-0.3ex}{$L$}}{4\pi R^2 c}
 \end{equation*}
 as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the source.
-
 Suppose a gaseous cloud containing particles with masses $m$ falling towards the same bright central mass $M \kern+0.5pt$
-due to gravitational attraction. During this process, each particle experiences an opposing radiative force
-$F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$ where the opacity $\kern-0.3pt \varkappa \kern+0.7pt$ measures cross
-section per unit mass. Balancing of \eqref{eqn:newton} and rearranging leads to the Eddington limit
+due to gravitational attraction. During this process, each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$
+as an opposing radiative force where the opacity $\kern-0.3pt \varkappa \kern+0.7pt$ measures cross section per unit mass.
+
+\newpage Balancing of \eqref{eqn:newton} and rearranging leads to the Eddington limit
 \begin{equation}
 	L = \frac{\raisebox{-0.3ex}{$4\pi GM c \kern+0.4pt$}}{\raisebox{0.8ex}{$\varkappa$}}
 	\label{eqn:eddington}
