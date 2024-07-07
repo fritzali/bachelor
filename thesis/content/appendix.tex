@@ -436,12 +436,55 @@ that lower order processes are much more efficient in reaching high particle ene
 
 
 
-\section{Accretion Discs}
+\newpage\input{amend/normal-head}
+
+
+
+\section{Accretion Disks}
 \label{sec:luminosity}
 
-\cite{Longair_2011}
+Diffusely distributed material in orbit around a central massive object naturally produces disk like structures. This is a
+consequence of gravitational forces being compensated in the radial plane by rotational effects while matter is relatively
+free to collapse in the axial direction. Due to compression and friction during inward spiraling, the disk is heated and
+can emit intense thermal radiation. Settings where such phenomena likely occur are protoplanetary disks
+surrounding newly formed stars or accretion flows on a \abbrev{SMBH} in the galactic core region, among others.
+The following describes some related effects that are for example discussed by \cite{Longair_2011} as well.
+
+
 
 \subsection*{Hydrostatic Equilibrium}
+
+In Newtonian physics, the gravitational force at distance $R \kern+0.5pt$ from a mass $M \kern+0.5pt$ is given as
+\begin{equation}
+	F = \frac{\raisebox{-0.3ex}{$GMm$}}{R^2}
+	\label{eqn:newton}
+\end{equation}
+for particles with masses $m$ orbiting the central object. The resulting acceleration is therefore of magnitude
+$g \kern-0.3pt = GM / \smash{R^2}$ with vertical component $\ddot{z} = \kern-0.6pt g \sin(\vartheta)$ with
+$\vartheta \kern+0.5pt$ as the elevation angle. In case of $\kern+0.5pt \vartheta \ll \pi / 2$ one can approximate
+$\sin(\vartheta) = \kern+0.3pt z / \kern-0.2pt R \kern+0.5pt$ to obtain
+\begin{equation*}
+	\ddot{z} = \frac{\raisebox{-0.3ex}{$GMz$}}{R^3}
+\end{equation*}
+which is related to pressure $p \kern+0.5pt$ and density $\kern-0.5pt \rho \kern+0.5pt$ via
+$d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable equilibrium to exist. Using the speed
+of sound $\smash{u^2} \kern-0.7pt = d \kern-0.1pt p / \kern-0.1pt d \kern-0.1pt \rho \kern+0.5pt$ allows reformulation to
+\begin{equation*}
+	\frac{d \kern-0.1pt \rho}{\raisebox{0.2ex}{$dz \kern+1.0pt$}} =
+	-\rho \kern+1.0pt \frac{\raisebox{-0.3ex}{$GMz$}}{u^2R^3}
+\end{equation*}
+and $\rho \kern+0.6pt = \kern-0.6pt \rho_0 \kern-0.5pt \exp \kern-1.0pt \smash{\bigl( -z^2 \kern-1.8pt / 2 h^2 \bigr)}$
+after integration. According to this result, the disk density follows a centered Gaussian distribution with height parameter
+$h \kern+0.5pt$ defined via
+\begin{equation*}
+	h^2 = \frac{\raisebox{-0.3ex}{$u^2R^3$}}{\raisebox{0.2ex}{$GM \kern+1.5pt$}}
+\end{equation*}
+as the standard deviation. Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
+acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. One is then
+able to write $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and from condition $h \ll R$ necessary for the small angle
+approximation to be valid follows $u \ll v \kern+1.0pt$ or that orbital velocities must greatly exceed the disk medium specific
+speed of sound. This special case is called a thin disk and can further be extended to slim or even thick types of accretion
+structures.
 
 
 
