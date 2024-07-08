@@ -87,8 +87,9 @@ class magnetar:
 		'''Defines string output for printing the magnetar object.'''
 		str1 = f'Magnetar:\n    R = {self.R:.3} cm\n    B = {self.B:.3} G\n    o = {self.o:.3} rad / s\n    '
 		str2 = f'chi = {self.chi:.3} rad\n    I = {self.I:.3} g * cm**2\n    mu = {self.mu:.3} erg / G\n    '
-		str3 = f'tsd = {self.tsd:.3} s\n    lum = {self.lum:.3} erg / s\n    E = {self.E(0):.3} GeV'
-		return str1 + str2 + str3
+		str3 = f'tsd = {self.tsd:.3} s\n    lum = {self.lum:.3} erg / s\n    E = {self.E(0):.3} GeV\n    '
+		str4 = f'spec = {self.proton_spectrum_prefactor(0):.3}'
+		return str1 + str2 + str3 + str4
 
 	def L(self, t):
 		'''
@@ -122,7 +123,7 @@ class magnetar:
 		'''
 		return f * self.e * self.B * self.R**3 * self.o**2 / (2 * self.c**2 * (1 + t / self.tsd)) * 624.150907
 
-	def proton_spectrum_coefficient(self, t, f = 1e-1):
+	def proton_spectrum_prefactor(self, t):
 		'''
 		Returns the prefactor of a delta functional proton spectrum.
 
@@ -130,11 +131,20 @@ class magnetar:
 		----------
 		t : float
 			The time passed from magnetar formation
-		f : float, optional
-			The efficiency fraction of potential drop acceleration
 
 		Returns
 		-------
 			The dimensionless prefactor of a delta functional proton spectrum
 		'''
-		return f * self.e * self.B * self.R**3 * self.o**2 / (2 * self.c**2 * (1 + t / self.tsd)) * 624.150907
+		return self.B * self.R**3 * self.o**2 / (self.c * self.e * (1 + t / self.tsd))
+
+
+
+
+
+
+
+
+
+mag = magnetar()
+print(mag)
