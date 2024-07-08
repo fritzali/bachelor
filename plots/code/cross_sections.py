@@ -87,7 +87,7 @@ def charm_quark_differential_production(x, E):
 	Parameters
 	----------
 	x : float
-		The energy ratio Ec / Ep of charm to incident proton in proton target rest coordinates
+		The energy ratio Ec / Ep of charm quark to incident proton in proton target rest coordinates
 	E : float
 		The projectile rest frame energy Ep in GeV
 

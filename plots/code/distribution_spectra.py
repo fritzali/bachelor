@@ -4,7 +4,42 @@ import numpy as np
 from warnings import warn
 
 
-def charmed_hadron_neutrinos(Enu, Eh, h):
+def meson_production(x, E, h):
+	'''Return the proton proton to pion or kaon singular production spectrum.
+
+	Parameters
+	----------
+	x : float
+		The energy ratio Eh / Ep of produced meson to incident proton in proton target rest coordinates
+	E : float
+		The prjectile rest frame energy Ep in GeV
+	h : {'pi', 'k'}
+		The type of charged meson produced
+
+	Returns
+	-------
+	float
+		The proton proton to pion or kaon singular production spectrum
+	'''
+	match h.lower():
+		case 'pi':
+		case 'k':
+		case _:
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `K` instead')
+	B0 = 0.25
+	a0 = 0.98
+	r0 = 2.6
+	c1 = 1.515
+	c2 = 0.206
+	c3 = 0.075
+	C = c1 - c2 * np.log(E) + c3 * np.log(E)**2
+	B = B0 + C
+	a = a0 / np.sqrt(C)
+	r = r0 / np.sqrt(C)
+	return 0
+
+
+def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	'''Return the charmed hadron to neutrino singular decay spectrum.
 
 	Parameters
@@ -50,7 +85,7 @@ def charmed_hadron_neutrinos(Enu, Eh, h):
 import matplotlib.pyplot as plt
 
 x = np.linspace(0, 1, 1000)
-plt.plot(x, np.vectorize(charmed_hadron_neutrinos)(x, 1, 'd0'))
+plt.plot(x, np.vectorize(charmed_hadron_decay_neutrinos)(x, 1, 'd0'))
 #plt.plot(x, charmed_hadron_neutrinos(x, 1, 'd+'))
 #plt.plot(x, charmed_hadron_neutrinos(x, 1, 'd+s'))
 #plt.plot(x, charmed_hadron_neutrinos(x, 1, 'lam+c'))
