@@ -2,4 +2,4 @@
 
 Listed in this directory is the Python code used to generate the included files for an aesthetically pleasing depiction of the acquired results.
 
-<img src="build/test.jpg" alt="test plot" title="Test Plot" width="700"/>
+<img src="build/test.png" alt="test plot" title="Test Plot" width="700"/>

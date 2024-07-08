@@ -19,5 +19,5 @@ plt.ylabel(r'$E_\nu^2\dot{\phi}_\nu$ $\kern+1.0pt$/ G$\kern+0.5pt$e$\kern-0.5pt$
 plt.legend()
 
 plt.savefig('build/test.pdf')
-plt.savefig('build/test.jpg')
+plt.savefig('build/test.png')
 plt.close()
