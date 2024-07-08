@@ -116,18 +116,3 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	D = 1 - 8 * l - 12 * l**2 * np.log(l) + 8 * l**3 - l**4
 	F = (6 * b * a**2 - 4 * a**3 - 12 * l**3 * a + 12 * l**2 * y - 6 * b * y**2 + 4 * y**3 + 12 * l**2 * np.log((1 - y) / l)) / D
 	return F / Eh
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-
-x = np.linspace(0, 1, 1000)
-plt.plot(x, np.vectorize(charmed_hadron_decay_neutrinos)(x, 1, 'd0'))
-#plt.plot(x, charmed_hadron_neutrinos(x, 1, 'd+'))
-#plt.plot(x, charmed_hadron_neutrinos(x, 1, 'd+s'))
-#plt.plot(x, charmed_hadron_neutrinos(x, 1, 'lam+c'))
-plt.show()
