@@ -21,14 +21,14 @@ def meson_production(x, E, h):
 		x : float
 			The energy ratio Eh / Ep of produced meson to incident proton in proton target rest coordinates
 		E : float
-			The projectile energy Ep in GeV from proton target rest coordinates
+			The projectile energy Ep from proton target rest coordinates in GeV
 		h : {'pi', 'k'}
 			The type of charged meson produced
 
 		Returns
 		-------
 		float
-			The proton-proton to pion or kaon singular production spectrum
+			The proton-proton to pion or kaon singular production spectrum in 1 / GeV
 	'''
 	match h.lower():
 		case 'pi':
@@ -63,16 +63,16 @@ def meson_decay_neutrinos(Enu, Eh, h):
 		Parameters
 		----------
 		Enu : float
-			The energy of produced neutrinos in GeV from a proton rest frame view
+			The energy of produced neutrinos from a proton rest frame view in GeV
 		Eh : float
-			The energy of decayed mesons in GeV from a proton rest frame view
+			The energy of decayed mesons from a proton rest frame view in GeV
 		h : {'pi', 'k'}
 			The type of meson initital state observed
 
 		Returns
 		-------
 		float
-			The pion or kaon to neutrino singular decay spectrum
+			The pion or kaon to neutrino singular decay spectrum in 1 / GeV
 	'''
 	match h.lower():
 		case 'pi':
@@ -97,16 +97,16 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 		Parameters
 		----------
 		Enu : float
-			The energy of produced neutrinos in GeV from a proton rest frame view
+			The energy of produced neutrinos from a proton rest frame view in GeV
 		Eh : float
-			The energy of decayed charmed hadrons in GeV from a proton rest frame view
+			The energy of decayed charmed hadrons from a proton rest frame view in GeV
 		h : {'d0', 'd+', 'd+s', 'lam+c'}
 			The type of hadronic initial state observed
 
 		Returns
 		-------
 		float
-			The charmed hadron to neutrino singular decay spectrum
+			The charmed hadron to neutrino singular decay spectrum in 1 / GeV
 	'''
 	match h.lower():
 		case 'd0':

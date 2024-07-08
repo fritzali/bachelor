@@ -20,13 +20,13 @@ def hadron_proton_cooling_factor(E, n, h, d = None):
 		Parameters
 		----------
 		E : float
-			The energy Eh in GeV as viewed from resting proton coordinates
+			The energy Eh as viewed from resting proton coordinates in GeV
 		n : float
-			The nucleon number density per cm cubed
+			The nucleon number density in 1 / cm**3
 		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
 			The incident hadron type
 		d : float, optional
-			The target field size in cm, assumed to be infinite if `None`
+			The target field size, assumed to be infinite if `None`, in cm
 
 		Returns
 		-------
@@ -85,9 +85,9 @@ def proton_proton_optical_depth(E, n, d):
 		Parameters
 		----------
 		E : float
-			The energy Ep in GeV as viewed from resting proton coordinates
+			The energy Ep as viewed from resting proton coordinates in GeV
 		n : float
-			The nucleon number density per cm cubed
+			The nucleon number density in 1 / cm**3
 		d : float
 			The target field size in cm
 
