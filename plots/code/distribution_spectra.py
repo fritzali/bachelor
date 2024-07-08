@@ -5,27 +5,31 @@ from warnings import warn
 
 
 def meson_production(x, E, h):
-	'''Return the proton proton to pion or kaon singular production spectrum.
+	'''Return the proton-proton to pion or kaon singular production spectrum.
 
 	Parameters
 	----------
 	x : float
 		The energy ratio Eh / Ep of produced meson to incident proton in proton target rest coordinates
 	E : float
-		The prjectile rest frame energy Ep in GeV
+		The projectile energy Ep in GeV from proton target rest coordinates
 	h : {'pi', 'k'}
 		The type of charged meson produced
 
 	Returns
 	-------
 	float
-		The proton proton to pion or kaon singular production spectrum
+		The proton-proton to pion or kaon singular production spectrum
 	'''
 	match h.lower():
 		case 'pi':
+			m = 0.140
+			f = 1
 		case 'k':
+			m = 0.494
+			f = 0.12
 		case _:
-			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `K` instead')
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `k` instead')
 	B0 = 0.25
 	a0 = 0.98
 	r0 = 2.6
@@ -36,7 +40,44 @@ def meson_production(x, E, h):
 	B = B0 + C
 	a = a0 / np.sqrt(C)
 	r = r0 / np.sqrt(C)
-	return 0
+	u = (1 - m / (x * E))**(1/2)
+	v = 1 - x**a
+	w = 1 + r * x**a * v
+	F = 4 * a * B * x**(a - 1) * (v / w)**4 * (1 / v + r * (1 - 2 * x**a) / w) * u
+	return f * F / E
+
+
+def meson_decay_neutrinos(Enu, Eh, h):
+	'''Return the pion or kaon to neutrino singular decay spectrum.
+
+	Parameters
+	----------
+	Enu : float
+		The energy of produced neutrinos in GeV from a proton rest frame view
+	Eh : float
+		The energy of decayed mesons in GeV from a proton rest frame view
+	h : {'pi', 'k'}
+		The type of meson initital state observed
+
+	Returns
+	-------
+	float
+		The pion or kaon to neutrino singular decay spectrum
+	'''
+	match h.lower():
+		case 'pi':
+			m = 0.140
+			f = 0.9999
+		case 'k':
+			m = 0.494
+			f = 0.6356
+		case _:
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `k` instead')
+	l = 0.106**2 / m**2
+	y = Enu / Eh
+	if y > 1 - l:
+		warn(f'{y} exceeds bound {1 - l}')
+	return f / (Eh * (1 - l))
 
 
 def charmed_hadron_decay_neutrinos(Enu, Eh, h):
@@ -45,9 +86,9 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	Parameters
 	----------
 	Enu : float
-		The energy of produced neutrinos in a proton rest frame view
+		The energy of produced neutrinos in GeV from a proton rest frame view
 	Eh : float
-		The energy of decayed charmed hadrons in a proton rest frame view
+		The energy of decayed charmed hadrons in GeV from a proton rest frame view
 	h : {'d0', 'd+', 'd+s', 'lam+c'}
 		The type of hadronic initial state observed
 
@@ -68,8 +109,8 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 		case _:
 			raise ValueError(f'`{h.lower()}` is an invalid charmed hadron identifyer, use `d0`, `d+`, `d+s` or `lam+c` instead')
 	y = Enu / Eh
-	if y < 0 or y > 1 - l:
-		warn(f'{y} is outside of bounds {0.} to {1 - l}')
+	if y > 1 - l:
+		warn(f'{y} exceeds bound {0.} to {1 - l}')
 	a = 1 - l
 	b = 1 - 2 * l
 	D = 1 - 8 * l - 12 * l**2 * np.log(l) + 8 * l**3 - l**4

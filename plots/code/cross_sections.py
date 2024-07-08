@@ -5,7 +5,7 @@ from warnings import warn
 
 
 def total_hadron_proton_scattering(s, h):
-	'''Return the total hadron proton scattering cross section.
+	'''Return the total hadron-proton scattering cross section.
 
 	Parameters
 	----------
@@ -17,7 +17,7 @@ def total_hadron_proton_scattering(s, h):
 	Returns
 	-------
 	float
-		The total hadron proton scattering cross section for `h` at `s` in mb
+		The total hadron-proton scattering cross section for `h` at `s` in mb
 	'''
 	match h.lower():
 		case 'p':
@@ -36,7 +36,7 @@ def total_hadron_proton_scattering(s, h):
 			R2 =  3.408
 			sh = 12.62
 		case _:
-			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `p`, `pi` or `K` instead')
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `p`, `pi` or `k` instead')
 	H  = 0.272
 	n1 = 0.447
 	n2 = 0.5486
@@ -44,7 +44,7 @@ def total_hadron_proton_scattering(s, h):
 
 
 def hadron_elastic_total_ratio(s):
-	'''Return the universal ratio of elastic to total hadron proton cross section.
+	'''Return the universal ratio of elastic to total hadron-proton cross section.
 
 	Parameters
 	----------
@@ -54,7 +54,7 @@ def hadron_elastic_total_ratio(s):
 	Returns
 	-------
 	float
-		The universal ratio of elastic to total hadron proton cross section
+		The universal ratio of elastic to total hadron-proton cross section
 	'''
 	A  = 1/2
 	g1 = 0.466
@@ -64,7 +64,7 @@ def hadron_elastic_total_ratio(s):
 
 
 def inelastic_hadron_proton_scattering(s, h):
-	'''Return the inelastic hadron proton scattering cross section.
+	'''Return the inelastic hadron-proton scattering cross section.
 
 	Parameters
 	----------
@@ -76,25 +76,25 @@ def inelastic_hadron_proton_scattering(s, h):
 	Returns
 	-------
 	float
-		The inelastic hadron proton scattering cross section for `h` at `s` in mb
+		The inelastic hadron-proton scattering cross section for `h` at `s` in mb
 	'''
 	return total_hadron_proton_scattering(s, h) * (1 - hadron_elastic_total_ratio(s))
 
 
 def charm_quark_differential_production(x, E):
-	'''Return the charm quark differential cross section for production in proton proton collisions.
+	'''Return the charm quark differential cross section for production in proton-proton collisions.
 
 	Parameters
 	----------
 	x : float
 		The energy ratio Ec / Ep of charm quark to incident proton in proton target rest coordinates
 	E : float
-		The projectile rest frame energy Ep in GeV
+		The projectile energy Ep in GeV from proton target rest coordinates
 
 	Returns
 	-------
 	float
-		The charm quark differential cross section for production in proton proton collisions in mb
+		The charm quark differential cross section for production in proton-proton collisions in mb
 	'''
 	if E < 1e4 or E > 1e11:
 		warn(f'{E} is outside of bounds {1e4} to {1e11}')
