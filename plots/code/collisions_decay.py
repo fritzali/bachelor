@@ -22,7 +22,7 @@ def hadron_proton_cooling_factor(E, n, h, d = None):
 		Parameters
 		----------
 		E : float
-			The energy Eh as viewed from resting proton coordinates in GeV
+			The energy Eh as viewed from target rest coordinates in GeV
 		n : float
 			The nucleon number density in 1 / cm**3
 		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
@@ -87,7 +87,7 @@ def proton_proton_optical_depth(E, n, d):
 		Parameters
 		----------
 		E : float
-			The energy Ep as viewed from resting proton coordinates in GeV
+			The energy Ep as viewed from target rest coordinates in GeV
 		n : float
 			The nucleon number density in 1 / cm**3
 		d : float

@@ -24,9 +24,9 @@ def meson_production(x, E, h):
 		Parameters
 		----------
 		x : float
-			The energy ratio Eh / Ep of produced meson to incident proton in proton target rest coordinates
+			The energy ratio Eh / Ep of produced meson to incident proton in target rest coordinates
 		E : float
-			The projectile energy Ep from proton target rest coordinates in GeV
+			The projectile energy Ep as viewed from target rest coordinates in GeV
 		h : {'pi', 'k'}
 			The type of charged meson produced
 
@@ -68,9 +68,9 @@ def meson_decay_neutrinos(Enu, Eh, h):
 		Parameters
 		----------
 		Enu : float
-			The energy of produced neutrinos from a proton rest frame view in GeV
+			The energy of produced neutrinos as viewed from target rest coordinates in GeV
 		Eh : float
-			The energy of decayed mesons from a proton rest frame view in GeV
+			The energy of decayed mesons as viewed from target rest coordinates in GeV
 		h : {'pi', 'k'}
 			The type of meson initital state observed
 
@@ -102,9 +102,9 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 		Parameters
 		----------
 		Enu : float
-			The energy of produced neutrinos from a proton rest frame view in GeV
+			The energy of produced neutrinos as viewed from target rest coordinates in GeV
 		Eh : float
-			The energy of decayed charmed hadrons from a proton rest frame view in GeV
+			The energy of decayed charmed hadrons as viewed from target rest coordinates in GeV
 		h : {'d0', 'd+', 'd+s', 'lam+c'}
 			The type of hadronic initial state observed
 

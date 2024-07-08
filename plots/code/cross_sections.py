@@ -34,7 +34,7 @@ def total_hadron_proton_scattering(s, h):
 		Returns
 		-------
 		float
-			The total hadron-proton scattering cross section for `h` at `s` in mb
+			The total hadron-proton scattering cross section in mb
 	'''
 	match h.lower():
 		case 'p':
@@ -95,7 +95,7 @@ def inelastic_hadron_proton_scattering(s, h):
 		Returns
 		-------
 		float
-			The inelastic hadron-proton scattering cross section for `h` at `s` in mb
+			The inelastic hadron-proton scattering cross section in mb
 	'''
 	return total_hadron_proton_scattering(s, h) * (1 - hadron_elastic_total_ratio(s))
 
@@ -107,14 +107,14 @@ def charm_quark_differential_production(x, E):
 		Parameters
 		----------
 		x : float
-			The energy ratio Ec / Ep of charm quark to incident proton in proton target rest coordinates
+			The energy ratio Ec / Ep of charm quark to incident proton in target rest coordinates
 		E : float
-			The projectile energy Ep from proton target rest coordinates in GeV
+			The projectile energy Ep as viewed from target rest coordinates in GeV
 
 		Returns
 		-------
 		float
-			The charm quark differential cross section for production in proton-proton collisions in mb
+			The charm quark differential cross section for production from proton-proton collisions in mb
 	'''
 	if E < 1e4 or E > 1e11:
 		warn(f'{E} is outside of bounds {1e4} to {1e11}')

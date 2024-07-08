@@ -17,7 +17,7 @@ def charmed_hadron_fragmentation_function(z, h):
 		Parameters
 		----------
 		z : float
-			The energy ratio Eh / Ec of resulting charmed hadron to produced charm quark in proton rest coordinates
+			The energy ratio Eh / Ec of resulting charmed hadron to produced charm quark in target rest coordinates
 		h : {'d0', 'd+', 'd+s', 'lam+c'}
 			The type of hadronic final state observed
 

@@ -121,11 +121,3 @@ class magnetar:
 			The monotonic proton energy in GeV
 		'''
 		return f * self.e * self.B * self.R**3 * self.o**2 / (2 * self.c**2 * (1 + t / self.tsd)) * 624.150907
-
-
-
-mag = magnetar()
-print(mag)
-
-
-
