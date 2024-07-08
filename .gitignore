@@ -3,4 +3,5 @@ __pycache__/
 .virtual_documents/
 /*/build/*
 !/*/build/*.pdf
+!/*/build/*.png
 !/*/build/*.jpg
