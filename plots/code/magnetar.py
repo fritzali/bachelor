@@ -9,7 +9,7 @@ Object oriented implementation of magnetar class as described in the thesis docu
 '''
 import numpy as np
 
-import integration as cal
+from parametrizations import *
 
 
 class magnetar:
@@ -88,7 +88,7 @@ class magnetar:
 		str1 = f'Magnetar:\n    R = {self.R:.3} cm\n    B = {self.B:.3} G\n    o = {self.o:.3} rad / s\n    '
 		str2 = f'chi = {self.chi:.3} rad\n    I = {self.I:.3} g * cm**2\n    mu = {self.mu:.3} erg / G\n    '
 		str3 = f'tsd = {self.tsd:.3} s\n    lum = {self.lum:.3} erg / s\n    E = {self.E(0):.3} GeV\n    '
-		str4 = f'spec = {self.proton_spectrum_prefactor(0):.3}'
+		str4 = f'spec = {self.proton_spectrum_prefactor(0):.3}\n    n = {self.number_density(self.tsd):.3} 1 / cm**3'
 		return str1 + str2 + str3 + str4
 
 	def L(self, t):
@@ -98,7 +98,7 @@ class magnetar:
 		Parameters
 		----------
 		t : float
-			The time passed from magnetar formation
+			The time passed from magnetar formation in s
 
 		Returns
 		-------
@@ -113,7 +113,7 @@ class magnetar:
 		Parameters
 		----------
 		t : float
-			The time passed from magnetar formation
+			The time passed from magnetar formation in s
 		f : float, optional
 			The efficiency fraction of potential drop acceleration
 
@@ -130,7 +130,7 @@ class magnetar:
 		Parameters
 		----------
 		t : float
-			The time passed from magnetar formation
+			The time passed from magnetar formation in s
 
 		Returns
 		-------
@@ -138,8 +138,42 @@ class magnetar:
 		'''
 		return self.B * self.R**3 * self.o**2 / (self.c * self.e * (1 + t / self.tsd))
 
+	def ejecta_radius(self, t, b = 1e-1):
+		'''
+		Returns the supernova ejecta radius.
 
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		b : float, optional
+			The relativistic velocity fraction
 
+		Returns
+		-------
+			The supernova ejecta radius in cm
+		'''
+		return b * self.c * t
+
+	def number_density(self, t, b = 1e-1, M = 1e1):
+		'''
+		Returns the supernova shell nucleon density.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+
+		Returns
+		-------
+			The supernova shell nucleon density in 1 / cm**3
+		'''
+		r = self.ejecta_radius(t, b)
+		return 3 * M * 1.9884e30/ (4 * np.pi * r**3 * 1.672621926e-27)
 
 
 
