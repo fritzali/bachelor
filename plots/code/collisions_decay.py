@@ -4,11 +4,13 @@ Parametrization of decay and collision as described in the thesis document.
 	Functions
 	---------
 	hadron_proton_cooling_factor
+		Returns the cooling factor for hadrons scattered by protons
+
 	proton_proton_optical_depth
+		Returns the effective optical depth for protons hitting protons
 
 '''
 import numpy as np
-import scipy.constants as con
 
 import cross_sections as cr
 
@@ -68,14 +70,14 @@ def hadron_proton_cooling_factor(E, n, h, d = None):
 		case _:
 			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 	kap = 0.8
-	c = con.c * 100
-	t_cool = 1 / (kap * sig * n * c)
-	t_dec = tau * E / m
-	d_dec = t_dec * c
-	if d is not None and d < d_dec:
-		d_free = t_cool * c
-		return 1 - np.exp(- d_free / d)
-	return 1 - np.exp(- t_cool / t_dec)
+	c = 29979245800
+	tcool = 1 / (kap * sig * n * c)
+	tdec = tau * E / m
+	ddec = tdec * c
+	if d is not None and d < ddec:
+		dfree = tcool * c
+		return 1 - np.exp(- dfree / d)
+	return 1 - np.exp(- tcool / tdec)
 
 
 def proton_proton_optical_depth(E, n, d):
@@ -100,5 +102,5 @@ def proton_proton_optical_depth(E, n, d):
 	s = 2 * (E * M + M**2)
 	kap = 0.5
 	sig = cr.inelastic_hadron_proton_scattering(s, 'p') * 1e-24
-	d_free = 1 / (kap * sig * n)
-	return d / d_free
+	dfree = 1 / (kap * sig * n)
+	return d / dfree

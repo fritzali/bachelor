@@ -4,8 +4,13 @@ Parametrizations of spectral distributions as described in the thesis document.
 	Functions
 	---------
 	meson_production
+		Returns the proton-proton to pion or kaon singular production spectrum
+
 	meson_decay_neutrinos
+		Returns the pion or kaon to neutrino singular decay spectrum
+
 	charmed_hadron_decay_neutrinos
+		Returns the charmed hadron to neutrino singular decay spectrum
 
 '''
 import numpy as np

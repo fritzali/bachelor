@@ -4,9 +4,16 @@ Parametrizations of hadronic cross sections as described in the thesis document.
 	Functions
 	---------
 	total_hadron_proton_scattering
+		Returns the total hadron-proton scattering cross section
+
 	hadron_elastic_total_ratio
+		Returns the universal ratio of elastic to total hadron-proton cross section
+
 	inelastic_hadron_proton_scattering
+		Returns the inelastic hadron-proton scattering cross section
+
 	charm_quark_differential_production
+		Returns the charm quark differential cross section for production in proton-proton collisions
 
 '''
 import numpy as np
