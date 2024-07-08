@@ -1,8 +1,8 @@
-'''Parametrizations of hadronic cross sections and related quantities as described in the thesis document.'''
+'''Parametrizations of hadronic cross sections as described in the thesis document.'''
 
-import matplotlib.pyplot as plt
 import numpy as np
-import warnings
+from warnings import warn
+
 
 def total_hadron_proton_scattering(s, h):
 	'''Return the total hadron proton scattering cross section.
@@ -36,11 +36,12 @@ def total_hadron_proton_scattering(s, h):
 			R2 =  3.408
 			sh = 12.62
 		case _:
-			raise ValueError(f'`{h}` is an invalid hadron identifyer, use `p`, `pi` or `K` instead')
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `p`, `pi` or `K` instead')
 	H  = 0.272
 	n1 = 0.447
 	n2 = 0.5486
 	return H * np.log(s / sh)**2 + P + R1 * (sh / s)**n1 + R2 * (sh / s)**n2
+
 
 def hadron_elastic_total_ratio(s):
 	'''Return the universal ratio of elastic to total hadron proton cross section.
@@ -61,6 +62,7 @@ def hadron_elastic_total_ratio(s):
 	g3 = 0.00177
 	return A * np.tanh(g1 - g2 * np.log(s) + g3 * np.log(s)**2)
 
+
 def inelastic_hadron_proton_scattering(s, h):
 	'''Return the inelastic hadron proton scattering cross section.
 
@@ -78,6 +80,7 @@ def inelastic_hadron_proton_scattering(s, h):
 	'''
 	return total_hadron_proton_scattering(s, h) * (1 - hadron_elastic_total_ratio(s))
 
+
 def charm_quark_differential_production(x, E):
 	'''Return the charm quark differential cross section for production in proton proton collisions.
 
@@ -94,7 +97,7 @@ def charm_quark_differential_production(x, E):
 		The charm quark differential cross section for production in proton proton collisions in mb
 	'''
 	if E < 1e4 or E > 1e11:
-		warnings.warn(f'{E} is outside of bounds {1e4} to {1e11}')
+		warn(f'{E} is outside of bounds {1e4} to {1e11}')
 	if E >= 1e8:
 		a1 = 0.403
 		a2 = 2.002
@@ -109,21 +112,8 @@ def charm_quark_differential_production(x, E):
 		b2 = 0.016
 		n1 = 1.061
 		n2 = 0.107
-	a = a1 - a2 * np.log(E)
+	a = a1 * np.log(E) - a2
 	b = b1 - b2 * np.log(E) - 1
-	n = n1 - n2 * np.log(E)
+	n = n1 + n2 * np.log(E)
 	m = 1.2
 	return a * x**b * (1 - x**m)**n / 14.5
-
-
-
-
-x = np.logspace(-4, 0, 1000)
-plt.plot(x, x * charm_quark_differential_production(x, 1e3))
-plt.plot(x, x * charm_quark_differential_production(x, 1e5))
-plt.plot(x, x * charm_quark_differential_production(x, 9e7))
-plt.plot(x, x * charm_quark_differential_production(x, 1e8))
-plt.plot(x, x * charm_quark_differential_production(x, 5e10))
-plt.plot(x, x * charm_quark_differential_production(x, 1e12))
-plt.xscale('log')
-plt.show()
