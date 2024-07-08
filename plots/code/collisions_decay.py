@@ -33,7 +33,7 @@ def hadron_proton_cooling_factor(E, n, h, d = None):
 		Returns
 		-------
 		float
-			The cooling factor for hadrons scattered by protons
+			The dimensionless cooling factor for hadrons scattered by protons
 	'''
 	M = 0.938
 	match h.lower():
@@ -96,7 +96,7 @@ def proton_proton_optical_depth(E, n, d):
 		Returns
 		-------
 		float
-			The effective optical depth for protons hitting protons
+			The dimensionless effective optical depth for protons hitting protons
 	'''
 	M = 0.938
 	s = 2 * (E * M + M**2)

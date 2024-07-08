@@ -121,3 +121,20 @@ class magnetar:
 			The monotonic proton energy in GeV
 		'''
 		return f * self.e * self.B * self.R**3 * self.o**2 / (2 * self.c**2 * (1 + t / self.tsd)) * 624.150907
+
+	def proton_spectrum_coefficient(self, t, f = 1e-1):
+		'''
+		Returns the prefactor of a delta functional proton spectrum.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+
+		Returns
+		-------
+			The dimensionless prefactor of a delta functional proton spectrum
+		'''
+		return f * self.e * self.B * self.R**3 * self.o**2 / (2 * self.c**2 * (1 + t / self.tsd)) * 624.150907

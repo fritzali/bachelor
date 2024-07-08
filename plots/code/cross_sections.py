@@ -72,7 +72,7 @@ def hadron_elastic_total_ratio(s):
 		Returns
 		-------
 		float
-			The universal ratio of elastic to total hadron-proton cross section
+			The dimensionless universal ratio of elastic to total hadron-proton cross section
 	'''
 	A  = 1/2
 	g1 = 0.466

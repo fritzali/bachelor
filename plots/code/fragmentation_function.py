@@ -12,7 +12,7 @@ import numpy as np
 
 def charmed_hadron_fragmentation_function(z, h):
 	'''
-	Returns the charmed hadrons from charm quarks fragmentation function.
+	Returns the charmed hadron from charm quarks fragmentation function.
 
 		Parameters
 		----------
@@ -24,7 +24,7 @@ def charmed_hadron_fragmentation_function(z, h):
 		Returns
 		-------
 		float
-			The charmed hadron `h` from charm quark `c` fragmentation function
+			The dimensionless charmed hadron from charm quarks fragmentation function
 	'''
 	match h.lower():
 		case 'd0':
