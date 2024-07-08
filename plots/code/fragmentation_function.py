@@ -1,22 +1,29 @@
-'''Parametrization of a fragmentation function as described in the thesis document.'''
+'''
+Parametrization of a fragmentation function as described in the thesis document.
 
+	Functions
+	---------
+	charmed_hadron_fragmentation_function
+
+'''
 import numpy as np
 
 
 def charmed_hadron_fragmentation_function(z, h):
-	'''Return the charmed hadrons from charm quarks fragmentation function.
+	'''
+	Returns the charmed hadrons from charm quarks fragmentation function.
 
-	Parameters
-	----------
-	z : float
-		The energy ratio Eh / Ec of resulting charmed hadron to produced charm quark in proton rest coordinates
-	h : {'d0', 'd+', 'd+s', 'lam+c'}
-		The type of hadronic final state observed
+		Parameters
+		----------
+		z : float
+			The energy ratio Eh / Ec of resulting charmed hadron to produced charm quark in proton rest coordinates
+		h : {'d0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic final state observed
 
-	Returns
-	-------
-	float
-		The charmed hadron `h` from charm quark `c` fragmentation function
+		Returns
+		-------
+		float
+			The charmed hadron `h` from charm quark `c` fragmentation function
 	'''
 	match h.lower():
 		case 'd0':

@@ -1,23 +1,33 @@
-'''Parametrizations of hadronic cross sections as described in the thesis document.'''
+'''
+Parametrizations of hadronic cross sections as described in the thesis document.
 
+	Functions
+	---------
+	total_hadron_proton_scattering
+	hadron_elastic_total_ratio
+	inelastic_hadron_proton_scattering
+	charm_quark_differential_production
+
+'''
 import numpy as np
 from warnings import warn
 
 
 def total_hadron_proton_scattering(s, h):
-	'''Return the total hadron-proton scattering cross section.
+	'''
+	Returns the total hadron-proton scattering cross section.
 
-	Parameters
-	----------
-	s : float
-		The squared center of mass energy in GeV
-	h : {'p', 'pi', 'k'}
-		The incident hadron on the proton target
+		Parameters
+		----------
+		s : float
+			The squared center of mass energy in GeV
+		h : {'p', 'pi', 'k'}
+			The incident hadron on the proton target
 
-	Returns
-	-------
-	float
-		The total hadron-proton scattering cross section for `h` at `s` in mb
+		Returns
+		-------
+		float
+			The total hadron-proton scattering cross section for `h` at `s` in mb
 	'''
 	match h.lower():
 		case 'p':
@@ -44,17 +54,18 @@ def total_hadron_proton_scattering(s, h):
 
 
 def hadron_elastic_total_ratio(s):
-	'''Return the universal ratio of elastic to total hadron-proton cross section.
+	'''
+	Returns the universal ratio of elastic to total hadron-proton cross section.
 
-	Parameters
-	----------
-	s : float
-		The squared center of mass energy in GeV
+		Parameters
+		----------
+		s : float
+			The squared center of mass energy in GeV
 
-	Returns
-	-------
-	float
-		The universal ratio of elastic to total hadron-proton cross section
+		Returns
+		-------
+		float
+			The universal ratio of elastic to total hadron-proton cross section
 	'''
 	A  = 1/2
 	g1 = 0.466
@@ -64,37 +75,39 @@ def hadron_elastic_total_ratio(s):
 
 
 def inelastic_hadron_proton_scattering(s, h):
-	'''Return the inelastic hadron-proton scattering cross section.
+	'''
+	Returns the inelastic hadron-proton scattering cross section.
 
-	Parameters
-	----------
-	s : float
-		The squared center of mass energy in GeV
-	h : {'p', 'pi', 'K'}
-		The incident hadron on the proton target
+		Parameters
+		----------
+		s : float
+			The squared center of mass energy in GeV
+		h : {'p', 'pi', 'K'}
+			The incident hadron on the proton target
 
-	Returns
-	-------
-	float
-		The inelastic hadron-proton scattering cross section for `h` at `s` in mb
+		Returns
+		-------
+		float
+			The inelastic hadron-proton scattering cross section for `h` at `s` in mb
 	'''
 	return total_hadron_proton_scattering(s, h) * (1 - hadron_elastic_total_ratio(s))
 
 
 def charm_quark_differential_production(x, E):
-	'''Return the charm quark differential cross section for production in proton-proton collisions.
+	'''
+	Returns the charm quark differential cross section for production in proton-proton collisions.
 
-	Parameters
-	----------
-	x : float
-		The energy ratio Ec / Ep of charm quark to incident proton in proton target rest coordinates
-	E : float
-		The projectile energy Ep in GeV from proton target rest coordinates
+		Parameters
+		----------
+		x : float
+			The energy ratio Ec / Ep of charm quark to incident proton in proton target rest coordinates
+		E : float
+			The projectile energy Ep in GeV from proton target rest coordinates
 
-	Returns
-	-------
-	float
-		The charm quark differential cross section for production in proton-proton collisions in mb
+		Returns
+		-------
+		float
+			The charm quark differential cross section for production in proton-proton collisions in mb
 	'''
 	if E < 1e4 or E > 1e11:
 		warn(f'{E} is outside of bounds {1e4} to {1e11}')

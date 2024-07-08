@@ -1,6 +1,18 @@
-import numpy as np
+'''
+Object oriented implementation of magnetar class as described in the thesis document.
 
-import collisions_decay as cd
-import cross_sections as cr
-import distribution_spectra as ds
-import fragmentation_function as ff
+	Classes
+	-------
+	magnetar
+
+'''
+import numpy as np
+import scipy.constants as con
+
+import calculations as cal
+
+
+class magnetar(R, B, O, chi, I):
+	'''
+	
+	'''
