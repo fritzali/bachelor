@@ -9,12 +9,18 @@ Parametrizations of spectral distributions as described in the thesis document.
 	meson_decay_neutrinos
 		Returns the pion or kaon to neutrino singular decay spectrum
 
+	charmed_hadron_production
+		Returns the proton-proton to charmed hadron singular production spectrum
+
 	charmed_hadron_decay_neutrinos
 		Returns the charmed hadron to neutrino singular decay spectrum
 
 '''
 import numpy as np
 from warnings import warn
+
+import cross_sections as cr
+import fragmentation_function as ff
 
 
 def meson_production(x, E, h):
@@ -44,6 +50,8 @@ def meson_production(x, E, h):
 			f = 0.12
 		case _:
 			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `k` instead')
+	if x < 0 or x > 1:
+		warn(f'`{x}` is outside of bounds {0} and {1}')
 	B0 = 0.25
 	a0 = 0.98
 	r0 = 2.6
@@ -94,6 +102,36 @@ def meson_decay_neutrinos(Enu, Eh, h):
 		warn(f'{y} exceeds bound {1 - l}')
 	return f / (Eh * (1 - l))
 
+
+def charmed_hadron_production(x, E, h, N = 1000):
+	'''
+	Returns the proton-proton to charmed hadron singular production spectrum.
+
+		Parameters
+		----------
+		x : float
+			The energy ratio Eh / Ep of produced hadron to incident proton in target rest coordinates
+		E : float
+			The projectile energy Ep as viewed from target rest coordinates in GeV
+		h : {'d0', 'd+', 'd+s', 'lam+c'}
+			The type of hadron produced
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+		float
+			The proton-proton to charmed hadron singular production spectrum in 1 / GeV
+	'''
+	if x < 0 or x > 1:
+		warn(f'`{x}` is outside of bounds {0} and {1}')
+	z = np.linspace(x, 1, N)
+	dz = z[1] - z[0]
+	dsig = (cr.charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
+	sig = np.sum(dz * dsig)
+	M = 0.938
+	s = 2 * (E * M + M**2)
+	return sig / (E * cr.inelastic_hadron_proton_scattering(s, 'p'))
 
 def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	'''
