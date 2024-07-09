@@ -27,6 +27,9 @@ Vectorization of given parametrizations.
 	meson_decay_neutrinos
 		Returns the pion or kaon to neutrino singular decay spectrum
 
+	charmed_hadron_production
+		Returns the proton-proton to charmed hadron singular production spectrum
+
 	charmed_hadron_decay_neutrinos
 		Returns the charmed hadron to neutrino singular decay spectrum
 
@@ -53,6 +56,7 @@ charm_quark_differential_production = np.vectorize(cr.charm_quark_differential_p
 
 meson_production = np.vectorize(ds.meson_production)
 meson_decay_neutrinos = np.vectorize(ds.meson_decay_neutrinos)
+charmed_hadron_production = np.vectorize(ds.charmed_hadron_production)
 charmed_hadron_decay_neutrinos = np.vectorize(ds.charmed_hadron_decay_neutrinos)
 
 charmed_hadron_fragmentation_function = np.vectorize(ff.charmed_hadron_fragmentation_function)
