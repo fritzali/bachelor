@@ -8,6 +8,7 @@ Object oriented implementation of magnetar class as described in the thesis docu
 
 '''
 import numpy as np
+from warnings import warn
 
 from parametrizations import *
 
@@ -175,10 +176,140 @@ class magnetar:
 		r = self.ejecta_radius(t, b)
 		return 3 * M * 1.9884e30/ (4 * np.pi * r**3 * 1.672621926e-27)
 
+	def _hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the hadron production spectrum from injection of protons.
 
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Eh as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
 
+		Returns
+		-------
+			The hadron production spectrum from injection of protons in 1 / (GeV s)
+		'''
+		Ep = self.E(t, f)
+		x = E / Ep
+		if x < 0 or x > 1:
+			warn(f'{x} is out of bounds {0.0} to {1.0}')
+			return 0.0
+		n = self.number_density(t, b, M)
+		d = self.ejecta_radius(t, b)
+		if D is True:
+			cf = hadron_proton_cooling_factor(E, n, h, d)
+		else:
+			cf = hadron_proton_cooling_factor(E, n, h)
+		od = proton_proton_optical_depth(Ep, n, d)
+		sig = self.proton_spectrum_prefactor(t)
+		match h.lower():
+			case 'pi':
+				prod = meson_production(x, Ep, h)
+			case 'k':
+				prod = meson_production(x, Ep, h)
+			case 'd0':
+				prod = charmed_hadron_production(x, Ep, h, N)
+			case 'd+':
+				prod = charmed_hadron_production(x, Ep, h, N)
+			case 'd+s':
+				prod = charmed_hadron_production(x, Ep, h, N)
+			case 'lam+c':
+				prod = charmed_hadron_production(x, Ep, h, N)
+			case _:
+				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
+		return cf * od * sig * prod
 
+	def hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the hadron spectrum from injection of protons.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Eh as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+			The hadron production spectrum from injection of protons in 1 / (GeV s)
+		'''
+		return np.vectorize(self._hadron_spectrum)(t, E, h, f, b, M, D, N)
+
+	def _neutrino_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the neutrino spectrum from decay of hadrons.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Enu as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+			The neutrino spectrum from decay of hadrons in 1 / (GeV s)
+		'''
+		
 
 
 mag = magnetar()
 print(mag)
+
+import matplotlib.pyplot as plt
+
+t = np.logspace(0, 6, 1000)
+
+plt.plot(t, mag.hadron_spectrum(t, 1e2, 'pi'))
+plt.plot(t, mag.hadron_spectrum(t, 1e2, 'k'))
+plt.plot(t, mag.hadron_spectrum(t, 1e2, 'd+'))
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.show()
+
+
+
+
+
+
