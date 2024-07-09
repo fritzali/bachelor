@@ -52,6 +52,7 @@ def meson_production(x, E, h):
 			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `k` instead')
 	if x < 0 or x > 1:
 		warn(f'`{x}` is outside of bounds {0.0} and {1.0}')
+		return 0.0
 	B0 = 0.25
 	a0 = 0.98
 	r0 = 2.6
@@ -100,6 +101,7 @@ def meson_decay_neutrinos(Enu, Eh, h):
 	y = Enu / Eh
 	if y > 1 - l:
 		warn(f'{y} exceeds bound {1 - l}')
+		return 0.0
 	return f / (Eh * (1 - l))
 
 
@@ -125,6 +127,7 @@ def charmed_hadron_production(x, E, h, N = 100):
 	'''
 	if x < 0 or x > 1:
 		warn(f'`{x}` is outside of bounds {0.0} to {1.0}')
+		return 0.0
 	z = np.linspace(x, 1, N)
 	dz = z[1] - z[0]
 	dsig = (cr.charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
@@ -154,19 +157,24 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	match h.lower():
 		case 'd0':
 			l = 0.67**2 / 1.86**2
+			f = 0.067
 		case 'd+':
 			l = 0.63**2 / 1.87**2
+			f = 0.176
 		case 'd+s':
 			l = 0.84**2 / 1.97**2
+			f = 0.065
 		case 'lam+c':
 			l = 1.27**2 / 2.29**2
+			f = 0.045
 		case _:
 			raise ValueError(f'`{h.lower()}` is an invalid charmed hadron identifyer, use `d0`, `d+`, `d+s` or `lam+c` instead')
 	y = Enu / Eh
 	if y > 1 - l:
 		warn(f'{y} exceeds bound {1 - l}')
+		return 0.0
 	a = 1 - l
 	b = 1 - 2 * l
 	D = 1 - 8 * l - 12 * l**2 * np.log(l) + 8 * l**3 - l**4
-	F = (6 * b * a**2 - 4 * a**3 - 12 * l**3 * a + 12 * l**2 * y - 6 * b * y**2 + 4 * y**3 + 12 * l**2 * np.log((1 - y) / l)) / D
-	return F / Eh
+	F = (6 * b * a**2 - 4 * a**3 - 12 * l**2 * a + 12 * l**2 * y - 6 * b * y**2 + 4 * y**3 + 12 * l**2 * np.log((1 - y) / l)) / D
+	return f * F / Eh

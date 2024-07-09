@@ -205,9 +205,6 @@ class magnetar:
 		'''
 		Ep = self.E(t, f)
 		x = E / Ep
-		if x < 0 or x > 1:
-			warn(f'{x} is out of bounds {0.0} to {1.0}')
-			return 0.0
 		n = self.number_density(t, b, M)
 		d = self.ejecta_radius(t, b)
 		if D is True:
@@ -305,7 +302,7 @@ class magnetar:
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 		Ep = self.E(t, f)
-		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, N)
+		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 100 * N)
 		dEh = Eh[1] - Eh[0]
 		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
 		match h.lower():
@@ -354,25 +351,98 @@ class magnetar:
 		'''
 		return np.vectorize(self._neutrino_spectrum)(t, E, h, f, b, M, D, N)
 
+	def _integrated_neutrino_spectrum(self, t1, t2, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the integrated neutrino spectrum from decay of hadrons.
+
+		Parameters
+		----------
+		t1 : float
+			The lower integration limit as time passed from magnetar formation in s
+		t2 : float
+			The upper integration limit as time passed from magnetar formation in s
+		E : float
+			The energy Enu as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+			The integrated neutrino spectrum from decay of hadrons in 1 / GeV
+		'''
+		t = np.linspace(t1, t2, N)
+		dt = t[1] - t[0]
+		dspec = (self.neutrino_spectrum(t, E, h, f, b, M, D, N))[1:]
+		return np.sum(dt * dspec)
+
+	def integrated_neutrino_spectrum(self, t1, t2, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the integrated neutrino spectrum from decay of hadrons.
+
+		Parameters
+		----------
+		t1 : float
+			The lower integration limit as time passed from magnetar formation in s
+		t2 : float
+			The upper integration limit as time passed from magnetar formation in s
+		E : float
+			The energy Enu as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+			The integrated neutrino spectrum from decay of hadrons in 1 / GeV
+		'''
+		return np.vectorize(self._integrated_neutrino_spectrum)(t1, t2, E, h, f, b, M, D, N)
+
 
 mag = magnetar()
 print(mag)
 
+t = np.linspace(1e3, 1e6, 100)
+Eh = np.linspace(1e6, 1e13, 200)
+Enu = np.linspace(1e6, 1e12, 400)
+
+dEh = Eh[1] - Eh[0]
+
+had_spec = mag.hadron_spectrum(t[:, None], Eh[None, :], 'pi')
+
+had_dec = meson_decay_neutrinos(Enu[None, :], Eh[:, None], 'pi')
+
+neu_spec = dEh * (had_spec @ had_dec)
+
+print(neu_spec.shape)
+
 import matplotlib.pyplot as plt
 
-t = np.logspace(3, 6, 100)
+plt.plot(t, neu_spec[:, 50])
 
-plt.plot(t, mag.hadron_spectrum(t, 1e6, 'k'))
-plt.plot(t, mag.hadron_spectrum(t, 1e6, 'pi'))
-plt.plot(t, mag.hadron_spectrum(t, 1e6, 'd0'))
+#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'pi'))
+#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'k'))
+#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'd0'))
 
 plt.xscale('log')
-plt.yscale('log')
+#plt.yscale('log')
 
 plt.show()
-
-
-
-
-
-
