@@ -103,7 +103,7 @@ def meson_decay_neutrinos(Enu, Eh, h):
 	return f / (Eh * (1 - l))
 
 
-def charmed_hadron_production(x, E, h, N = 1000):
+def charmed_hadron_production(x, E, h, N = 100):
 	'''
 	Returns the proton-proton to charmed hadron singular production spectrum.
 
@@ -124,7 +124,7 @@ def charmed_hadron_production(x, E, h, N = 1000):
 			The proton-proton to charmed hadron singular production spectrum in 1 / GeV
 	'''
 	if x < 0 or x > 1:
-		warn(f'`{x}` is outside of bounds {0} and {1}')
+		warn(f'`{x}` is outside of bounds {0.0} to {1.0}')
 	z = np.linspace(x, 1, N)
 	dz = z[1] - z[0]
 	dsig = (cr.charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
