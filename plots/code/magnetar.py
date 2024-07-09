@@ -305,7 +305,7 @@ class magnetar:
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 		Ep = self.E(t, f)
-		Eh = np.linspace(E / (1 - l), Ep, N)
+		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, N)
 		dEh = Eh[1] - Eh[0]
 		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
 		match h.lower():
@@ -360,18 +360,16 @@ print(mag)
 
 import matplotlib.pyplot as plt
 
-t = np.logspace(1, 5, 10)
+t = np.logspace(3, 6, 100)
 
-spec = mag._neutrino_spectrum(mag.tsd, 1e9, 'k')
+plt.plot(t, mag.hadron_spectrum(t, 1e6, 'k'))
+plt.plot(t, mag.hadron_spectrum(t, 1e6, 'pi'))
+plt.plot(t, mag.hadron_spectrum(t, 1e6, 'd0'))
 
-print(spec)
-#plt.plot(t, mag.neutrino_spectrum(t, 1e9, 'k'))
-#plt.plot(t, mag.neutrino_spectrum(t, 1e9, 'd0', D = True))
+plt.xscale('log')
+plt.yscale('log')
 
-#plt.xscale('log')
-#plt.yscale('log')
-
-#plt.show()
+plt.show()
 
 
 
