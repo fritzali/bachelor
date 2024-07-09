@@ -51,7 +51,7 @@ def meson_production(x, E, h):
 		case _:
 			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi` or `k` instead')
 	if x < 0 or x > 1:
-		warn(f'`{x}` is outside of bounds {0} and {1}')
+		warn(f'`{x}` is outside of bounds {0.0} and {1.0}')
 	B0 = 0.25
 	a0 = 0.98
 	r0 = 2.6
@@ -164,7 +164,7 @@ def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 			raise ValueError(f'`{h.lower()}` is an invalid charmed hadron identifyer, use `d0`, `d+`, `d+s` or `lam+c` instead')
 	y = Enu / Eh
 	if y > 1 - l:
-		warn(f'{y} exceeds bound {0.} to {1 - l}')
+		warn(f'{y} exceeds bound {1 - l}')
 	a = 1 - l
 	b = 1 - 2 * l
 	D = 1 - 8 * l - 12 * l**2 * np.log(l) + 8 * l**3 - l**4

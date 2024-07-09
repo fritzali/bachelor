@@ -242,7 +242,7 @@ class magnetar:
 		t : float
 			The time passed from magnetar formation in s
 		E : float
-			The projectile energy Eh as viewed from target rest coordinates in GeV
+			The energy Eh as viewed from target rest coordinates in GeV
 		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
 			The type of hadronic particle
 		f : float, optional
@@ -271,7 +271,7 @@ class magnetar:
 		t : float
 			The time passed from magnetar formation in s
 		E : float
-			The projectile energy Enu as viewed from target rest coordinates in GeV
+			The energy Enu as viewed from target rest coordinates in GeV
 		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
 			The type of hadronic particle
 		f : float, optional
@@ -289,7 +289,70 @@ class magnetar:
 		-------
 			The neutrino spectrum from decay of hadrons in 1 / (GeV s)
 		'''
-		
+		match h.lower():
+			case 'pi':
+				l = 0.106**2 / 0.140**2
+			case 'k':
+				l = 0.106**2 / 0.494**2
+			case 'd0':
+				l = 0.67**2 / 1.86**2
+			case 'd+':
+				l = 0.63**2 / 1.87**2
+			case 'd+s':
+				l = 0.84**2 / 1.97**2
+			case 'lam+c':
+				l = 1.27**2 / 2.29**2
+			case _:
+				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
+		Ep = self.E(t, f)
+		Eh = np.linspace(E / (1 - l), Ep, N)
+		dEh = Eh[1] - Eh[0]
+		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
+		match h.lower():
+			case 'pi':
+				ddec = (meson_decay_neutrinos(E, Eh, h))[1:]
+			case 'k':
+				ddec = (meson_decay_neutrinos(E, Eh, h))[1:]
+			case 'd0':
+				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
+			case 'd+':
+				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
+			case 'd+s':
+				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
+			case 'lam+c':
+				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
+			case _:
+				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
+		return np.sum(dEh * dsig * ddec)
+
+	def neutrino_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+		'''
+		Returns the neutrino spectrum from decay of hadrons.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The energy Enu as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		N : int, optional
+			The number of steps for integration accuracy
+
+		Returns
+		-------
+			The neutrino spectrum from decay of hadrons in 1 / (GeV s)
+		'''
+		return np.vectorize(self._neutrino_spectrum)(t, E, h, f, b, M, D, N)
 
 
 mag = magnetar()
@@ -297,16 +360,18 @@ print(mag)
 
 import matplotlib.pyplot as plt
 
-t = np.logspace(0, 6, 1000)
+t = np.logspace(1, 5, 10)
 
-plt.plot(t, mag.hadron_spectrum(t, 1e2, 'pi'))
-plt.plot(t, mag.hadron_spectrum(t, 1e2, 'k'))
-plt.plot(t, mag.hadron_spectrum(t, 1e2, 'd+'))
+spec = mag._neutrino_spectrum(mag.tsd, 1e9, 'k')
 
-plt.xscale('log')
-plt.yscale('log')
+print(spec)
+#plt.plot(t, mag.neutrino_spectrum(t, 1e9, 'k'))
+#plt.plot(t, mag.neutrino_spectrum(t, 1e9, 'd0', D = True))
 
-plt.show()
+#plt.xscale('log')
+#plt.yscale('log')
+
+#plt.show()
 
 
 
