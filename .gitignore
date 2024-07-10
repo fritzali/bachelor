@@ -2,6 +2,7 @@ __pycache__/
 .ipynb_checkpoints/
 .virtual_documents/
 /*/build/*
+!/*/build/*.jpg
 !/*/build/*.pdf
 !/*/build/*.png
-!/*/build/*.jpg
+!/*/build/*.txt

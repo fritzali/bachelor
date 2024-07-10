@@ -380,7 +380,7 @@ class magnetar:
 		-------
 			The integrated neutrino spectrum from decay of hadrons in 1 / GeV
 		'''
-		t = np.linspace(t1, t2, N)
+		t = np.linspace(t1, t2, 20)
 		dt = t[1] - t[0]
 		dspec = (self.neutrino_spectrum(t, E, h, f, b, M, D, N))[1:]
 		return np.sum(dt * dspec)
@@ -420,29 +420,67 @@ class magnetar:
 mag = magnetar()
 print(mag)
 
-t = np.linspace(1e3, 1e6, 100)
-Eh = np.linspace(1e6, 1e13, 200)
-Enu = np.linspace(1e6, 1e12, 400)
 
-dEh = Eh[1] - Eh[0]
+# t_E_1e6 = np.logspace(3, 7, 100)
 
-had_spec = mag.hadron_spectrum(t[:, None], Eh[None, :], 'pi')
+# pi_had_E_1e6 = mag.hadron_spectrum(t_E_1e6, 1e6, 'pi')
+# k_had_E_1e6 = mag.hadron_spectrum(t_E_1e6, 1e6, 'k')
+# c_had_E_1e6 = (mag.hadron_spectrum(t_E_1e6, 1e6, 'd0')
+# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'd+')
+# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'd+s')
+# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'lam+c'))
+# with open('data/had_E_1e6_no_cf.txt', 'w') as f:
+# 	f.write('# Eh = 1e6 GeV (no cooling)\n')
+# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # c / 1/(GeV s)\n')
+# 	for row in zip(t_E_1e6, pi_had_E_1e6, k_had_E_1e6, c_had_E_1e6):
+# 		f.write(r'{0} {1} {2} {3}'.format(*row))
+# 		f.write('\n')
 
-had_dec = meson_decay_neutrinos(Enu[None, :], Eh[:, None], 'pi')
+# pi_neu_E_1e6 = mag.neutrino_spectrum(t_E_1e6, 1e6, 'pi')
+# k_neu_E_1e6 = mag. neutrino_spectrum(t_E_1e6, 1e6, 'k')
+# d0_neu_E_1e6 = mag.neutrino_spectrum(t_E_1e6, 1e6, 'd0')
+# with open('data/neu_E_1e6_no_cf.txt', 'w') as f:
+# 	f.write('# Enu = 1e6 GeV (no cooling)\n')
+# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # d0 / 1/(GeV s)\n')
+# 	for row in zip(t_E_1e6, pi_neu_E_1e6, k_neu_E_1e6, d0_neu_E_1e6):
+# 		f.write(r'{0} {1} {2} {3}'.format(*row))
+# 		f.write('\n')
 
-neu_spec = dEh * (had_spec @ had_dec)
 
-print(neu_spec.shape)
+# t_E_1e9 = np.logspace(2, 5, 100)
+ 
+# pi_had_E_1e9 = mag.hadron_spectrum(t_E_1e9, 1e9, 'pi')
+# k_had_E_1e9 = mag.hadron_spectrum(t_E_1e9, 1e9,  'k')
+# c_had_E_1e9 = (mag.hadron_spectrum(t_E_1e9, 1e9, 'd0')
+# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'd+')
+# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'd+s')
+# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'lam+c'))
+# with open('data/had_E_1e9_no_cf.txt', 'w') as f:
+# 	f.write('# Eh = 1e9 GeV (no cooling)\n')
+# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # c / 1/(GeV s)\n')
+# 	for row in zip(t_E_1e9, pi_had_E_1e9, k_had_E_1e9, c_had_E_1e9):
+# 		f.write(r'{0} {1} {2} {3}'.format(*row))
+# 		f.write('\n')
 
-import matplotlib.pyplot as plt
+# pi_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'pi')
+# k_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'k')
+# d0_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'd0')
+# with open('data/neu_E_1e9_with_cf.txt', 'w') as f:
+# 	f.write('# Enu = 1e9 GeV (with cooling)\n')
+# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # d0 / 1/(GeV s)\n')
+# 	for row in zip(t_E_1e9, pi_neu_E_1e9, k_neu_E_1e9, d0_neu_E_1e9):
+# 		f.write(r'{0} {1} {2} {3}'.format(*row))
+# 		f.write('\n')
 
-plt.plot(t, neu_spec[:, 50])
 
-#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'pi'))
-#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'k'))
-#plt.plot(t, mag.neutrino_spectrum(t, 1e6, 'd0'))
+E = np.logspace(4, 11, 20)
 
-plt.xscale('log')
-#plt.yscale('log')
-
-plt.show()
+pi_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'pi')
+k_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'k')
+d0_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'd0')
+with open('data/neu_with_cf.txt', 'w') as f:
+	f.write('# t1, t2 = 1e2, 1e7 (with cooling)\n')
+	f.write('# E / GeV # pi / 1/GeV # k / 1/GeV # d0 / 1/GeV\n')
+	for row in zip(E, pi_neu, k_neu, d0_neu):
+		f.write(r'{0} {1} {2} {3}'.format(*row))
+		f.write('\n')
