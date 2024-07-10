@@ -4,6 +4,7 @@ channels:
 dependencies:
  - jupyter
  - matplotlib
+ - numba
  - numpy
  - python
  - scipy

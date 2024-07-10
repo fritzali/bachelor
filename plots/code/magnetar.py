@@ -420,6 +420,25 @@ class magnetar:
 mag = magnetar()
 print(mag)
 
+t = np.logspace(3, 7, 100)
+
+pi = mag.hadron_spectrum(t, 1e6, 'pi')
+k = mag.hadron_spectrum(t, 1e6, 'k')
+c = (mag.hadron_spectrum(t, 1e6, 'd0')
+	+ mag.hadron_spectrum(t, 1e6, 'd+')
+	+ mag.hadron_spectrum(t, 1e6, 'd+s')
+	+ mag.hadron_spectrum(t, 1e6, 'lam+c'))
+
+import matplotlib.pyplot as plt
+
+plt.plot(t, pi)
+plt.plot(t, k)
+plt.plot(t, c)
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.show()
 
 # t_E_1e6 = np.logspace(3, 7, 100)
 
@@ -473,14 +492,14 @@ print(mag)
 # 		f.write('\n')
 
 
-E = np.logspace(4, 11, 20)
+# E = np.logspace(4, 11, 20)
 
-pi_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'pi')
-k_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'k')
-d0_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'd0')
-with open('data/neu_with_cf.txt', 'w') as f:
-	f.write('# t1, t2 = 1e2, 1e7 (with cooling)\n')
-	f.write('# E / GeV # pi / 1/GeV # k / 1/GeV # d0 / 1/GeV\n')
-	for row in zip(E, pi_neu, k_neu, d0_neu):
-		f.write(r'{0} {1} {2} {3}'.format(*row))
-		f.write('\n')
+# pi_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'pi')
+# k_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'k')
+# d0_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'd0')
+# with open('data/neu_with_cf.txt', 'w') as f:
+# 	f.write('# t1, t2 = 1e2, 1e7 (with cooling)\n')
+# 	f.write('# E / GeV # pi / 1/GeV # k / 1/GeV # d0 / 1/GeV\n')
+# 	for row in zip(E, pi_neu, k_neu, d0_neu):
+# 		f.write(r'{0} {1} {2} {3}'.format(*row))
+# 		f.write('\n')

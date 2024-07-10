@@ -7,8 +7,6 @@ Parametrization of a fragmentation function as described in the thesis document.
 		Returns the charmed hadrons from charm quarks fragmentation function
 
 '''
-import numpy as np
-
 
 def charmed_hadron_fragmentation_function(z, h):
 	'''

@@ -136,6 +136,7 @@ def charmed_hadron_production(x, E, h, N = 100):
 	s = 2 * (E * M + M**2)
 	return sig / (E * cr.inelastic_hadron_proton_scattering(s, 'p'))
 
+
 def charmed_hadron_decay_neutrinos(Enu, Eh, h):
 	'''
 	Returns the charmed hadron to neutrino singular decay spectrum.
