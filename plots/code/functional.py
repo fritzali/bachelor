@@ -21,6 +21,9 @@ Vectorization of given parametrizations.
 	charm_quark_differential_production
 		Returns the charm quark differential cross section for production in proton-proton collisions
 
+	charmed_hadron_differential_production
+		Returns the charmed hadron differential cross section for production in proton-proton collisions
+
 	meson_production
 		Returns the proton-proton to pion or kaon singular production spectrum
 
@@ -40,10 +43,10 @@ Vectorization of given parametrizations.
 
 import numpy as np
 
-import collisions_decay as cd
-import cross_sections as cr
-import distribution_spectra as ds
-import fragmentation_function as ff
+import parametrizations.collisions_decay as cd
+import parametrizations.cross_sections as cr
+import parametrizations.distribution_spectra as ds
+import parametrizations.fragmentation_function as ff
 
 
 hadron_proton_cooling_factor = np.vectorize(cd.hadron_proton_cooling_factor)
@@ -53,6 +56,7 @@ total_hadron_proton_scattering = np.vectorize(cr.total_hadron_proton_scattering)
 hadron_elastic_total_ratio = np.vectorize(cr.hadron_elastic_total_ratio)
 inelastic_hadron_proton_scattering = np.vectorize(cr.inelastic_hadron_proton_scattering)
 charm_quark_differential_production = np.vectorize(cr.charm_quark_differential_production)
+charmed_hadron_differential_production = np.vectorize(cr.charmed_hadron_differential_production)
 
 meson_production = np.vectorize(ds.meson_production)
 meson_decay_neutrinos = np.vectorize(ds.meson_decay_neutrinos)

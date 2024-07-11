@@ -12,7 +12,7 @@ Parametrization of decay and collision as described in the thesis document.
 '''
 import numpy as np
 
-import cross_sections as cr
+import parametrizations.cross_sections as cr
 
 
 def hadron_proton_cooling_factor(E, n, h, d = None):
@@ -49,22 +49,22 @@ def hadron_proton_cooling_factor(E, n, h, d = None):
 			sig = cr.inelastic_hadron_proton_scattering(s, 'k') * 1e-24
 		case 'd0':
 			m   = 1.86
-			tau = 410e-15
+			tau = 0.410e-12
 			s   = 2 * E * M + M**2 + m**2
 			sig = cr.inelastic_hadron_proton_scattering(s, 'k') * 1e-24
 		case 'd+':
 			m   = 1.87
-			tau = 1033e-15
+			tau = 1.033e-12
 			s   = 2 * E * M + M**2 + m**2
 			sig = cr.inelastic_hadron_proton_scattering(s, 'k') * 1e-24
 		case 'd+s':
 			m   = 1.97
-			tau = 501e-15
+			tau = 0.501e-12
 			s   = 2 * E * M + M**2 + m**2
 			sig = cr.inelastic_hadron_proton_scattering(s, 'k') * 1e-24
 		case 'lam+c':
 			m   = 2.29
-			tau = 203e-15
+			tau = 0.203e-12
 			s   = 2 * E * M + M**2 + m**2
 			sig = cr.inelastic_hadron_proton_scattering(s, 'k') * 1e-24
 		case _:
@@ -98,6 +98,7 @@ def proton_proton_optical_depth(E, n, d):
 		float
 			The dimensionless effective optical depth for protons hitting protons
 	'''
+	return 1
 	M = 0.938
 	s = 2 * (E * M + M**2)
 	kap = 0.5

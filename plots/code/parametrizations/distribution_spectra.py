@@ -19,8 +19,8 @@ Parametrizations of spectral distributions as described in the thesis document.
 import numpy as np
 from warnings import warn
 
-import cross_sections as cr
-import fragmentation_function as ff
+import parametrizations.cross_sections as cr
+import parametrizations.fragmentation_function as ff
 
 
 def meson_production(x, E, h):
@@ -128,13 +128,10 @@ def charmed_hadron_production(x, E, h, N = 100):
 	if x < 0 or x > 1:
 		warn(f'`{x}` is outside of bounds {0.0} to {1.0}')
 		return 0.0
-	z = np.linspace(x, 1, N)
-	dz = z[1] - z[0]
-	dsig = (cr.charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
-	sig = np.sum(dz * dsig)
+	prod = cr.charmed_hadron_differential_production(x, E, h, N)
 	M = 0.938
 	s = 2 * (E * M + M**2)
-	return sig / (E * cr.inelastic_hadron_proton_scattering(s, 'p'))
+	return prod / (E * cr.inelastic_hadron_proton_scattering(s, 'p'))
 
 
 def charmed_hadron_decay_neutrinos(Enu, Eh, h):

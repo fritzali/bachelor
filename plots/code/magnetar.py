@@ -10,7 +10,7 @@ Object oriented implementation of magnetar class as described in the thesis docu
 import numpy as np
 from warnings import warn
 
-from parametrizations import *
+from functional import *
 
 
 class magnetar:
@@ -176,6 +176,31 @@ class magnetar:
 		r = self.ejecta_radius(t, b)
 		return 3 * M * 1.9884e30/ (4 * np.pi * r**3 * 1.672621926e-27)
 
+	def _cooling_factor(self, t, E, h, b = 1e-1, M = 1e1, D = False):
+		n = self.number_density(t, b, M)
+		d = self.ejecta_radius(t, b)
+		if D is True:
+			return hadron_proton_cooling_factor(E, n, h, d)
+		else:
+			return hadron_proton_cooling_factor(E, n, h)
+
+	def cooling_factor(self, t, E, h, b = 1e-1, M = 1e1, D = False):
+		return np.vectorize(self._cooling_factor)(t, E, h, b, M, D)
+
+	def _optical_depth(self, t, f = 1e-1, b = 1e-1, M = 1e1):
+		Ep = self.E(t, f)
+		n = self.number_density(t, b, M)
+		d = self.ejecta_radius(t, b)
+		return proton_proton_optical_depth(Ep, n, d)
+
+	def optical_depth(self, t, f = 1e-1, b = 1e-1, M = 1e1):
+		return np.vectorize(self._optical_depth)(t, f, b, M)
+
+	def collision_factor(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False):
+		cf = self.cooling_factor(t, E, h, b, M, D)
+		od = self.optical_depth(t, f, b, M)
+		return cf * od
+
 	def _hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
 		'''
 		Returns the hadron production spectrum from injection of protons.
@@ -205,14 +230,6 @@ class magnetar:
 		'''
 		Ep = self.E(t, f)
 		x = E / Ep
-		n = self.number_density(t, b, M)
-		d = self.ejecta_radius(t, b)
-		if D is True:
-			cf = hadron_proton_cooling_factor(E, n, h, d)
-		else:
-			cf = hadron_proton_cooling_factor(E, n, h)
-		od = proton_proton_optical_depth(Ep, n, d)
-		sig = self.proton_spectrum_prefactor(t)
 		match h.lower():
 			case 'pi':
 				prod = meson_production(x, Ep, h)
@@ -228,7 +245,9 @@ class magnetar:
 				prod = charmed_hadron_production(x, Ep, h, N)
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
-		return cf * od * sig * prod
+		sig = self.proton_spectrum_prefactor(t)
+		f = self.collision_factor(t, E, h, f, b, M, D)
+		return prod * sig * f
 
 	def hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
 		'''
@@ -420,14 +439,14 @@ class magnetar:
 mag = magnetar()
 print(mag)
 
-t = np.logspace(3, 7, 100)
+t = np.logspace(4, 6, 100)
 
-pi = mag.hadron_spectrum(t, 1e6, 'pi')
-k = mag.hadron_spectrum(t, 1e6, 'k')
-c = (mag.hadron_spectrum(t, 1e6, 'd0')
-	+ mag.hadron_spectrum(t, 1e6, 'd+')
-	+ mag.hadron_spectrum(t, 1e6, 'd+s')
-	+ mag.hadron_spectrum(t, 1e6, 'lam+c'))
+pi = mag.hadron_spectrum(t, 1e9, 'pi')
+k = mag.hadron_spectrum(t, 1e9, 'k')
+c = (mag.hadron_spectrum(t, 1e9, 'd0')
+	+ mag.hadron_spectrum(t, 1e9, 'd+')
+	+ mag.hadron_spectrum(t, 1e9, 'd+s')
+	+ mag.hadron_spectrum(t, 1e9, 'lam+c'))
 
 import matplotlib.pyplot as plt
 
@@ -437,6 +456,8 @@ plt.plot(t, c)
 
 plt.xscale('log')
 plt.yscale('log')
+
+plt.ylim(2e22, 4e23)
 
 plt.show()
 
