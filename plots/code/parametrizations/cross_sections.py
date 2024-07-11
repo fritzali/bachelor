@@ -182,10 +182,6 @@ def charm_quark_differential_production(x, E, o = 'good'):
 	n = n0 - n1 * np.log(E / 1e4)
 	m = 1.2
 	return a * x**b * (1 - x**m)**n / 14.5
-#	M = 0.494
-#	m = 0.938
-#	s = 2 * E * m + m**2 + M**2
-#	return 1.51 * inelastic_hadron_proton_scattering(s, 'k') * (1 - x)**0.51
 
 
 def charmed_hadron_differential_production(x, E, h, N = 100):
@@ -208,8 +204,23 @@ def charmed_hadron_differential_production(x, E, h, N = 100):
 		float
 			The charmed hadron differential cross section for production from proton-proton collisions in mb
 	'''
+	match h.lower():
+		case 'd0':
+			m   = 1.86
+		case 'd+':
+			m   = 1.87
+		case 'd+s':
+			m   = 1.97
+		case 'lam+c':
+			m   = 2.29
+		case _:
+			raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `d0`, `d+`, `d+s` or `lam+c` instead')
+	if m > x * E:
+		u = 0.0
+	else:
+		u = (1 - m / (x * E))**(1/2)
 	z = np.linspace(x, 1, N)
 	dz = z[1] - z[0]
 	dsig = (charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
 	sig = np.sum(dz * dsig)
-	return sig
+	return u * sig / 22.369070

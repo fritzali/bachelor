@@ -60,10 +60,14 @@ def meson_production(x, E, h):
 	c2 = 0.206
 	c3 = 0.075
 	C = c1 - c2 * np.log(E) + c3 * np.log(E)**2
+	C = 3.67 + 0.83 * np.log(E / 1e3) + 0.075 * np.log(E / 1e3)**2
 	B = B0 + C
 	a = a0 / np.sqrt(C)
 	r = r0 / np.sqrt(C)
-	u = (1 - m / (x * E))**(1/2)
+	if m > x * E:
+		u = 0.0
+	else:
+		u = (1 - m / (x * E))**(1/2)
 	v = 1 - x**a
 	w = 1 + r * x**a * v
 	F = 4 * a * B * x**(a - 1) * (v / w)**4 * (1 / v + r * (1 - 2 * x**a) / w) * u

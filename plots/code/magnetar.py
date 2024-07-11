@@ -321,7 +321,7 @@ class magnetar:
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 		Ep = self.E(t, f)
-		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 100 * N)
+		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 10 * N)
 		dEh = Eh[1] - Eh[0]
 		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
 		match h.lower():
@@ -439,14 +439,14 @@ class magnetar:
 mag = magnetar()
 print(mag)
 
-t = np.logspace(4, 6, 100)
+t = np.logspace(1, 7, 50)
 
-pi = mag.hadron_spectrum(t, 1e9, 'pi')
-k = mag.hadron_spectrum(t, 1e9, 'k')
-c = (mag.hadron_spectrum(t, 1e9, 'd0')
-	+ mag.hadron_spectrum(t, 1e9, 'd+')
-	+ mag.hadron_spectrum(t, 1e9, 'd+s')
-	+ mag.hadron_spectrum(t, 1e9, 'lam+c'))
+pi = mag.hadron_spectrum(t, 1e8, 'pi')
+k = mag.hadron_spectrum(t, 1e8, 'k')
+c = (mag.hadron_spectrum(t, 1e8, 'd0')
+	+ mag.hadron_spectrum(t, 1e8, 'd+')
+	+ mag.hadron_spectrum(t, 1e8, 'd+s')
+	+ mag.hadron_spectrum(t, 1e8, 'lam+c'))
 
 import matplotlib.pyplot as plt
 
@@ -457,7 +457,8 @@ plt.plot(t, c)
 plt.xscale('log')
 plt.yscale('log')
 
-plt.ylim(2e22, 4e23)
+plt.xlim(5e1, 1e7)
+plt.ylim(1e23, 5e27)
 
 plt.show()
 
