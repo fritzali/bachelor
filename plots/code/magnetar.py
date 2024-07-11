@@ -321,7 +321,7 @@ class magnetar:
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 		Ep = self.E(t, f)
-		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 10 * N)
+		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 100 * N)
 		dEh = Eh[1] - Eh[0]
 		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
 		match h.lower():
