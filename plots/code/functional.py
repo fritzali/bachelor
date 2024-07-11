@@ -71,15 +71,15 @@ import matplotlib.pyplot as plt
 
 x = np.logspace(-10, 0, 1000)
 
-#z1 = meson_production(x, 1e9, 'pi')
-#z2 = meson_production(x, 1e9, 'k')
-y1 = charmed_hadron_differential_production(x, 1e8, 'd0')# * (1 - 1.86 / (x * 1e9))
-y2 = charmed_hadron_differential_production(x, 1e8, 'd+')# * (1 - 1.87 / (x * 1e9))
-y3 = charmed_hadron_differential_production(x, 1e8, 'd+s')# * (1 - 1.97 / (x * 1e9))
-y4 = charmed_hadron_differential_production(x, 1e8, 'lam+c')# * (1 - 2.29 / (x * 1e9))
+z1 = meson_production(x, 1e8, 'pi')
+z2 = meson_production(x, 1e8, 'k')
+y1 = charmed_hadron_production(x, 1e8, 'd0')# * (1 - 1.86 / (x * 1e9))
+y2 = charmed_hadron_production(x, 1e8, 'd+')# * (1 - 1.87 / (x * 1e9))
+y3 = charmed_hadron_production(x, 1e8, 'd+s')# * (1 - 1.97 / (x * 1e9))
+y4 = charmed_hadron_production(x, 1e8, 'lam+c')# * (1 - 2.29 / (x * 1e9))
 
-#plt.plot(x, z1)
-#plt.plot(x, z2)
+plt.plot(x, z1)
+plt.plot(x, z2)
 plt.plot(x, y1)
 plt.plot(x, y2)
 plt.plot(x, y3)
