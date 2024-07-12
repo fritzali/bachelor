@@ -12,11 +12,16 @@ References are sorted into the following types:
 - [Jackson (1999)](https://ui.adsabs.harvard.edu/abs/1998clel.book.....J) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
 - [Longair (2011)](https://www.cambridge.org/core/books/high-energy-astrophysics/CF25E2E5FC0EDFC51FCD7846A262C0AE) &nbsp; *astrophysics of high energy phenomena for advanced undergraduate study*
 
+#### European Nuclear Research Organization
+
+- [LHC (2016)](https://arxiv.org/abs/1510.01707) &nbsp; *measurement of total charm meson production cross section in large hadron collider experiments*
+
 #### Papers
 
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
 - [Belousov (2016)](https://link.springer.com/article/10.1134/S1063778816010075) &nbsp; *physically motivated fits of total scattering cross sections of hadrons*
 - [Bhattacharya (2015)](https://arxiv.org/abs/1502.01076) &nbsp; *perturbative charm production and prompt atmospheric neutrino flux*
+- [Bhattacharya (2016)](https://arxiv.org/abs/1607.00193) &nbsp; *perturbative prompt atmospheric neutrino fluxes with effective branching fractions for charm decay*
 - [Bugaev (1998)](https://arxiv.org/abs/hep-ph/9803488) &nbsp; *effective final state masses for semileptonic charm hadron decays*
 - [Carpio (2020)](https://arxiv.org/abs/2007.07945) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
 - [Deutsch (1955)](https://ui.adsabs.harvard.edu/abs/1955AnAp...18....1D) &nbsp; *magnetic fields of stars as uniformly magnetized sharply bound spheres for particle acceleration*
