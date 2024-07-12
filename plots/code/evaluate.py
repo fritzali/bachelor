@@ -1,11 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import quad
 
 from functional import *
-
-def integral(i, a, b, c, d):
-	return quad(i, a, b, args = (c, d))
 
 def test_charmed_hadron_cross_section():
 	s = 13e3**2
