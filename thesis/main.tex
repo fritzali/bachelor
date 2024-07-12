@@ -9,11 +9,11 @@
 	\newpage\pagenumbering{gobble}
 
 	\input{content/abstract.tex}
-	\input{content/acknowledgements.tex}
-	\input{content/abbreviations.tex}
 
 	\tableofcontents
 	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
+
+	\input{content/abbreviations.tex}
 
 	\newpage\pagenumbering{arabic}
 
@@ -39,4 +39,5 @@
 	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
 	\endgroup
 
+	\input{content/acknowledgements.tex}
 \end{document}
