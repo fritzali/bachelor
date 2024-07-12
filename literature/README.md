@@ -28,10 +28,12 @@ References are sorted into the following types:
 - [Bugaev (1998)](https://arxiv.org/abs/hep-ph/9803488) &nbsp; *effective final state masses for semileptonic charm hadron decays*
 - [Carpio (2020)](https://arxiv.org/abs/2007.07945) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
 - [Deutsch (1955)](https://ui.adsabs.harvard.edu/abs/1955AnAp...18....1D) &nbsp; *magnetic fields of stars as uniformly magnetized sharply bound spheres for particle acceleration*
+- [Drury (2012)](https://arxiv.org/abs/1203.3681) &nbsp; *review of cosmic ray origins focussing on galactic supernova explosions and resulting shock fronts*
 - [Eichmann (2022)](https://arxiv.org/abs/2207.00102) &nbsp; *solution to the multimessenger puzzle of a composite starburst and corona region active galactic core*
 - [Fagundes (2012)](https://arxiv.org/abs/1112.5115) &nbsp; *model independent parametrization for ratio of elastic to total cross section in hadron scattering*
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
 - [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
+- [Gabici (2019)](https://arxiv.org/abs/1903.11584) &nbsp; *review and critique of the standard view on mainly galactic cosmic ray origins*
 - [Goldreich (1969)](https://ui.adsabs.harvard.edu/abs/1969ApJ...157..869G) &nbsp; *seminal work on non vanishing space charge density around neutron stars and convenient energy extraction*
 - [Gonçalves (2007)](https://arxiv.org/abs/hep-ph/0607125) &nbsp; *parametrization of charm production differential cross section in proton air interactions*
 - [Gralla (2019)](https://arxiv.org/abs/1811.07438) &nbsp; *effective force free field theory with small corrections on large scales instead of large deviations in small regions*
