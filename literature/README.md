@@ -20,6 +20,7 @@ References are sorted into the following types:
 
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
 - [Becker (2008)](https://arxiv.org/abs/0710.1557) &nbsp; *review of high energy neutrinos in the context of multimessenger astrophysics*
+- [Beckmann (2013)](https://arxiv.org/abs/1302.1397) &nbsp; *short summary and motivation of open issues in classifying the active galactic nucleus phenomenon*
 - [Belousov (2016)](https://link.springer.com/article/10.1134/S1063778816010075) &nbsp; *physically motivated fits of total scattering cross sections of hadrons*
 - [Bhattacharya (2015)](https://arxiv.org/abs/1502.01076) &nbsp; *perturbative charm production and prompt atmospheric neutrino flux*
 - [Bhattacharya (2016)](https://arxiv.org/abs/1607.00193) &nbsp; *perturbative prompt atmospheric neutrino fluxes with effective branching fractions for charm decay*
@@ -43,9 +44,11 @@ References are sorted into the following types:
 - [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
 - [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
 - [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
+- [Rodrigues (2024)](https://arxiv.org/abs/2307.13024) &nbsp; *leptohadronic multimessenger model for gamma ray blazar signals*
 - [Spitkovsky (2006)](https://arxiv.org/abs/astro-ph/0603147) &nbsp; *magnetohydrodynamics simulations for axisymmetric and oblique rotator luminosity*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
 - [Tjus (2020)](https://arxiv.org/abs/2002.00964) &nbsp; *review of possible galactic cosmic ray origins using multimessenger information*
+- [Tjus (2023)](https://ui.adsabs.harvard.edu/abs/2023EPJWC.29010002B) &nbsp; *investigation of neutrinos from charm dominance in dense galactic core regions*
 
 #### Particle Data Group
 
