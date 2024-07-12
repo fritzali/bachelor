@@ -44,6 +44,7 @@ References are sorted into the following types:
 - [Lisovyi (2016)](https://arxiv.org/abs/1509.01061) &nbsp; *verification of fragmentation fits from non perturbative calculation in soft process measurements*
 - [Lykasov (2021)](https://arxiv.org/abs/2012.02451) &nbsp; *functional ratios of kaon to pion cross sections in proton collision*
 - [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
+- [Mészáros (2019)](https://arxiv.org/abs/1906.10212) &nbsp; *review of the current state in multimessenger astrophysics as a whole*
 - [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
 - [Rodrigues (2024)](https://arxiv.org/abs/2307.13024) &nbsp; *leptohadronic multimessenger model for gamma ray blazar signals*
 - [Spitkovsky (2006)](https://arxiv.org/abs/astro-ph/0603147) &nbsp; *magnetohydrodynamics simulations for axisymmetric and oblique rotator luminosity*
