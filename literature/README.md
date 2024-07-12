@@ -19,9 +19,11 @@ References are sorted into the following types:
 #### Papers
 
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
+- [Becker (2008)](https://arxiv.org/abs/0710.1557) &nbsp; *review of high energy neutrinos in the context of multimessenger astrophysics*
 - [Belousov (2016)](https://link.springer.com/article/10.1134/S1063778816010075) &nbsp; *physically motivated fits of total scattering cross sections of hadrons*
 - [Bhattacharya (2015)](https://arxiv.org/abs/1502.01076) &nbsp; *perturbative charm production and prompt atmospheric neutrino flux*
 - [Bhattacharya (2016)](https://arxiv.org/abs/1607.00193) &nbsp; *perturbative prompt atmospheric neutrino fluxes with effective branching fractions for charm decay*
+- [Blandford (2019)](https://arxiv.org/abs/1812.06025) &nbsp; *review of relativistic jets from spinning black holes in active galactic nuclei*
 - [Bugaev (1998)](https://arxiv.org/abs/hep-ph/9803488) &nbsp; *effective final state masses for semileptonic charm hadron decays*
 - [Carpio (2020)](https://arxiv.org/abs/2007.07945) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
 - [Deutsch (1955)](https://ui.adsabs.harvard.edu/abs/1955AnAp...18....1D) &nbsp; *magnetic fields of stars as uniformly magnetized sharply bound spheres for particle acceleration*
@@ -43,6 +45,7 @@ References are sorted into the following types:
 - [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
 - [Spitkovsky (2006)](https://arxiv.org/abs/astro-ph/0603147) &nbsp; *magnetohydrodynamics simulations for axisymmetric and oblique rotator luminosity*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
+- [Tjus (2020)](https://arxiv.org/abs/2002.00964) &nbsp; *review of possible galactic cosmic ray origins using multimessenger information*
 
 #### Particle Data Group
 
