@@ -28,6 +28,7 @@ References are sorted into the following types:
 - [Bugaev (1998)](https://arxiv.org/abs/hep-ph/9803488) &nbsp; *effective final state masses for semileptonic charm hadron decays*
 - [Carpio (2020)](https://arxiv.org/abs/2007.07945) &nbsp; *estimated contribution from charmed hadrons as well as pions and kaons to neutrinos produced in newborn magnetars*
 - [Deutsch (1955)](https://ui.adsabs.harvard.edu/abs/1955AnAp...18....1D) &nbsp; *magnetic fields of stars as uniformly magnetized sharply bound spheres for particle acceleration*
+- [Eichmann (2022)](https://arxiv.org/abs/2207.00102) &nbsp; *solution to the multimessenger puzzle of a composite starburst and corona region active galactic core*
 - [Fagundes (2012)](https://arxiv.org/abs/1112.5115) &nbsp; *model independent parametrization for ratio of elastic to total cross section in hadron scattering*
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
 - [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
