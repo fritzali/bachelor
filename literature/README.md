@@ -12,25 +12,6 @@ References are sorted into the following types:
 - [Jackson (1999)](https://ui.adsabs.harvard.edu/abs/1998clel.book.....J) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
 - [Longair (2011)](https://www.cambridge.org/core/books/high-energy-astrophysics/CF25E2E5FC0EDFC51FCD7846A262C0AE) &nbsp; *astrophysics of high energy phenomena for advanced undergraduate study*
 
-#### European Nuclear Research Organization
-
-- [LHC (2016)](https://arxiv.org/abs/1510.01707) &nbsp; *measurement of total charm meson production cross section in large hadron collider experiments*
-
-#### IceCube
-
-- [IC Blazar Flare (2018)](https://arxiv.org/abs/1807.08816) &nbsp; *multimessenger observations of flaring blazar coincident with a high energy neutrino detection*
-- [IC Blazar Signal (2018)](https://arxiv.org/abs/1807.08794) &nbsp; *retrospective neutrino detection of the same blazar in more quiescent states*
-- [IC First Evidence (2013)](https://arxiv.org/abs/1311.5238) &nbsp; *diffuse high energy neutrino flux inconsistent with atmospheric origin indicate extraterrestial sources*
-- [IC More Evidence (2016)](https://arxiv.org/abs/1607.08006) &nbsp; *observation and characterization of more accurate cosmic muon neutrino spectra*
-
-#### Laser Gravitational Wave Interferometer
-
-- [LIGO (2016)](https://arxiv.org/abs/1602.03837) &nbsp; *first ever detection of gravitational waves from a stellar mass binary black hole merger*
-
-#### Pierre Auger
-
-- [PA (2022)](https://arxiv.org/abs/2211.16020) &nbsp; *catalog of cosmic rays at highest energies consistent with the photodissociation cutoff*
-
 #### Papers
 
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
@@ -68,6 +49,25 @@ References are sorted into the following types:
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
 - [Tjus (2020)](https://arxiv.org/abs/2002.00964) &nbsp; *review of possible galactic cosmic ray origins using multimessenger information*
 - [Tjus (2023)](https://ui.adsabs.harvard.edu/abs/2023EPJWC.29010002B) &nbsp; *investigation of neutrinos from charm dominance in dense galactic core regions*
+
+#### European Nuclear Research Organization
+
+- [LHC (2016)](https://arxiv.org/abs/1510.01707) &nbsp; *measurement of total charm meson production cross section in large hadron collider experiments*
+
+#### IceCube Neutrino Observatory
+
+- [IC Blazar Flare (2018)](https://arxiv.org/abs/1807.08816) &nbsp; *multimessenger observations of flaring blazar coincident with a high energy neutrino detection*
+- [IC Blazar Signal (2018)](https://arxiv.org/abs/1807.08794) &nbsp; *retrospective neutrino detection of the same blazar in more quiescent states*
+- [IC First Evidence (2013)](https://arxiv.org/abs/1311.5238) &nbsp; *diffuse high energy neutrino flux inconsistent with atmospheric origin indicate extraterrestial sources*
+- [IC More Evidence (2016)](https://arxiv.org/abs/1607.08006) &nbsp; *observation and characterization of more accurate cosmic muon neutrino spectra*
+
+#### Laser Gravitational Wave Interferometer
+
+- [LIGO (2016)](https://arxiv.org/abs/1602.03837) &nbsp; *first ever detection of gravitational waves from a stellar mass binary black hole merger*
+
+#### Pierre Auger Observatory
+
+- [PA (2022)](https://arxiv.org/abs/2211.16020) &nbsp; *catalog of cosmic rays at highest energies consistent with the photodissociation cutoff*
 
 #### Particle Data Group
 
