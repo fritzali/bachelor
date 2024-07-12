@@ -16,6 +16,21 @@ References are sorted into the following types:
 
 - [LHC (2016)](https://arxiv.org/abs/1510.01707) &nbsp; *measurement of total charm meson production cross section in large hadron collider experiments*
 
+#### IceCube
+
+- [IC Blazar Flare (2018)](https://arxiv.org/abs/1807.08816) &nbsp; *multimessenger observations of flaring blazar coincident with a high energy neutrino detection*
+- [IC Blazar Signal (2018)](https://arxiv.org/abs/1807.08794) &nbsp; *retrospective neutrino detection of the same blazar in more quiescent states*
+- [IC First Evidence (2013)](https://arxiv.org/abs/1311.5238) &nbsp; *diffuse high energy neutrino flux inconsistent with atmospheric origin indicate extraterrestial sources*
+- [IC More Evidence (2016)](https://arxiv.org/abs/1607.08006) &nbsp; *observation and characterization of more accurate cosmic muon neutrino spectra*
+
+#### Laser Gravitational Wave Interferometer
+
+- [LIGO (2016)](https://arxiv.org/abs/1602.03837) &nbsp; *first ever detection of gravitational waves from a stellar mass binary black hole merger*
+
+#### Pierre Auger
+
+- [PA (2022)](https://arxiv.org/abs/2211.16020) &nbsp; *catalog of cosmic rays at highest energies consistent with the photodissociation cutoff*
+
 #### Papers
 
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
