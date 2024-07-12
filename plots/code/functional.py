@@ -69,9 +69,9 @@ charmed_hadron_fragmentation_function = np.vectorize(ff.charmed_hadron_fragmenta
 
 # import matplotlib.pyplot as plt
 # 
-# x = np.logspace(-13, 0, 1000)
+# x = np.logspace(-10, 0, 1000)
 # 
-# E = 1e9
+# E = 1e8
 # 
 # z1 = meson_production(x, E, 'pi')
 # z2 = meson_production(x, E, 'k')

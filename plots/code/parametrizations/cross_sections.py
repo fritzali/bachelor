@@ -131,7 +131,7 @@ def _charm_quark_differential_production(x, E):
 		a2 = 8.411
 		b1 = 0.197
 		b2 = 0.016
-		n1 = 1.061
+		n1 = 8.486
 		n2 = 0.107
 	a = a1 * np.log(E) - a2
 	b = b1 - b2 * np.log(E) - 1
@@ -162,24 +162,24 @@ def charm_quark_differential_production(x, E, o = 'good'):
 		warn(f'{E} is outside of bounds {3e4} to {1e11}')
 	match o.lower():
 		case 'good':
-			a0 = 5.422
 			a1 = 0.403
-			b0 = 0.025
-			b1 = 0.023
-			n0 = 6.7
-			n1 = 0.102
+			a2 = 2.002
+			b1 = 0.237
+			b2 = 0.023
+			n1 = 7.639
+			n2 = 0.102
 		case 'bad':
-			a0 = 6.804
 			a1 = 0.826
-			b0 = 0.05
-			b1 = 0.016
-			n0 = 7.5
-			n1 = 0.107
+			a2 = 8.411
+			b1 = 0.197
+			b2 = 0.016
+			n1 = 8.486
+			n2 = 0.107
 		case _:
 			raise ValueError(f'`{o.lowe()}` is not a valid option, use `good` or `bad` instead')
-	a = a0 + a1 * np.log(E / 1e8)
-	b = b0 - b1 * np.log(E / 1e4) - 1
-	n = n0 - n1 * np.log(E / 1e4)
+	a = a1 * np.log(E) - a2
+	b = b1 - b2 * np.log(E) - 1
+	n = n1 - n2 * np.log(E)
 	m = 1.2
 	return a * x**b * (1 - x**m)**n / 14.5
 
