@@ -44,6 +44,7 @@ References are sorted into the following types:
 - [Lykasov (2022)](https://arxiv.org/abs/2201.10301) &nbsp; *functional ratios of kaon to pion cross sections in beryllium collision*
 - [Mészáros (2019)](https://arxiv.org/abs/1906.10212) &nbsp; *review of the current state in multimessenger astrophysics as a whole*
 - [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
+- [Murase (2009)](https://arxiv.org/abs/0904.2509) &nbsp; *probing high energy neutrinos from fast rotating magnetars via conventional but not exotic meson decay*
 - [Rodrigues (2024)](https://arxiv.org/abs/2307.13024) &nbsp; *leptohadronic multimessenger model for gamma ray blazar signals*
 - [Spitkovsky (2006)](https://arxiv.org/abs/astro-ph/0603147) &nbsp; *magnetohydrodynamics simulations for axisymmetric and oblique rotator luminosity*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
