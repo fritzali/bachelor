@@ -14,6 +14,7 @@ References are sorted into the following types:
 
 #### Papers
 
+- [Abramowicz (2013)](https://arxiv.org/abs/1104.5499) &nbsp; *review of foundational black hole accretion theory including disk type limits and general relativistic effects*
 - [Alvarez (2004)](https://arxiv.org/abs/astro-ph/0311267) &nbsp; *summary of different pulsar spindown mechanisms and corresponding braking indices*
 - [Becker (2008)](https://arxiv.org/abs/0710.1557) &nbsp; *review of high energy neutrinos in the context of multimessenger astrophysics*
 - [Beckmann (2013)](https://arxiv.org/abs/1302.1397) &nbsp; *short summary and motivation of open issues in classifying the active galactic nucleus phenomenon*
