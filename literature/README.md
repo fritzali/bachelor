@@ -11,6 +11,7 @@ References are sorted into the following types:
 - [Haskell (2018)](https://arxiv.org/abs/1709.10340) &nbsp; *discussion on superfluidity and superconductivity inside neutron stars*
 - [Jackson (1999)](https://ui.adsabs.harvard.edu/abs/1998clel.book.....J) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
 - [Longair (2011)](https://www.cambridge.org/core/books/high-energy-astrophysics/CF25E2E5FC0EDFC51FCD7846A262C0AE) &nbsp; *astrophysics of high energy phenomena for advanced undergraduate study*
+- [Murase (2023)](https://arxiv.org/abs/2202.03381) &nbsp; *exploration of accretion disks and coronae or jets as possible neutrino sources in galactic nuclei*
 
 #### Papers
 
@@ -51,6 +52,7 @@ References are sorted into the following types:
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
 - [Tjus (2020)](https://arxiv.org/abs/2002.00964) &nbsp; *review of possible galactic cosmic ray origins using multimessenger information*
 - [Tjus (2023)](https://ui.adsabs.harvard.edu/abs/2023EPJWC.29010002B) &nbsp; *investigation of neutrinos from charm dominance in dense galactic core regions*
+- [Visser (2008)](https://arxiv.org/abs/0706.0622) &nbsp; *introduction to the spacetime of rotating black holes with a focus on horizons and ergospheres*
 
 #### European Nuclear Research Organization
 
