@@ -409,7 +409,17 @@ homogenous sphere. Adding to the inaccuracy introduced by discounting any intern
 rotation. But due to only dealing with very rough estimates anyway, setting $I \kern+0.5pt = \qty{1e45}{\gram\centi\meter\squared}$
 produces no discernable difference either. Provided by \cite{Haensel_1999} is the minimum period of uniform rotation, beyond which
 the neutron star would lose its structural integrity. Choosing an optimistic value of twice this minimum $T = \qty{0.3}{\milli\second}$
-yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency.
+yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency. Lastly, the tilt parameter $\kern-0.5pt \chi \kern+0.5pt$
+between rotational axis and magnetic field symmetry must be set. As for all previous parameters, the same choice as in \cite{Carpio_2020}
+is made, with an angle $\chi = \num{0.95}$ in radians.
+
+Concluding this brief numerical setup is the modeling of the supernova ejecta as a target field for accelerated particles. Assuming
+this to be a spherical region with constant density at each point in time $t \kern+0.5pt$ leads to the number density
+$\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt$ for the case that protons with masses $m_p$ make
+up all ejected material. From further asserting radial expansion at constant relative velocity $\beta_\text{ej}$ one obtains the
+ejecta radius $r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t \kern+0.5pt$ as a function of time. With total
+ejecta masses similar to that of the progenitor star, values between $\num{10} \kern+1.5pt M_\odot$ and $\num{35} \kern+1.5pt M_\odot$
+are possible. In this case, the lower bound of $M_\text{ej} = \num{10} \kern+1.5pt M_\odot$ is adopted.
 
 
 
