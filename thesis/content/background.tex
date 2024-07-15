@@ -1,5 +1,8 @@
+\let\backupskip\chapterheadstartvskip
+\renewcommand*\chapterheadstartvskip{\vspace*{3\topskip}} 
 \chapter{Background}
 \label{ch:background}
+\let\chapterheadstartvskip\backupskip
 
 On their journey through space, messenger particles are subject to various influences, both in terms of type and scale,
 before reaching our planet. Understanding this propagation requires a thorough comprehension of physical processes at all
@@ -23,34 +26,6 @@ a more detailed treatment is omitted, with the exception of certain phenomena im
 
 
 
-\subsection{Reference Frames}
-\label{sub:frames}
-
-Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or independent from
-the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
-$p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
-\begin{align*}
-	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 \kern+0.5pt , &&
-	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 \kern+0.5pt , &&
-	u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
-\end{align*}
-as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
-exchanged mediating particle. Implied in this context is a Minkowski inner product, making the above quantities manifestly Lorentz
-invariant.
-{\newpage}
-When working with parametrizations defined for use in different subdisciplines, it often becomes necessary to convert from center
-of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile as viewed in the
-stationary target coordinate system, where vectors $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and $p = (m c^2 \kern-1.0pt , 0)$
-measure the respective particle momenta. With $\bm{P}$ denoting a classical projectile momentum, as well as rest masses $M$ and $m$
-for projectile and target, the relation $E^2 = \bm{P}^2 c^2 + M^2 c^4$ leads to
-\begin{equation*}
-	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
-\end{equation*}
-for the invariant mass. The trailing terms in this equation become negligible at high energies, allowing for an approximation
-$s = 2E m c^2$ in the target rest frame.
-
-
-
 \subsection{Fundamental Interactions}
 \label{sub:interactions}
 
@@ -66,7 +41,6 @@ $Z$ and $W^\pm$ bosons that carry the weak force. The only remaining fundamental
 the effects of which are currently best described in terms of \emph{General Relativity} (GR{\kern+0.25pt}) as the continuous
 macroscopic curvature of spacetime due to the presence of large masses. Because elementary particles exclusively inhabit
 microscopic scales, their behavior is usually indistinguishable from that described by SR in flat space.
-
 
 
 \subsection{Hadrons \& Leptons}
@@ -90,7 +64,7 @@ high energies. In these regimes, strong force coupling becomes small and allows 
 asymptotic freedom. A major consequence of this is that perturbative QCD calculations become possible, which would otherwise
 require complex approaches such as discrete QCD on a lattice or some type of effective field theory instead.
 
-In the quark model, hadrons can be divided into classes based on constituent numbers. Baryons are comprised of three quarks, all
+The quark model enables classification of hadrons based on their constituent numbers. Baryons are comprised of three quarks, all
 with different colors, while mesons contain two quarks with opposite color and anticolor charges. From spin addition, it is clear
 that baryons obey fermionic statistics, while mesons act as bosons. Exemplary quark contents are given for baryons such as protons
 $p \equiv uud \kern+0.5pt$ and neutrons $n \equiv udd \kern+0.5pt$ as well as pions
@@ -104,12 +78,57 @@ with the baryon $\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c} \kern-0.5pt \equiv u \k
 as in \cite{Carpio_2020}. Specific decay channels will be listed directly in the relevant sections
 with \cite{pdg} providing a broad overview.
 
+Contrary to hadrons, leptons are fundamental particles. Due to being colorless, they are not affected by the strong force, meaning
+that all leptonic interactions obey EWT instead. Noting that photons only couple to electrical charges, this leaves neutrinos as the
+only particles which interact exclusively via the weak force. Here, one distinctive feature of the weak interaction should be
+mentioned as well, namely that of parity violation. This manifests by only coupling to left-handed components of particles and
+right-handed components of antiparticles. Handedness in this context refers to chirality, which for massless particles is equivalent
+to helicity or the sign of the spin projection onto the momentum vector. Because the SM assigns zero mass to neutrinos, this EWT
+property suppresses certain decay modes and enforces correlated polarizations for the involved leptons. Not included in the SM is
+the observation of neutrino oscillations, which are, however, not relevant for this work, since flavor differences are neglected.
+
+
+
+\subsection{Reference Frames}
+\label{sub:frames}
+
+Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or independent from
+the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
+$p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
+\begin{align*}
+	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 \kern+0.5pt , &&
+	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 \kern+0.5pt , &&
+	u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
+\end{align*}
+as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
+exchanged mediating particle. Implied in this context is a Minkowski inner product, making the above quantities manifestly Lorentz
+invariant. When working with parametrizations defined for use in different subdisciplines, it regularly becomes necessary to convert
+from center of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile as viewed
+in the system of a stationary target, where the vectors $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and $p = (m c^2 \kern-1.0pt , 0)$
+measure the respective particle momenta. With $\bm{P}$ denoting a classical projectile momentum, as well as rest masses $M$ and $m$
+for projectile and target, the relation $E^2 = \bm{P}^2 c^2 + M^2 c^4$ leads to
+\begin{equation*}
+	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
+\end{equation*}
+for the invariant mass. The trailing terms in this equation become negligible at high energies, allowing for an approximation
+$s = 2E m c^2$ in the target rest frame.
+
 
 
 \subsection{Particle Collisions}
 \label{sub:collisions}
 
-Cross Sections
+Another important aspect of particle physics is the description of collision processes. For this purpose, the concept of cross
+sections $\sigma \kern+0.5pt$ should be understood. In classical mechanics, these quantities are solely related to geometric
+properties of the objects involved, assuming they only interact upon impact. If longer range forces are included, the
+cross section represents a larger effective area that measures how the trajectory of an incoming projectile is influenced by
+the target. Additionally, differential cross sections with respect to some independent variable such as solid angle
+$d\sigma \kern-0.3pt / \kern-0.6pt d\Omega$ or kinetic energy $d\sigma \kern-0.3pt / \kern-0.6pt dE$ can be defined.
+Measurements of this quantity often reveal more information about the inner structure of targets. To distinguish these cases,
+one might refer to $\sigma$ as the integrated cross section. Since QM is at the core of particle physics, cross sections in this
+context are instead interpreted as probability measures of fundamentally stochastic collision processes, such as the production
+of specific particles. It can also be useful to separate cross sections into elastic and inelastic components, especially for
+collisions in which particles lose energy, as is the case for cooling processes via scattering.
 
 
 
@@ -169,7 +188,7 @@ which scales spectra from direct production to account for decay processes takin
 This is in some sense a core mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high
 energy regimes. While longer lived particles experience significant cooling due to time dilation, charmed hadron decay is prompt
 in comparison. One requirement for the validity of \eqref{eqn:cooling} is that $\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$
-holds with a target field size $d \kern+0.5pt$ to ensure decays occur exclusive inside this region.
+holds with a target field size $d \kern+0.5pt$ to ensure decays occur exclusive inside this region. 
 
 
 
