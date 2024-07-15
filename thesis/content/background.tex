@@ -96,8 +96,8 @@ Depending on the application, energies in particle physics are either given as v
 the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
 $p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
 \begin{align*}
-	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 \kern+0.5pt , &&
-	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 \kern+0.5pt , &&
+	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 &&
+	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 &&
 	u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
 \end{align*}
 as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
@@ -140,7 +140,7 @@ where $S \kern+0.5pt$ and $dx$ measure surface area and thickness, respectively.
 targets that each have effective interaction cross sections $\tilde{\sigma}$ with a total coverage of $\tilde{S} = \tilde{\sigma} \tilde{N}$
 as viewed by an incident projectile.
 
-The probability for dissipating such a beam constituent then corresponds to the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
+The probability for dissipating these beam constituent then corresponds to the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
 explicitly $\mathscr{P} = \kern-0.5pt \tilde{\sigma} \kern+0.5pt n \kern+1.5pt dx$ in case of $dx$ as the covered distance.
 Expressing $\tilde{\sigma} = \kappa\sigma$ in terms of the inelastic scattering cross section $\sigma$ and a dimensionless factor
 $\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
@@ -184,7 +184,7 @@ $t_\text{dec} \kern-0.6pt = \tau E / m$ in units of time. Substituting into the 
 	\mathscr{C} = 1 - \kern+0.9pt \exp \biggl( -\frac{t_\text{cool}}{\raisebox{0.5ex}{$t_\text{dec}$}} \biggr)
 	\label{eqn:cooling}
 \end{equation}
-which scales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
+that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
 This is an essential mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high energies.
 While longer lived particles experience significant cooling thanks to time dilation, charmed hadrons decay promptly in comparison, resulting
 in a neutrino flux that directly traces the underlying hadronic spectrum. One requirement for the validity of \eqref{eqn:cooling} is that
@@ -192,63 +192,39 @@ $\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$ holds, with $d \kern+0.5pt$ m
 inside this region. 
 
 
+\newpage\input{amend/special-head}
+
 
 \section{Multimessenger Astronomy}
 \label{sec:multimessenger}
 
-
-
-\subsection{Cosmic Rays}
-\label{sub:rays}
-
-
-
-\subsection{Neutrinos}
-\label{sub:neutrinos}
-
-
-
-\subsection{Photons}
-\label{sub:photons}
-
-
-
-\subsection{Gravitational Waves}
-\label{sub:gravitational}
-
-
-
-\section{Astrophysical Sources}
-\label{sec:sources}
+An extension of traditional astronomy, the field of multimessenger astrophysics continues to thrive, providing valuable insights via the
+combination of complementary information carried by multiple messenger species. This section begins by expanding on concepts alluded
+to in chapter \ref{ch:introduction} before continuing to describe the available multimessenger candidates in some detail. For a more
+extensive overview, reference \cite{Meszaros_2019} should be consulted.
 
 
 
 \subsection{Magnetic Field Scales}
 \label{sub:fields}
 
-Particles carrying electric charge $Q = Ze$ and moving at velocity $v \kern+1.0pt$ orthogonal to a homogenous magnetic field $B$ are
-acted on by the Lorentz force $F = QvB$ resulting in a gyrating motion. This must then be equal to the relativistic centripetal force
-$F = m \varGamma v^2 \kern-0.5pt / R$ on a circular path with $R$ as the Larmor radius. Solving by rearranging and identifying
-$p = m \varGamma v \kern+0.5pt$ leads to
+Particles carrying electric charges $Q = Ze$ and moving at velocity $v \kern+1.0pt$ orthogonal to a homogenous magnetic field $B$ are
+acted on by the Lorentz force $F = QvB \kern+0.5pt$ that produces a gyrating motion. With the elementary charge $e$ and $\varGamma$
+as a Lorentz factor, this must balance a relativistic centripetal force $F = m \varGamma v^2 \kern-0.5pt / R$ on the resulting circular
+path with $R$ giving the Larmor radius. Rearranging and identifying $p = m \varGamma v \kern+0.5pt$ leads to the solution
 \begin{equation*}
 	R = \frac{p}{\raisebox{0.3ex}{$QB \kern+0.3pt$}}
 \end{equation*}
-on which a condition $R < D$ with the magnetic field extent $D$ can be placed.
-
-
-\newpage\input{amend/normal-head}
-
-
-In case of highly relativistic energies one can write $E = \kern-0.8pt pc$ to replace momentum and obtain an inequality
-$E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophyiscal magnetic fields are not ordered, following
-turbulences travelling through the plasma instead. To incorporate effects of moving scattering centers, a factor
-$\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén velocity is included, giving
+on which the magnetic field extent $D$ imposes $R < D$ as a condition. In case of highly relativistic energies, one can substitute
+$E = \kern-0.8pt pc$ for the momentum to obtain an inequality $E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophyiscal
+magnetic fields are not ordered, instead following turbulences that travel through the plasma. To incorporate effects of moving scattering
+centers, a factor $\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén velocity is included, giving
 \begin{equation}
 	E < Ze \kern-0.3pt \beta \kern+0.9pt cBD
 	\label{eqn:hillas}
 \end{equation}
-as the Hillas criterion, named after its description in \cite{Hillas_1984} to constrain source region sizes based on prevailing
-magnetic fields for \abbrev{UHECR} acceleration.
+as the Hillas criterion. It is named after its description in \cite{Hillas_1984} and connects source region sizes to the strength of
+prevailing magnetic fields, with observed energies as a constraint.
 
 
 
@@ -290,6 +266,74 @@ instead. For alpha particles and heavier nuclei, similar steps apply, while elec
 downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
 the multiple competing mechanisms for energy losses and momentum isotropization, it is as a consequence extremely challenging
 to reliably interpret cosmic ray signals and practically impossible to reconstruct any information about specific sources.
+
+
+
+\subsection{Stochastic Acceleration}
+\label{sub:acceleration}
+
+Due to its wide applicability in different astrophysical scenarios, probabilistic collisions are often viewed as one of
+the more plausible mechanisms responsible for accelerating cosmic rays to high energies. The general case is described in
+\cite{Longair_2011} and supposes that for each collision, particles gain energy proportional to a constant factor $\eta$ and
+remain in the region of acceleration with fixed probability $\varsigma$ on average. With initial conditions $N_0$ for the
+particle number and $E_0$ as the mean energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$
+after $k$ collisions. Using $\ln x^k = k\ln x$~in
+\begin{equation*}
+	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
+\end{equation*}
+eliminates the exponent and by rearranging gives the relation
+\begin{equation*}
+	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
+\end{equation*}
+connecting energy and number of particles. This integrated spectrum incidentally follows a power law, which is an almost
+ubiquitous feature observed in cosmic ray physics. One obtains
+\begin{equation*}
+	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
+	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
+\end{equation*}
+for the differential spectrum where the spectral index
+\begin{equation*}
+	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
+\end{equation*}
+is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
+
+The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\kern-0.5pt \beta = v / c \kern+1.0pt$ in a
+fully ionized gas. Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results
+in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ spectral dependence
+that is discussed by \cite{Longair_2011} as well. A slightly steeper index around $\alpha = \num{-2.5}$ can be derived when nonlinear
+effects are accounted for to better reproduce measurements.
+
+Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
+of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
+speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios $\beta \ll 1$ mean
+that lower order processes are much more efficient in reaching high particle energies.
+
+
+\newpage\input{amend/normal-head}
+
+
+\subsection{Cosmic Rays}
+\label{sub:rays}
+
+
+
+\subsection{Neutrinos}
+\label{sub:neutrinos}
+
+
+
+\subsection{Photons}
+\label{sub:photons}
+
+
+
+\subsection{Gravitational Waves}
+\label{sub:gravitational}
+
+
+
+\section{Astrophysical Sources}
+\label{sec:sources}
 
 
 
@@ -432,44 +476,3 @@ mechanism. With \eqref{eqn:eddington} one finds an analogous steady state limit
 	\dot{M} \kern-0.2pt = \frac{\raisebox{-0.3ex}{$4\pi GM$}}{\raisebox{0.8ex}{$\eta c \varkappa$}}
 \end{equation*}
 for the accretion rate, enforced by continuous balancing of radiation pressure and gravitational forces as a natural feedback process.
-
-
-
-\subsection{Stochastic Acceleration}
-\label{sub:acceleration}
-
-Due to its wide applicability in different astrophysical scenarios, probabilistic collisions are often viewed as one of
-the more plausible mechanisms responsible for accelerating cosmic rays to high energies. The general case is described in
-\cite{Longair_2011} and supposes that for each collision, particles gain energy proportional to a constant factor $\eta$ and
-remain in the region of acceleration with fixed probability $\varsigma$ on average. With initial conditions $N_0$ for the
-particle number and $E_0$ as the mean energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$
-after $k$ collisions. Using $\ln x^k = k\ln x$~in
-\begin{equation*}
-	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
-\end{equation*}
-eliminates the exponent and by rearranging gives the relation
-\begin{equation*}
-	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
-\end{equation*}
-connecting energy and number of particles. This integrated spectrum incidentally follows a power law, which is an almost
-ubiquitous feature observed in cosmic ray physics. One obtains
-\begin{equation*}
-	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
-	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
-\end{equation*}
-for the differential spectrum where the spectral index
-\begin{equation*}
-	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
-\end{equation*}
-is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
-
-The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\kern-0.5pt \beta = v / c \kern+1.0pt$ in a
-fully ionized gas. Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results
-in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ spectral dependence
-that is discussed by \cite{Longair_2011} as well. A slightly steeper index around $\alpha = \num{-2.5}$ can be derived when nonlinear
-effects are accounted for to better reproduce measurements.
-
-Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
-of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
-speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios $\beta \ll 1$ mean
-that lower order processes are much more efficient in reaching high particle energies.
