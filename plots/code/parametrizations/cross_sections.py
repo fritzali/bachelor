@@ -223,4 +223,4 @@ def charmed_hadron_differential_production(x, E, h, N = 100):
 	dz = z[1] - z[0]
 	dsig = (charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
 	sig = np.sum(dz * dsig)
-	return u * sig / 22
+	return u * sig / 22.32
