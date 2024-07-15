@@ -199,9 +199,9 @@ inside this region.
 \label{sec:multimessenger}
 
 An extension of traditional astronomy, the field of multimessenger astrophysics continues to thrive, providing valuable insights via the
-combination of complementary information carried by multiple messenger species. This section begins by expanding on concepts alluded
-to in chapter \ref{ch:introduction} before continuing to describe the available multimessenger candidates in some detail. For a more
-extensive overview, reference \cite{Meszaros_2019} should be consulted.
+combination of complementary information carried by multiple messenger species. This section begins by expanding on phyiscal concepts
+alluded to in chapter \ref{ch:introduction} before continuing to describe the available multimessenger candidates in some detail. For
+a more extensive overview, reference \cite{Meszaros_2019} should be consulted.
 
 
 
@@ -224,7 +224,7 @@ centers, a factor $\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén ve
 	\label{eqn:hillas}
 \end{equation}
 as the Hillas criterion. It is named after its description in \cite{Hillas_1984} and connects source region sizes to the strength of
-prevailing magnetic fields, with observed energies as a constraint.
+prevailing magnetic fields, with observed cosmic ray energies as a constraint.
 
 
 
@@ -235,16 +235,17 @@ At very high energies, protons and nuclei interact with cosmic photons, which ca
 the Doppler effect. In these processes, the photon spin is absorbed to produce a delta resonance $\Delta^+$ representing an excited
 proton state. This decays almost immediately to pairs of nucleons and pions, leading to $p\gamma \rightarrow \kern-0.1pt n\smash{\pi^+}$
 or $p\gamma \rightarrow \kern+0.2pt p \smash{\pi^0}$ as probable reaction channels and resulting in a change of momentum for the
-produced particles.
-
-For \abbrev{CMB} radiation, a close to perfect black body spectrum has been measured with
+produced particles.~For the case of \emph{Cosmic Microwave Background} (CMB) radiation, a close to perfect black body spectrum
 \begin{equation*}
 	\frac{\raisebox{-0.3ex}{$dn$}}{\raisebox{0.15ex}{$d\epsilon$}} (\epsilon) \kern+0.2pt =
 	\frac{\raisebox{-0.3ex}{$\epsilon^2$}}{\pi^2 \hbar^3 c^3 \bigl( e^{\kern+1.0pt \epsilon / k_B T} - 1 \bigr)}
 \end{equation*}
-given by \cite{Gaisser_2016} as the photon density. This predicts that at a temperature $T \kern-0.5pt = \qty{2.725}{\kelvin}$
-significant numbers of photons exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$
-in the \abbrev{CMB} rest frame. To find a threshold in center of mass coordinates, the scalar product is used for
+is given by \cite{Gaisser_2016} as the number density. From a CMB temperature of $T \kern-0.5pt = \qty{2.725}{\kelvin}$ follows that
+significant photon numbers exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$ in the CMB rest frame. 
+
+\newpage\input{amend/normal-head}
+
+To find a threshold in center of mass coordinates, the scalar product is used for
 \begin{equation*}
 	s \kern+0.3pt = \bigl( p_{\kern-0.5pt p} + p_{\kern+0.5pt \gamma} \bigr)^2 =
 	p_{\kern-0.5pt p}^2 + p_{\kern+0.5pt \gamma}^2 + 2 p_{\kern-0.5pt p} p_{\kern+0.5pt \gamma} =
@@ -254,14 +255,14 @@ where $M \kern-0.3pt = m_p + \kern+0.3pt m_\pi$ and $m_\gamma = 0$ as well as he
 \begin{equation*}
 	E = \Bigl( \kern-1.0pt \bigl( m_p + m_\pi \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
 \end{equation*}
-or roughly $E \kern+1.0pt = \kern-0.5pt 10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ for the so called \abbrev{GZK}
-cutoff. Energies that exceed this value when viewed from \abbrev{CMB} coordinates lead to significant losses, making the universe
-opaque to such protons. If pair production $\gamma \kern-0.5pt \rightarrow \smash{e^+ \kern-0.5pt e^-}$ via interaction with a
-proton is considered, one finds
+corresponds to roughly $E \kern+1.0pt = \kern-0.5pt 10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ for the so-called
+GZK cutoff. Energies that exceed this value when viewed from \abbrev{CMB} coordinates lead to significant losses, making the universe
+opaque to such protons. If pair production $\gamma \kern-0.5pt \rightarrow \smash{e^+ \kern-0.5pt e^-}$ from proton interactions is
+considered, one finds
 \begin{equation*}
 	E = \Bigl( \kern-1.0pt \bigl( m_p + 2m_e \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
 \end{equation*}
-approximated to $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
+or approximately $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
 instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mainly through Compton
 downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
 the multiple competing mechanisms for energy losses and momentum isotropization, it is as a consequence extremely challenging
@@ -272,12 +273,14 @@ to reliably interpret cosmic ray signals and practically impossible to reconstru
 \subsection{Stochastic Acceleration}
 \label{sub:acceleration}
 
-Due to its wide applicability in different astrophysical scenarios, probabilistic collisions are often viewed as one of
-the more plausible mechanisms responsible for accelerating cosmic rays to high energies. The general case is described in
-\cite{Longair_2011} and supposes that for each collision, particles gain energy proportional to a constant factor $\eta$ and
-remain in the region of acceleration with fixed probability $\varsigma$ on average. With initial conditions $N_0$ for the
-particle number and $E_0$ as the mean energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$
-after $k$ collisions. Using $\ln x^k = k\ln x$~in
+From the introduction of theoretical limits in sections \ref{sub:fields} and \ref{sub:cutoff} arises the question of how
+particles reach these high energy regimes in the first place. Due to its relatively simple derivation and surprising accuracy
+in the description of measured spectra, probabilistic collisions are often viewed as one of the most plausible mechanisms
+responsible for cosmic ray acceleration. The general case is described in \cite{Longair_2011} and supposes that for each
+collision, particles gain some energy proportional to a constant factor $\eta$ and remain in the accelerating region with
+probability $\varsigma$ on average. With initial conditions $N_0$ for the number of particles and $E_0$ as the mean
+energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$ after $k$ collisions. Using
+$\ln x^k = k\ln x$ in
 \begin{equation*}
 	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
 \end{equation*}
@@ -285,31 +288,31 @@ eliminates the exponent and by rearranging gives the relation
 \begin{equation*}
 	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
 \end{equation*}
-connecting energy and number of particles. This integrated spectrum incidentally follows a power law, which is an almost
-ubiquitous feature observed in cosmic ray physics. One obtains
+as a connection between energy and particle number. This incidentally follows a power law, which is an almost ubiquitous feature
+observed in cosmic ray physics.
+{\newpage}
+One can interpret the above expression as an integrated spectrum, leading to
 \begin{equation*}
 	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
 	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
 \end{equation*}
-for the differential spectrum where the spectral index
+for the differential case with a characteristic spectral index
 \begin{equation*}
 	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
 \end{equation*}
-is constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
+constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
 
-The basic case of \abbrev{DSA} considers strong shock fronts moving with velocity $\kern-0.5pt \beta = v / c \kern+1.0pt$ in a
-fully ionized gas. Requiring momentum isotropization without significant energy losses on both sides of the discontinuity results
-in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ for a $dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ spectral dependence
-that is discussed by \cite{Longair_2011} as well. A slightly steeper index around $\alpha = \num{-2.5}$ can be derived when nonlinear
-effects are accounted for to better reproduce measurements.
+The basic case of \emph{Diffusive Shock Acceleration} (DSA) considers shock fronts that propagate with velocity
+$\kern-0.5pt \beta = v / c \kern+1.0pt$ in a fully ionized gas. Requiring momentum isotropization without significant energy losses
+on each side of the discontinuity results in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ and a corresponding spectral dependence
+$dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ that is discussed by \cite{Longair_2011} as well. A slightly steeper
+index around $\alpha = \num{-2.5}$ can be derived when nonlinear effects are accounted for.
 
 Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
 of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
-speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios $\beta \ll 1$ mean
-that lower order processes are much more efficient in reaching high particle energies.
+speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios of $\beta \ll 1$
+mean that lower order processes are much more efficient in reaching high particle energies.
 
-
-\newpage\input{amend/normal-head}
 
 
 \subsection{Cosmic Rays}
