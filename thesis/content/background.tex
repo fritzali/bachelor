@@ -198,10 +198,24 @@ inside this region.
 \section{Multimessenger Astronomy}
 \label{sec:multimessenger}
 
-An extension of traditional astronomy, the field of multimessenger astrophysics continues to thrive, providing valuable insights via the
-combination of complementary information carried by multiple messenger species. This section begins by expanding on phyiscal concepts
-alluded to in chapter \ref{ch:introduction} before continuing to describe the available multimessenger candidates in some detail. For
-a more extensive overview, reference \cite{Meszaros_2019} should be consulted.
+An extension of traditional astronomy, the field of multimessenger astrophysics continues to thrive, providing valuable insights via
+the combination of complementary information carried by multiple messenger species. This section expands on the relevant physical concepts
+alluded to in chapter \ref{ch:introduction} and summarizes the available multimessenger candidates in some detail. For a more extensive overview,
+reference \cite{Meszaros_2019} should be consulted.
+
+
+
+\subsection{Cosmic Rays}
+\label{sub:rays}
+
+Consisting of charged particles with strictly non-thermal origins, cosmic rays were first detected at high altitudes over a
+century ago. Since then, they have become a foundational piece in our understanding of astrophysical sources. Although their flux
+mainly includes protons, other nuclei as heavy as lead contribute significantly at higher energies as well. Besides this baryonic
+component, there are also charged leptons adding to the total population. The exact ratios of these constituents contain information
+about source compositions, though any reconstruction of individual sources is likely impossible. This is a consequence of cosmic
+magnetic fields that scramble the directions of charged particles, leading to a largely isotropic distribution. At the same time,
+it is possible to constrain the size and field parameters of sources based on the energy of cosmic rays. One such condition
+is provided in section \ref{sub:fields} as the Hillas criterion.
 
 
 
@@ -315,11 +329,6 @@ mean that lower order processes are much more efficient in reaching high particl
 
 
 
-\subsection{Cosmic Rays}
-\label{sub:rays}
-
-
-
 \subsection{Neutrinos}
 \label{sub:neutrinos}
 
@@ -416,7 +425,7 @@ core region, among others. The following describes some related effects that are
 
 
 
-\subsection*{Hydrostatic Equilibrium}
+\subsubsection*{Hydrostatic Equilibrium}
 
 In Newtonian physics, the gravitational force at distance $R \kern+0.5pt$ from a mass $M \kern+0.5pt$ is given as
 \begin{equation}
@@ -424,8 +433,8 @@ In Newtonian physics, the gravitational force at distance $R \kern+0.5pt$ from a
 	\label{eqn:newton}
 \end{equation}
 for particles with masses $m$ orbiting the central object. The resulting acceleration is therefore of magnitude
-$g \kern-0.3pt = GM / \smash{R^2}$ with vertical component $\ddot{z} = \kern-0.6pt g \sin(\vartheta)$ with
-$\vartheta \kern+0.5pt$ as the elevation angle. In case of $\kern+0.5pt \vartheta \ll \pi / 2$ one can approximate
+$g \kern-0.3pt = GM / \smash{R^2}$ with vertical component $\ddot{z} = \kern-0.6pt g \sin(\vartheta)$ and
+$\vartheta \kern+0.5pt$ as the angular elevation.~In case of $\kern+0.5pt \vartheta \ll \pi / 2$ one can approximate
 $\sin(\vartheta) = \kern+0.3pt z / \kern-0.2pt R \kern+0.5pt$ to obtain
 \begin{equation*}
 	\ddot{z} = \frac{\raisebox{-0.3ex}{$GMz$}}{R^3}
@@ -445,14 +454,14 @@ $h \kern+0.5pt$ defined via
 \end{equation*}
 as the standard deviation. Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
 acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. One is then
-able to write $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and from condition $h \ll R$ necessary for the small angle
-approximation to be valid follows $u \ll v \kern+1.0pt$ or that orbital velocities must greatly exceed the disk medium specific
-speed of sound. This special case is called a thin disk and can further be extended to slim or even thick types of accretion
+able to write $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and from the necessary condition $h \ll R$ for the small angle
+approximation follows $u \ll v \kern+1.0pt$ or that orbital velocities must greatly exceed the speed of sound specific
+to the medium. This special case is called a thin disk and can further be extended to slim or even thick types of accretion
 structures.
 
 
 
-\subsection*{Luminosity Limit}
+\subsubsection*{Luminosity Limit}
 
 Any luminous object radiating with spherical symmetry excerts a pressure
 \begin{equation*}
@@ -461,7 +470,7 @@ Any luminous object radiating with spherical symmetry excerts a pressure
 as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the source.
 Suppose a gaseous cloud containing particles with masses $m$ falling towards the same bright central mass $M \kern+0.5pt$
 due to gravitational attraction. During this process, each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$
-as an opposing radiative force where the opacity $\kern-0.3pt \varkappa \kern+0.7pt$ measures cross section per unit mass.
+as an opposing radiative force, where the opacity $\kern-0.3pt \varkappa \kern+0.7pt$ measures cross section per unit mass.
 
 \newpage Balancing of \eqref{eqn:newton} and rearranging leads to the Eddington limit
 \begin{equation}
