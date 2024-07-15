@@ -36,7 +36,7 @@ References are sorted into the following types:
 - [Gonçalves (2007)](https://arxiv.org/abs/hep-ph/0607125) &nbsp; *parametrization of charm production differential cross section in proton air interactions*
 - [Gralla (2019)](https://arxiv.org/abs/1811.07438) &nbsp; *effective force free field theory with small corrections on large scales instead of large deviations in small regions*
 - [Gruzinov (2006)](https://arxiv.org/abs/astro-ph/0510751) &nbsp; *estimate of pulsar power with force free magnetosphere conditions via variational calculus*
-- [Haensel (1999)](https://arxiv.org/abs/astro-ph/9901118) &nbsp; **
+- [Haensel (1999)](https://arxiv.org/abs/astro-ph/9901118) &nbsp; *calculation of the minimum uniformly rotating neutron stars period under causality preservation*
 - [Hillas (1984)](https://ui.adsabs.harvard.edu/abs/1984ARA%26A..22..425H) &nbsp; *constraint on magnetic field strength and size of accelerating region for high energy particles*
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
 - [Kniehl (2006)](https://arxiv.org/abs/hep-ph/0607306) &nbsp; *charm hadron fragmentation functions via factorization schemes on leading order calculations*
