@@ -1,6 +1,27 @@
 \chapter{Methods}
 \label{ch:methods}
 
+Building on a physical background, this chapter first introduces generally applicable methods for the translation of an
+injected proton distribution to a hadronic spectrum, which then decays to create neutrinos. Subsequently, the injection
+spectra are decribed for the previously specified astrophysical settings. To start with, a general case $a \rightarrow b$
+is defined for the reaction. Given a spectrum $dN_a \kern+0.5pt / \kern-0.25pt dE_a$ that describes the number $N_a$ of
+particles $a$ per $E_a$ energy interval, as well as the spectral distribution $F_{a \rightarrow b}$ for the probability
+that particles $b$ are produced in a singular interaction, one can solve the folding integral
+\begin{equation}
+	\frac{dN_b}{\raisebox{0.5ex}{$dE_b$}} (E_b) \kern+0.5pt = \kern-1.5pt\int_{\check{E}_a}^{\hat{E}_a} dE_a
+	\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b, E_a)
+	\label{eqn:folding}
+\end{equation}
+to obtain their numbers $N_b$ with respect to $E_b$ energies. From this formulation, it is clear that both distributions
+and spectra should be assumed to depend on energy, with other arguments such as the time $t \kern+0.5pt$ being allowed as
+well. Additionally, integration bounds $\check{E}_a \leq \hat{E}_a$ must always be specified, which are usually dictated by
+kinematic constraints.
+
+To implement and compute the following parametrizations, the \emph{Python} programming language and its package \emph{Numpy}
+are used. Results are presented visually with the \emph{Matplotlib} library.\footnote{$\,$In service of reproducability, all
+implementations can be viewed in \href{https://github.com/fritzali/bachelor}{this} repository.}
+
+
 \section{Cross Sections}
 \label{sec:cross}
 
