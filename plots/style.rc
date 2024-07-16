@@ -7,13 +7,15 @@ figure.constrained_layout.w_pad : 0.09
 figure.constrained_layout.h_pad : 0.09
 
 figure.dpi : 600
-figure.figsize : 6.00 , 3.75
+figure.figsize : 5.25 , 3.50
 
 font.family : serif
 font.size : 10
 
 legend.fontsize : small
 legend.frameon : False
+
+lines.linewidth: 1
 
 lines.dash_capstyle: round
 lines.solid_capstyle: round
