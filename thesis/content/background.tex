@@ -391,14 +391,16 @@ Neutron stars are stable remnants of massive stellar progenitors that are destro
 depleted their fuel reserves. Instead of nuclear fusion, the remaining neutron star is supported against further gravitational
 contraction by degeneracy pressures. These result from the Pauli exclusion principle that prevents fermions from occupying identical
 quantum states. While white dwarfs rely primarily on electrons for this mechanism, neutron stars depend on the repulsion among
-nucleons, making them some of highest density macroscopic objects in the universe. Due to some angular momentum of the progenitor
+nucleons, placing them among the most dense macroscopic objects in the universe. Due to some angular momentum of the progenitor
 star usually being conserved in the remnant, the compression of stellar material immediately before a supernova explosion leads to
 extremely fast rotational periods. In addition to that, conservation of magnetic energy implies large magnetizations as well.
 Reference \cite{Thompson_1993} discusses this possibility of so-called fossil fields, but argues that strong convective flows
 during formation or inside the very young neutron star are more likely culprits. These would also remove any previous correlation
 between the axis of rotation and the field orientation. Because neutron star interiors are assumed to be superconducting fluids,
 dynamo effects can amplify and sustain any initial magnetic fields \cite{Haskell_2018}. If such a magnetized rotator emits misaligned
-radio jets, their sweeping motion will be observed as a pulsating radio source, hence the name pulsar.
+radio jets, their sweeping motion will be observed as a pulsating radio source, hence the name pulsar. The decay of fields is generally
+modeled as exponential or according to a power law, but can be assumed to be static for the shorter timescales relevant to the present
+work \cite{Sang_1990}.
 
 When extreme magnetic fields in the range of $B = \kern-0.5pt \qty{e15}{\gauss}$ are achieved, the respective neutron star is
 classified as a magnetar. To fully model these sources, additional parameters are required. Typical neutron star radii are of the
@@ -406,20 +408,20 @@ order $R = \kern-0.5pt \qty{e6}{\centi\meter}$ with masses of $M = \num{1.4} \ke
 limit that defines the maximum stable mass for white dwarfs. From the solar mass $M_\odot \kern-0.75pt = \qty{2e33}{\gram}$ follows
 a moment of inertia $I \kern+0.5pt = \qty{8e44}{\gram\centi\meter\squared}$ for our magnetar that has been approximated as a rigid
 homogenous sphere. Adding to the inaccuracy introduced by discounting any internal structure are the effects of highly relativistic
-rotation. But due to only dealing with very rough estimates anyway, setting $I \kern+0.5pt = \qty{1e45}{\gram\centi\meter\squared}$
-produces no discernable difference either. Provided by \cite{Haensel_1999} is the minimum period of uniform rotation, beyond which
-the neutron star would lose its structural integrity. Choosing an optimistic value of twice this minimum $T = \qty{0.3}{\milli\second}$
-yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency. Lastly, the tilt parameter $\kern-0.5pt \chi \kern+0.5pt$
-between rotational axis and magnetic field symmetry must be set. As for all previous parameters, the same choice as in \cite{Carpio_2020}
-is made, with an angle $\chi = \num{0.95}$ in radians.
+rotation. Due to only using rough estimates anyway, setting $\cramped{I \kern+0.5pt = \qty{1e45}{\gram\centi\meter\squared}}$ produces no
+discernable difference in the final results. Provided by \cite{Haensel_1999} is the minimum period of uniform rotation, beyond
+which the neutron star loses its structural integrity. Choosing an optimistic value of twice this minimum time $T = \qty{0.3}{\milli\second}$
+yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency. Lastly, the tilt $\kern-0.5pt \chi \kern+0.5pt$
+between rotational axis and magnetic field symmetry must be set. As for all previous parameters, the same choice as in
+\cite{Carpio_2020} is made, with an angle $\chi = \num{0.95}$ in radians.
 
-Concluding this brief numerical setup is the modeling of the supernova ejecta as a target field for accelerated particles. Assuming
-this to be a spherical region with constant density at each point in time $t \kern+0.5pt$ leads to the number density
-$\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt$ for the case that protons with masses $m_p$ make
-up all ejected material. From further asserting radial expansion at constant relative velocity $\beta_\text{ej}$ one obtains the
-ejecta radius $r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t \kern+0.5pt$ as a function of time. With total
-ejecta masses similar to that of the progenitor star, values between $\num{10} \kern+1.5pt M_\odot$ and $\num{35} \kern+1.5pt M_\odot$
-are possible. In this case, the lower bound of $M_\text{ej} = \num{10} \kern+1.5pt M_\odot$ is adopted.
+Concluding this numerical setup is the modeling of the supernova ejecta as a target field for accelerated particles. Assuming
+this to be a spherical region of homogenously distributed matter at each time $t \kern+0.5pt$ after formation of the magnetar
+leads to $\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt$ as the number density for the case of
+protons with masses $m_p$ making up all ejected material. From further asserting radial expansion at constant relative velocity
+$\beta_\text{ej}$ one obtains the ejecta radius $r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t \kern+0.5pt$
+as a function of time. With total ejecta masses being similar to that of the progenitor star, values between $\num{10} \kern+1.5pt M_\odot$
+and $\num{35} \kern+1.5pt M_\odot$ are possible. Here, the lower bound of $M_\text{ej} = \num{10} \kern+1.5pt M_\odot$ is adopted.
 
 
 
@@ -440,16 +442,15 @@ flux density, respectively. In case of a rotating dipole in vacuo,
 \end{equation}
 is the exact expression for radiant power derived in \cite{Jackson_1999} as a standard reference, where a static angle
 $\kern-1.0pt \chi \kern+1.0pt$ between the dipole field and rotational axis with angular frequency $\omega$ is assumed. If
-instead a \abbrev{FFE} limit is applied, variational calculations \cite{Gruzinov_2006} and \abbrev{MHD} simulations
-\cite{Spitkovsky_2006} indicate
+a force free limit is applied instead, variational calculations \cite{Gruzinov_2006} and simulations \cite{Spitkovsky_2006} indicate
 \begin{equation}
 	L = \frac{\mu^2 \omega^4 \raisebox{0.15ex}{\( \bigl(
 	\raisebox{-0.15ex}{\( 1 \kern-0.7pt + \sin^2 \kern-2.0pt \chi \kern+1.0pt \)} \bigr) \)} }{c^3}
 	\label{eqn:ffe-mhd}
 \end{equation}
-as an appropriate expression of the luminosity. This is likely somewhat more accurate than the previous result, as it has been
+as an appropriate expression of the luminosity. This is more accurate than the previous result, as it has been
 shown by \cite{Goldreich_1969} that the surroundings of a neutron star cannot support a vacuum but must instead be filled with a
-plasma of charge carriers originating from instabilities at the surface. However, one immediately encounters the problem that
+plasma of charge carriers originating from instabilities at the surface. However, one quickly encounters the problem that
 $\bm{E} \cdot \kern-1.0pt \bm{B} = \kern-0.5pt 0$ as a condition of force free magnetospheres prevents particle acceleration. As
 \cite{Li_2012} and \cite{Gralla_2019} discuss, this can be overcome by introducing deviations from such a global solution on local
 scales.
@@ -465,10 +466,16 @@ loss via $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields $L_0 \kern-0
 $\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$ for an expression of
 $t_\text{sd} = I \kern+0.5pt / 2K\omega_0^2$ as the spindown time. It further follows for any $t \kern+0.5pt$ that
 $I \kern+0.5pt \dot{\omega} = -K \omega^3$ must hold. This is a special case of the power law differential equation
-$\dot{\omega} \propto \omega^n$ with $n = 3$ being the braking index characteristic of a rotating magnetic dipole. Separating
-variables and integrating leads to finding
+$\dot{\omega} \propto \omega^n$ with $n = 3$ as the so-called braking index typical of a rotating magnetic dipole. 
+For comparison, one would find $n = 5$ in case of a quadrupole, indicating that $n$ is characteristic of the specific
+energy loss mechanism involved. After separating variables and integrating, one obtains
 $\omega = \omega_0 \smash{\bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)^{-1/2}}$
-as the time dependent frequency solution.
+for the frequency as a function of time.
+
+Another important concept in neutron star environments is the so-called light cylinder. Defined via
+$R_\text{lc} \kern-0.6pt = c / \kern-0.4pt \omega$ as the radius, it describes the boundary beyond which magnetic field lines
+are unable to corotate with the central body without exceeding the speed of light. Thanks to the resulting lag, magnetic fields
+are open, providing a potential acceleration mechanism.
 
 
 

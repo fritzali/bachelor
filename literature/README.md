@@ -49,6 +49,7 @@ References are sorted into the following types:
 - [Metz (2016)](https://arxiv.org/abs/1607.02521) &nbsp; *review of nonperturbative parton distribution and fragmentation functions*
 - [Murase (2009)](https://arxiv.org/abs/0904.2509) &nbsp; *probing high energy neutrinos from fast rotating magnetars via conventional but not exotic meson decay*
 - [Rodrigues (2024)](https://arxiv.org/abs/2307.13024) &nbsp; *leptohadronic multimessenger model for gamma ray blazar signals*
+- [Sang (1990)](https://ui.adsabs.harvard.edu/abs/1990ApJ...363..597S) &nbsp; **
 - [Spitkovsky (2006)](https://arxiv.org/abs/astro-ph/0603147) &nbsp; *magnetohydrodynamics simulations for axisymmetric and oblique rotator luminosity*
 - [Thompson (1993)](https://ui.adsabs.harvard.edu/abs/1993ApJ...408..194T) &nbsp; *exploration of fossil fields and convective dynamos for neutron star magnetism*
 - [Tjus (2020)](https://arxiv.org/abs/2002.00964) &nbsp; *review of possible galactic cosmic ray origins using multimessenger information*
