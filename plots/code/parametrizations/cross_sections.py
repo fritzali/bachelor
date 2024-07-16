@@ -142,7 +142,7 @@ def charm_quark_differential_production(x, E, o = 'good'):
 	b = b1 - b2 * np.log(E) - 1
 	n = n1 - n2 * np.log(E)
 	m = 1.2
-	return a * x**b * (1 - x**m)**n / 14.5
+	return a * x**b * (1 - x**m)**n / 14.5 / 22.32
 
 
 def charmed_hadron_differential_production(x, E, h, N = 100):
@@ -184,4 +184,4 @@ def charmed_hadron_differential_production(x, E, h, N = 100):
 	dz = z[1] - z[0]
 	dsig = (charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
 	sig = np.sum(dz * dsig)
-	return u * sig / 22.32
+	return u * sig

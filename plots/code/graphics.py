@@ -14,8 +14,8 @@ plt.plot(x, x * y12, 'b', label=r'$E_p = 10^{12}$ GeV')
 plt.plot(x, x * y10, 'r', label=r'$E_p = 10^{10}$ GeV')
 plt.plot(x, x * y8, 'k', label=r'$E_p = 10^{8}$ GeV')
 
-plt.xlabel(r'$x_E = \kern-0.5pt E_h \kern+0.5pt / E_p$')
-plt.ylabel(r'$x_E \kern+1.5pt d\sigma \kern-0.3pt / \kern-0.8pt dx_E \kern+1.2pt$ $\mathrel{/}$ mb')
+plt.xlabel(r'$x_h \kern-0.8pt = \kern-0.5pt E_h \kern+0.5pt / E_p$')
+plt.ylabel(r'$x_h \kern+0.5pt d\sigma \kern-0.3pt / \kern-0.8pt dx_h \kern+0.2pt$ $\mathrel{/}$ mb')
 
 plt.xscale('log')
 plt.yscale('log')
