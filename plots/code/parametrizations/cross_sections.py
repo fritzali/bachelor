@@ -101,45 +101,6 @@ def inelastic_hadron_proton_scattering(s, h):
 	return total_hadron_proton_scattering(s, h) * (1 - hadron_elastic_total_ratio(s))
 
 
-def _charm_quark_differential_production(x, E):
-	'''
-	Returns the charm quark differential cross section for production in proton-proton collisions.
-
-		Parameters
-		----------
-		x : float
-			The energy ratio Ec / Ep of charm quark to incident proton in target rest coordinates
-		E : float
-			The projectile energy Ep as viewed from target rest coordinates in GeV
-
-		Returns
-		-------
-		float
-			The charm quark differential cross section for production from proton-proton collisions in mb
-	'''
-	if E < 1e4 or E > 1e11:
-		warn(f'{E} is outside of bounds {1e4} to {1e11}')
-	if E >= 1e8:
-		a1 = 0.403
-		a2 = 2.002
-		b1 = 0.237
-		b2 = 0.023
-		n1 = 7.639
-		n2 = 0.102
-	else:
-		a1 = 0.826
-		a2 = 8.411
-		b1 = 0.197
-		b2 = 0.016
-		n1 = 8.486
-		n2 = 0.107
-	a = a1 * np.log(E) - a2
-	b = b1 - b2 * np.log(E) - 1
-	n = n1 - n2 * np.log(E)
-	m = 1.2
-	return a * x**b * (1 - x**m)**n / 14.5
-
-
 def charm_quark_differential_production(x, E, o = 'good'):
 	'''
 	Returns the charm quark differential cross section for production in proton-proton collisions.

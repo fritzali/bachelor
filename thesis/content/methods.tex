@@ -6,10 +6,10 @@ injected proton distribution to a hadronic spectrum, which then decays to create
 spectra are decribed for the previously specified astrophysical settings. To start with, a general case $a \rightarrow b$
 is defined for the reaction. Given a spectrum $dN_a \kern+0.5pt / \kern-0.25pt dE_a$ that describes the number $N_a$ of
 particles $a$ per $E_a$ energy interval, as well as the spectral distribution $F_{a \rightarrow b}$ for the probability
-that particles $b$ are produced in a singular interaction, one can solve the folding integral
+that particles $b$ are produced by a singular interaction, one can solve the folding integral
 \begin{equation}
 	\frac{dN_b}{\raisebox{0.5ex}{$dE_b$}} (E_b) \kern+0.5pt = \kern-1.5pt\int_{\check{E}_a}^{\hat{E}_a} dE_a
-	\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b, E_a)
+	\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b \kern+0.5pt, \kern-0.5pt E_a)
 	\label{eqn:folding}
 \end{equation}
 to obtain their numbers $N_b$ with respect to $E_b$ energies. From this formulation, it is clear that both distributions
@@ -17,25 +17,24 @@ and spectra should be assumed to depend on energy, with other arguments such as 
 well. Additionally, integration bounds $\check{E}_a \leq \hat{E}_a$ must always be specified, which are usually dictated by
 kinematic constraints.
 
-To implement and compute the following parametrizations, the \emph{Python} programming language and its package \emph{Numpy}
-are used. Results are presented visually with the \emph{Matplotlib} library.\footnote{$\,$In service of reproducability, all
+To implement and compute all following parametrizations, the \emph{Python} programming language and its library \emph{Numpy}
+are used. Graphical results are created via the \emph{Matplotlib} package.\footnote{$\,$In service of reproducability, all
 implementations can be viewed in \href{https://github.com/fritzali/bachelor}{this} repository.}
 
 
 \section{Cross Sections}
 \label{sec:cross}
 
-By defining an effective area perpendicular to the velocity vectors of projectiles and targets, cross sections measure
-the probability of collision processes in particle physics. Due to depending on the strength of an interaction, these
-quantities generally scale with energy. Distinct from the integrated case, differential cross sections are usually given
-with respect to some independent variable such as angle or momentum of the particle.
+By defining an effective area perpendicular to the momentum vectors of projectiles and targets, cross sections as described
+by section \ref{sub:collisions} measure probabilities of collision processes in particle physics and are therefore required
+for the calculation of spectral distributions. 
 
 
 
 \subsection{Scattering}
 \label{sub:scattering}
 
-To model total cross sections in hadron proton scattering, this work uses the formula
+To model total cross sections in hadron-proton scattering, this work uses the formula
 \begin{equation}
 	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
 	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
@@ -45,8 +44,8 @@ as given in \cite{Belousov_2016} for a universal analytic parametrization of the
 
 All adjustable parameters are listed in table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
 cooling. In this approach, the variable $M$ \kern+0.5pt relates to $H \kern+0.5pt = \pi (\hbar c / M)^2$ and
-$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} denote Heisenberg,
-Pomeranchuk and Regge terms which have some qualitative motivation, though the formula itself is primarily a quantitative
+$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} are named after Heisenberg,
+Pomeranchuk and Regge, respectively, and have some qualitative motivation, though the formula itself is primarily a quantitative
 result.
 
 \input{content/tables/hadron-scattering.tex}
@@ -62,37 +61,48 @@ the model independent parametrization
 \end{equation}
 with a constant asymptote $\mathscr{A}$ at very high energies. Coefficients are given in table \ref{tab:hadron-ratio} for
 different physical settings. Both equations \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} use units of \unit{\giga\electronvolt\squared}
-for the $s$  variables.
+for the $s$  variables. Combining these, figure \ref{fig:hadron-proton-scattering} depicts the scaling of inelastic cross sections
+with energy for different hadrons.
 
 \input{content/tables/hadron-ratio.tex}
 
-Reference \cite{Fagundes_2013} tests the asymptotic rise $\sigma(s) \propto \ln^2(s)$ derived in \cite{Froissart_1961} as
-a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, a ratio $\mathscr{A} = 1/3$ due to
-diffraction as opposed to the black disc limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested.
-Because parameters are only available in the latter case, all calculations of $\mathscr{R}$ use function \eqref{eqn:ratio}
-as defined by an asymptote $\mathscr{A} = 1/2 \kern+0.2pt$ for this work. Data matching $\mathscr{A} = 1/3$ then implies
-underestimated values of $\sigma_{\text{inel}\kern+0.5pt}(s)$ which should however not significantly influence the overall results.
+Reference \cite{Fagundes_2013} tests the asymptotic rise $\sigma(s) \propto \ln^2(s)$ derived in \cite{Froissart_1961}
+as a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, a ratio $\mathscr{A} = 1/3$ due to
+diffraction as opposed to the black disc limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested
+\cite{Fagundes_2013}. Because parameters are only available in the latter case, all calculations of $\mathscr{R}$ use \eqref{eqn:ratio}
+as defined by an asymptote $\mathscr{A} = 1/2 \kern+0.2pt$ for this work. Data matching $\mathscr{A} = 1/3$ then imply that
+$\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to significantly influence the overall results.
+
+\input{content/visuals/hadron-proton-scattering.tex}
 
 
 
 \subsection{Production}
 \label{sub:production}
 
-For charm quark production in proton air collisions, reference \cite{Goncalves_2007} gives
+For charm quark production in proton-{\kern+0.1pt}air collisions, reference \cite{Goncalves_2007} gives
 \begin{equation*}
 	x_F \kern+1.0pt \frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_F \kern+0.5pt, \kern-0.5pt E_p \bigr)
-	= a \kern+0.5pt x_F^b \kern+1.0pt \bigl( 1 \kern-0.3pt - x_F^m \kern+0.3pt \bigr)^n
+	\kern-0.1pt = a \kern+0.5pt x_F^b \kern+1.0pt \bigl( 1 \kern-0.3pt - x_F^m \kern+0.3pt \bigr)^n
 \end{equation*}
 as the parametrized differential cross section with components
 \begin{align*}
 	a = a_1 \kern-0.5pt \ln\bigl(E_p\bigr) - \kern+0.5pt a_2 && b = b_1 \kern-1.0pt - b_2 \ln\bigl(E_p\bigr) &&
 	n = n_1 \kern-1.0pt - \kern+0.5pt n_2 \ln\bigl(E_p\bigr)
 \end{align*}
-for which table \ref{tab:charm-production} lists all necessary constants. Here proton energies $E_p$ are defined as viewed
+for which table \ref{tab:charm-production} lists all necessary constants. Here, proton energies $E_p$ are defined as viewed
 by air nuclei at rest, while the Feynman scaling variable $x_F \kern+1.0pt = p_c \kern+1.5pt / \kern-0.5pt p_s$ specifies
 magnitude ratios of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the
-colliding particles. Application of appendix \ref{sec:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$
-where $x_c = \kern+0.2pt E_c \kern+1.0pt / E_p$ in the relevant energy ranges.
+colliding particles. Application of section \ref{sub:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$
+where $x_c = \kern+0.2pt E_c \kern+1.0pt / E_p$ in the relevant energy ranges. It should be noted that for the values
+table \ref{tab:charm-production} provides, the coefficient $n_0 \kern-0.5pt = \num{0.075}$ from table 1 in \cite{Goncalves_2007} 
+for the lower energy regime is set to $n_0 \kern-0.5pt = \num{7.5}$ instead, because the parametrization breaks down otherwise.
+Further testing reveals another problem in the \qty{e4}{\giga\electronvolt} to \qty{e8}{\giga\electronvolt} region,
+namely that energies around the \qty{26}{\tera\electronvolt} mark or lower result in negative differential cross
+sections. Considering other approximation made for this work, it is decided that the
+\qty{e8}{\giga\electronvolt} to $10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ case can be extrapolated to all
+energies without producing unreasonably large errors. With this choice, the threshold below which unphysical values are
+produced is only \qty{140}{\giga\electronvolt} instead, which is well outside the relevant energy ranges.
 
 \input{content/tables/charm-production.tex}
 
@@ -250,6 +260,21 @@ $l = \kern-0.3pt \mu$ because there is one muon for each neutrino. In addition, 
 $E_\mu \kern+0.5pt / E_h > \lambda_h$ and $E_{\kern+0.5pt \nu} \kern+0.5pt / E_h < 1 - \lambda_h$ for integral bounds
 $E_\mu < E_h < E_\mu \kern+0.5pt / \lambda_h$ in the case of muons or
 $E_{\kern+0.5pt \nu} \kern+0.5pt / \smash{\bigl( 1 - \lambda_h \bigr)} < E_h < E_p$ when considering neutrinos.
+
+
+
+\section{Computation}
+\label{sec:computation}
+
+
+
+\subsection{Proton Injection}
+\label{sub:injection}
+
+
+
+\subsection{Hadron Production \& Decay}
+\label{sub:production}
 
 
 
