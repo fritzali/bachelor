@@ -562,12 +562,12 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		None
 	'''
 	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
-	str1 = '(1e2 - 1e4)'
+	str1 = '(1e3 - 1e3)'
 	str2 = '(1e4 - 1e5)'
-	str3 = '(1e2 - 1e7)'
-	con1 = (t > 1e2) & (t < 1e4)
+	str3 = '(1e3 - 1e7)'
+	con1 = (t > 1e3) & (t < 1e4)
 	con2 = (t > 1e4) & (t < 1e5)
-	con3 = (t > 1e2) & (t < 1e7)
+	con3 = (t > 1e3) & (t < 1e7)
 	t1 = t[con1]
 	t2 = t[con2]
 	t3 = t[con3]
