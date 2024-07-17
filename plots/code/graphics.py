@@ -80,81 +80,96 @@ c = D0 + Dplus + DplusS + LAMplusC
 
 N = c.max()
 
-plt.plot(t, pi / N, 'r', label=r'$\pi$')
-plt.plot(t, K / N, 'k', label=r'$K$')
-# plt.plot(t, D0 / N, 'b-', label=r'$D^0$')
-# plt.plot(t, Dplus / N, 'b--', label=r'$D^+$')
-# plt.plot(t, DplusS / N, 'b-.', label=r'$D^+_s$')
-# plt.plot(t, LAMplusC / N, 'b:', label=r'$\Lambda^+_c$')
-plt.plot(t, c / N, 'b', lw=10, alpha=0.25, label=r'$c$')
+plt.plot(t, pi / N, 'r', label=r'Pions')
+plt.plot(t, K / N, 'k', label=r'Kaons')
+plt.plot(t, c / N, 'b', label=r'Charm')
 
 plt.xscale('log')
 plt.yscale('log')
 
 plt.xlim(1e1, 1e7)
-plt.ylim(1e-4, 1e1)
+plt.ylim(1e-6, 4e0)
 
 plt.legend()
 
-plt.show()
+plt.savefig('build/hadron_spectra.pdf')
+plt.savefig('build/hadron_spectra.png')
+plt.close()
 
 
 
-t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
-E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
-
-en = 1e9
-i = (np.abs(E - en)).argmin()
-en = E[i]
-
-pi = np.genfromtxt('code/tabulate/magnetar/neutrinos/pi.txt')
-K = np.genfromtxt('code/tabulate/magnetar/neutrinos/K.txt')
-D0 = np.genfromtxt('code/tabulate/magnetar/neutrinos/D0.txt')
-Dplus = np.genfromtxt('code/tabulate/magnetar/neutrinos/Dplus.txt')
-DplusS = np.genfromtxt('code/tabulate/magnetar/neutrinos/DplusS.txt')
-LAMplusC = np.genfromtxt('code/tabulate/magnetar/neutrinos/LAMplusC.txt')
-
-pi = pi[i, :]
-K = K[i, :]
-D0 = D0[i, :]
-Dplus = Dplus[i, :]
-DplusS = DplusS[i, :]
-LAMplusC = LAMplusC[i, :]
-
-c = D0 + Dplus + DplusS + LAMplusC
-
-N = c.max()
-
-plt.plot(t, pi / N, 'r', label=r'$\pi$')
-plt.plot(t, K / N, 'k', label=r'$K$')
-# plt.plot(t, D0 / N, 'b-', label=r'$D^0$')
-# plt.plot(t, Dplus / N, 'b--', label=r'$D^+$')
-# plt.plot(t, DplusS / N, 'b-.', label=r'$D^+_s$')
-# plt.plot(t, LAMplusC / N, 'b:', label=r'$\Lambda^+_c$')
-plt.plot(t, c / N, 'b', label=r'$c$')
-
-plt.xscale('log')
-plt.yscale('log')
-
-plt.xlim(1e1, 1e7)
-plt.ylim(1e-4, 1e1)
-
-plt.legend()
-
-plt.show()
-
-
-
-E, pi1, pi2, pi3 = np.genfromtxt('code/tabulate/magnetar/integrate/pi.txt', unpack=True)
-
-plt.plot(E, E**2 * pi1, 'k:')
-plt.plot(E, E**2 * pi2, 'k--')
-plt.plot(E, E**2 * pi3, 'k-')
-
-plt.xscale('log')
-plt.yscale('log')
-
-plt.xlim(1e6, 1e12)
-plt.ylim(1e43, 3e50)
-
-plt.show()
+# t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
+# E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
+# 
+# en = 1e9
+# i = (np.abs(E - en)).argmin()
+# en = E[i]
+# 
+# pi = np.genfromtxt('code/tabulate/magnetar/neutrinos/pi.txt')
+# K = np.genfromtxt('code/tabulate/magnetar/neutrinos/K.txt')
+# D0 = np.genfromtxt('code/tabulate/magnetar/neutrinos/D0.txt')
+# Dplus = np.genfromtxt('code/tabulate/magnetar/neutrinos/Dplus.txt')
+# DplusS = np.genfromtxt('code/tabulate/magnetar/neutrinos/DplusS.txt')
+# LAMplusC = np.genfromtxt('code/tabulate/magnetar/neutrinos/LAMplusC.txt')
+# 
+# pi = pi[i, :]
+# K = K[i, :]
+# D0 = D0[i, :]
+# Dplus = Dplus[i, :]
+# DplusS = DplusS[i, :]
+# LAMplusC = LAMplusC[i, :]
+# 
+# c = D0 + Dplus + DplusS + LAMplusC
+# 
+# N = c.max()
+# 
+# plt.plot(t, pi / N, 'r', label=r'$\pi$')
+# plt.plot(t, K / N, 'k', label=r'$K$')
+# # plt.plot(t, D0 / N, 'b-', label=r'$D^0$')
+# # plt.plot(t, Dplus / N, 'b--', label=r'$D^+$')
+# # plt.plot(t, DplusS / N, 'b-.', label=r'$D^+_s$')
+# # plt.plot(t, LAMplusC / N, 'b:', label=r'$\Lambda^+_c$')
+# plt.plot(t, c / N, 'b', label=r'$c$')
+# 
+# plt.xscale('log')
+# plt.yscale('log')
+# 
+# plt.xlim(1e1, 1e7)
+# plt.ylim(1e-4, 1e1)
+# 
+# plt.legend()
+# 
+# plt.show()
+# 
+# 
+# 
+# E, pi1, pi2, pi3 = np.genfromtxt('code/tabulate/magnetar/integrate/pi.txt', unpack=True)
+# E, K1, K2, K3 = np.genfromtxt('code/tabulate/magnetar/integrate/K.txt', unpack=True)
+# E, D01, D02, D03 = np.genfromtxt('code/tabulate/magnetar/integrate/D0.txt', unpack=True)
+# E, Dplus1, Dplus2, Dplus3 = np.genfromtxt('code/tabulate/magnetar/integrate/Dplus.txt', unpack=True)
+# E, DplusS1, DplusS2, DplusS3 = np.genfromtxt('code/tabulate/magnetar/integrate/DplusS.txt', unpack=True)
+# E, LAMplusC1, LAMplusC2, LAMplusC3 = np.genfromtxt('code/tabulate/magnetar/integrate/LAMplusC.txt', unpack=True)
+# 
+# c1 = D01 + Dplus1 + DplusS1 + LAMplusC1
+# c2 = D02 + Dplus2 + DplusS2 + LAMplusC2
+# c3 = D03 + Dplus3 + DplusS3 + LAMplusC3
+# 
+# N = (E**2 * c3).max()
+# 
+# plt.plot(E, E**2 * pi1 / N, 'r:')
+# plt.plot(E, E**2 * pi2 / N, 'r--')
+# plt.plot(E, E**2 * pi3 / N, 'r-')
+# plt.plot(E, E**2 * K1 / N, 'k:')
+# plt.plot(E, E**2 * K2 / N, 'k--')
+# plt.plot(E, E**2 * K3 / N, 'k-')
+# plt.plot(E, E**2 * c1 / N, 'b:')
+# plt.plot(E, E**2 * c2 / N, 'b--')
+# plt.plot(E, E**2 * c3 / N, 'b-')
+# 
+# plt.xscale('log')
+# plt.yscale('log')
+# 
+# plt.xlim(3e5, 1e11)
+# plt.ylim(1e-4, 3e3)
+# 
+# plt.show()

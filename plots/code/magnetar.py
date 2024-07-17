@@ -385,163 +385,6 @@ class magnetar:
 		'''
 		return np.vectorize(self._hadron_spectrum)(t, E, h, f, b, M, D, N)
 
-	def _neutrino_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
-		'''
-		Returns the neutrino spectrum from decay of hadrons.
-
-		Parameters
-		----------
-		t : float
-			The time passed from magnetar formation in s
-		E : float
-			The energy Enu as viewed from target rest coordinates in GeV
-		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
-			The type of hadronic particle
-		f : float, optional
-			The efficiency fraction of potential drop acceleration
-		b : float, optional
-			The relativistic velocity fraction
-		M : float, optional
-			The total ejecta mass in solar masses
-		D : bool, optional
-			The option to consider ejecta size for cooling, assumed to be infinite if `False`
-		N : int, optional
-			The number of steps for integration accuracy
-
-		Returns
-		-------
-			The neutrino spectrum from decay of hadrons in 1 / (GeV s)
-		'''
-		match h.lower():
-			case 'pi':
-				l = 0.106**2 / 0.140**2
-			case 'k':
-				l = 0.106**2 / 0.494**2
-			case 'd0':
-				l = 0.67**2 / 1.86**2
-			case 'd+':
-				l = 0.63**2 / 1.87**2
-			case 'd+s':
-				l = 0.84**2 / 1.97**2
-			case 'lam+c':
-				l = 1.27**2 / 2.29**2
-			case _:
-				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
-		Ep = self.E(t, f)
-		Eh = np.linspace(E / (0.9999 * (1 - l)), 0.9999 * Ep, 100 * N)
-		dEh = Eh[1] - Eh[0]
-		dsig = (self.hadron_spectrum(t, Eh, h, f, b, M, D, N))[1:]
-		match h.lower():
-			case 'pi':
-				ddec = (meson_decay_neutrinos(E, Eh, h))[1:]
-			case 'k':
-				ddec = (meson_decay_neutrinos(E, Eh, h))[1:]
-			case 'd0':
-				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
-			case 'd+':
-				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
-			case 'd+s':
-				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
-			case 'lam+c':
-				ddec = (charmed_hadron_decay_neutrinos(E, Eh, h))[1:]
-			case _:
-				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
-		return np.sum(dEh * dsig * ddec)
-
-	def neutrino_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
-		'''
-		Returns the neutrino spectrum from decay of hadrons.
-
-		Parameters
-		----------
-		t : float
-			The time passed from magnetar formation in s
-		E : float
-			The energy Enu as viewed from target rest coordinates in GeV
-		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
-			The type of hadronic particle
-		f : float, optional
-			The efficiency fraction of potential drop acceleration
-		b : float, optional
-			The relativistic velocity fraction
-		M : float, optional
-			The total ejecta mass in solar masses
-		D : bool, optional
-			The option to consider ejecta size for cooling, assumed to be infinite if `False`
-		N : int, optional
-			The number of steps for integration accuracy
-
-		Returns
-		-------
-			The neutrino spectrum from decay of hadrons in 1 / (GeV s)
-		'''
-		return np.vectorize(self._neutrino_spectrum)(t, E, h, f, b, M, D, N)
-
-	def _integrated_neutrino_spectrum(self, t1, t2, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
-		'''
-		Returns the integrated neutrino spectrum from decay of hadrons.
-
-		Parameters
-		----------
-		t1 : float
-			The lower integration limit as time passed from magnetar formation in s
-		t2 : float
-			The upper integration limit as time passed from magnetar formation in s
-		E : float
-			The energy Enu as viewed from target rest coordinates in GeV
-		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
-			The type of hadronic particle
-		f : float, optional
-			The efficiency fraction of potential drop acceleration
-		b : float, optional
-			The relativistic velocity fraction
-		M : float, optional
-			The total ejecta mass in solar masses
-		D : bool, optional
-			The option to consider ejecta size for cooling, assumed to be infinite if `False`
-		N : int, optional
-			The number of steps for integration accuracy
-
-		Returns
-		-------
-			The integrated neutrino spectrum from decay of hadrons in 1 / GeV
-		'''
-		t = np.linspace(t1, t2, 20)
-		dt = t[1] - t[0]
-		dspec = (self.neutrino_spectrum(t, E, h, f, b, M, D, N))[1:]
-		return np.sum(dt * dspec)
-
-	def integrated_neutrino_spectrum(self, t1, t2, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
-		'''
-		Returns the integrated neutrino spectrum from decay of hadrons.
-
-		Parameters
-		----------
-		t1 : float
-			The lower integration limit as time passed from magnetar formation in s
-		t2 : float
-			The upper integration limit as time passed from magnetar formation in s
-		E : float
-			The energy Enu as viewed from target rest coordinates in GeV
-		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
-			The type of hadronic particle
-		f : float, optional
-			The efficiency fraction of potential drop acceleration
-		b : float, optional
-			The relativistic velocity fraction
-		M : float, optional
-			The total ejecta mass in solar masses
-		D : bool, optional
-			The option to consider ejecta size for cooling, assumed to be infinite if `False`
-		N : int, optional
-			The number of steps for integration accuracy
-
-		Returns
-		-------
-			The integrated neutrino spectrum from decay of hadrons in 1 / GeV
-		'''
-		return np.vectorize(self._integrated_neutrino_spectrum)(t1, t2, E, h, f, b, M, D, N)
-
 
 def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
 	'''
@@ -719,27 +562,115 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		None
 	'''
 	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
-	t1 = t[(t > 1e3) & (t < 1e4)]
-	t2 = t[(t > 1e4) & (t < 1e5)]
-	t3 = t[(t > 1e3) & (t < 1e7)]
-#	dt1 = (t[1:] - t[:-1])[(t[1:] > 1e3) & (t[1:] < 1e4)]
-#	dt2 = (t[1:] - t[:-1])[(t[1:] > 1e4) & (t[1:] < 1e5)]
-#	dt3 = (t[1:] - t[:-1])[(t[1:] > 1e3) & (t[1:] < 1e7)]
+	str1 = '(1e2 - 1e4)'
+	str2 = '(1e4 - 1e5)'
+	str3 = '(1e2 - 1e7)'
+	con1 = (t > 1e2) & (t < 1e4)
+	con2 = (t > 1e4) & (t < 1e5)
+	con3 = (t > 1e2) & (t < 1e7)
+	t1 = t[con1]
+	t2 = t[con2]
+	t3 = t[con3]
 	E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
 	with open('code/tabulate/magnetar/integrate/pi.txt', 'w') as f:
 		f.write(f'# `pi` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
 		f.write(f'{mag}\n')
 		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum (1e3 - 1e4 s) / 1/GeV ')
-		f.write(f'# Spectrum (1e4 - 1e5 s) / 1/GeV ')
-		f.write(f'# Spectrum (1e3 - 1e7 s) / 1/GeV\n')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
 		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/pi.txt')
-		y1 = neu[:, (t > 1e3) & (t < 1e4)]
-		y2 = neu[:, (t > 1e4) & (t < 1e5)]
-		y3 = neu[:, (t > 1e3) & (t < 1e7)]
-		spec1 = np.trapezoid(y1, t1, axis=1) # y1 @ dt1 #
-		spec2 = np.trapezoid(y2, t2, axis=1) # y2 @ dt2 #
-		spec3 = np.trapezoid(y3, t3, axis=1) # y3 @ dt3 #
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+	with open('code/tabulate/magnetar/integrate/K.txt', 'w') as f:
+		f.write(f'# `K` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/K.txt')
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+	with open('code/tabulate/magnetar/integrate/D0.txt', 'w') as f:
+		f.write(f'# `D0` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/D0.txt')
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+	with open('code/tabulate/magnetar/integrate/Dplus.txt', 'w') as f:
+		f.write(f'# `D+` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/Dplus.txt')
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+	with open('code/tabulate/magnetar/integrate/DplusS.txt', 'w') as f:
+		f.write(f'# `D+s` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/DplusS.txt')
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+	with open('code/tabulate/magnetar/integrate/LAMplusC.txt', 'w') as f:
+		f.write(f'# `Lam+c` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum {str1} / 1/GeV ')
+		f.write(f'# Spectrum {str2} / 1/GeV ')
+		f.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/LAMplusC.txt')
+		y1 = neu[:, con1]
+		y2 = neu[:, con2]
+		y3 = neu[:, con3]
+		spec1 = np.trapezoid(y1, t1, axis=1)
+		spec2 = np.trapezoid(y2, t2, axis=1)
+		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
 			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
 			f.write(f'\n')
@@ -751,91 +682,3 @@ mag = magnetar(B = 10**14.5)
 #magnetar_hadron_spectrum(mag)
 #magnetar_neutrino_spectrum(mag)
 magnetar_integrated_neutrino_spectrum(mag)
-
-
-# t = np.logspace(1, 7, 50)
-# 
-# pi = mag.hadron_spectrum(t, 1e8, 'pi')
-# k = mag.hadron_spectrum(t, 1e8, 'k')
-# c = (mag.hadron_spectrum(t, 1e8, 'd0')
-# 	+ mag.hadron_spectrum(t, 1e8, 'd+')
-# 	+ mag.hadron_spectrum(t, 1e8, 'd+s')
-# 	+ mag.hadron_spectrum(t, 1e8, 'lam+c'))
-# 
-# import matplotlib.pyplot as plt
-# 
-# plt.plot(t, pi)
-# plt.plot(t, k)
-# plt.plot(t, c)
-# 
-# plt.xscale('log')
-# plt.yscale('log')
-# 
-# plt.xlim(5e1, 1e7)
-# plt.ylim(1e23, 5e27)
-# 
-# plt.show()
-
-# t_E_1e6 = np.logspace(3, 7, 100)
-
-# pi_had_E_1e6 = mag.hadron_spectrum(t_E_1e6, 1e6, 'pi')
-# k_had_E_1e6 = mag.hadron_spectrum(t_E_1e6, 1e6, 'k')
-# c_had_E_1e6 = (mag.hadron_spectrum(t_E_1e6, 1e6, 'd0')
-# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'd+')
-# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'd+s')
-# 			+ mag.hadron_spectrum(t_E_1e6, 1e6, 'lam+c'))
-# with open('data/had_E_1e6_no_cf.txt', 'w') as f:
-# 	f.write('# Eh = 1e6 GeV (no cooling)\n')
-# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # c / 1/(GeV s)\n')
-# 	for row in zip(t_E_1e6, pi_had_E_1e6, k_had_E_1e6, c_had_E_1e6):
-# 		f.write(r'{0} {1} {2} {3}'.format(*row))
-# 		f.write('\n')
-
-# pi_neu_E_1e6 = mag.neutrino_spectrum(t_E_1e6, 1e6, 'pi')
-# k_neu_E_1e6 = mag. neutrino_spectrum(t_E_1e6, 1e6, 'k')
-# d0_neu_E_1e6 = mag.neutrino_spectrum(t_E_1e6, 1e6, 'd0')
-# with open('data/neu_E_1e6_no_cf.txt', 'w') as f:
-# 	f.write('# Enu = 1e6 GeV (no cooling)\n')
-# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # d0 / 1/(GeV s)\n')
-# 	for row in zip(t_E_1e6, pi_neu_E_1e6, k_neu_E_1e6, d0_neu_E_1e6):
-# 		f.write(r'{0} {1} {2} {3}'.format(*row))
-# 		f.write('\n')
-
-
-# t_E_1e9 = np.logspace(2, 5, 100)
- 
-# pi_had_E_1e9 = mag.hadron_spectrum(t_E_1e9, 1e9, 'pi')
-# k_had_E_1e9 = mag.hadron_spectrum(t_E_1e9, 1e9,  'k')
-# c_had_E_1e9 = (mag.hadron_spectrum(t_E_1e9, 1e9, 'd0')
-# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'd+')
-# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'd+s')
-# 			+ mag.hadron_spectrum(t_E_1e9, 1e9, 'lam+c'))
-# with open('data/had_E_1e9_no_cf.txt', 'w') as f:
-# 	f.write('# Eh = 1e9 GeV (no cooling)\n')
-# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # c / 1/(GeV s)\n')
-# 	for row in zip(t_E_1e9, pi_had_E_1e9, k_had_E_1e9, c_had_E_1e9):
-# 		f.write(r'{0} {1} {2} {3}'.format(*row))
-# 		f.write('\n')
-
-# pi_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'pi')
-# k_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'k')
-# d0_neu_E_1e9 = mag.neutrino_spectrum(t_E_1e9, 1e9, 'd0')
-# with open('data/neu_E_1e9_with_cf.txt', 'w') as f:
-# 	f.write('# Enu = 1e9 GeV (with cooling)\n')
-# 	f.write('# t / s # pi / 1/(GeV s) # k / 1/(GeV s) # d0 / 1/(GeV s)\n')
-# 	for row in zip(t_E_1e9, pi_neu_E_1e9, k_neu_E_1e9, d0_neu_E_1e9):
-# 		f.write(r'{0} {1} {2} {3}'.format(*row))
-# 		f.write('\n')
-
-
-# E = np.logspace(4, 11, 20)
-
-# pi_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'pi')
-# k_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'k')
-# d0_neu = mag.integrated_neutrino_spectrum(1e2, 1e7, E, 'd0')
-# with open('data/neu_with_cf.txt', 'w') as f:
-# 	f.write('# t1, t2 = 1e2, 1e7 (with cooling)\n')
-# 	f.write('# E / GeV # pi / 1/GeV # k / 1/GeV # d0 / 1/GeV\n')
-# 	for row in zip(E, pi_neu, k_neu, d0_neu):
-# 		f.write(r'{0} {1} {2} {3}'.format(*row))
-# 		f.write('\n')
