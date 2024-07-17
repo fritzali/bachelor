@@ -581,6 +581,36 @@ def magnetar_hadron_spectrum(mag, Kt = 1000, KE = 100, f = 1e-1, b = 1e-1, M = 1
 		f.write(f'# Time / s (horizontal axis)\n')
 		f.write(f'# Energy / GeV (vertical axis)\n')
 		np.savetxt(f, spec)
+	with open('code/tabulate/hadrons/K.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'k')
+		f.write(f'# `K` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	with open('code/tabulate/hadrons/D0.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd0')
+		f.write(f'# `D0` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	with open('code/tabulate/hadrons/Dplus.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+')
+		f.write(f'# `D+` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	with open('code/tabulate/hadrons/DplusS.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+s')
+		f.write(f'# `D+s` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	with open('code/tabulate/hadrons/LAMplusC.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'lam+c')
+		f.write(f'# `Lam+c` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
 	end = time.perf_counter()
 	with open('code/tabulate/hadrons/axes.txt', 'w') as f:
 		f.write(f'# Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
@@ -614,12 +644,52 @@ def magnetar_neutrino_spectrum(mag, K = 1000):
 	x = np.genfromtxt('code/tabulate/hadrons/axes.txt', skip_header=15)
 	d = np.diag(np.insert((x[1:] - x[:-1]), 0, 0.0))
 	with open('code/tabulate/neutrinos/pi.txt', 'w') as f:
-		had = np.genfromtxt('code/tabulate/hadrons/pi.txt')
-		dec = meson_decay_neutrinos(x[None, :], E[:, None], 'pi')
-		spec = dec @ d @ had
 		f.write(f'# `pi` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
 		f.write(f'# Time / s (horizontal axis)\n')
 		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/pi.txt')
+		dec = meson_decay_neutrinos(E[:, None], x[None, :], 'pi')
+		spec = dec @ d @ had
+		np.savetxt(f, spec)
+	with open('code/tabulate/neutrinos/K.txt', 'w') as f:
+		f.write(f'# `K` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/K.txt')
+		dec = meson_decay_neutrinos(E[:, None], x[None, :], 'k')
+		spec = dec @ d @ had
+		np.savetxt(f, spec)
+	with open('code/tabulate/neutrinos/D0.txt', 'w') as f:
+		f.write(f'# `D0` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/D0.txt')
+		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd0')
+		spec = dec @ d @ had
+		np.savetxt(f, spec)
+	with open('code/tabulate/neutrinos/Dplus.txt', 'w') as f:
+		f.write(f'# `D+` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/Dplus.txt')
+		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd+')
+		spec = dec @ d @ had
+		np.savetxt(f, spec)
+	with open('code/tabulate/neutrinos/DplusS.txt', 'w') as f:
+		f.write(f'# `D+s` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/DplusS.txt')
+		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd+s')
+		spec = dec @ d @ had
+		np.savetxt(f, spec)
+	with open('code/tabulate/neutrinos/LAMplusC.txt', 'w') as f:
+		f.write(f'# `Lam+c` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt('code/tabulate/hadrons/LAMplusC.txt')
+		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'lam+c')
+		spec = dec @ d @ had
 		np.savetxt(f, spec)
 	end = time.perf_counter()
 	with open('code/tabulate/neutrinos/axes.txt', 'w') as f:
@@ -633,7 +703,7 @@ def magnetar_neutrino_spectrum(mag, K = 1000):
 		f.write(f'# {end - start}')
 	
 
-magnetar_hadron_spectrum(mag)
+#magnetar_hadron_spectrum(mag)
 magnetar_neutrino_spectrum(mag)
 
 

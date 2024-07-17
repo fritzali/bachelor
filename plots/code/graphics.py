@@ -58,20 +58,86 @@ from functional import *
 t = np.genfromtxt('code/tabulate/hadrons/axes.txt', skip_footer=1)
 E = np.genfromtxt('code/tabulate/hadrons/axes.txt', skip_header=15)
 
-i8 = (np.abs(E - 1e8)).argmin()
-E8 = E[i8]
+en = 1e8
+i = (np.abs(E - en)).argmin()
+en = E[i]
 
 pi = np.genfromtxt('code/tabulate/hadrons/pi.txt')
+K = np.genfromtxt('code/tabulate/hadrons/K.txt')
+D0 = np.genfromtxt('code/tabulate/hadrons/D0.txt')
+Dplus = np.genfromtxt('code/tabulate/hadrons/Dplus.txt')
+DplusS = np.genfromtxt('code/tabulate/hadrons/DplusS.txt')
+LAMplusC = np.genfromtxt('code/tabulate/hadrons/LAMplusC.txt')
 
-pi8 = pi[i8, :]
+pi = pi[i, :]
+K = K[i, :]
+D0 = D0[i, :]
+Dplus = Dplus[i, :]
+DplusS = DplusS[i, :]
+LAMplusC = LAMplusC[i, :]
 
-plt.plot(t, pi8, label=f'{E8:.6} GeV')
+c = D0 + Dplus + DplusS + LAMplusC
+
+N = c.max()
+
+plt.plot(t, pi / N, 'r', label=r'$\pi$')
+plt.plot(t, K / N, 'k', label=r'$K$')
+plt.plot(t, D0 / N, 'b-', label=r'$D^0$')
+plt.plot(t, Dplus / N, 'b--', label=r'$D^+$')
+plt.plot(t, DplusS / N, 'b-.', label=r'$D^+_s$')
+plt.plot(t, LAMplusC / N, 'b:', label=r'$\Lambda^+_c$')
+plt.plot(t, c / N, 'b', lw=10, alpha=0.25, label=r'$c$')
 
 plt.xscale('log')
 plt.yscale('log')
 
 plt.xlim(5e1, 1e7)
-plt.ylim(1e23, 4e27)
+plt.ylim(1e-4, 4e0)
+
+plt.legend()
+
+plt.show()
+
+
+
+t = np.genfromtxt('code/tabulate/neutrinos/axes.txt', skip_footer=1)
+E = np.genfromtxt('code/tabulate/neutrinos/axes.txt', skip_header=15)
+
+en = 1e9
+i = (np.abs(E - en)).argmin()
+en = E[i]
+
+pi = np.genfromtxt('code/tabulate/neutrinos/pi.txt')
+K = np.genfromtxt('code/tabulate/neutrinos/K.txt')
+D0 = np.genfromtxt('code/tabulate/neutrinos/D0.txt')
+Dplus = np.genfromtxt('code/tabulate/neutrinos/Dplus.txt')
+DplusS = np.genfromtxt('code/tabulate/neutrinos/DplusS.txt')
+LAMplusC = np.genfromtxt('code/tabulate/neutrinos/LAMplusC.txt')
+
+pi = pi[i, :]
+K = K[i, :]
+D0 = D0[i, :]
+Dplus = Dplus[i, :]
+DplusS = DplusS[i, :]
+LAMplusC = LAMplusC[i, :]
+
+c = D0 + Dplus + DplusS + LAMplusC
+
+N = c.max()
+
+plt.plot(t, pi / N, 'r', label=r'$\pi$')
+plt.plot(t, K / N, 'k', label=r'$K$')
+plt.plot(t, D0 / N, 'b-', label=r'$D^0$')
+plt.plot(t, Dplus / N, 'b--', label=r'$D^+$')
+plt.plot(t, DplusS / N, 'b-.', label=r'$D^+_s$')
+plt.plot(t, LAMplusC / N, 'b:', label=r'$\Lambda^+_c$')
+plt.plot(t, c / N, 'b', lw=10, alpha=0.25, label=r'$c$')
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlim(5e1, 1e6)
+plt.ylim(1e-4, 4e0)
 
 plt.legend()
 
