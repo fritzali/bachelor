@@ -543,9 +543,9 @@ class magnetar:
 		return np.vectorize(self._integrated_neutrino_spectrum)(t1, t2, E, h, f, b, M, D, N)
 
 
-def magnetar_hadron_spectrum(mag, Kt = 1000, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
 	'''
-	Prints calculated hadron spectra for all types to tabulate/magnetard text files
+	Prints calculated hadron spectra for all types to tabulated text files
 
 	Parameters
 	----------
@@ -623,7 +623,7 @@ def magnetar_hadron_spectrum(mag, Kt = 1000, KE = 100, f = 1e-1, b = 1e-1, M = 1
 
 def magnetar_neutrino_spectrum(mag, K = 100):
 	'''
-	Prints calculated neutrino spectra for all types to tabulate/magnetard text files
+	Prints calculated neutrino spectra for all types to tabulated text files
 
 	Parameters
 	----------
@@ -701,17 +701,17 @@ def magnetar_neutrino_spectrum(mag, K = 100):
 		f.write(f'# {end - start}')
 
 
-def magnetar_integrated_neutrino_spectrum(mag, t1, t2):
+def magnetar_integrated_neutrino_spectrum(mag):
 	'''
-	Prints integrated neutrino spectra for all types to tabulate/magnetard text files
+	Prints integrated neutrino spectra for all types to tabulated text files
 
 	Parameters
 	----------
 	mag : magnetar
 		The magnetar object of which respective methods are used
-	t1 : float
+	ta : float
 		The lower temproal bound of integration
-	t2 : float
+	tb : float
 		The upper temproal bound of integration
 
 	Returns
@@ -719,22 +719,38 @@ def magnetar_integrated_neutrino_spectrum(mag, t1, t2):
 		None
 	'''
 	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
+	t1 = t[(t > 1e3) & (t < 1e4)]
+	t2 = t[(t > 1e4) & (t < 1e5)]
+	t3 = t[(t > 1e3) & (t < 1e7)]
+#	dt1 = (t[1:] - t[:-1])[(t[1:] > 1e3) & (t[1:] < 1e4)]
+#	dt2 = (t[1:] - t[:-1])[(t[1:] > 1e4) & (t[1:] < 1e5)]
+#	dt3 = (t[1:] - t[:-1])[(t[1:] > 1e3) & (t[1:] < 1e7)]
 	E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
 	with open('code/tabulate/magnetar/integrate/pi.txt', 'w') as f:
 		f.write(f'# `pi` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Energy / GeV # Spectrum / 1/GeV\n')
+		f.write(f'{mag}\n')
+		f.write(f'# Energy / GeV ')
+		f.write(f'# Spectrum (1e3 - 1e4 s) / 1/GeV ')
+		f.write(f'# Spectrum (1e4 - 1e5 s) / 1/GeV ')
+		f.write(f'# Spectrum (1e3 - 1e7 s) / 1/GeV\n')
 		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/pi.txt')
-		spec = np.trapezoid(neu, t, axis=1)
-		for row in zip(E, spec):
-			f.write(f'{0}   {1}'.format(*row))
+		y1 = neu[:, (t > 1e3) & (t < 1e4)]
+		y2 = neu[:, (t > 1e4) & (t < 1e5)]
+		y3 = neu[:, (t > 1e3) & (t < 1e7)]
+		spec1 = np.trapezoid(y1, t1, axis=1) # y1 @ dt1 #
+		spec2 = np.trapezoid(y2, t2, axis=1) # y2 @ dt2 #
+		spec3 = np.trapezoid(y3, t3, axis=1) # y3 @ dt3 #
+		for row in zip(E, spec1, spec2, spec3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
 			f.write(f'\n')
 
 
 mag = magnetar(B = 10**14.5)
 
 
-magnetar_hadron_spectrum(mag)
-magnetar_neutrino_spectrum(mag)
+#magnetar_hadron_spectrum(mag)
+#magnetar_neutrino_spectrum(mag)
+magnetar_integrated_neutrino_spectrum(mag)
 
 
 # t = np.logspace(1, 7, 50)

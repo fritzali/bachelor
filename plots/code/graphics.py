@@ -142,3 +142,19 @@ plt.ylim(1e-4, 1e1)
 plt.legend()
 
 plt.show()
+
+
+
+E, pi1, pi2, pi3 = np.genfromtxt('code/tabulate/magnetar/integrate/pi.txt', unpack=True)
+
+plt.plot(E, E**2 * pi1, 'k:')
+plt.plot(E, E**2 * pi2, 'k--')
+plt.plot(E, E**2 * pi3, 'k-')
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlim(1e6, 1e12)
+plt.ylim(1e43, 3e50)
+
+plt.show()
