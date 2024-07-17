@@ -4,6 +4,37 @@ import time
 
 from functional import *
 
+
+def inelastic_hadron_scattering():
+	s = np.logspace(1, 10, 1000)
+
+	p = inelastic_hadron_proton_scattering(s, 'p')
+	pi = inelastic_hadron_proton_scattering(s, 'pi')
+	K = inelastic_hadron_proton_scattering(s, 'k')
+
+	with open('code/tabulate/miscellaneous/inelastic_scattering.txt', 'w') as f:
+		f.write(f'# Hadron Inelastic Scattering Cross Section\n')
+		f.write(f'# s / GeV**2 # sig (proton) / mb # sig (pion) / mb # sig (kaon) / mb\n')
+		for row in zip(s, p, pi, K):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+
+
+def sample_charmed_hadron_cross_section():
+	x = np.logspace(-7, 0, 1000)
+
+	sig1 = charmed_hadron_differential_production(x, 1e12, 'd0')
+	sig2 = charmed_hadron_differential_production(x, 1e10, 'd0')
+	sig3 = charmed_hadron_differential_production(x, 1e8, 'd0')
+
+	with open('code/tabulate/miscellaneous/sample_charm_hadron.txt', 'w') as f:
+		f.write(f'# `D0` Sample Charmed Hadron Cross Section\n')
+		f.write(f'# x # sig (1e12 GeV) / mb # sig (1e10 GeV) / mb # sig (1e8 GeV) / mb\n')
+		for row in zip(x, sig1, sig2, sig3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+
+
 def test_charmed_hadron_cross_section():
 	start = time.perf_counter()
 
@@ -36,4 +67,22 @@ def test_charmed_hadron_cross_section():
 
 	print(f'\nelapsed: {end - start:.3f} s\n')
 
+
+def sample_charmed_hadron_cross_section():
+	x = np.logspace(-7, 0, 1000)
+
+	sig1 = charmed_hadron_differential_production(x, 1e12, 'd0')
+	sig2 = charmed_hadron_differential_production(x, 1e10, 'd0')
+	sig3 = charmed_hadron_differential_production(x, 1e8, 'd0')
+
+	with open('code/tabulate/miscellaneous/sample_charm_hadron.txt', 'w') as f:
+		f.write(f'# `D0` Sample Charmed Hadron Cross Section\n')
+		f.write(f'# x # sig (1e12 GeV) / mb # sig (1e10 GeV) / mb # sig (1e8 GeV) / mb\n')
+		for row in zip(x, sig1, sig2, sig3):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+
+
+inelastic_hadron_scattering()
+sample_charmed_hadron_cross_section()
 test_charmed_hadron_cross_section()

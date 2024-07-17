@@ -98,7 +98,6 @@ def proton_proton_optical_depth(E, n, d):
 		float
 			The dimensionless effective optical depth for protons hitting protons
 	'''
-	return 1
 	M = 0.938
 	s = 2 * (E * M + M**2)
 	kap = 0.5

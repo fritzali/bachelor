@@ -676,9 +676,44 @@ def magnetar_integrated_neutrino_spectrum(mag):
 			f.write(f'\n')
 
 
+def magnetar_collision_factor(mag, f = 1e-1, b = 1e-1, M = 1e1, D = False):
+	'''
+	Prints collision factor from optical depth and cooling
+
+	Parameters
+	----------
+	mag : magnetar
+		The magnetar object of which respective methods are used
+	f : float, optional
+		The efficiency fraction of potential drop acceleration
+	b : float, optional
+		The relativistic velocity fraction
+	M : float, optional
+		The total ejecta mass in solar masses
+	D : bool, optional
+		The option to consider ejecta size for cooling, assumed to be infinite if `False`
+
+	Returns
+	-------
+		None
+	'''
+	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
+	pi = mag.collision_factor(t, 1e9, 'pi')
+	K = mag.collision_factor(t, 1e9, 'k')
+	c = (mag.collision_factor(t, 1e9, 'd0') + mag.collision_factor(t, 1e9, 'd0')
+	   + mag.collision_factor(t, 1e9, 'd0') + mag.collision_factor(t, 1e9, 'd0')) / 4
+	with open('code/tabulate/magnetar/miscellaneous/collision_factor.txt', 'w') as f:
+		f.write(f'# Magnetar Collision Factor\n')
+		f.write(f'# t / s # pi # K # c\n')
+		for row in zip(t, pi, K, c):
+			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			f.write(f'\n')
+
+
 mag = magnetar(B = 10**14.5)
 
 
-#magnetar_hadron_spectrum(mag)
-#magnetar_neutrino_spectrum(mag)
+magnetar_hadron_spectrum(mag)
+magnetar_neutrino_spectrum(mag)
 magnetar_integrated_neutrino_spectrum(mag)
+magnetar_collision_factor(mag)

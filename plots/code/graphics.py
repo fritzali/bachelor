@@ -4,15 +4,32 @@ import matplotlib.pyplot as plt
 from functional import *
 
 
+s, p, pi, K = np.genfromtxt('code/tabulate/miscellaneous/inelastic_scattering.txt', unpack=True)
 
-x = np.logspace(-7, 0, 1000)
-y12 = charmed_hadron_differential_production(x, 1e12, 'd0')
-y10 = charmed_hadron_differential_production(x, 1e10, 'd0')
-y8 = charmed_hadron_differential_production(x, 1e8, 'd0')
+plt.plot(s, p, 'b', label=r'$p \kern-0.1pt p$')
+plt.plot(s, pi, 'r', label=r'$\pi \kern-0.1pt p$')
+plt.plot(s, K, 'k', label=r'$K \kern-0.2pt p$')
 
-plt.plot(x, x * y12, 'b', label=r'$E_p = 10^{12}$ GeV')
-plt.plot(x, x * y10, 'r', label=r'$E_p = 10^{10}$ GeV')
-plt.plot(x, x * y8, 'k', label=r'$E_p = 10^{8}$ GeV')
+plt.xlabel(r'$s$ $\mathrel{/} \kern-0.1pt$ GeV$^2$')
+plt.ylabel(r'$\sigma_{h \kern-0.1pt p}$ $\mathrel{/}$ mb')
+
+plt.xscale('log')
+
+plt.xlim(1e2, 1e9)
+
+plt.legend()
+
+plt.savefig('build/hadron_proton_scattering.pdf')
+plt.savefig('build/hadron_proton_scattering.png')
+plt.close()
+
+
+
+x, y1, y2, y3 = np.genfromtxt('code/tabulate/miscellaneous/sample_charm_hadron.txt', unpack=True)
+
+plt.plot(x, x * y1, 'b', label=r'$E_p = 10^{12}$ GeV')
+plt.plot(x, x * y2, 'r', label=r'$E_p = 10^{10}$ GeV')
+plt.plot(x, x * y3, 'k', label=r'$E_p = 10^{8}$ GeV')
 
 plt.xlabel(r'$x_h \kern-0.8pt = \kern-0.5pt E_h \kern+0.5pt / E_p$')
 plt.ylabel(r'$x_h \kern+0.5pt d\sigma \kern-0.3pt / \kern-0.8pt dx_h \kern+0.2pt$ $\mathrel{/}$ mb')
@@ -31,26 +48,21 @@ plt.close()
 
 
 
-s = np.logspace(1, 10, 1000)
-yp = inelastic_hadron_proton_scattering(s, 'p')
-ypi = inelastic_hadron_proton_scattering(s, 'pi')
-yk = inelastic_hadron_proton_scattering(s, 'k')
+t, pi, K, c = np.genfromtxt('code/tabulate/magnetar/miscellaneous/collision_factor.txt', unpack=True)
 
-plt.plot(s, yp, 'b', label=r'$p \kern-0.1pt p$')
-plt.plot(s, ypi, 'r', label=r'$\pi \kern-0.1pt p$')
-plt.plot(s, yk, 'k', label=r'$K \kern-0.2pt p$')
+plt.plot(t, pi, 'r', label=r'Pion', zorder=2)
+plt.plot(t, K, 'k', label=r'Kaon', zorder=3)
+plt.plot(t, c, 'b', label=r'Charm', zorder=1)
 
-plt.xlabel(r'$s$ $\mathrel{/} \kern-0.1pt$ GeV$^2$')
-plt.ylabel(r'$\sigma_{h \kern-0.1pt p}$ $\mathrel{/}$ mb')
+plt.xlabel(r'$t$ $\mathrel{/} \kern-0.8pt$ s')
 
 plt.xscale('log')
-
-plt.xlim(1e2, 1e9)
+plt.yscale('log')
 
 plt.legend()
 
-plt.savefig('build/hadron_proton_scattering.pdf')
-plt.savefig('build/hadron_proton_scattering.png')
+plt.savefig('build/collision_factor_evolution.pdf')
+plt.savefig('build/collision_factor_evolution.png')
 plt.close()
 
 
@@ -137,15 +149,21 @@ c3 = D03 + Dplus3 + DplusS3 + LAMplusC3
 
 N = (E**2 * c3).max()
 
-# plt.plot(E, E**2 * pi1 / N, 'r:')
-# plt.plot(E, E**2 * pi2 / N, 'r--')
-plt.plot(E, E**2 * pi3 / N, 'r-', label=r'Pion Decay')
-# plt.plot(E, E**2 * K1 / N, 'k:')
-# plt.plot(E, E**2 * K2 / N, 'k--')
-plt.plot(E, E**2 * K3 / N, 'k-', label=r'Kaon Decay')
-# plt.plot(E, E**2 * c1 / N, 'b:')
-# plt.plot(E, E**2 * c2 / N, 'b--')
-plt.plot(E, E**2 * c3 / N, 'b-', label=r'Charm Decay')
+plt.scatter([], [], color='r', label=r'Pion Decay')
+plt.scatter([], [], color='k', label=r'Kaon Decay')
+plt.scatter([], [], color='b', label=r'Charm Decay')
+
+plt.fill_between(E, 3 * E**2 * c3 / N, E**2 * c3 / (3 * N), color='b', alpha=0.25)
+
+plt.plot(E, E**2 * c1 / N, 'b:')
+plt.plot(E, E**2 * c2 / N, 'b--')
+plt.plot(E, E**2 * c3 / N, 'b-')
+plt.plot(E, E**2 * pi1 / N, 'r:')
+plt.plot(E, E**2 * pi2 / N, 'r--')
+plt.plot(E, E**2 * pi3 / N, 'r-')
+plt.plot(E, E**2 * K1 / N, 'k:', label=r'$10^3 \kern+1.5pt$s $-$ $10^4 \kern+1.5pt$s')
+plt.plot(E, E**2 * K2 / N, 'k--', label=r'$10^4 \kern+1.5pt$s $-$ $10^5 \kern+1.5pt$s')
+plt.plot(E, E**2 * K3 / N, 'k-', label=r'$10^3 \kern+1.5pt$s $-$ $10^7 \kern+1.5pt$s') 
 
 plt.xlabel(r'$t$ $\mathrel{/} \kern-0.8pt$ s')
 plt.ylabel(r'$E_\nu^2\phi_\nu$ $\mathrel{/} \kern-0.7pt$ max$\bigl( \kern-0.3pt E_\nu^2\phi^c_\nu \kern+0.2pt \bigr)$')
