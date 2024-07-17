@@ -181,7 +181,6 @@ def charmed_hadron_differential_production(x, E, h, N = 100):
 	else:
 		u = (1 - m / (x * E))**(1/2)
 	z = np.linspace(x, 1, N)
-	dz = z[1] - z[0]
-	dsig = (charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)[1:]
-	sig = np.sum(dz * dsig)
+	y = (charm_quark_differential_production(x / z, E) * ff.charmed_hadron_fragmentation_function(z, h) / z)
+	sig = np.trapezoid(y, z)
 	return u * sig

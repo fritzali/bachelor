@@ -11,8 +11,7 @@ def test_charmed_hadron_cross_section():
 	M = 0.938
 	E = (s - 2 * M**2) / (2 * M)
 
-	x = np.logspace(-10, 0, 100000)
-	dx = x[1:] - x[:-1]
+	x = np.logspace(-10, 0, 10000)
 
 	had = ['D0', 'D+', 'D+s']
 	val = [2.072, 0.834, 0.353]
@@ -20,8 +19,8 @@ def test_charmed_hadron_cross_section():
 	f = np.empty(0)
 
 	for h in zip(had, val):
-		dsig = charmed_hadron_differential_production(x, E, h[0])[1:]
-		sig = np.sum(dx * dsig)
+		y = charmed_hadron_differential_production(x, E, h[0])
+		sig = np.trapezoid(y, x)
 		r = 2 * sig / h[1]
 		f = np.append(f, r)
 

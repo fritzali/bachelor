@@ -10,6 +10,9 @@ Object oriented implementation of magnetar class as described in the thesis docu
 import numpy as np
 from warnings import warn
 
+import datetime
+import time
+
 from functional import *
 
 
@@ -86,10 +89,10 @@ class magnetar:
 
 	def __str__(self):
 		'''Defines string output for printing the magnetar object.'''
-		str1 = f'Magnetar:\n    R = {self.R:.3} cm\n    B = {self.B:.3} G\n    o = {self.o:.3} rad / s\n    '
-		str2 = f'chi = {self.chi:.3} rad\n    I = {self.I:.3} g * cm**2\n    mu = {self.mu:.3} erg / G\n    '
-		str3 = f'tsd = {self.tsd:.3} s\n    lum = {self.lum:.3} erg / s\n    E = {self.E(0):.3} GeV\n    '
-		str4 = f'spec = {self.proton_spectrum_prefactor(0):.3}\n    n = {self.number_density(self.tsd):.3} 1 / cm**3'
+		str1 = f'# Magnetar:\n#     R = {self.R:.3} cm\n#     B = {self.B:.3} G\n#     o = {self.o:.3} rad / s\n#     '
+		str2 = f'chi = {self.chi:.3} rad\n#     I = {self.I:.3} g * cm**2\n#     mu = {self.mu:.3} erg / G\n#     '
+		str3 = f'tsd = {self.tsd:.3} s\n#     lum = {self.lum:.3} erg / s\n#     E = {self.E(0):.3} GeV\n#     '
+		str4 = f'spec = {self.proton_spectrum_prefactor(0):.3}\n#     n = {self.number_density(self.tsd):.3} 1 / cm**3'
 		return str1 + str2 + str3 + str4
 
 	def L(self, t):
@@ -177,6 +180,28 @@ class magnetar:
 		return 3 * M * 1.9884e30/ (4 * np.pi * r**3 * 1.672621926e-27)
 
 	def _cooling_factor(self, t, E, h, b = 1e-1, M = 1e1, D = False):
+		'''
+		Returns the ejecta material cooling factor.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Eh as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+
+		Returns
+		-------
+			The unitless ejecta material cooling factor
+		'''
 		n = self.number_density(t, b, M)
 		d = self.ejecta_radius(t, b)
 		if D is True:
@@ -185,18 +210,100 @@ class magnetar:
 			return hadron_proton_cooling_factor(E, n, h)
 
 	def cooling_factor(self, t, E, h, b = 1e-1, M = 1e1, D = False):
+		'''
+		Returns the ejecta material cooling factor.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Eh as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+
+		Returns
+		-------
+			The unitless ejecta material cooling factor
+		'''
 		return np.vectorize(self._cooling_factor)(t, E, h, b, M, D)
 
 	def _optical_depth(self, t, f = 1e-1, b = 1e-1, M = 1e1):
+		'''
+		Returns the ejecta material proton effective optical depth.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+
+		Returns
+		-------
+			The unitless ejecta material proton effective optical depth
+		'''
 		Ep = self.E(t, f)
 		n = self.number_density(t, b, M)
 		d = self.ejecta_radius(t, b)
 		return proton_proton_optical_depth(Ep, n, d)
 
 	def optical_depth(self, t, f = 1e-1, b = 1e-1, M = 1e1):
+		'''
+		Returns the ejecta material proton effective optical depth.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+
+		Returns
+		-------
+			The unitless ejecta material proton effective optical depth
+		'''
 		return np.vectorize(self._optical_depth)(t, f, b, M)
 
 	def collision_factor(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False):
+		'''
+		Returns the ejecta material combined attenuation factor.
+
+		Parameters
+		----------
+		t : float
+			The time passed from magnetar formation in s
+		E : float
+			The projectile energy Eh as viewed from target rest coordinates in GeV
+		h : {'pi', 'k', 'd0', 'd+', 'd+s', 'lam+c'}
+			The type of hadronic particle
+		f : float, optional
+			The efficiency fraction of potential drop acceleration
+		b : float, optional
+			The relativistic velocity fraction
+		M : float, optional
+			The total ejecta mass in solar masses
+		D : bool, optional
+			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+
+		Returns
+		-------
+			The unitless ejecta material combined attenuation factor
+		'''
 		cf = self.cooling_factor(t, E, h, b, M, D)
 		od = self.optical_depth(t, f, b, M)
 		return cf * od
@@ -437,30 +544,122 @@ class magnetar:
 
 
 mag = magnetar()
-print(mag)
 
-t = np.logspace(1, 7, 50)
+def magnetar_hadron_spectrum(mag, Kt = 1000, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+	'''
+	Prints calculated hadron spectra for all types to tabulated text files
 
-pi = mag.hadron_spectrum(t, 1e8, 'pi')
-k = mag.hadron_spectrum(t, 1e8, 'k')
-c = (mag.hadron_spectrum(t, 1e8, 'd0')
-	+ mag.hadron_spectrum(t, 1e8, 'd+')
-	+ mag.hadron_spectrum(t, 1e8, 'd+s')
-	+ mag.hadron_spectrum(t, 1e8, 'lam+c'))
+	Parameters
+	----------
+	mag : magnetar
+		The magnetar object of which respective methods are used
+	Kt : int, optional
+		The number of points in time
+	KE : int, optional
+		The number of energy values
+	f : float, optional
+		The efficiency fraction of potential drop acceleration
+	b : float, optional
+		The relativistic velocity fraction
+	M : float, optional
+		The total ejecta mass in solar masses
+	D : bool, optional
+		The option to consider ejecta size for cooling, assumed to be infinite if `False`
+	N : int, optional
+		The number of steps for integration accuracy
 
-import matplotlib.pyplot as plt
+	Returns
+	-------
+		None
+	'''
+	start = time.perf_counter()
+	t = np.logspace(1, 8, Kt)
+	E = np.logspace(5, 12, KE)
+	with open('code/tabulate/hadrons/pi.txt', 'w') as f:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'pi')
+		f.write(f'# `pi` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	end = time.perf_counter()
+	with open('code/tabulate/hadrons/axes.txt', 'w') as f:
+		f.write(f'# Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}')
+		f.write(f'\n# Time / s (horizontal axis)\n')
+		np.savetxt(f, t, newline=' ')
+		f.write(f'\n# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, E, newline=' ')
+		f.write(f'\n# Elapsed Time / s\n')
+		f.write(f'# {end - start}')
 
-plt.plot(t, pi)
-plt.plot(t, k)
-plt.plot(t, c)
 
-plt.xscale('log')
-plt.yscale('log')
+def magnetar_neutrino_spectrum(mag, K = 1000):
+	'''
+	Prints calculated neutrino spectra for all types to tabulated text files
 
-plt.xlim(5e1, 1e7)
-plt.ylim(1e23, 5e27)
+	Parameters
+	----------
+	mag : magnetar
+		The magnetar object of which respective methods are used
+	K : int, optional
+		The number of energy values
 
-plt.show()
+	Returns
+	-------
+		None
+	'''
+	start = time.perf_counter()
+	E = np.logspace(5, 12, K)
+	t = np.genfromtxt('code/tabulate/hadrons/axes.txt', skip_footer=1)
+	x = np.genfromtxt('code/tabulate/hadrons/axes.txt', skip_header=15)
+	d = np.diag(np.insert((x[1:] - x[:-1]), 0, 0.0))
+	with open('code/tabulate/neutrinos/pi.txt', 'w') as f:
+		had = np.genfromtxt('code/tabulate/hadrons/pi.txt')
+		dec = meson_decay_neutrinos(x[None, :], E[:, None], 'pi')
+		spec = dec @ d @ had
+		f.write(f'# `pi` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'# Time / s (horizontal axis)\n')
+		f.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, spec)
+	end = time.perf_counter()
+	with open('code/tabulate/neutrinos/axes.txt', 'w') as f:
+		f.write(f'# Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		f.write(f'{mag}')
+		f.write(f'\n# Time / s (horizontal axis)\n')
+		np.savetxt(f, t, newline=' ')
+		f.write(f'\n# Energy / GeV (vertical axis)\n')
+		np.savetxt(f, E, newline=' ')
+		f.write(f'\n# Elapsed Time / s\n')
+		f.write(f'# {end - start}')
+	
+
+magnetar_hadron_spectrum(mag)
+magnetar_neutrino_spectrum(mag)
+
+
+
+# t = np.logspace(1, 7, 50)
+# 
+# pi = mag.hadron_spectrum(t, 1e8, 'pi')
+# k = mag.hadron_spectrum(t, 1e8, 'k')
+# c = (mag.hadron_spectrum(t, 1e8, 'd0')
+# 	+ mag.hadron_spectrum(t, 1e8, 'd+')
+# 	+ mag.hadron_spectrum(t, 1e8, 'd+s')
+# 	+ mag.hadron_spectrum(t, 1e8, 'lam+c'))
+# 
+# import matplotlib.pyplot as plt
+# 
+# plt.plot(t, pi)
+# plt.plot(t, k)
+# plt.plot(t, c)
+# 
+# plt.xscale('log')
+# plt.yscale('log')
+# 
+# plt.xlim(5e1, 1e7)
+# plt.ylim(1e23, 5e27)
+# 
+# plt.show()
 
 # t_E_1e6 = np.logspace(3, 7, 100)
 
