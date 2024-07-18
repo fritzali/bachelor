@@ -29,7 +29,12 @@
 \setkomafont{captionlabel}{\normalfont\selectfont\scshape}
 \setkomafont{disposition}{\normalfont}
 
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{\subsectiontocdepth}
+
+\RedeclareSectionCommand[
+	tocentryformat=\normalfont\small,
+	tocpagenumberformat=\normalfont\small,
+]{subsection}
 
 \usepackage{libertinus}
 
