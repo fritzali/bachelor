@@ -19,7 +19,7 @@ Parametrizations of hadronic cross sections as described in the thesis document.
 import numpy as np
 from warnings import warn
 
-import parametrizations.fragmentation_function as ff
+import code.parametrizations.fragmentation_function as ff
 
 def total_hadron_proton_scattering(s, h):
 	'''

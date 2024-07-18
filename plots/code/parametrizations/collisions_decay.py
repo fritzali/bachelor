@@ -12,7 +12,7 @@ Parametrization of decay and collision as described in the thesis document.
 '''
 import numpy as np
 
-import parametrizations.cross_sections as cr
+import code.parametrizations.cross_sections as cr
 
 
 def hadron_proton_cooling_factor(E, n, h, d = None):

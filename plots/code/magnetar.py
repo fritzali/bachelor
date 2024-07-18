@@ -13,7 +13,7 @@ from warnings import warn
 import datetime
 import time
 
-from functional import *
+from code.functional import *
 
 
 class magnetar:
@@ -279,7 +279,7 @@ class magnetar:
 		'''
 		return np.vectorize(self._optical_depth)(t, f, b, M)
 
-	def collision_factor(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False):
+	def collision_factor(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False):
 		'''
 		Returns the ejecta material combined attenuation factor.
 
@@ -305,10 +305,13 @@ class magnetar:
 			The unitless ejecta material combined attenuation factor
 		'''
 		cf = self.cooling_factor(t, E, h, b, M, D)
-		od = self.optical_depth(t, f, b, M)
-		return cf * od
+		if O is True:
+			od = self.optical_depth(t, f, b, M)
+			return cf * od
+		else:
+			return cf
 
-	def _hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+	def _hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
 		'''
 		Returns the hadron production spectrum from injection of protons.
 
@@ -353,10 +356,10 @@ class magnetar:
 			case _:
 				raise ValueError(f'`{h.lower()}` is an invalid hadron identifyer, use `pi`, `k`, `d0`, `d+`, `d+s` or `lam+c` instead')
 		sig = self.proton_spectrum_prefactor(t)
-		f = self.collision_factor(t, E, h, f, b, M, D)
+		f = self.collision_factor(t, E, h, f, b, M, D, O)
 		return prod * sig * f
 
-	def hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+	def hadron_spectrum(self, t, E, h, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
 		'''
 		Returns the hadron spectrum from injection of protons.
 
@@ -376,6 +379,8 @@ class magnetar:
 			The total ejecta mass in solar masses
 		D : bool, optional
 			The option to consider ejecta size for cooling, assumed to be infinite if `False`
+		O : bool, optional
+			The option to include an effective optical depth, ignored if `False`
 		N : int, optional
 			The number of steps for integration accuracy
 
@@ -386,7 +391,7 @@ class magnetar:
 		return np.vectorize(self._hadron_spectrum)(t, E, h, f, b, M, D, N)
 
 
-def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, N = 100):
+def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
 	'''
 	Prints calculated hadron spectra for all types to tabulated text files
 
@@ -406,6 +411,8 @@ def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e
 		The total ejecta mass in solar masses
 	D : bool, optional
 		The option to consider ejecta size for cooling, assumed to be infinite if `False`
+	O : bool, optional
+		The option to include an effective optical depth, ignored if `False`
 	N : int, optional
 		The number of steps for integration accuracy
 

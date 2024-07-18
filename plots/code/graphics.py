@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from functional import *
+from code.functional import *
 
 
 s, p, pi, K = np.genfromtxt('code/tabulate/miscellaneous/inelastic_scattering.txt', unpack=True)
@@ -113,7 +113,7 @@ plt.savefig('build/charm_decay_comparison.pdf')
 plt.savefig('build/charm_decay_comparison.png')
 plt.close()
 
-plt.fill_between(t, 3 * c / N, c / (3 * N), color='b', alpha=0.25, zorder=0)
+plt.fill_between(t, 3 * c / N, c / (3 * N), color='none', facecolor='b', alpha=0.25, zorder=0)
 
 plt.plot(t, pi / N, 'r', label=r'Pion Decay', zorder=3)
 plt.plot(t, K / N, 'k', label=r'Kaon Decay', zorder=2)
@@ -153,7 +153,7 @@ plt.scatter([], [], color='r', label=r'Pion Decay')
 plt.scatter([], [], color='k', label=r'Kaon Decay')
 plt.scatter([], [], color='b', label=r'Charm Decay')
 
-plt.fill_between(E, 3 * E**2 * c3 / N, E**2 * c3 / (3 * N), color='b', alpha=0.25)
+plt.fill_between(E, 3 * E**2 * c3 / N, E**2 * c3 / (3 * N), color='none', facecolor='b', alpha=0.25)
 
 plt.plot(E, E**2 * c1 / N, 'b:')
 plt.plot(E, E**2 * c2 / N, 'b--')

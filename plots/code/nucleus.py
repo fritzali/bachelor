@@ -1,5 +1,5 @@
 import numpy as np
 
-from functional import *
+from code.functional import *
 
 

@@ -43,10 +43,10 @@ Vectorization of given parametrizations.
 
 import numpy as np
 
-import parametrizations.collisions_decay as cd
-import parametrizations.cross_sections as cr
-import parametrizations.distribution_spectra as ds
-import parametrizations.fragmentation_function as ff
+import code.parametrizations.collisions_decay as cd
+import code.parametrizations.cross_sections as cr
+import code.parametrizations.distribution_spectra as ds
+import code.parametrizations.fragmentation_function as ff
 
 
 hadron_proton_cooling_factor = np.vectorize(cd.hadron_proton_cooling_factor)

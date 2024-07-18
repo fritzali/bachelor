@@ -19,8 +19,8 @@ Parametrizations of spectral distributions as described in the thesis document.
 import numpy as np
 from warnings import warn
 
-import parametrizations.cross_sections as cr
-import parametrizations.fragmentation_function as ff
+import code.parametrizations.cross_sections as cr
+import code.parametrizations.fragmentation_function as ff
 
 
 def meson_production(x, E, h):

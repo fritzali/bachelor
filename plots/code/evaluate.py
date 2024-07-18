@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-from functional import *
+from code.functional import *
 
 
 def inelastic_hadron_scattering():
