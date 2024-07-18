@@ -305,7 +305,7 @@ class magnetar:
 			The unitless ejecta material combined attenuation factor
 		'''
 		cf = self.cooling_factor(t, E, h, b, M, D)
-		if O is True:
+		if O:
 			od = self.optical_depth(t, f, b, M)
 			return cf * od
 		else:
@@ -388,10 +388,10 @@ class magnetar:
 		-------
 			The hadron production spectrum from injection of protons in 1 / (GeV s)
 		'''
-		return np.vectorize(self._hadron_spectrum)(t, E, h, f, b, M, D, N)
+		return np.vectorize(self._hadron_spectrum)(t, E, h, f, b, M, D, O, N)
 
 
-def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
+def magnetar_hadron_spectrum(mag, reg, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
 	'''
 	Prints calculated hadron spectra for all types to tabulated text files
 
@@ -399,6 +399,8 @@ def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e
 	----------
 	mag : magnetar
 		The magnetar object of which respective methods are used
+	reg : string
+		The directory string to which files are saved
 	Kt : int, optional
 		The number of points in time
 	KE : int, optional
@@ -423,55 +425,55 @@ def magnetar_hadron_spectrum(mag, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e
 	start = time.perf_counter()
 	t = np.logspace(1, 8, Kt)
 	E = np.logspace(5, 12, KE)
-	with open('code/tabulate/magnetar/hadrons/pi.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'pi')
-		f.write(f'# `pi` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/hadrons/K.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'k')
-		f.write(f'# `K` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/hadrons/D0.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd0')
-		f.write(f'# `D0` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/hadrons/Dplus.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+')
-		f.write(f'# `D+` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/hadrons/DplusS.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+s')
-		f.write(f'# `D+s` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/hadrons/LAMplusC.txt', 'w') as f:
-		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'lam+c')
-		f.write(f'# `Lam+c` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, spec)
+	with open(f'{reg}/hadrons/pi.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'pi', f, b, M, D, O, N)
+		file.write(f'# `pi` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
+	with open(f'{reg}/hadrons/K.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'k', f, b, M, D, O, N)
+		file.write(f'# `K` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
+	with open(f'{reg}/hadrons/D0.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd0', f, b, M, D, O, N)
+		file.write(f'# `D0` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
+	with open(f'{reg}/hadrons/Dplus.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+', f, b, M, D, O, N)
+		file.write(f'# `D+` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
+	with open(f'{reg}/hadrons/DplusS.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'd+s', f, b, M, D, O, N)
+		file.write(f'# `D+s` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
+	with open(f'{reg}/hadrons/LAMplusC.txt', 'w') as file:
+		spec = mag.hadron_spectrum(t[None, :], E[:, None], 'lam+c', f, b, M, D, O, N)
+		file.write(f'# `Lam+c` Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, spec)
 	end = time.perf_counter()
-	with open('code/tabulate/magnetar/hadrons/axes.txt', 'w') as f:
-		f.write(f'# Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}')
-		f.write(f'\n# Time / s (horizontal axis)\n')
-		np.savetxt(f, t, newline=' ')
-		f.write(f'\n# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, E, newline=' ')
-		f.write(f'\n# Elapsed Time / s\n')
-		f.write(f'# {end - start}')
+	with open(f'{reg}/hadrons/axes.txt', 'w') as file:
+		file.write(f'# Hadron Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}')
+		file.write(f'\n# Time / s (horizontal axis)\n')
+		np.savetxt(file, t, newline=' ')
+		file.write(f'\n# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, E, newline=' ')
+		file.write(f'\n# Elapsed Time / s\n')
+		file.write(f'# {end - start}')
 
 
-def magnetar_neutrino_spectrum(mag, K = 100):
+def magnetar_neutrino_spectrum(mag, reg, K = 100):
 	'''
 	Prints calculated neutrino spectra for all types to tabulated text files
 
@@ -479,6 +481,8 @@ def magnetar_neutrino_spectrum(mag, K = 100):
 	----------
 	mag : magnetar
 		The magnetar object of which respective methods are used
+	reg : string
+		The directory string to which files are saved
 	K : int, optional
 		The number of energy values
 
@@ -488,70 +492,70 @@ def magnetar_neutrino_spectrum(mag, K = 100):
 	'''
 	start = time.perf_counter()
 	E = np.logspace(5, 12, K)
-	t = np.genfromtxt('code/tabulate/magnetar/hadrons/axes.txt', skip_footer=1)
-	x = np.genfromtxt('code/tabulate/magnetar/hadrons/axes.txt', skip_header=15)
+	t = np.genfromtxt(f'{reg}/hadrons/axes.txt', skip_footer=1)
+	x = np.genfromtxt(f'{reg}/hadrons/axes.txt', skip_header=15)
 	d = np.diag(np.insert((x[1:] - x[:-1]), 0, 0.0))
-	with open('code/tabulate/magnetar/neutrinos/pi.txt', 'w') as f:
-		f.write(f'# `pi` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/pi.txt')
+	with open(f'{reg}/neutrinos/pi.txt', 'w') as file:
+		file.write(f'# `pi` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/pi.txt')
 		dec = meson_decay_neutrinos(E[:, None], x[None, :], 'pi')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/neutrinos/K.txt', 'w') as f:
-		f.write(f'# `K` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/K.txt')
+		np.savetxt(file, spec)
+	with open(f'{reg}/neutrinos/K.txt', 'w') as file:
+		file.write(f'# `K` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/K.txt')
 		dec = meson_decay_neutrinos(E[:, None], x[None, :], 'k')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/neutrinos/D0.txt', 'w') as f:
-		f.write(f'# `D0` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/D0.txt')
+		np.savetxt(file, spec)
+	with open(f'{reg}/neutrinos/D0.txt', 'w') as file:
+		file.write(f'# `D0` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/D0.txt')
 		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd0')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/neutrinos/Dplus.txt', 'w') as f:
-		f.write(f'# `D+` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/Dplus.txt')
+		np.savetxt(file, spec)
+	with open(f'{reg}/neutrinos/Dplus.txt', 'w') as file:
+		file.write(f'# `D+` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/Dplus.txt')
 		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd+')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/neutrinos/DplusS.txt', 'w') as f:
-		f.write(f'# `D+s` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/DplusS.txt')
+		np.savetxt(file, spec)
+	with open(f'{reg}/neutrinos/DplusS.txt', 'w') as file:
+		file.write(f'# `D+s` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/DplusS.txt')
 		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'd+s')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
-	with open('code/tabulate/magnetar/neutrinos/LAMplusC.txt', 'w') as f:
-		f.write(f'# `Lam+c` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'# Time / s (horizontal axis)\n')
-		f.write(f'# Energy / GeV (vertical axis)\n')
-		had = np.genfromtxt('code/tabulate/magnetar/hadrons/LAMplusC.txt')
+		np.savetxt(file, spec)
+	with open(f'{reg}/neutrinos/LAMplusC.txt', 'w') as file:
+		file.write(f'# `Lam+c` Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'# Time / s (horizontal axis)\n')
+		file.write(f'# Energy / GeV (vertical axis)\n')
+		had = np.genfromtxt(f'{reg}/hadrons/LAMplusC.txt')
 		dec = charmed_hadron_decay_neutrinos(E[:, None], x[None, :], 'lam+c')
 		spec = dec @ d @ had
-		np.savetxt(f, spec)
+		np.savetxt(file, spec)
 	end = time.perf_counter()
-	with open('code/tabulate/magnetar/neutrinos/axes.txt', 'w') as f:
-		f.write(f'# Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}')
-		f.write(f'\n# Time / s (horizontal axis)\n')
-		np.savetxt(f, t, newline=' ')
-		f.write(f'\n# Energy / GeV (vertical axis)\n')
-		np.savetxt(f, E, newline=' ')
-		f.write(f'\n# Elapsed Time / s\n')
-		f.write(f'# {end - start}')
+	with open(f'{reg}/neutrinos/axes.txt', 'w') as file:
+		file.write(f'# Neutrino Spectrum / 1/(GeVs) - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}')
+		file.write(f'\n# Time / s (horizontal axis)\n')
+		np.savetxt(file, t, newline=' ')
+		file.write(f'\n# Energy / GeV (vertical axis)\n')
+		np.savetxt(file, E, newline=' ')
+		file.write(f'\n# Elapsed Time / s\n')
+		file.write(f'# {end - start}')
 
 
-def magnetar_integrated_neutrino_spectrum(mag):
+def magnetar_integrated_neutrino_spectrum(mag, reg):
 	'''
 	Prints integrated neutrino spectra for all types to tabulated text files
 
@@ -559,6 +563,8 @@ def magnetar_integrated_neutrino_spectrum(mag):
 	----------
 	mag : magnetar
 		The magnetar object of which respective methods are used
+	reg : string
+		The directory string to which files are saved
 	ta : float
 		The lower temproal bound of integration
 	tb : float
@@ -568,7 +574,7 @@ def magnetar_integrated_neutrino_spectrum(mag):
 	-------
 		None
 	'''
-	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
+	t = np.genfromtxt(f'{reg}/neutrinos/axes.txt', skip_footer=1)
 	str1 = '(1e3 - 1e3)'
 	str2 = '(1e4 - 1e5)'
 	str3 = '(1e3 - 1e7)'
@@ -578,15 +584,15 @@ def magnetar_integrated_neutrino_spectrum(mag):
 	t1 = t[con1]
 	t2 = t[con2]
 	t3 = t[con3]
-	E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
-	with open('code/tabulate/magnetar/integrate/pi.txt', 'w') as f:
-		f.write(f'# `pi` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/pi.txt')
+	E = np.genfromtxt(f'{reg}/neutrinos/axes.txt', skip_header=15)
+	with open(f'{reg}/integrate/pi.txt', 'w') as file:
+		file.write(f'# `pi` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/pi.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -594,16 +600,16 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-	with open('code/tabulate/magnetar/integrate/K.txt', 'w') as f:
-		f.write(f'# `K` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/K.txt')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
+	with open(f'{reg}/integrate/K.txt', 'w') as file:
+		file.write(f'# `K` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/K.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -611,16 +617,16 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-	with open('code/tabulate/magnetar/integrate/D0.txt', 'w') as f:
-		f.write(f'# `D0` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/D0.txt')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
+	with open(f'{reg}/integrate/D0.txt', 'w') as file:
+		file.write(f'# `D0` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/D0.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -628,16 +634,16 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-	with open('code/tabulate/magnetar/integrate/Dplus.txt', 'w') as f:
-		f.write(f'# `D+` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/Dplus.txt')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
+	with open(f'{reg}/integrate/Dplus.txt', 'w') as file:
+		file.write(f'# `D+` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/Dplus.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -645,16 +651,16 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-	with open('code/tabulate/magnetar/integrate/DplusS.txt', 'w') as f:
-		f.write(f'# `D+s` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/DplusS.txt')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
+	with open(f'{reg}/integrate/DplusS.txt', 'w') as file:
+		file.write(f'# `D+s` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/DplusS.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -662,16 +668,16 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-	with open('code/tabulate/magnetar/integrate/LAMplusC.txt', 'w') as f:
-		f.write(f'# `Lam+c` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
-		f.write(f'{mag}\n')
-		f.write(f'# Energy / GeV ')
-		f.write(f'# Spectrum {str1} / 1/GeV ')
-		f.write(f'# Spectrum {str2} / 1/GeV ')
-		f.write(f'# Spectrum {str3} / 1/GeV\n')
-		neu = np.genfromtxt('code/tabulate/magnetar/neutrinos/LAMplusC.txt')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
+	with open(f'{reg}/integrate/LAMplusC.txt', 'w') as file:
+		file.write(f'# `Lam+c` Integrated Spectrum / 1/GeV - {datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")}\n')
+		file.write(f'{mag}\n')
+		file.write(f'# Energy / GeV ')
+		file.write(f'# Spectrum {str1} / 1/GeV ')
+		file.write(f'# Spectrum {str2} / 1/GeV ')
+		file.write(f'# Spectrum {str3} / 1/GeV\n')
+		neu = np.genfromtxt(f'{reg}/neutrinos/LAMplusC.txt')
 		y1 = neu[:, con1]
 		y2 = neu[:, con2]
 		y3 = neu[:, con3]
@@ -679,48 +685,20 @@ def magnetar_integrated_neutrino_spectrum(mag):
 		spec2 = np.trapezoid(y2, t2, axis=1)
 		spec3 = np.trapezoid(y3, t3, axis=1)
 		for row in zip(E, spec1, spec2, spec3):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
-
-
-def magnetar_collision_factor(mag, f = 1e-1, b = 1e-1, M = 1e1, D = False):
-	'''
-	Prints collision factor from optical depth and cooling
-
-	Parameters
-	----------
-	mag : magnetar
-		The magnetar object of which respective methods are used
-	f : float, optional
-		The efficiency fraction of potential drop acceleration
-	b : float, optional
-		The relativistic velocity fraction
-	M : float, optional
-		The total ejecta mass in solar masses
-	D : bool, optional
-		The option to consider ejecta size for cooling, assumed to be infinite if `False`
-
-	Returns
-	-------
-		None
-	'''
-	t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
-	pi = mag.collision_factor(t, 1e9, 'pi')
-	K = mag.collision_factor(t, 1e9, 'k')
-	c = (mag.collision_factor(t, 1e9, 'd0') + mag.collision_factor(t, 1e9, 'd0')
-	   + mag.collision_factor(t, 1e9, 'd0') + mag.collision_factor(t, 1e9, 'd0')) / 4
-	with open('code/tabulate/magnetar/miscellaneous/collision_factor.txt', 'w') as f:
-		f.write(f'# Magnetar Collision Factor\n')
-		f.write(f'# t / s # pi # K # c\n')
-		for row in zip(t, pi, K, c):
-			f.write(r'{0}   {1}   {2}   {3}'.format(*row))
-			f.write(f'\n')
+			file.write(r'{0}   {1}   {2}   {3}'.format(*row))
+			file.write(f'\n')
 
 
 mag = magnetar(B = 10**14.5)
 
 
-magnetar_hadron_spectrum(mag)
-magnetar_neutrino_spectrum(mag)
-magnetar_integrated_neutrino_spectrum(mag)
-magnetar_collision_factor(mag)
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/without', O = False)
+magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
+magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
+
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/with', O = True)
+magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
+magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
+
+
+print(f'\n# Default\n{magnetar()}\n')
