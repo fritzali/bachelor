@@ -48,25 +48,6 @@ plt.close()
 
 
 
-t, pi, K, c = np.genfromtxt('code/tabulate/magnetar/miscellaneous/collision_factor.txt', unpack=True)
-
-plt.plot(t, pi, 'r', label=r'Pion', zorder=2)
-plt.plot(t, K, 'k', label=r'Kaon', zorder=3)
-plt.plot(t, c, 'b', label=r'Charm', zorder=1)
-
-plt.xlabel(r'$t$ $\mathrel{/} \kern-0.8pt$ s')
-
-plt.xscale('log')
-plt.yscale('log')
-
-plt.legend()
-
-plt.savefig('build/collision_factor_evolution.pdf')
-plt.savefig('build/collision_factor_evolution.png')
-plt.close()
-
-
-
 t = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_footer=1)
 E = np.genfromtxt('code/tabulate/magnetar/neutrinos/axes.txt', skip_header=15)
 

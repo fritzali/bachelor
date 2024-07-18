@@ -1,4 +1,4 @@
-# `pi` Integrated Spectrum / 1/GeV - 2024/07/18 10:30:27
+# `pi` Integrated Spectrum / 1/GeV - 2024/07/18 10:48:25
 # Magnetar:
 #     R = 1e+06 cm
 #     B = 3.16e+14 G
