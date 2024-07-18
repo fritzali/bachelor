@@ -19,9 +19,11 @@
 
 	\input{content/abbreviations.tex}
 
-	\tableofcontents
-	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
+	\begin{spacing}{0.97531}
+		\tableofcontents
+	\end{spacing}
 	\enlargethispage{2\baselineskip}\newpage
+	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
 
 	\renewcommand{\listfigurename}{Figures}\listoffigures
 	{\renewcommand*{\chaptermarkformat}{}\renewcommand*{\sectionmarkformat}{}\chaptermark{}}
@@ -38,9 +40,6 @@
 	\input{content/methods.tex}
 	\input{content/results.tex}
 	\input{content/conclusion.tex}
-
-%	\renewcommand{\thesection}{\Alph{section}}
-%	\input{content/appendix.tex}
 
 	\printbibliography[heading=bibintoc]
 

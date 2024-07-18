@@ -338,3 +338,31 @@ to the normal vector of the accretion disk plane. The height parameter defined i
 characterizes diffuse density distributions. In contrast to this, the highly simplified case considered here instead assumes a sharply
 bound disk of constant height. Cross sections and spectra are taken as presented in sections \ref{sec:cross} and \ref{sec:spectral} with
 charmed hadron scattering cross sections being approximated to that of kaons.
+
+
+
+\section{Implementation}
+\label{sec:implementation}
+
+In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
+this task allows the general case
+\begin{align*}
+	F(x, y) \kern+1.5pt &= \int_{z_{-}}^{z_{+}} dz \: G(x, z) \, H(z, y) \\
+	\intertext{to be rewritten as a Riemann sum. Assuming $G$ and $H$ are integrable over a given interval,}
+	F_{ij} \kern+1.8pt &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
+\end{align*}
+converges to the exact solution for sufficiently small steps. Transforming variables
+\begin{align*}
+	&&&& x \rightarrow x_i && y \rightarrow y_j && z \rightarrow z_k &&&&
+\end{align*}
+and defining $D_{kk} = z_{k+1} \kern-1.0pt - z_k$ leads to the above notation. It is easily shown how this expression in terms of
+indices translates to the product of corresponding matrices
+\begin{equation*}
+	\bm{F} \kern+0.6pt = \bm{G} \, \bm{D} \, \bm{H}
+\end{equation*}
+as an equivalent formulation. Here the output $\bm{F} \in \mathbb{R}^{m \times n}$ is obtained from the inputs
+$\bm{G} \in \mathbb{R}^{m \times l}$ and $\bm{H} \in \mathbb{R}^{l \times n}$ as well as the square matrix
+$\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal. These results enable a quick and
+efficient implementation of the required calculations as program code, where array arithmetic operations can greatly
+increase execution speed.\footnote{$\,$In service of reproducability, all implementations can be viewed in
+\href{https://github.com/fritzali/bachelor}{this} repository.}
