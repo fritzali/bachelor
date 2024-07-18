@@ -11,5 +11,6 @@ FORCE:
 .PHONY: all clean
 
 build/main: code Makefile main.py style.rc header.tex | build
-	TEXINPUTS=$$(pwd): MATPLOTLIBRC=style.rc python main.py
+#	TEXINPUTS=$$(pwd): MATPLOTLIBRC=style.rc python main.py
+	python main.py
 	touch build/main
