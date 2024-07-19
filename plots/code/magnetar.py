@@ -6,6 +6,19 @@ Object oriented implementation of magnetar class as described in the thesis docu
 	magnetar
 		Collects parameters and methods associated with the magnetar model
 
+	Functions
+	---------
+		magnetar_hadron_spectrum
+			Prints calculated hadron spectra for all types to tabulated text files
+			
+
+		magnetar_neutrino_spectrum
+			Prints calculated neutrino spectra for all types to tabulated text files
+			
+
+		magnetar_integrated_neutrino_spectrum
+			Prints integrated neutrino spectra for all types to tabulated text files
+
 '''
 import numpy as np
 from warnings import warn
@@ -46,37 +59,37 @@ class magnetar:
 	Methods
 	-------
 	__init__
-		Constructs all attributes of the magnetar class.
+		Constructs all attributes of the magnetar class
 
 	__str__
-		Defines string output for printing the magnetar object.
+		Defines string output for printing the magnetar object
 
 	L
-		Returns the spindown luminosity.
+		Returns the spindown luminosity
 
 	E
-		Returns the monotonic proton energy.
+		Returns the monotonic proton energy
 
 	proton_spectrum_prefactor
-		Returns the prefactor of a delta functional proton spectrum.
+		Returns the prefactor of a delta functional proton spectrum
 
 	ejecta_radius
-		Returns the supernova ejecta radius.
+		Returns the supernova ejecta radius
 
 	number_density
-		Returns the supernova shell nucleon density.
+		Returns the supernova shell nucleon density
 
 	cooling_factor
-		Returns the ejecta material cooling factor.
+		Returns the ejecta material cooling factor
 
 	optical_depth
-		Returns the ejecta material proton effective optical depth.
+		Returns the ejecta material proton effective optical depth
 
 	collision_factor
-		Returns the ejecta material combined attenuation factor.
+		Returns the ejecta material combined attenuation factor
 
 	hadron_spectrum
-		Returns the hadron spectrum from injection of protons.
+		Returns the hadron spectrum from injection of protons
 
 	'''
 
@@ -426,7 +439,7 @@ class magnetar:
 
 def magnetar_hadron_spectrum(mag, reg, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M = 1e1, D = False, O = False, N = 100):
 	'''
-	Prints calculated hadron spectra for all types to tabulated text files
+	Prints calculated hadron spectra for all types to tabulated text files.
 
 	Parameters
 	----------
@@ -508,7 +521,7 @@ def magnetar_hadron_spectrum(mag, reg, Kt = 500, KE = 100, f = 1e-1, b = 1e-1, M
 
 def magnetar_neutrino_spectrum(mag, reg, K = 100):
 	'''
-	Prints calculated neutrino spectra for all types to tabulated text files
+	Prints calculated neutrino spectra for all types to tabulated text files.
 
 	Parameters
 	----------
@@ -590,7 +603,7 @@ def magnetar_neutrino_spectrum(mag, reg, K = 100):
 
 def magnetar_integrated_neutrino_spectrum(mag, reg):
 	'''
-	Prints integrated neutrino spectra for all types to tabulated text files
+	Prints integrated neutrino spectra for all types to tabulated text files.
 
 	Parameters
 	----------
