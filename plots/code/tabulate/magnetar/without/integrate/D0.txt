@@ -1,4 +1,4 @@
-# `D0` Integrated Spectrum / 1/GeV - 2024/07/19 13:12:35
+# `D0` Integrated Spectrum / 1/GeV - 2024/07/19 13:23:11
 # Magnetar:
 #     R = 1e+06 cm
 #     B = 3.16e+14 G

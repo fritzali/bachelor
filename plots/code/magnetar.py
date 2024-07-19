@@ -738,11 +738,11 @@ def magnetar_integrated_neutrino_spectrum(mag, reg):
 mag = magnetar(B = 10**14.5)
 
 
-magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/without', D = True, O = False)
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/without', D = False, O = False)
 magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
 magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
 
-magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/with', D = True, O = True)
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/with', D = False, O = True)
 magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
 magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
 
