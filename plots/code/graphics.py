@@ -90,8 +90,8 @@ plt.ylim(1e-4, 2e0)
 
 plt.legend(handlelength=1.8, loc=2)
 
-plt.savefig('build/charm_decay_comparison_without.pdf')
-plt.savefig('build/charm_decay_comparison_without.png')
+plt.savefig('build/magnetar_charm_decay_comparison_without.pdf')
+plt.savefig('build/magnetar_charm_decay_comparison_without.png')
 plt.close()
 
 plt.fill_between(t, 3 * c / N, c / (3 * N), color='none', facecolor='b', alpha=0.25, zorder=0)
@@ -111,8 +111,8 @@ plt.ylim(1e-6, 1e1)
 
 plt.legend(handlelength=1.8, loc=2)
 
-plt.savefig('build/neutrino_spectrum_without.pdf')
-plt.savefig('build/neutrino_spectrum_without.png')
+plt.savefig('build/magnetar_neutrino_spectrum_without.pdf')
+plt.savefig('build/magnetar_neutrino_spectrum_without.png')
 plt.close()
 
 
@@ -146,7 +146,7 @@ plt.plot(E, E**2 * K1 / N, 'k:', label=r'$10^3 \kern+1.5pt$s $\kern+0.3pt -$ $10
 plt.plot(E, E**2 * K2 / N, 'k--', label=r'$10^4 \kern+1.5pt$s $\kern+0.3pt -$ $10^5 \kern+1.5pt$s')
 plt.plot(E, E**2 * K3 / N, 'k-', label=r'$10^3 \kern+1.5pt$s $\kern+0.3pt -$ $10^7 \kern+1.5pt$s') 
 
-plt.xlabel(r'$t$ $\mathrel{/} \kern-0.8pt$ s')
+plt.xlabel(r'$E_\nu$ $\mathrel{/} \kern-0.6pt$ GeV')
 plt.ylabel(r'$E_\nu^2\phi_\nu$ $\mathrel{/} \kern-0.7pt$ max$\bigl( \kern-0.3pt E_\nu^2\phi^c_\nu \kern+0.2pt \bigr)$')
 
 plt.xscale('log')
@@ -157,8 +157,8 @@ plt.ylim(1.6e-4, 3e3)
 
 plt.legend(handlelength=1.8, loc=1)
 
-plt.savefig('build/integrated_neutrino_spectrum_without.pdf')
-plt.savefig('build/integrated_neutrino_spectrum_without.png')
+plt.savefig('build/magnetar_integrated_neutrino_spectrum_without.pdf')
+plt.savefig('build/magnetar_integrated_neutrino_spectrum_without.png')
 plt.close()
 
 
@@ -205,8 +205,8 @@ plt.ylim(1e-4, 2e0)
 
 plt.legend(handlelength=1.8, loc=3)
 
-plt.savefig('build/charm_decay_comparison_with.pdf')
-plt.savefig('build/charm_decay_comparison_with.png')
+plt.savefig('build/magnetar_charm_decay_comparison_with.pdf')
+plt.savefig('build/magnetar_charm_decay_comparison_with.png')
 plt.close()
 
 plt.fill_between(t, 3 * c / N, c / (3 * N), color='none', facecolor='b', alpha=0.25, zorder=0)
@@ -226,8 +226,8 @@ plt.ylim(1e-6, 1e1)
 
 plt.legend(handlelength=1.8, loc=1)
 
-plt.savefig('build/neutrino_spectrum_with.pdf')
-plt.savefig('build/neutrino_spectrum_with.png')
+plt.savefig('build/magnetar_neutrino_spectrum_with.pdf')
+plt.savefig('build/magnetar_neutrino_spectrum_with.png')
 plt.close()
 
 
@@ -261,7 +261,7 @@ plt.plot(E, E**2 * K1 / N, 'k:', label=r'$10^3 \kern+1.5pt$s $\kern+0.3pt -$ $10
 plt.plot(E, E**2 * K2 / N, 'k--', label=r'$10^4 \kern+1.5pt$s $\kern+0.3pt -$ $10^5 \kern+1.5pt$s')
 plt.plot(E, E**2 * K3 / N, 'k-', label=r'$10^3 \kern+1.5pt$s $\kern+0.3pt -$ $10^7 \kern+1.5pt$s') 
 
-plt.xlabel(r'$t$ $\mathrel{/} \kern-0.8pt$ s')
+plt.xlabel(r'$E_\nu$ $\mathrel{/} \kern-0.6pt$ GeV')
 plt.ylabel(r'$E_\nu^2\phi_\nu$ $\mathrel{/} \kern-0.7pt$ max$\bigl( \kern-0.3pt E_\nu^2\phi^c_\nu \kern+0.2pt \bigr)$')
 
 plt.xscale('log')
@@ -272,6 +272,61 @@ plt.ylim(4.3e-4, 3e1)
 
 plt.legend(handlelength=1.8, loc=1)
 
-plt.savefig('build/integrated_neutrino_spectrum_with.pdf')
-plt.savefig('build/integrated_neutrino_spectrum_with.png')
+plt.savefig('build/magnetar_integrated_neutrino_spectrum_with.pdf')
+plt.savefig('build/magnetar_integrated_neutrino_spectrum_with.png')
+plt.close()
+
+
+
+E, pi = np.genfromtxt('code/tabulate/nucleus/neutrinos/pi.txt', unpack=True)
+E, K = np.genfromtxt('code/tabulate/nucleus/neutrinos/K.txt', unpack=True)
+E, D0 = np.genfromtxt('code/tabulate/nucleus/neutrinos/D0.txt', unpack=True)
+E, Dplus = np.genfromtxt('code/tabulate/nucleus/neutrinos/Dplus.txt', unpack=True)
+E, DplusS = np.genfromtxt('code/tabulate/nucleus/neutrinos/DplusS.txt', unpack=True)
+E, LAMplusC = np.genfromtxt('code/tabulate/nucleus/neutrinos/LAMplusC.txt', unpack=True)
+
+c = D0 + Dplus + DplusS + LAMplusC
+
+N = (E**2 * c).max()
+
+plt.plot(E, E**2 * c / N, 'b-', label=r'Total Charm Decay', zorder=2)
+plt.plot(E, E**2 * D0 / N, 'b--', label=r'$D^0$ Decay', zorder=2)
+plt.plot(E, E**2 * Dplus / N, 'r-', label=r'$D^+$ Decay', zorder=1)
+plt.plot(E, E**2 * DplusS / N, 'r--', label=r'$D^+_s$ Decay', zorder=1)
+plt.plot(E, E**2 * LAMplusC / N, 'k-', label=r'$\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c}$ Decay', zorder=0)
+
+plt.xlabel(r'$E_\nu$ $\mathrel{/} \kern-0.6pt$ GeV')
+plt.ylabel(r'$E_\nu^2\phi_\nu$ $\mathrel{/} \kern-0.7pt$ max$\bigl( \kern-0.3pt E_\nu^2\phi^c_\nu \kern+0.2pt \bigr)$')
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlim(3e5, 1e11)
+plt.ylim(5e-4, 2e0)
+
+plt.legend(handlelength=1.8, loc=3)
+
+plt.savefig('build/nucleus_charm_decay_comparison.pdf')
+plt.savefig('build/nucleus_charm_decay_comparison.png')
+plt.close()
+
+plt.fill_between(E, 3 * E**2 * c / N, E**2 * c / (3 * N), color='none', facecolor='b', alpha=0.25)
+
+plt.plot(E, E**2 * pi / N, 'r', label=r'Pion Decay', zorder=1)
+plt.plot(E, E**2 * K / N, 'k', label=r'Kaon Decay', zorder=1)
+plt.plot(E, E**2 * c / N, 'b', label=r'Charm Decay', zorder=0) 
+
+plt.xlabel(r'$E_\nu$ $\mathrel{/} \kern-0.6pt$ GeV')
+plt.ylabel(r'$E_\nu^2\phi_\nu$ $\mathrel{/} \kern-0.7pt$ max$\bigl( \kern-0.3pt E_\nu^2\phi^c_\nu \kern+0.2pt \bigr)$')
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlim(3e5, 1e11)
+plt.ylim(5e-4, 2e3)
+
+plt.legend(handlelength=1.8, loc=1)
+
+plt.savefig('build/nucleus_neutrino_spectrum.pdf')
+plt.savefig('build/nucleus_neutrino_spectrum.png')
 plt.close()
