@@ -3,7 +3,7 @@
 
 Presented in this chapter are the results obtained by applying the previously described methods. Due to uncertain normalization
 factors, all values are given with respect to the maximum charm component in terms of flux $\dot{\phi}_\nu$ or fluence $\phi_\nu$
-for physical quantities. As per its definition,
+as physical quantities. By its definition,
 \begin{equation}
 	\dot{\phi}_\nu \kern+0.25pt = \frac{d \kern+0.75pt \dot{N}_{\kern-0.5pt \nu} / \kern-1.0pt dE_\nu \kern+0.25pt}{4\pi d^2} \:,
 	\label{eqn:flux}
@@ -29,9 +29,9 @@ originate. Model parameters use the numerical values that section \ref{sec:compu
 Shown in figure \ref{fig:magnetar-charm-comparison-with} is the temporal evolution of charmed hadron contributions to the
 total charm component at $E_\nu = \qty{e9}{\giga\electronvolt}$ originating from a young magnetar.
 Decays of $\smash{D^0}$ constitute most of the charmed neutrinos, with $\smash{D^+} \kern-0.5pt$ adding significant amounts
-as well, especially at later times. Both $\smash{D^+_s}$ and $\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c}$ are roughly the same,
-each contributing around \qty{10}{\percent} to the combined flux. This is in line with cross sections calculated via
-\eqref{eqn:differential} or measured by \cite{lhc} as well as the respective branching fractions listed in table
+as well, especially at later times. Both $\smash{D^+_s}$ and $\smash{\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c}}$ are roughly
+the same, each contributing around \qty{10}{\percent} to the combined flux. This is in line with cross sections calculated
+via \eqref{eqn:differential} or measured by \cite{lhc} as well as the respective branching fractions listed in table
 \ref{tab:charm-hadrons} for effective three body decays to neutrinos.
 
 Similarly, figure \ref{fig:magnetar-flux-with} presents light curves for pions and kaons next to the total charm contribution,
@@ -55,9 +55,45 @@ at earlier times. To verify this finding, calculations are repeated under omissi
 \input{content/visuals/magnetar-charm-comparison-without.tex}
 
 \input{content/visuals/magnetar-flux-without.tex}
+\vspace{1.5\baselineskip}
 \input{content/visuals/magnetar-fluence-without.tex}
 
-better agreement, shape, peaks with lifetime, 
+As suspected, these results more closely match those in \cite{Carpio_2020}. Starting with the comparison of charmed hadrons, figure
+\ref{fig:magnetar-charm-comparison-without} agrees with the previous statements regarding $\smash{D^0}$ and $\smash{D^+} \kern-0.5pt$
+dominating over $\smash{D^+_s}$ and $\smash{\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c}}$ decays. By excluding the optical depth,
+one can reveal additional information via the identification of comparatively narrow peaks. Their relative positions are consistent with
+the different mean lifetimes that table \ref{tab:charm-hadrons} lists, an observation which is not accessible from figure
+\ref{fig:magnetar-charm-comparison-with} due to flux curves resembling broad plateaus rather than clearly defined extrema. Due to shorter
+decay times resulting in vanishing cooling factors \eqref{eqn:cooling} at higher energies, curves are shifted according to the proton
+spectrum formulation \eqref{eqn:delta} with a delta function, reproducing the slight offsets in charmed hadron contribution.
+
+
+Again comparing \cite{Carpio_2020} to figures \ref{fig:magnetar-flux-without} and \ref{fig:magnetar-fluence-without} indicates improved
+agreement, with distribution shapes that are roughly similar in either case. Because of differences in the approaches, some deviation is
+to be expected. Reference \cite{Carpio_2020} uses event generator results to model pion and kaon cross sections, as well as QCD calculations
+for the charm component, while this thesis collects various parametrizations from the literature for semianalytical computations instead.
+Especially the almost identical shapes of pion and kaon light curves in figure \ref{fig:magnetar-flux-without} are most likely a consequence
+of the simplifying assumption that their spectral distributions are linearly proportional except for a cutoff determined from their rest
+masses. Despite this, neutrino fluxes from pion or kaon decay individually fit their counterparts in \cite{Carpio_2020} fairly well when
+the contribution from muons is ignored, and their respective maxima are within acceptable margins compared to the charmed hadron curves in
+figure \ref{fig:magnetar-flux-without} and reference \cite{Carpio_2020}.
+
+There are, however, certain disagreements that are unlikely to arise purely from variations in the described methodologies. To begin with,
+reference \cite{Carpio_2020} provides $\cramped{E^M} = \kern-0.5pt \smash{\qty{1.3e13}{\giga\electronvolt}}$ as an initial value for the
+energy of injected protons, which disagrees with inserting the same default parameters into \eqref{eqn:mono} to find
+$\cramped{E^M} = \kern-0.5pt \smash{\qty{1.7e12}{\giga\electronvolt}}$ instead after conversion from \unit{erg} to \unit{\giga\electronvolt}
+units. If the larger and seemingly erroneous value is actually used, it would imply energies an order of magnitude higher than in the
+calculations presented here. Predictions from this include earlier light curve cutoffs, as energies become insufficient after less time
+has passed, and potentially smaller separation between charm, pion and kaon components, because at each point in time, only lower
+energy hadrons are available for neutrino production, resulting in a depression of otherwise possible peak values. Comparing to
+\cite{Carpio_2020} points to figure \ref{fig:magnetar-flux-without} displaying both of these features. Smaller injection energies
+further imply lower charm decay contributions to the total neutrino fluence, which figure \ref{fig:magnetar-fluence-without} seems
+to support as well when compared to \cite{Carpio_2020}. Adding to this concern is the large divergence from figures
+\ref{fig:magnetar-flux-with} and \ref{fig:magnetar-fluence-with} that 
+
+
+
+
 
 \input{content/visuals/nucleus-charm-comparison.tex}
 \input{content/visuals/nucleus-fluence.tex}
