@@ -45,6 +45,39 @@ class magnetar:
 
 	Methods
 	-------
+	__init__
+		Constructs all attributes of the magnetar class.
+
+	__str__
+		Defines string output for printing the magnetar object.
+
+	L
+		Returns the spindown luminosity.
+
+	E
+		Returns the monotonic proton energy.
+
+	proton_spectrum_prefactor
+		Returns the prefactor of a delta functional proton spectrum.
+
+	ejecta_radius
+		Returns the supernova ejecta radius.
+
+	number_density
+		Returns the supernova shell nucleon density.
+
+	cooling_factor
+		Returns the ejecta material cooling factor.
+
+	optical_depth
+		Returns the ejecta material proton effective optical depth.
+
+	collision_factor
+		Returns the ejecta material combined attenuation factor.
+
+	hadron_spectrum
+		Returns the hadron spectrum from injection of protons.
+
 	'''
 
 	def __init__(self, R = 1e6, B = 1e15, o = 1e4, chi = 95e-2, I = 1e45, m = 'force free'):
