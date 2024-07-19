@@ -135,10 +135,10 @@ of observing any final state $h$ originating from a $c$ quark is encoded in a \e
 (PDF) among other things. While a PDF represents the probability density of finding a parton with given momentum inside a colorless
 particle, probabilities for color neutral-{\kern+0.2pt}states existing in individual partons are given by the appropriate \abbrev{FF} instead.
 The partons described here are either quarks or gluons, which sections \ref{sub:interactions} and \ref{sub:hadrons} describe
-more closely. By fitting to existing data or perturbative results, models can extrapolate to low momentum fractions that have
-not yet been probed experimentally.
-\newpage
-Such a procedure has lead \cite{Kniehl_2006} to obtain
+more closely.
+
+By fitting to existing data or perturbative calculations, models can extrapolate to low momentum fractions that have
+not yet been probed experimentally. This procedure has lead \cite{Kniehl_2006} to obtain
 \begin{equation}
 	D^{\kern+0.5pt h}_{c}(z) = \frac{N_h z \kern+1.0pt (1 - z)^{\kern+0.5pt 2}}
 	{\bigl((1 - z)^{\kern+0.5pt 2} + \epsilon_h z \bigl)^{\raisebox{-1.5ex}{$^2$}}}
@@ -366,3 +366,5 @@ $\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal
 efficient implementation of the required calculations as program code, where array arithmetic operations can greatly
 increase execution speed.\footnote{$\,$In service of reproducability, all implementations can be viewed in
 \href{https://github.com/fritzali/bachelor}{this} repository.}
+
+Logarithmic spacing can lead to better accuracy and fewer steps...

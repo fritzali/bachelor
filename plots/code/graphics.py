@@ -224,7 +224,7 @@ plt.yscale('log')
 plt.xlim(4e1, 4e6)
 plt.ylim(1e-6, 1e1)
 
-plt.legend(handlelength=1.8, loc=1)
+plt.legend(handlelength=1.8, loc=3)
 
 plt.savefig('build/magnetar_neutrino_spectrum_with.pdf')
 plt.savefig('build/magnetar_neutrino_spectrum_with.png')

@@ -249,8 +249,8 @@ class magnetar:
 			The unitless ejecta material cooling factor
 		'''
 		n = self.number_density(t, b, M)
-		d = self.ejecta_radius(t, b)
 		if D is True:
+			d = self.ejecta_radius(t, b)
 			return hadron_proton_cooling_factor(E, n, h, d)
 		else:
 			return hadron_proton_cooling_factor(E, n, h)
@@ -738,11 +738,11 @@ def magnetar_integrated_neutrino_spectrum(mag, reg):
 mag = magnetar(B = 10**14.5)
 
 
-magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/without', O = False)
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/without', D = True, O = False)
 magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
 magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/without')
 
-magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/with', O = True)
+magnetar_hadron_spectrum(mag, 'code/tabulate/magnetar/with', D = True, O = True)
 magnetar_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
 magnetar_integrated_neutrino_spectrum(mag, 'code/tabulate/magnetar/with')
 

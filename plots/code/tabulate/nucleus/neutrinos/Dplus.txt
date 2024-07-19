@@ -1,4 +1,4 @@
-# `D+` Integrated Spectrum / 1/GeV - 2024/07/19 03:03:47
+# `D+` Integrated Spectrum / 1/GeV - 2024/07/19 13:13:33
 # Nucleus:
 #     n = 1e+14 1/cm**3
 #     d = 1e+15 cm
