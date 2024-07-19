@@ -268,7 +268,7 @@ plt.xscale('log')
 plt.yscale('log')
 
 plt.xlim(3e5, 1e11)
-plt.ylim(4.3e-4, 3e1)
+plt.ylim(4.3e-4, 6e1)
 
 plt.legend(handlelength=1.8, loc=1)
 
