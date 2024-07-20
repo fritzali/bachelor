@@ -10,7 +10,7 @@ as physical quantities. By its definition,
 \end{equation}
 the flux counts neutrinos per energy, time and area. Equation \eqref{eqn:flux} derives from evenly spreading all spectral
 intensity over a spherical surface with radius equal to the distance $d \kern+0.5pt$ from a single source. Integrating over
-time yields the fluence
+time yields the fluence,
 \begin{equation}
 	\phi_\nu \kern+0.25pt = \frac{dN_{\kern-0.5pt \nu} / \kern-1.0pt dE_\nu \kern+0.25pt}{4\pi d^2} \:,
 	\label{eqn:fluence}
@@ -64,12 +64,11 @@ dominating over $\smash{D^+_s}$ and $\smash{\Lambda^{\kern-0.5pt +}_{\kern+0.5pt
 one can reveal additional information via the identification of comparatively narrow peaks. Their relative positions are consistent with
 the different mean lifetimes that table \ref{tab:charm-hadrons} lists, an observation which is not accessible from figure
 \ref{fig:magnetar-charm-comparison-with} due to flux curves resembling broad plateaus rather than clearly defined extrema. Due to shorter
-decay times resulting in vanishing cooling factors \eqref{eqn:cooling} at higher energies, curves are shifted according to the proton
-spectrum formulation \eqref{eqn:delta} with a delta function, reproducing the slight offsets in charmed hadron contribution.
-
+decay times resulting in vanishing cooling factors \eqref{eqn:cooling} at higher energies, curves are shifted to reproduce slight offsets
+in charmed hadron contribution.
 
 Again comparing \cite{Carpio_2020} to figures \ref{fig:magnetar-flux-without} and \ref{fig:magnetar-fluence-without} indicates improved
-agreement, with distribution shapes that are roughly similar in either case. Because of differences in the approaches, some deviation is
+agreement, with distribution shapes that are roughly similar in both cases. Because of differences in the approaches, some deviation is
 to be expected. Reference \cite{Carpio_2020} uses event generator results to model pion and kaon cross sections, as well as QCD calculations
 for the charm component, while this thesis collects various parametrizations from the literature for semianalytical computations instead.
 Especially the almost identical shapes of pion and kaon light curves in figure \ref{fig:magnetar-flux-without} are most likely a consequence
@@ -81,12 +80,12 @@ figure \ref{fig:magnetar-flux-without} and reference \cite{Carpio_2020}.
 There are, however, certain disagreements that are unlikely to arise purely from variations in the described methodologies. To begin with,
 reference \cite{Carpio_2020} provides $\cramped{E^M} = \kern-0.5pt \smash{\qty{1.3e13}{\giga\electronvolt}}$ as an initial value for the
 energy of injected protons, which disagrees with inserting the same default parameters into \eqref{eqn:mono} to find
-$\cramped{E^M} = \kern-0.5pt \smash{\qty{1.7e12}{\giga\electronvolt}}$ instead after conversion from \unit{erg} to \unit{\giga\electronvolt}
+$\cramped{E^M} = \kern-0.5pt \smash{\qty{1.7e12}{\giga\electronvolt}}$ instead, after conversion from \unit{erg} to \unit{\giga\electronvolt}
 units. If the larger and seemingly erroneous value is actually used, it would imply energies an order of magnitude higher than in the
 calculations presented here. Predictions from this include earlier light curve cutoffs, as energies become insufficient after less time
 has passed, and potentially smaller separation between charm, pion and kaon components, because at each point in time, only lower
-energy hadrons are available for neutrino production, resulting in a depression of otherwise possible peak values. Comparing to
-\cite{Carpio_2020} points to figure \ref{fig:magnetar-flux-without} displaying both of these features. Smaller injection energies
+energy hadrons are available for neutrino production, resulting in a depression of otherwise possible peak values. A comparison to
+\cite{Carpio_2020} shows that figure \ref{fig:magnetar-flux-without} displays both of these features. Smaller injection energies
 further imply lower charm decay contributions to the total neutrino fluence, which figure \ref{fig:magnetar-fluence-without} seems
 to support as well when compared to \cite{Carpio_2020}. Adding to this concern is the large divergence from figures
 \ref{fig:magnetar-flux-with} and \ref{fig:magnetar-fluence-with} that most likely stems from the optical depth. Setting this
@@ -95,9 +94,15 @@ due to an expanding ejecta volume. Such an assumption is difficult to justify, w
 of extremely high densities. As reference \cite{Carpio_2020} explicitly includes an optical depth in the same way
 this thesis does, it is unclear how the wide disparities between neutrino spectra come about, especially
 considering that figures \ref{fig:magnetar-flux-without} and \ref{fig:magnetar-fluence-without} without $\mathscr{O}$ present
-better matches than figures \ref{fig:magnetar-flux-with} and \ref{fig:magnetar-fluence-with} with $\mathscr{O}$ to \cite{Carpio_2020}.
-Though this problem should certainly be investigated further, the following discussion treats the results without optical
-depth as valid, as they better agree with prior expectations as well as \cite{Carpio_2020}.
+better matches than figures \ref{fig:magnetar-flux-with} and \ref{fig:magnetar-fluence-with} with $\mathscr{O}$ to those in \cite{Carpio_2020}.
+This issue represents a major incongruence and warrants further scrutiny, which is discussed in more detail by the next chapter. Due to their
+better agreement with prior expectations and to extract physical implications from the results, calculations without optical depth are treated
+as valid in the following paragraph.
+
+With the present parameters, our model predicts number densities of $n_\text{ej} = \qty{3.1e18}{\per\centi\meter\cubed}$ after one spindown
+time $t_\text{sd} = \smash{\qty{3.2e3}{\second}}$ has passed.
+
+
 
 Accordingly, figure \ref{eqn:magnetar-flux-without} confirms that charm decays dominate pion and kaon contributions at earlier times. Including
 secondary muons and pions would lead to larger fluxes, but is unlikely to exceed the charmed hadron peak due to its curve being
