@@ -342,6 +342,44 @@ charmed hadron scattering cross sections being approximated to that of kaons.
 
 
 
+\subsection{Numerical Setup}
+\label{sub:numerical}
+
+
+
+
+When extreme magnetic fields in the range of $B = \kern-0.5pt \qty{e15}{\gauss}$ are achieved, the respective neutron star is
+classified as a magnetar. To fully model these sources, additional parameters are required. Typical neutron star radii are of the
+order $R = \kern-0.5pt \qty{e6}{\centi\meter}$ with masses of $M = \num{1.4} \kern+1.5pt M_\odot$ in accordance with the Chandrasekhar
+limit that defines the maximum stable mass for white dwarfs. From the solar mass $M_\odot \kern-0.75pt = \qty{2e33}{\gram}$ follows
+a moment of inertia $I \kern+0.5pt = \qty{8e44}{\gram\centi\meter\squared}$ for our magnetar that has been approximated as a rigid
+homogenous sphere. Adding to the inaccuracy introduced by discounting any internal structure are the effects of highly relativistic
+rotation. Due to only using rough estimates anyway, setting $\cramped{I \kern+0.5pt = \qty{1e45}{\gram\centi\meter\squared}}$ produces no
+discernable difference in the final results. Provided by \cite{Haensel_1999} is the minimum period of uniform rotation, beyond
+which the neutron star loses its structural integrity. Choosing an optimistic value of twice this minimum time $T = \qty{0.3}{\milli\second}$
+yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency. Lastly, the tilt $\kern-0.5pt \chi \kern+0.5pt$
+between rotational axis and magnetic field symmetry must be set. As for all previous parameters, the same choice as in
+\cite{Carpio_2020} is made, with an angle $\chi = \num{0.95}$ in radians.
+
+\enlargethispage{\baselineskip}
+
+Concluding this numerical setup is the modeling of the supernova ejecta as a target field for accelerated particles. Assuming
+this to be a spherical region of homogenously distributed matter at each time $t \kern+0.5pt$ after formation of the magnetar
+leads to $\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt$ as the number density for the case of
+protons with masses $m_p$ making up all ejected material. From further asserting radial expansion at constant relative velocity
+$\beta_\text{ej}$ one obtains the ejecta radius $r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t \kern+0.5pt$
+as a function of time. With total ejecta masses being similar to that of the progenitor star, values between $\num{10} \kern+1.5pt M_\odot$
+and $\num{35} \kern+1.5pt M_\odot$ are possible. Here, the lower bound of $\cramped{M_\text{ej} = \num{10} \kern+1.5pt M_\odot}$ is adopted.
+With velocities $\beta_\text{ej} = \num{0.1}$ of typical supernova shocks, the model is completed.
+
+
+The typical SMBH has masses around $\num{e8} \kern+1.5pt M_\odot$ with $\qty{2}{\astronomicalunit}$ as a Schwarzschild radius. While
+jets can reach enormous scales of multiple \qty{100}{\kilo\parsec} with terminal bow shocks at \unit{\mega\parsec} distances from the
+core, itself contained within \qty{1}{\parsec} sizes, accretion disks extend to radii of $R = \kern-0.5pt \qty{10}{\milli\parsec}$
+with heights around $h = \qty{100}{\astronomicalunit}$ being plausible. Rough densities of $n = \qty{e15}{\per\centi\meter\cubed}$
+may be assumed on average, with a more detailed description provided in the following paragraphs.
+
+
 \section{Implementation}
 \label{sec:implementation}
 

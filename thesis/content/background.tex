@@ -5,11 +5,11 @@
 \let\chapterheadstartvskip\backupskip
 
 On their journey through space, messenger particles are subject to various influences, both in terms of type and scale,
-before reaching our planet. Understanding this propagation requires a thorough comprehension of physical processes at all
-scales of application, from production in astrophysical sources, through interactions with the vast radiation and matter
+before reaching our planet. Understanding this propagation requires a thorough description of different physical processes
+at all scales of application, from production in astrophysical sources, through interactions with the radiation and matter
 fields that fill the cosmos, to entering the solar system and ultimately the terrestrial atmosphere. The following sections
-provide an incomplete overview of aspects relevant to the treatment of this complex topic, as well as references for further
-study on the various related subjects.
+provide an overview of aspects relevant to the treatment of this complex topic, as well as references for further study on
+the various related subjects.
 
 
 
@@ -96,11 +96,11 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 	Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or independent from
 	the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
 	$p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
-	\begin{align*}
+	\begin{align}
 		s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 \: , &&
 		t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 \: , &&
 		u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
-	\end{align*}
+	\end{align}
 	as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
 	exchanged mediating particle. Implied in this context is a Minkowski inner product, making the above quantities manifestly Lorentz
 	invariant. When working with parametrizations defined for use in different subdisciplines, it regularly becomes necessary to convert
@@ -108,9 +108,9 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 	in the system of a stationary target, where vectors $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and $p = (m c^2 \kern-1.0pt , 0)$
 	represent the respective particle momenta. With $\bm{P}$ denoting a classical projectile momentum and $c$ the speed of light,
 	rest masses $M$ and $m$ for projectile and target lead to a relation $E^2 = \bm{P}^2 c^2 + M^2 c^4$ and
-	\begin{equation*}
+	\begin{equation}
 		s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
-	\end{equation*}
+	\end{equation}
 	for the invariant mass. The trailing terms in this equation become negligible at high energies, allowing for an approximation
 	$s = 2E m c^2$ in the target rest frame.
 
@@ -151,29 +151,29 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 	follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
 	count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
 	of first order. The solution is found to follow an exponential law
-	\begin{equation*}
+	\begin{equation}
 		N(x) \kern+0.4pt = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}} \kern+0.5pt \Bigr)
-	\end{equation*}
+	\end{equation}
 	where $N \kern+1.0pt$ particles remain over some distance $x \kern+0.5pt$ with $N_0$ as the initial amount. Furthermore,
-	\begin{equation*}
+	\begin{equation}
 		P(x) \kern+0.3pt = 1 -
 		\kern+0.9pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}}\kern+0.5pt \Bigr)
-	\end{equation*}
+	\end{equation}
 	gives the probability of a particle having been scattered after travelling $x \kern+0.5pt$ length units. Similar steps
 	for time instead of distance lead to the well known equation
-	\begin{equation*}
+	\begin{equation}
 		N(t) \kern+0.4pt = N_0 \exp \kern-2.0pt
 		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
 		\kern+0.5pt \Bigr)\)}
-	\end{equation*}
+	\end{equation}
 	describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons
 	or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
 	decays with probability
-	\begin{equation*}
+	\begin{equation}
 		P(t) \kern+0.3pt = 1 - \kern+0.9pt \exp \kern-2.0pt
 		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
 		\kern+0.5pt \Bigr)\)}
-	\end{equation*}
+	\end{equation}
 	before a time $t$ has passed and for $\tau$ as the mean lifetime. Translating this from rest frame to laboratory coordinates defines
 	the decay timescale $t_\text{dec} \kern-0.6pt = \tau \kern+0.4pt \varGamma$ with a Lorentz factor $\varGamma = E / m$ via
 	projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
@@ -225,9 +225,9 @@ Particles carrying electric charges $Q = Ze$ and moving at velocity $v \kern+1.0
 acted on by the Lorentz force $F = QvB \kern+0.5pt$ that produces a gyrating motion. With the elementary charge $e$ and $\varGamma$
 as a Lorentz factor, this must balance a relativistic centripetal force $F = m \varGamma v^2 \kern-0.5pt / R$ on the resulting circular
 path with $R$ giving the Larmor radius. Rearranging and identifying $p = m \varGamma v \kern+0.5pt$ leads to the solution
-\begin{equation*}
+\begin{equation}
 	R = \frac{p}{\raisebox{0.3ex}{$QB \kern+0.3pt$}}
-\end{equation*}
+\end{equation}
 on which the magnetic field extent $D$ imposes $R < D$ as a condition. In case of highly relativistic energies, one can substitute
 $E = \kern-0.8pt pc$ for the momentum to obtain an inequality $E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophyiscal
 magnetic fields are not ordered, instead following turbulences that travel through the plasma. To incorporate effects of moving scattering
@@ -249,32 +249,32 @@ the Doppler effect. In these processes, the photon spin is absorbed to produce a
 proton state. This decays almost immediately to pairs of nucleons and pions, leading to $p\gamma \rightarrow \kern-0.1pt n\smash{\pi^+}$
 or $p\gamma \rightarrow \kern+0.2pt p \smash{\pi^0}$ as probable reaction channels and resulting in a change of momentum for the
 produced particles.~For the case of \emph{Cosmic Microwave Background} (CMB) radiation, a close to perfect black body spectrum
-\begin{equation*}
+\begin{equation}
 	\frac{\raisebox{-0.3ex}{$dn$}}{\raisebox{0.15ex}{$d\epsilon$}} (\epsilon) \kern+0.2pt =
 	\frac{\raisebox{-0.3ex}{$\epsilon^2$}}{\pi^2 \hbar^3 c^3 \bigl( e^{\kern+1.0pt \epsilon / k_B T} - 1 \bigr)}
-\end{equation*}
+\end{equation}
 is given by \cite{Gaisser_2016} as the number density. From a CMB temperature of $T \kern-0.5pt = \qty{2.725}{\kelvin}$ follows that
 significant photon numbers exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$ in the CMB rest frame. 
 
 \newpage\input{amend/normal-head}
 
 To find a threshold in center of mass coordinates, the scalar product is used for
-\begin{equation*}
+\begin{equation}
 	s \kern+0.3pt = \bigl( p_{\kern-0.5pt p} + p_{\kern+0.5pt \gamma} \bigr)^2 =
 	p_{\kern-0.5pt p}^2 + p_{\kern+0.5pt \gamma}^2 + 2 p_{\kern-0.5pt p} p_{\kern+0.5pt \gamma} =
 	m_p^2 \kern+0.8pt c^4 \kern-0.2pt + 2 E \epsilon = \kern-0.2pt M^2c^4
-\end{equation*}
+\end{equation}
 where $M \kern-0.3pt = m_p + \kern+0.3pt m_\pi$ and $m_\gamma = 0$ as well as head on collisions have been assumed. The solution
-\begin{equation*}
+\begin{equation}
 	E = \Bigl( \kern-1.0pt \bigl( m_p + m_\pi \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
-\end{equation*}
+\end{equation}
 corresponds to roughly $E \kern+1.0pt = \kern-0.5pt 10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ for the so-called
 GZK cutoff. Energies that exceed this value when viewed from CMB coordinates lead to significant losses, making the universe
 opaque to such protons. If pair production $\gamma \kern-0.5pt \rightarrow \smash{e^+ \kern-0.5pt e^-}$ from proton interactions is
 considered, one finds
-\begin{equation*}
+\begin{equation}
 	E = \Bigl( \kern-1.0pt \bigl( m_p + 2m_e \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
-\end{equation*}
+\end{equation}
 or approximately $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
 instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mainly through Compton
 downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
@@ -294,27 +294,27 @@ collision, particles gain some energy proportional to a constant factor $\eta$ a
 probability $\varsigma$ on average. With initial conditions $N_0$ for the number of particles and $E_0$ as the mean
 energy, this results in $N \kern+0.9pt = N_0 \varsigma^k$ and $E \kern+0.9pt = E_0 \eta^k$ after $k$ collisions. Using
 $\ln x^k = k\ln x$ in
-\begin{equation*}
+\begin{equation}
 	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
-\end{equation*}
+\end{equation}
 eliminates the exponent and by rearranging gives the relation
-\begin{equation*}
+\begin{equation}
 	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
-\end{equation*}
+\end{equation}
 as a connection between energy and particle number. This incidentally follows a power law, which is an almost ubiquitous feature
 observed in cosmic ray physics.
 
 \newpage
 
 One can interpret the above expression as an integrated spectrum, leading to
-\begin{equation*}
+\begin{equation}
 	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
 	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
-\end{equation*}
+\end{equation}
 for the differential case with a characteristic spectral index
-\begin{equation*}
+\begin{equation}
 	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
-\end{equation*}
+\end{equation}
 constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
 
 The basic case of \emph{Diffusive Shock Acceleration} (DSA) considers shock fronts that propagate with velocity
@@ -404,41 +404,38 @@ Neutron stars are stable remnants of massive stellar progenitors that are destro
 depleted their fuel reserves. Instead of nuclear fusion, the remaining neutron star is supported against further gravitational
 contraction by degeneracy pressures. These result from the Pauli exclusion principle that prevents fermions from occupying identical
 quantum states. While white dwarfs rely primarily on electrons for this mechanism, neutron stars depend on the repulsion among
-nucleons, placing them among the most dense macroscopic objects in the universe. Due to some angular momentum of the progenitor
-star usually being conserved in the remnant, the compression of stellar material immediately before a supernova explosion leads to
+nucleons, placing them among the most dense macroscopic objects in the universe. Due to angular momentum of the progenitor
+star being conserved in the remnant, the compression of stellar material immediately before a supernova explosion leads to
 extremely fast rotational periods. In addition to that, conservation of magnetic energy implies large magnetizations as well.
 Reference \cite{Thompson_1993} discusses this possibility of so-called fossil fields, but argues that strong convective flows
 during formation or inside the very young neutron star are more likely culprits. These would also remove any previous correlation
 between the axis of rotation and the field orientation. Because neutron star interiors are assumed to be superconducting fluids,
 dynamo effects can amplify and sustain any initial magnetic fields \cite{Haskell_2018}. If such a magnetized rotator emits misaligned
-radio jets, their sweeping motion will be observed as a pulsating radio source, hence the name pulsar. The decay of fields is generally
-modeled as exponential or according to a power law, but can be assumed to be static for the shorter timescales relevant to the present
-work \cite{Sang_1990}. Surrounding young neutron stars are clouds of ejected material, which serve as target fields. Inside this plasma,
-free charges weaken the otherwise strong fields, allowing synchrotron losses to be neglected.
+radio jets, their sweeping motion will be observed as a pulsating radio source, hence the name pulsar. In case of extreme magnetic
+fields being achieved, the respective neutron star is further classified as a magnetar. The decay of these fields is generally modeled
+as exponential or according to a power law, but can be approximated as being static for the shorter timescales relevant to the present
+thesis \cite{Sang_1990}. Surrounding newborn neutron stars are clouds of ejected material, which serve as target fields. Modeling this
+to be a spherical region of homogenously distributed matter at each time~$t \kern+0.5pt$~after formation of the remnant leads to
+a number density 
+\begin{equation}
+	\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt
+	\label{eqn:number-density}
+\end{equation}
+for all ejecta mass $M_\text{ej}$ consisting of protons with $m_p$ masses. From asserting radial expansion at a constant $\beta_\text{ej}$
+velocity, one finds the ejecta radius
+\begin{equation}
+	r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t
+	\label{eqn:ejecta-radius}
+\end{equation}
+as a function of time. Inside this plasma, free charge carriers weaken the otherwise strong fields, allowing synchrotron losses to be
+neglected \cite{Carpio_2020}. In vacuo, these would significantly reduce the energy of injected protons, thereby preventing production
+of highly energetic hadrons and neutrinos. Furthermore, typical densities listed in section \ref{sub:numerical} are sufficiently low for
+neutrino attenuation effects to be neglected \cite{Carpio_2020}.
 
-When extreme magnetic fields in the range of $B = \kern-0.5pt \qty{e15}{\gauss}$ are achieved, the respective neutron star is
-classified as a magnetar. To fully model these sources, additional parameters are required. Typical neutron star radii are of the
-order $R = \kern-0.5pt \qty{e6}{\centi\meter}$ with masses of $M = \num{1.4} \kern+1.5pt M_\odot$ in accordance with the Chandrasekhar
-limit that defines the maximum stable mass for white dwarfs. From the solar mass $M_\odot \kern-0.75pt = \qty{2e33}{\gram}$ follows
-a moment of inertia $I \kern+0.5pt = \qty{8e44}{\gram\centi\meter\squared}$ for our magnetar that has been approximated as a rigid
-homogenous sphere. Adding to the inaccuracy introduced by discounting any internal structure are the effects of highly relativistic
-rotation. Due to only using rough estimates anyway, setting $\cramped{I \kern+0.5pt = \qty{1e45}{\gram\centi\meter\squared}}$ produces no
-discernable difference in the final results. Provided by \cite{Haensel_1999} is the minimum period of uniform rotation, beyond
-which the neutron star loses its structural integrity. Choosing an optimistic value of twice this minimum time $T = \qty{0.3}{\milli\second}$
-yields $\omega_0 = \qty{e4}{\per\second}$ for the initial angular frequency. Lastly, the tilt $\kern-0.5pt \chi \kern+0.5pt$
-between rotational axis and magnetic field symmetry must be set. As for all previous parameters, the same choice as in
-\cite{Carpio_2020} is made, with an angle $\chi = \num{0.95}$ in radians.
 
-\enlargethispage{\baselineskip}
 
-Concluding this numerical setup is the modeling of the supernova ejecta as a target field for accelerated particles. Assuming
-this to be a spherical region of homogenously distributed matter at each time $t \kern+0.5pt$ after formation of the magnetar
-leads to $\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt$ as the number density for the case of
-protons with masses $m_p$ making up all ejected material. From further asserting radial expansion at constant relative velocity
-$\beta_\text{ej}$ one obtains the ejecta radius $r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t \kern+0.5pt$
-as a function of time. With total ejecta masses being similar to that of the progenitor star, values between $\num{10} \kern+1.5pt M_\odot$
-and $\num{35} \kern+1.5pt M_\odot$ are possible. Here, the lower bound of $\cramped{M_\text{ej} = \num{10} \kern+1.5pt M_\odot}$ is adopted.
-With velocities $\beta_\text{ej} = \num{0.1}$ of typical supernova shocks, the model is completed.
+\enlargethispage*{2\baselineskip}
+
 
 
 \subsection{Spindown}
@@ -449,9 +446,12 @@ lost. Reference \cite{Alvarez_2004} gives a brief overview of possible radiation
 higher order electromagnetic moments. Because this work is limited in its scope and concerns itself with the acceleration of
 electric charges, a pure magnetic dipole approach will be adopted. For more compact and convenient notation, Gaussian units are used.
 
-In an idealized view like \cite{Deutsch_1955} of stars as sharply bound and uniformly magnetized spheres, one finds
-$\mu = \kern-0.1pt R^3 B / 2$ for the external magnetic moment. The parameters $R$ and $B$ measure stellar radius and polar magnetic
-flux density, respectively. In case of a rotating dipole in vacuo,
+\newpage
+
+An idealized view like in \cite{Deutsch_1955} models stars as sharply bound and uniformly magnetized spheres, leading to
+$\cramped{\mu \kern-0.1pt = \kern-0.6pt R_\text{ns}^3 B_\text{ns} \kern+0.1pt / 2}$ for the external magnetic moment.
+Parameters $R_\text{ns}$ and $B_\text{ns}$ measure stellar radius and polar magnetic flux density, respectively. For a rotating
+dipole in vacuo,
 \begin{equation}
 	L = \frac{2\mu^2 \omega^4 \kern-1.0pt \sin^2 \kern-2.0pt \chi \kern+1.0pt}{3c^3}
 	\label{eqn:vacuum}
@@ -471,21 +471,43 @@ $\bm{E} \cdot \kern-1.0pt \bm{B} = \kern-0.5pt 0$ as a condition of force free m
 \cite{Li_2012} and \cite{Gralla_2019} discuss, this can be overcome by introducing deviations from such a global solution on local
 scales.
 
-Spindown is described by an exponential energy decay $E = \kern-0.3pt E_0 \kern-0.2pt \exp \kern-2.0pt
-\smash{\bigl( - \kern+0.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}$ with a characteristic timescale
-$t_\text{sd}$ and $\dot{E} = - E / t_\text{sd}$ for the time derivative. Assuming all energy is stored in
-rotational form, the expressions $E = \kern-0.5pt I \kern+0.5pt \omega^2 \kern-1.5pt / 2$ and
-$\dot{E} = \kern-0.5pt I \kern+0.5pt \omega \kern+0.5pt \dot{\omega}$ are also valid with $I \kern+0.5pt$ as the neutron star
-moment of inertia. Equations \eqref{eqn:vacuum} and \eqref{eqn:ffe-mhd} can be generalized as $L = \kern-0.5pt K \omega^4$ by
-using a coefficient $K$ containing all other information except the dipolar $\omega^4$ dependence. Identifying this with the energy
-loss via $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields $L_0 \kern-0.3pt = \kern-0.2pt K \omega_0^4$ as well as
-$\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$ for an expression of
-$t_\text{sd} = I \kern+0.5pt / 2K\omega_0^2$ as the spindown time. It further follows for any $t \kern+0.5pt$ that
-$I \kern+0.5pt \dot{\omega} = -K \omega^3$ must hold. This is a special case of the power law differential equation
-$\dot{\omega} \propto \omega^n$ with $n = 3$ as the so-called braking index typical of a rotating magnetic dipole. 
-For comparison, one would find $n = 5$ in case of a quadrupole, indicating that $n$ is characteristic of the specific
-energy loss mechanism involved. After separating variables and integrating, one obtains
-$\omega = \omega_0 \smash{\bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)^{-1/2}}$
+Spindown follows an exponential energy decay $E = \kern-0.3pt E_0 \kern-0.2pt \exp \kern-2.0pt
+\smash{\bigl( - \kern+0.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}$ with the time derivative
+\begin{equation}
+	\dot{E} = - E / t_\text{sd}
+	\label{eqn:exp-derivative}
+\end{equation}
+and $t_\text{sd}$ as a characteristic timescale. Assuming all energy is stored in rotational form of
+\begin{equation}
+	E = \kern-0.5pt I \kern+0.5pt \omega^2 \kern-1.5pt / 2 \: ,
+	\label{eqn:quad}
+\end{equation}
+where $I \kern+0.5pt$ gives the neutron star moment of inertia, leads to a term
+\begin{equation}
+	\dot{E} = \kern-0.5pt I \kern+0.5pt \omega \kern+0.5pt \dot{\omega}
+	\label{eqn:quad-derivative}
+\end{equation}
+as an equally valid expression of the energy loss rate. Equations \eqref{eqn:vacuum} and \eqref{eqn:ffe-mhd} can be generalized via
+$L = \kern-0.5pt K \omega^4$ by using a coefficient $K$ containing all information except the dipolar $\omega^4$ dependence.
+Identifying this with \eqref{eqn:exp-derivative} through $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields
+$L_0 \kern-0.3pt = \kern-0.2pt K \omega_0^4$ as well as the decay rate $\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$
+from inserting \eqref{eqn:quad} as the energy, which can be combined to find
+\begin{equation}
+	t_\text{sd} = I \kern+0.5pt / 2K\omega_0^2
+	\label{eqn:spindown-time}
+\end{equation}
+for the spindown time. It further follows from equating \eqref{eqn:quad-derivative} to the luminosity at any $t \kern+0.5pt$ that
+\begin{equation}
+	I \kern+0.5pt \dot{\omega} = -K \omega^3
+\end{equation}
+must hold. This represents a special case of the power law differential equation $\dot{\omega} \propto \omega^n$ with a so-called
+braking index $n = 3$ typical of a rotating magnetic dipole. As a comparison, one would find $n = 5$ in case of a quadrupole, indicating
+that $n$ is characteristic of the specific energy loss mechanism involved \cite{Alvarez_2004}. After separating variables and integrating,
+one obtains
+\begin{equation}
+	\omega = \omega_0 \smash{\bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)^{-1/2}}
+	\label{eqn:frequency}
+\end{equation}
 for the frequency as a function of time.
 
 Another important concept in neutron star environments is the so-called light cylinder. Defined via
@@ -507,9 +529,9 @@ states this explicity. The superscript $M$ denotes a monochromatic energy distri
 \subsection{Active Galactic Nuclei}
 \label{sub:nuclei}
 
-As the bright centers observed in some galaxies, such compact cores are emitters of extreme energies, making them prime
-candidates for UHECR acceleration. It is accepted that AGN are driven by SMBH central engines. These black holes are assumed
-to be of Kerr type, giving them a spin and an according angular momentum \cite{Visser_2008}. Through interactions of
+As the bright centers observed in some galaxies, these compact cores are emitters of extreme energies, making them prime
+candidates for UHECR acceleration. It is accepted that AGN are driven by SMBH central engines. These black holes are described
+by the Kerr metric, giving them a spin and an according angular momentum \cite{Visser_2008}. Through interactions of
 infalling material and magnetic fields, this rotational energy can be extracted to form highly relativistic jets \cite{Blandford_2019}.
 In the plane of rotation surrounding the central mass, one usually finds an accretion disk emitting lumious thermal radiation,
 a thorough review of which is given by \cite{Abramowicz_2013}. The SMBH is enveloped by a bubble of highly magnetized
@@ -518,16 +540,11 @@ supposes a generally similar structure for all active galactic cores. In this vi
 by their radio emissivity and total luminosity, as well as the relative orientation in the direction of an observer. The
 last feature predicts the measured effects of broad and narrow line regions or the obstruction by a dusty torus that is situated
 around the outer accretion disk. Potential sources of high energy neutrinos in this complex environment are discussed by \cite{Murase_2023}.
-For the work at hand, a general DSA mechanism is assumed, which injects energetic particles onto a static accretion disk as the proton target.
-The responsible shocks have several possible origins, such as the corona or the disk itself. Other options are jet shocks that travel
+The present thesis assumes a general DSA mechanism, which injects energetic particles onto a static accretion disk as the proton target.
+Responsible shocks have several possible origins, such as the corona or the disk itself. Other options are jet shocks that travel
 towards the inner region or starburst events in the surrounding galaxy as tested in \cite{Eichmann_2022}. One more critical assumption
-is that of vanishing magnetic fields inside the AGN disk, which is necessary to neglect synchrotron losses.
-
-The typical SMBH has masses around $\num{e8} \kern+1.5pt M_\odot$ with $\qty{2}{\astronomicalunit}$ as a Schwarzschild radius. While
-jets can reach enormous scales of multiple \qty{100}{\kilo\parsec} with terminal bow shocks at \unit{\mega\parsec} distances from the
-core, itself contained within \qty{1}{\parsec} sizes, accretion disks extend to radii of $R = \kern-0.5pt \qty{10}{\milli\parsec}$
-with heights around $h = \qty{100}{\astronomicalunit}$ being plausible. Rough densities of $n = \qty{e15}{\per\centi\meter\cubed}$
-may be assumed on average, with a more detailed description provided in the following paragraphs.
+is that of vanishing magnetic fields inside the AGN disk, which is necessary to neglect synchrotron losses. At first order, this can be
+justified by the same logic given for the magnetar setting earlier.
 
 
 
@@ -556,22 +573,22 @@ for particles with masses $m$ orbiting the central object. The resulting acceler
 $g \kern-0.3pt = GM / \smash{R^2}$ with vertical component $\ddot{z} = \kern-0.6pt g \sin(\vartheta)$ and
 $\vartheta \kern+0.5pt$ as the angular elevation.~In case of $\kern+0.5pt \vartheta \ll \pi / 2$ one can approximate
 $\sin(\vartheta) = \kern+0.3pt z / \kern-0.2pt R \kern+0.5pt$ to obtain
-\begin{equation*}
+\begin{equation}
 	\ddot{z} = \frac{\raisebox{-0.3ex}{$GMz$}}{R^3}
-\end{equation*}
+\end{equation}
 which is related to pressure $p \kern+0.5pt$ and density $\kern-0.5pt \rho \kern+0.5pt$ via
 $d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable equilibrium to exist. Using the speed
 of sound $\smash{u^2} \kern-0.7pt = d \kern-0.1pt p / \kern-0.1pt d \kern-0.1pt \rho \kern+0.5pt$ allows reformulation to
-\begin{equation*}
+\begin{equation}
 	\frac{d \kern-0.1pt \rho}{\raisebox{0.2ex}{$dz \kern+1.0pt$}} =
 	-\rho \kern+1.0pt \frac{\raisebox{-0.3ex}{$GMz$}}{u^2R^3}
-\end{equation*}
+\end{equation}
 and $\rho \kern+0.6pt = \kern-0.6pt \rho_0 \kern-0.5pt \exp \kern-1.0pt \smash{\bigl( -z^2 \kern-1.8pt / 2 h^2 \bigr)}$
 after integration. According to this result, the disk density follows a centered Gaussian distribution with height parameter
 $h \kern+0.5pt$ defined via
-\begin{equation*}
+\begin{equation}
 	h^2 = \frac{\raisebox{-0.3ex}{$u^2R^3$}}{\raisebox{0.2ex}{$GM \kern+1.5pt$}}
-\end{equation*}
+\end{equation}
 as the standard deviation. Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
 acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. One is then
 able to write $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and from the necessary condition $h \ll R$ for the small angle
@@ -584,9 +601,9 @@ structures.
 \subsubsection*{Luminosity Limit}
 
 Any luminous object radiating with spherical symmetry excerts a pressure
-\begin{equation*}
+\begin{equation}
 	P = \frac{\raisebox{-0.3ex}{$L$}}{4\pi R^2 c}
-\end{equation*}
+\end{equation}
 as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the source.
 Suppose a gaseous cloud containing particles with masses $m$ falling towards the same bright central mass $M \kern+0.5pt$
 due to gravitational attraction. During this process, each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$
@@ -604,7 +621,7 @@ context of stellar structures, this approach can also be used to describe accret
 with rate $\dot{M} \kern+0.5pt$ due to accreting matter, some of the corresponding gravitational potential may be converted to
 radiation. In terms of rest energy, a luminosity $L = \eta\dot{M}c^2$ is obtained where $\eta$ denotes the efficiency of this
 mechanism. With \eqref{eqn:eddington} one finds an analogous steady state limit
-\begin{equation*}
+\begin{equation}
 	\dot{M} \kern-0.2pt = \frac{\raisebox{-0.3ex}{$4\pi GM$}}{\raisebox{0.8ex}{$\eta c \varkappa$}}
-\end{equation*}
+\end{equation}
 for the accretion rate, enforced by continuous balancing of radiation pressure and gravitational forces as an intrinsic feedback process.
