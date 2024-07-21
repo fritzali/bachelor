@@ -1,76 +1,78 @@
-\chapter{Methods}
-\label{ch:methods}
-
-Building on a physical background, this chapter first introduces generally applicable methods for the translation of an
-injected proton distribution to a hadronic spectrum, which then decays to create neutrinos. Subsequently, the injection
-spectra are decribed for the previously specified astrophysical settings. To start with, a general case $a \rightarrow b$
-is defined for the reaction. Given a spectrum $dN_a \kern+0.5pt / \kern-0.25pt dE_a$ that describes the number $N_a$ of
-particles $a$ per $E_a$ energy interval, as well as the spectral distribution $F_{a \rightarrow b}$ for the probability
-that particles $b$ are produced by a singular interaction, one can solve the folding integral
-\begin{equation}
-	\frac{dN_b}{\raisebox{0.5ex}{$dE_b$}} (E_b) \kern+0.5pt = \kern-1.5pt\int_{\check{E}_a}^{\hat{E}_a} dE_a
-	\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b \kern+0.5pt, \kern-0.5pt E_a)
-	\label{eqn:folding}
-\end{equation}
-to obtain their numbers $N_b$ with respect to $E_b$ energies. From this formulation, it is clear that both distributions
-and spectra should be assumed to depend on energy, with other arguments such as the time $t \kern+0.5pt$ being allowed as
-well. Additionally, integration bounds $\check{E}_a \leq \hat{E}_a$ must always be specified, which are usually dictated by
-kinematic constraints.
-
-To implement and compute all following parametrizations, the \emph{Python} programming language and its library \emph{Numpy}
-are used. Graphical results are created via the \emph{Matplotlib} package.\footnote{$\,$In service of reproducability, all
-implementations can be viewed in \href{https://github.com/fritzali/bachelor}{this} repository.}
-
-
-\section{Cross Sections}
-\label{sec:cross}
-
-By defining an effective area perpendicular to the momentum vectors of projectiles and targets, cross sections as described
-by section \ref{sub:collisions} measure probabilities of collision processes in particle physics and are therefore required
-for the calculation of spectral distributions. 
-
-
-
-\subsection{Scattering}
-\label{sub:scattering}
-
-To model total cross sections in hadron-proton scattering, this thesis uses the formula
-\begin{equation}
-	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
-	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
-	\label{eqn:hpr1r2}
-\end{equation}
-as given in \cite{Belousov_2016} for a universal analytic parametrization of the corresponding amplitudes.
-
-All adjustable parameters are listed in table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
-cooling. In this approach, the variable $M$ \kern+0.5pt relates to $H \kern+0.5pt = \pi (\hbar c / M)^2$ and
-$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} are named after Heisenberg,
-Pomeranchuk and Regge, respectively, and have some qualitative motivation, though the formula itself is primarily a quantitative
-result.
+\begin{spacing}{0.985}
+	\chapter{Methods}
+	\label{ch:methods}
+	
+	Building on a physical background, this chapter first introduces generally applicable methods for the translation of an
+	injected proton distribution to a hadronic spectrum, which then decays to create neutrinos. Subsequently, the injection
+	spectra are described for the previously specified astrophysical settings. To start with, a general case $a \rightarrow b$
+	is defined for the reaction. Given a spectrum $dN_a \kern+0.5pt / \kern-0.25pt dE_a$ that describes the number $N_a$ of
+	particles $a$ per $E_a$ energy interval, as well as the spectral distribution $F_{a \rightarrow b}$ for the probability
+	that particles $b$ are produced by a singular interaction, one can solve the folding integral
+	\begin{equation}
+		\frac{dN_b}{\raisebox{0.5ex}{$dE_b$}} (E_b) \kern+0.5pt = \kern-1.5pt\int_{\check{E}_a}^{\hat{E}_a} dE_a
+		\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b \kern+0.5pt, \kern-0.5pt E_a)
+		\label{eqn:folding}
+	\end{equation}
+	to obtain their numbers $N_b$ with respect to $E_b$ energies. From this formulation, it is clear that both distributions
+	and spectra should be assumed to depend on energy, with other arguments such as the time $t \kern+0.5pt$ being allowed as
+	well. Additionally, integration bounds $\check{E}_a \leq \hat{E}_a$ must always be specified, which are usually dictated by
+	kinematic constraints.
+	
+	To implement and compute all following parametrizations, the \emph{Python} programming language and its library \emph{NumPy}
+	are used. Graphical results are created via the \emph{Matplotlib} package.
+	
+	
+	
+	\section{Cross Sections}
+	\label{sec:cross}
+	
+	By defining an effective area perpendicular to the momentum vectors of projectiles and targets, cross sections as described
+	in Section \ref{sub:collisions} measure probabilities of collision processes in particle physics and are therefore required
+	for the calculation of spectral distributions. 
+	
+	
+	
+	\subsection{Scattering}
+	\label{sub:scattering}
+	
+	To model total cross sections in hadron-proton scattering, this thesis uses the formula
+	\begin{equation}
+		\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
+		R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
+		\label{eqn:hpr1r2}
+	\end{equation}
+	as given in \cite{Belousov_2016} for a universal analytic parametrization of the corresponding amplitudes.
+	All adjustable parameters are listed in table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
+	cooling. In this approach, the variable $M$ \kern+0.5pt relates to $H \kern+0.5pt = \pi (\hbar c / M)^2$ and
+	$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} are named after Heisenberg,
+	Pomeranchuk and Regge, respectively, and have some qualitative motivation, though the formula itself is mainly a quantitative
+	result.
+	\enlargethispage{\baselineskip}\newpage
+\end{spacing}
 
 \input{content/tables/hadron-scattering.tex}
 
 Assuming a quasi universal ratio $\mathscr{R}$ between elastic and total hadron cross sections, one obtains the inelastic
 cross section $\sigma_\text{inel} = (1 - \mathscr{R}) \sigma_\text{tot}$ from $\sigma_\text{el} = \mathscr{R} \sigma_\text{tot}$
 and $\sigma_\text{el} + \sigma_\text{inel} = \sigma_\text{tot}$ as a unitarity condition. Provided in \cite{Fagundes_2012} is
-the model independent parametrization
+the model-independent parametrization
 \begin{equation}
 	\mathscr{R}(s) = \frac{\sigma_{\text{el}\kern+0.5pt} (s)}{\sigma_{\text{tot}\kern+0.5pt} (s)} =
 	\mathscr{A} \tanh \bigl( \kern+1.0pt \gamma_1 \kern-1.0pt - \gamma_2 \ln (s) + \gamma_3 \ln^2 (s) \bigr)
 	\label{eqn:ratio}
 \end{equation}
-with a constant asymptote $\mathscr{A}$ at very high energies. Coefficients are given in table \ref{tab:hadron-ratio} for
+with a constant asymptote $\mathscr{A}$ at very high energies. Coefficients are given in Table \ref{tab:hadron-ratio} for
 different physical settings. Both equations \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} use units of \unit{\giga\electronvolt\squared}
-for the $s$  variables. Combining these, figure \ref{fig:hadron-proton-scattering} depicts the scaling of inelastic cross sections
+for the $s$  variables. Combining these, Figure \ref{fig:hadron-proton-scattering} depicts the scaling of inelastic cross sections
 with energy for different hadrons.
 
 \input{content/tables/hadron-ratio.tex}
 
-Reference \cite{Fagundes_2013} tests the asymptotic rise $\sigma(s) \propto \ln^2(s)$ derived in \cite{Froissart_1961}
-as a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, a ratio $\mathscr{A} = 1/3$ due to
-diffraction as opposed to the black disc limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested
-\cite{Fagundes_2013}. Because parameters are only available in the latter case, all calculations of $\mathscr{R}$ use \eqref{eqn:ratio}
-as defined by an asymptote $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data matching $\mathscr{A} = 1/3$ then imply that
+Reference \cite{Fagundes_2013} examines the asymptotic rise $\sigma(s) \propto \ln^2(s)$ derived in \cite{Froissart_1961}
+as a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, an asymptote $\mathscr{A} = 1/3$ due to
+diffraction as opposed to the black disk limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested
+in \cite{Fagundes_2013}. Because parameters are only available in the latter case, all calculations of the ratio $\mathscr{R}$
+use \eqref{eqn:ratio} as defined by $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data better matching $\mathscr{A} = 1/3$ then imply that
 $\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to significantly influence the overall results.
 
 \input{content/visuals/hadron-proton-scattering.tex}
@@ -403,7 +405,7 @@ as an equivalent formulation. Here the output $\bm{F} \in \mathbb{R}^{m \times n
 $\bm{G} \in \mathbb{R}^{m \times l}$ and $\bm{H} \in \mathbb{R}^{l \times n}$ as well as the square matrix
 $\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal. These results enable a quick and
 efficient implementation of the required calculations as program code, where array arithmetic operations can greatly
-increase execution speed.\footnote{$\,$In service of reproducability, all implementations can be viewed in
+increase execution speed.\footnote{$\,$For the purpose of reproducability, all implementations can be viewed in
 \href{https://github.com/fritzali/bachelor}{this} repository.}
 
 Logarithmic spacing can lead to better accuracy and fewer steps...
