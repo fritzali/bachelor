@@ -34,6 +34,8 @@ References are sorted into the following types:
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
 - [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
 - [Gabici (2019)](https://arxiv.org/abs/1903.11584) &nbsp; *review and critique of the standard view on mainly galactic cosmic ray origins*
+- [García (2013)](https://arxiv.org/abs/1303.2112) &nbsp; *accretion disk density*
+- [García (2014)](https://arxiv.org/abs/1312.3231) &nbsp; *accretion disk density*
 - [Goldreich (1969)](https://ui.adsabs.harvard.edu/abs/1969ApJ...157..869G) &nbsp; *seminal work on non vanishing space charge density around neutron stars and convenient energy extraction*
 - [Gonçalves (2007)](https://arxiv.org/abs/hep-ph/0607125) &nbsp; *parametrization of charm production differential cross section in proton air interactions*
 - [Gralla (2019)](https://arxiv.org/abs/1811.07438) &nbsp; *effective force free field theory with small corrections on large scales instead of large deviations in small regions*
@@ -41,6 +43,7 @@ References are sorted into the following types:
 - [Haensel (1999)](https://arxiv.org/abs/astro-ph/9901118) &nbsp; *calculation of the minimum uniformly rotating neutron stars period under causality preservation*
 - [Hillas (1984)](https://ui.adsabs.harvard.edu/abs/1984ARA%26A..22..425H) &nbsp; *constraint on magnetic field strength and size of accelerating region for high energy particles*
 - [Kelner (2006)](https://arxiv.org/abs/astro-ph/0606058) &nbsp; *analytical spectra from event generator data on inclusive meson production*
+- [King (2008)](https://ui.adsabs.harvard.edu/abs/2008NewAR..52..253K/) &nbsp; *accretion disk height*
 - [Kniehl (2006)](https://arxiv.org/abs/hep-ph/0607306) &nbsp; *charm hadron fragmentation functions via factorization schemes on leading order calculations*
 - [Koers (2006)](https://arxiv.org/abs/hep-ph/0611219) &nbsp; *distributions and multiplicities of secondary pions and kaons in energetic proton proton collisions*
 - [Li (2012)](https://arxiv.org/abs/1107.0979) &nbsp; *overview of vacuum and force free as well as resisitve magnetosphere solutions on local and global scales*
