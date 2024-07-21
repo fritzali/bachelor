@@ -34,7 +34,7 @@ for the calculation of spectral distributions.
 \subsection{Scattering}
 \label{sub:scattering}
 
-To model total cross sections in hadron-proton scattering, this work uses the formula
+To model total cross sections in hadron-proton scattering, this thesis uses the formula
 \begin{equation}
 	\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
 	R_h^1 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_1} + R_h^2 \bigl( s_h \kern+0.5pt / s \bigr)^{\eta_2}
@@ -70,7 +70,7 @@ Reference \cite{Fagundes_2013} tests the asymptotic rise $\sigma(s) \propto \ln^
 as a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, a ratio $\mathscr{A} = 1/3$ due to
 diffraction as opposed to the black disc limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested
 \cite{Fagundes_2013}. Because parameters are only available in the latter case, all calculations of $\mathscr{R}$ use \eqref{eqn:ratio}
-as defined by an asymptote $\mathscr{A} = 1/2 \kern+0.2pt$ for this work. Data matching $\mathscr{A} = 1/3$ then imply that
+as defined by an asymptote $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data matching $\mathscr{A} = 1/3$ then imply that
 $\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to significantly influence the overall results.
 
 \input{content/visuals/hadron-proton-scattering.tex}
@@ -99,7 +99,7 @@ table \ref{tab:charm-production} provides, the coefficient $n_0 \kern-0.5pt = \n
 for the lower energy regime is set to $n_0 \kern-0.5pt = \num{7.5}$ instead, because the parametrization breaks down otherwise.
 Further testing reveals another problem with the \qty{e4}{\giga\electronvolt} to \qty{e8}{\giga\electronvolt} region,
 in that energies around~\qty{26}{\tera\electronvolt}~or lower yield negative differential cross
-sections. Considering other approximations made in this work, it is therefore decided that an extrapolation from the
+sections. Considering other approximations made in this thesis, it is therefore decided that an extrapolation from the
 \qty{e8}{\giga\electronvolt} to $10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ case to all energies
 can be done without producing unreasonably large errors.
 
@@ -112,10 +112,10 @@ Borrowing from \cite{Bhattacharya_2015} among others, linear scaling with nucleo
 \end{equation*}
 for inclusive charm production in proton-{\kern+0.1pt}proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent}
 nitrogen and \qty{25}{\percent} oxygen, one finds $A = \kern-0.3pt \num{14.5}$ for this factor. By integrating the charmed hadron
-cross section defined below and comparing to experimental data in \cite{lhc} for the charm mesons considered in this work,
+cross section defined below and comparing to experimental data in \cite{lhc} for the charm mesons considered in this thesis,
 one finds that calculated values exceed measurements~by a factor \num{22.32+-2.34} on average, yielding $\tilde{A} = \num{323.64}$
 as a modification to enforce compatibility with observations. One problem of this approach is that \cite{lhc} provides values
-at $\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{13}{\tera\electronvolt}$ or roughly $E_p = \kern+0.1pt \qty{9}{\peta\electronvolt}$ only,
+at $\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{13}{\tera\electronvolt}$ or roughly $E_p = \kern+0.1pt \qty{90}{\peta\electronvolt}$ only,
 so that deviations at different energies are not accounted for. Similar to earlier reasoning, the resulting inaccuracy is deemed acceptable.
 
 Translation of charm quarks to charmed hadrons is achieved with an integral
@@ -145,7 +145,7 @@ not yet been probed experimentally. This procedure has lead \cite{Kniehl_2006} t
 	\label{eqn:fragmentation}
 \end{equation}
 with parameters from $\kern+0.5pt e^+e^- \kern-0.8pt$ data in table \ref{tab:charm-hadrons} as the charm hadron FF used
-throughout this work. It is important to note that such functions are invariant under charge conjugation, so that there is no
+throughout this thesis. It is important to note that such functions are invariant under charge conjugation, so that there is no
 differentiation between quark to particle or antiquark to antiparticle processes.
 
 \input{content/visuals/charm-hadron-cross-section.tex}
@@ -254,7 +254,7 @@ Coefficients are specified in table \ref{tab:pion-spectrum} and recalculated for
 instead of \unit{\tera\electronvolt} units. Under the assumption of a $\smash{\pi^0} \kern-0.5pt$ cross section approximately
 equal to the $\smash{\pi^\pm} \kern-0.5pt$ average and with identical spectra for charged pions, it follows that
 $F_\pi = \tilde{F}_\pi \kern+0.5pt / E_p$ should describe pion production regardless of charge reasonably well
-for the purpose of this work.
+for the purpose of this thesis.
 
 \input{content/tables/pion-spectrum.tex}
 
@@ -272,7 +272,7 @@ particle listings. By decaying, muons produced in these processes can significan
 \cite{Carpio_2020} suggest that this is particularly relevant for pions. Muonic three body decays of type
 $\mu^- \kern-2.5pt \kern+0.5pt \rightarrow e^- \kern+0.5pt \overline{\kern-0.2pt \nu \kern+0.8pt}_e \nu_\mu$ as well as
 cooling factors depend on the polarization of participating leptons due to the nature of weak force coupling. This complicates
-computations and is thus omitted in service of restricting the present work to a managable scope, though it should be remembered
+computations and is thus omitted in service of restricting the present thesis to a managable scope, though it should be remembered
 as an important caveat for the final results.
 
 The remaining two body decays of ultrarelativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
@@ -320,8 +320,8 @@ For the AGN setting, a more general DSA scenario like in section \ref{sub:accele
 \begin{equation*}
 	\frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} = \mathscr{S} E_p^{\kern+0.2pt -2}
 \end{equation*}
-with $\kern-0.2pt \mathscr{S} \kern+0.6pt$ for an arbitrary unitless normalization factor that does not need to be specified further,
-as this work is interested in relative neutrino contributions instead of absolute predictions.
+with $\kern-0.2pt \mathscr{S} \kern+0.6pt$ for an arbitrary normalization factor that does not need to be specified further,
+as this thesis is interested in relative neutrino contributions instead of absolute predictions.
 
 
 
