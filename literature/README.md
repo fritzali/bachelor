@@ -9,9 +9,11 @@ References are sorted into the following types:
 
 - [Gaisser (2016)](https://www.cambridge.org/core/books/cosmic-rays-and-particle-physics/C81BA71195ADFC89EFCC2C565B617702) &nbsp; *updated introduction to the combined field of cosmic rays and particle physics*
 - [Haskell (2018)](https://arxiv.org/abs/1709.10340) &nbsp; *discussion on superfluidity and superconductivity inside neutron stars*
+- [Halzen (1984)](https://www.wiley-vch.de/en/areas-interest/natural-sciences/physics-11ph/nuclear-high-energy-physics-11ph2/quarks-and-leptons-978-0-471-88741-6) &nbsp; *course on quarks and leptons as an introduction to the field of modern particle physics*
 - [Jackson (1999)](https://ui.adsabs.harvard.edu/abs/1998clel.book.....J) &nbsp; *standard reference for students of classical electrodynamics at the graduate level*
 - [Longair (2011)](https://www.cambridge.org/core/books/high-energy-astrophysics/CF25E2E5FC0EDFC51FCD7846A262C0AE) &nbsp; *astrophysics of high energy phenomena for advanced undergraduate study*
 - [Murase (2023)](https://arxiv.org/abs/2202.03381) &nbsp; *exploration of accretion disks and coronae or jets as possible neutrino sources in galactic nuclei*
+- [Peskin (1995)](https://www.taylorfrancis.com/books/mono/10.1201/9780429503559/introduction-quantum-field-theory-michael-peskin) &nbsp; *introductory text intended for graduate courses on quantum field theory*
 
 #### Papers
 
@@ -59,6 +61,7 @@ References are sorted into the following types:
 #### European Nuclear Research Organization
 
 - [LHC (2016)](https://arxiv.org/abs/1510.01707) &nbsp; *measurement of total charm meson production cross section in large hadron collider experiments*
+- [QWG (2005)](https://arxiv.org/abs/hep-ph/0412158) &nbsp; *comprehensive review of heavy quarkonium physics in anticipation of the large hadron collider experiment*
 
 #### IceCube Neutrino Observatory
 
