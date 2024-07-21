@@ -399,6 +399,8 @@ insights into highly energetic merger events, there should also exist a gravitat
 the very early universe.
 
 
+\newpage\input{amend/special-head}
+
 
 \section{Astrophysical Sources}
 \label{sec:sources}
@@ -419,21 +421,21 @@ nucleons, placing them among the most dense macroscopic objects in the universe.
 star being conserved in the remnant, the compression of stellar material immediately before a supernova explosion leads to
 extremely fast rotational periods. In addition to that, conservation of magnetic energy implies large magnetizations as well.
 Reference \cite{Thompson_1993} discusses this possibility of so-called fossil fields, but argues that strong convective flows
-during formation or inside the very young neutron star are more likely culprits. These would also remove any previous correlation
+during formation or inside the very young neutron star are more likely culprits. These would also eliminate any prior correlation
 between the axis of rotation and the field orientation. Because neutron star interiors are assumed to be superconducting fluids,
 dynamo effects can amplify and sustain any initial magnetic fields \cite{Haskell_2018}. If such a magnetized rotator emits misaligned
 radio jets, their sweeping motion will be observed as a pulsating radio source, hence the name pulsar. In case of extreme magnetic
-fields being achieved, the respective neutron star is further classified as a magnetar. The decay of these fields is generally modeled
+fields, the respective neutron star is further classified as a magnetar. The decay of these fields is generally modeled
 as exponential or according to a power law, but can be approximated as being static for the shorter timescales relevant to the present
 thesis \cite{Sang_1990}. Surrounding newborn neutron stars are clouds of ejected material, which serve as target fields. Modeling this
 to be a spherical region of homogenously distributed matter at each time~$t \kern+0.5pt$~after formation of the remnant leads to
-a number density 
+a number density corresponding to the ratio
 \begin{equation}
 	\cramped{n = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt
 	\label{eqn:number-density}
 \end{equation}
-for all ejecta mass $M_\text{ej}$ consisting of protons with $m_p$ masses. From asserting radial expansion at a constant $\beta_\text{ej}$
-velocity, one finds the ejecta radius
+for all ejecta mass $M_\text{ej}$ consisting of protons with $m_p$ masses. By asserting a radial expansion at constant
+$\beta_\text{ej}$ velocities, one finds the ejecta radius
 \begin{equation}
 	r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t
 	\label{eqn:ejecta-radius}
@@ -445,23 +447,19 @@ neutrino attenuation effects to be neglected, and a comparison of the optical de
 thermal radiation fields are unlikely to influence the overall results \cite{Carpio_2020}.
 
 
-
-\enlargethispage*{2\baselineskip}
-
+\enlargethispage*{2\baselineskip}\newpage\input{amend/normal-head}
 
 
 \subsection{Spindown}
 \label{sub:spindown}
 
 To explain observations of rapidly spinning neutron stars or pulsars, there has to exist some mechanism by which rotational energy is
-lost. Reference \cite{Alvarez_2004} gives a brief overview of possible radiation candidates such as gravitational quadrupolar or
+lost. Reference \cite{Alvarez_2004} gives a brief overview of possible radiation candidates such as gravitational quadrupole or
 higher order electromagnetic moments. Because this thesis is limited in its scope and concerns itself with the acceleration of
 electric charges, a pure magnetic dipole approach will be adopted. For more compact and convenient notation, Gaussian units are used.
 
-\newpage
-
 An idealized view like in \cite{Deutsch_1955} models stars as sharply bound and uniformly magnetized spheres, leading to
-$\cramped{\mu \kern-0.1pt = \kern-0.6pt R_\text{ns}^3 B_\text{ns} \kern+0.1pt / 2}$ for the external magnetic moment.
+$\cramped{\mu \kern-0.1pt = \kern-0.6pt R_\text{ns}^3 B_\text{ns} \kern+0.1pt / 2}$ for the external magnetic moment \cite{Jackson_1999}.
 Parameters $R_\text{ns}$ and $B_\text{ns}$ measure stellar radius and polar magnetic flux density, respectively. For a rotating
 dipole in vacuo,
 \begin{equation}
@@ -470,18 +468,18 @@ dipole in vacuo,
 \end{equation}
 is the exact expression for radiant power derived in \cite{Jackson_1999} as a standard reference, where a static angle
 $\kern-1.0pt \chi \kern+1.0pt$ between the dipole field and rotational axis with angular frequency $\omega$ is assumed. If
-a force free limit is applied instead, variational calculations \cite{Gruzinov_2006} and simulations \cite{Spitkovsky_2006} indicate
+a force{\kern+0.2pt}-free limit is applied instead, variational calculations \cite{Gruzinov_2006} and simulations
+\cite{Spitkovsky_2006} indicate
 \begin{equation}
 	L = \frac{\mu^2 \omega^4 \raisebox{0.15ex}{\( \bigl(
 	\raisebox{-0.15ex}{\( 1 \kern-0.7pt + \sin^2 \kern-2.0pt \chi \kern+1.0pt \)} \bigr) \)} }{c^3}
 	\label{eqn:ffe-mhd}
 \end{equation}
 as an appropriate expression of the luminosity. This is more accurate than the previous result, as it has been
-shown by \cite{Goldreich_1969} that the surroundings of a neutron star cannot support a vacuum but must instead be filled with a
-plasma of charge carriers originating from instabilities at the surface. However, one quickly encounters the problem that
-$\bm{E} \cdot \kern-1.0pt \bm{B} = \kern-0.5pt 0$ as a condition of force free magnetospheres prevents particle acceleration. As
-\cite{Li_2012} and \cite{Gralla_2019} discuss, this can be overcome by introducing deviations from such a global solution on local
-scales.
+shown by \cite{Goldreich_1969} that the surroundings of a neutron star cannot support a vacuum but must instead be filled
+with a plasma of charge carriers originating from instabilities at the surface. However, one quickly encounters the problem that
+$\bm{E} \cdot \kern-1.0pt \bm{B} = \kern-0.5pt 0$ as a condition of force{\kern+0.2pt}-free magnetospheres prevents particle acceleration.
+This can be overcome by introducing deviations from such global solutions on local scales as discussed in \cite{Li_2012} and \cite{Gralla_2019}.
 
 Spindown follows an exponential energy decay $E = \kern-0.3pt E_0 \kern-0.2pt \exp \kern-2.0pt
 \smash{\bigl( - \kern+0.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}$ with the time derivative
@@ -489,18 +487,21 @@ Spindown follows an exponential energy decay $E = \kern-0.3pt E_0 \kern-0.2pt \e
 	\dot{E} = - E / t_\text{sd}
 	\label{eqn:exp-derivative}
 \end{equation}
-and $t_\text{sd}$ as a characteristic timescale. Assuming all energy is stored in rotational form of
+and $t_\text{sd}$ as a characteristic timescale. Assuming exclusively rotational energy
 \begin{equation}
 	E = \kern-0.5pt I \kern+0.5pt \omega^2 \kern-1.5pt / 2 \: ,
 	\label{eqn:quad}
 \end{equation}
-where $I \kern+0.5pt$ gives the neutron star moment of inertia, leads to a term
+where $I \kern+0.5pt$ gives the neutron star moment of inertia, leads to
 \begin{equation}
 	\dot{E} = \kern-0.5pt I \kern+0.5pt \omega \kern+0.5pt \dot{\omega}
 	\label{eqn:quad-derivative}
 \end{equation}
 as an equally valid expression of the energy loss rate. Equations \eqref{eqn:vacuum} and \eqref{eqn:ffe-mhd} can be generalized via
-$L = \kern-0.5pt K \omega^4$ by using a coefficient $K$ containing all information except the dipolar $\omega^4$ dependence.
+$L = \kern-0.5pt K \omega^4$ by using a coefficient $K$ containing all information except the \mbox{dipolar $\omega^4$ dependence.}
+
+\newpage
+
 Identifying this with \eqref{eqn:exp-derivative} through $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields
 $L_0 \kern-0.3pt = \kern-0.2pt K \omega_0^4$ as well as the decay rate $\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$
 from inserting \eqref{eqn:quad} as the energy, which can be combined to find
@@ -520,21 +521,21 @@ one obtains
 	\omega = \omega_0 \smash{\bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)^{-1/2}}
 	\label{eqn:frequency}
 \end{equation}
-for the frequency as a function of time.
+for the frequency as a function of time and spindown scale.
 
-Another important concept in neutron star environments is the so-called light cylinder. Defined via
-$R_\text{lc} \kern-0.6pt = c / \kern-0.4pt \omega$ as the radius, it describes the boundary beyond which magnetic field lines
-are unable to corotate with the central body without exceeding the speed of light. Thanks to the resulting lag, magnetic fields
-are open, providing a potential acceleration mechanism.
+Another important concept for the description of neutron star environments is the so-called light cylinder. It represents the boundary
+beyond which magnetic field lines can no longer corotate with the central body without exceeding the speed of light, defining
+$R_\text{lc} \kern-0.6pt = c / \kern-0.4pt \omega$ as its radius. Due to the resulting lag, magnetic fields
+are open, providing a potential mechanism for the acceleration of particles to high energies \cite{Goldreich_1969}.
 
-With an open field magnetic flux $\psi = \mu / R_\text{lc}$ follows $\phi = \psi / R_\text{lc}$ for the potential drop. From
-this, a particle with charge $e$ reaches energies of $E^M = \eta e \phi$ where $\eta$ measures the acceleration efficiency.
+With an open field magnetic flux $\psi = \mu / R_\text{lc}$ follows $\phi = \psi / R_\text{lc}$ as the difference in potential energy.
+From this, a charge $e$ reaches energies $E^M = \eta e \phi \kern+0.5pt$ with an efficiency $\eta < 1$ limiting the acceleration.
 Expanding these terms and including the dependence on time,
 \begin{equation}
-	E^M(t) = \frac{\eta e B R^3 \omega_0^2}{2c^2 \bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}
+	E^M(t) = \frac{\eta \kern+0.5pt e B R^3 \omega_0^2}{2c^2 \bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}
 	\label{eqn:mono}
 \end{equation}
-states this explicity. The superscript $M$ denotes a monochromatic energy distribution.
+states this explicitly. The superscript $M$ denotes a monochromatic energy distribution.
 
 
 
@@ -543,20 +544,24 @@ states this explicity. The superscript $M$ denotes a monochromatic energy distri
 
 As the bright centers observed in some galaxies, these compact cores are emitters of extreme energies, making them prime
 candidates for UHECR acceleration. It is accepted that AGN are driven by SMBH central engines. These black holes are described
-by the Kerr metric, giving them a spin and an according angular momentum \cite{Visser_2008}. Through interactions of
+by the Kerr metric, giving them a spin and a corresponding angular momentum \cite{Visser_2008}. Through interactions of
 infalling material and magnetic fields, this rotational energy can be extracted to form highly relativistic jets \cite{Blandford_2019}.
-In the plane of rotation surrounding the central mass, one usually finds an accretion disk emitting lumious thermal radiation,
-a thorough review of which is given by \cite{Abramowicz_2013}. The SMBH is enveloped by a bubble of highly magnetized
-hot plasma, the so-called corona region. Included in \cite{Beckmann_2013} is a brief overview of the unified AGN model that
-supposes a generally similar structure for all active galactic cores. In this view, distinct AGN types are differentiated
+In the plane of rotation surrounding the central mass, one usually finds an accretion disk emitting luminous thermal radiation,
+a thorough review of which is given by \cite{Abramowicz_2013}. The central SMBH is enveloped by a bubble of hot plasma, the so-called
+corona region.
+
+\newpage
+
+Included in \cite{Beckmann_2013} is a brief overview of the unified AGN model that assumes a generally similar structure for all active
+galactic cores. In this view, distinct AGN types are differentiated
 by their radio emissivity and total luminosity, as well as the relative orientation in the direction of an observer. The
 last feature predicts the measured effects of broad and narrow line regions or the obstruction by a dusty torus that is situated
-around the outer accretion disk. Potential sources of high energy neutrinos in this complex environment are discussed by \cite{Murase_2023}.
-The present thesis assumes a general DSA mechanism, which injects energetic particles onto a static accretion disk as the proton target.
-Responsible shocks have several possible origins, such as the corona or the disk itself. Other options are jet shocks that travel
-towards the inner region or starburst events in the surrounding galaxy as tested in \cite{Eichmann_2022}. One more critical assumption
-is that of vanishing magnetic fields inside the AGN disk, which is necessary to neglect synchrotron losses. At first order, this can be
-justified by the same logic given for the magnetar setting earlier.
+around the outer accretion disk. Potential sources of high energy neutrinos in the complex AGN environment are discussed in \cite{Murase_2023}.
+This thesis assumes a general DSA mechanism, which injects energetic particles onto a static accretion disk as the proton target.
+The shocks involved in this acceleration have several possible origins, such as the corona or the disk itself. Other options are jet
+shocks that travel towards the inner region or starburst events in the surrounding galaxy as tested in \cite{Eichmann_2022}. One more
+critical assumption is that of vanishing magnetic fields inside the AGN disk, which is necessary to neglect synchrotron losses. At first
+order, this is justified by the same reasoning given for the magnetar setting.
 
 
 
@@ -566,15 +571,9 @@ justified by the same logic given for the magnetar setting earlier.
 Diffusely distributed material in orbit around a central massive object naturally produces flat structures. This is a
 consequence of gravitational forces being compensated in the radial plane by rotational effects while matter is relatively
 free to collapse in the axial direction. Compression and friction during inward spiraling heat the disk, thereby emitting
-intense thermal radiation.
-
-Settings where these phenomena likely occur are protoplanetary disks surrounding newly formed
-stars or accretion flows on a SMBH inside the galactic core region, among others. The following describes some
-related effects that are for example discussed by \cite{Longair_2011} as well.
-
-
-
-\subsubsection*{Hydrostatic Equilibrium}
+intense thermal radiation. Settings where these phenomena likely occur are the protoplanetary disks that surround newly formed
+stars or accretion flows on a SMBH at the center of a galactic core region, among others. The following describes some related effects
+that are also discussed in \cite{Longair_2011}.
 
 In Newtonian physics, the gravitational force at distance $R \kern+0.5pt$ from a mass $M \kern+0.5pt$ is given as
 \begin{equation}
@@ -589,51 +588,46 @@ $\sin(\vartheta) = \kern+0.3pt z / \kern-0.2pt R \kern+0.5pt$ to obtain
 	\ddot{z} = \frac{\raisebox{-0.3ex}{$GMz$}}{R^3}
 \end{equation}
 which is related to pressure $p \kern+0.5pt$ and density $\kern-0.5pt \rho \kern+0.5pt$ via
-$d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable equilibrium to exist. Using the speed
+$d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable hysdrostatic equilibrium to exist. Using the speed
 of sound $\smash{u^2} \kern-0.7pt = d \kern-0.1pt p / \kern-0.1pt d \kern-0.1pt \rho \kern+0.5pt$ allows reformulation to
 \begin{equation}
 	\frac{d \kern-0.1pt \rho}{\raisebox{0.2ex}{$dz \kern+1.0pt$}} =
 	-\rho \kern+1.0pt \frac{\raisebox{-0.3ex}{$GMz$}}{u^2R^3}
 \end{equation}
 and $\rho \kern+0.6pt = \kern-0.6pt \rho_0 \kern-0.5pt \exp \kern-1.0pt \smash{\bigl( -z^2 \kern-1.8pt / 2 h^2 \bigr)}$
-after integration. According to this result, the disk density follows a centered Gaussian distribution with height parameter
-$h \kern+0.5pt$ defined via
+after integration. According to this result, the height $h$ defined via
 \begin{equation}
 	h^2 = \frac{\raisebox{-0.3ex}{$u^2R^3$}}{\raisebox{0.2ex}{$GM \kern+1.5pt$}}
 \end{equation}
-as the standard deviation. Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
-acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. One is then
-able to write $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and from the necessary condition $h \ll R$ for the small angle
-approximation follows $u \ll v \kern+1.0pt$ or that orbital velocities must greatly exceed the speed of sound specific
-to the medium. This special case is called a thin disk and can further be extended to slim or even thick types of accretion
-structures.
+gives the standard deviation of the density, which follows a centered Gaussian distribution.
 
+Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
+acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. From writing
+$\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and the small angle approximation $h \ll R$ follows $u \ll v \kern+1.0pt$
+as a necessary condition, meaning that the orbital velocity must greatly exceed the speed of sound specific to the medium. This
+special case is called a thin disk and can further be extended to slim or even thick types of accretion structures.
 
-
-\subsubsection*{Luminosity Limit}
-
-Any luminous object radiating with spherical symmetry excerts a pressure
+Any luminous object radiating with spherical symmetry exerts a pressure
 \begin{equation}
 	P = \frac{\raisebox{-0.3ex}{$L$}}{4\pi R^2 c}
 \end{equation}
-as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the source.
-Suppose a gaseous cloud containing particles with masses $m$ falling towards the same bright central mass $M \kern+0.5pt$
-due to gravitational attraction. During this process, each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$
-as an opposing radiative force, where the opacity $\kern-0.3pt \varkappa \kern+0.7pt$ measures cross section per unit mass.
-
-\newpage Balancing of \eqref{eqn:newton} and rearranging leads to the Eddington limit
+as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the source. Suppose a gaseous cloud containing particles
+with masses $m$ is falling towards the same bright central mass $M \kern+0.5pt$ due to gravitational attraction. During this process,
+each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$ as an opposing radiative force, where the opacity
+$\kern-0.3pt \varkappa \kern+0.7pt$ represents cross section per unit mass. Balancing \eqref{eqn:newton} leads to
 \begin{equation}
 	L = \frac{\raisebox{-0.3ex}{$4\pi GM c \kern+0.4pt$}}{\raisebox{0.8ex}{$\varkappa$}}
 	\label{eqn:eddington}
 \end{equation}
-on the luminosity beyond which additional matter is immediately blown away from the central object. By assuming that infalling
-material consists exclusively of ionized hydrogen, one can approximate $\varkappa \kern-0.1pt = m / \kern-0.5pt \sigma \kern+0.3pt$
-with proton mass $m$ and Thomson cross section $\sigma \kern+0.5pt$ from electron scattering. Though originally applied in the
+as the Eddington luminosity limit, beyond which additional matter is immediately blown away from the central object. By assuming that
+the infalling material consists exclusively of ionized hydrogen, one can approximate $\varkappa \kern-0.1pt = m / \kern-0.5pt \sigma \kern+0.3pt$
+with the Thomson cross section $\sigma \kern+0.5pt$ from scattering of electrons and $m$ as the proton mass. Though originally applied in the
 context of stellar structures, this approach can also be used to describe accretion disks. If a compact object increases its mass
 with rate $\dot{M} \kern+0.5pt$ due to accreting matter, some of the corresponding gravitational potential may be converted to
-radiation. In terms of rest energy, a luminosity $L = \eta\dot{M}c^2$ is obtained where $\eta$ denotes the efficiency of this
-mechanism. With \eqref{eqn:eddington} one finds an analogous steady state limit
+radiation. In terms of rest energy, a luminosity of $L = \eta\dot{M}c^2$ is obtained where a factor $\eta$ denotes the efficiency of this
+mechanism. With \eqref{eqn:eddington} one finds
 \begin{equation}
 	\dot{M} \kern-0.2pt = \frac{\raisebox{-0.3ex}{$4\pi GM$}}{\raisebox{0.8ex}{$\eta c \varkappa$}}
 \end{equation}
-for the accretion rate, enforced by continuous balancing of radiation pressure and gravitational forces as an intrinsic feedback process.
+as an analogous steady state limit for the accretion rate, enforced by continuous balancing of radiation pressure and gravitational forces
+as an intrinsic feedback process.
