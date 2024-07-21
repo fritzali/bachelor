@@ -71,9 +71,10 @@ with energy for different hadrons.
 Reference \cite{Fagundes_2013} examines the asymptotic rise $\sigma(s) \propto \ln^2(s)$ derived in \cite{Froissart_1961}
 as a theoretical upper bound and concludes that it is somewhat exceeded. Additionally, an asymptote $\mathscr{A} = 1/3$ due to
 diffraction as opposed to the black disk limit $\mathscr{A} = 1/2 \kern+0.2pt$ from optical theorem predictions is suggested
-in \cite{Fagundes_2013}. Because parameters are only available in the latter case, all calculations of the ratio $\mathscr{R}$
-use \eqref{eqn:ratio} as defined by $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data better matching $\mathscr{A} = 1/3$ then imply that
-$\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to significantly influence the overall results.
+in \cite{Fagundes_2013}. As parameters are only available in the latter case, all calculations of $\mathscr{R}$
+use a ratio \eqref{eqn:ratio} as defined by $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data matching $\mathscr{A} = 1/3$
+imply that $\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to
+noticably impact the overall results.
 
 \input{content/visuals/hadron-proton-scattering.tex}
 
@@ -83,35 +84,37 @@ $\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is 
 \label{sub:production}
 
 For charm quark production in proton-{\kern+0.1pt}air collisions, reference \cite{Goncalves_2007} gives
-\begin{equation*}
+\begin{equation}
 	x_F \kern+1.0pt \frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_F \kern+0.5pt, \kern-0.5pt E_p \bigr)
 	\kern-0.1pt = a \kern+0.5pt x_F^b \kern+1.0pt \bigl( 1 \kern-0.3pt - x_F^m \kern+0.3pt \bigr)^n
-\end{equation*}
+	\label{eqn:charm}
+\end{equation}
 as the parametrized differential cross section with components
-\begin{align*}
-	a = a_1 \kern-0.5pt \ln\bigl(E_p\bigr) - \kern+0.5pt a_2 && b = b_1 \kern-1.0pt - b_2 \ln\bigl(E_p\bigr) &&
-	n = n_1 \kern-1.0pt - \kern+0.5pt n_2 \ln\bigl(E_p\bigr)
-\end{align*}
-for which table \ref{tab:charm-production} lists all necessary constants. Here, proton energies $E_p$ are defined as viewed
+\begin{align}
+	&& a = a_1 \kern-0.5pt \ln\bigl(E_p\bigr) - \kern+0.5pt a_2 \: , && b = b_1 \kern-1.0pt - b_2 \ln\bigl(E_p\bigr) \: , &&
+	n = n_1 \kern-1.0pt - \kern+0.5pt n_2 \ln\bigl(E_p\bigr) &&
+\end{align}
+for which Table \ref{tab:charm-production} lists all necessary constants. Here, proton energies $E_p$ are defined as viewed
 by air nuclei at rest, while the Feynman scaling variable $x_F \kern+1.0pt = p_c \kern+1.5pt / \kern-0.5pt p_s$ specifies
-magnitude ratios of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the
-colliding particles. Application of section \ref{sub:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$
+the magnitude ratio of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the
+colliding particles. Application of Section \ref{sub:frames} shows that this approximately fulfills $x_F \kern+1.0pt = x_c$
 where $\cramped{x_c = \kern+0.2pt E_c \kern+1.0pt / E_p}$ in the relevant energy ranges. It should be noted that for the values
-table \ref{tab:charm-production} provides, the coefficient $n_0 \kern-0.5pt = \num{0.075}$ from table 1 in \cite{Goncalves_2007} 
+Table \ref{tab:charm-production} provides, the factor $n_0 \kern-0.5pt = \num{0.075}$ from Table 1 in \cite{Goncalves_2007} 
 for the lower energy regime is set to $n_0 \kern-0.5pt = \num{7.5}$ instead, because the parametrization breaks down otherwise.
-Further testing reveals another problem with the \qty{e4}{\giga\electronvolt} to \qty{e8}{\giga\electronvolt} region,
-in that energies around~\qty{26}{\tera\electronvolt}~or lower yield negative differential cross
+Further testing reveals another problem with the \qty{e4}{\giga\electronvolt} to \qty{e8}{\giga\electronvolt} region
+in that energies of~\qty{26}{\tera\electronvolt}~or lower yield negative differential cross
 sections. Considering other approximations made in this thesis, it is therefore decided that an extrapolation from the
 \qty{e8}{\giga\electronvolt} to $10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ case to all energies
-can be done without producing unreasonably large errors.
+can be done without producing unreasonably large errors. With these parameters, equation~\eqref{eqn:charm}~only becomes
+negative for energies of \qty{140}{\giga\electronvolt} and below.
 
 \input{content/tables/charm-production.tex}
 
-Borrowing from \cite{Bhattacharya_2015} among others, linear scaling with nucleon number is assumed, giving
-\begin{equation*}
+Borrowing from \cite{Bhattacharya_2015} among others, linear scaling with respect to the nucleon number gives
+\begin{equation}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) = \tilde{A}^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr)
-\end{equation*}
+\end{equation}
 for inclusive charm production in proton-{\kern+0.1pt}proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent}
 nitrogen and \qty{25}{\percent} oxygen, one finds $A = \kern-0.3pt \num{14.5}$ for this factor. By integrating the charmed hadron
 cross section defined below and comparing to experimental data in \cite{lhc} for the charm mesons considered in this thesis,
@@ -123,7 +126,7 @@ so that deviations at different energies are not accounted for. Similar to earli
 Translation of charm quarks to charmed hadrons is achieved with an integral
 \begin{equation}
 	\frac{\raisebox{-0.5ex}{$d \kern+1.2pt \tilde{\sigma}$}}{\raisebox{0.5ex}{$dx_h$}}
-	\bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) = \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
+	\bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) = \kern-1.0pt \int_{\kern+0.5pt x_h}^1 dz \, z^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}}
 	\bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) \kern+1.0pt D^{\kern+0.5pt h}_c (z)
 	\label{eqn:unmodified}
@@ -134,13 +137,15 @@ $E_h \leq E_c \kern+0.2pt \leq E_p$ to incorporate kinematic constraints. Furthe
 of observing any final state $h$ originating from a $c$ quark is encoded in a \emph{Frag$\kern-0.3pt$mentation Function}
 (FF) $D^{\kern+0.5pt h}_c (z)$ dependent on the fraction of hadron to charm energy. Reference
 \cite{Metz_2016} addresses the connection between this concept and that of a \emph{Parton Distribution Function}
-(PDF) among other things. While a PDF represents the probability density of finding a parton with given momentum inside a colorless
-particle, probabilities for color neutral-{\kern+0.2pt}states existing in individual partons are given by the appropriate FF instead.
-The partons described here are either quarks or gluons, which sections \ref{sub:interactions} and \ref{sub:hadrons} describe
-more closely.
+(PDF) among other things. While a PDF represents the probability density of finding a parton with given momentum inside
+a colorless particle, probabilities for color-neutral states existing in individual partons are given by the appropriate
+FF instead. The partons described here are either quarks or gluons, which Sections \ref{sub:interactions} and \ref{sub:hadrons}
+characterize in more detail.
+
+\newpage
 
 By fitting to existing data or perturbative calculations, models can extrapolate to low momentum fractions that have
-not yet been probed experimentally. This procedure has lead \cite{Kniehl_2006} to obtain
+not yet been probed experimentally. Such a method has lead \cite{Kniehl_2006} to obtain
 \begin{equation}
 	D^{\kern+0.5pt h}_{c}(z) = \frac{N_h z \kern+1.0pt (1 - z)^{\kern+0.5pt 2}}
 	{\bigl((1 - z)^{\kern+0.5pt 2} + \epsilon_h z \bigl)^{\raisebox{-1.5ex}{$^2$}}}
@@ -154,8 +159,8 @@ differentiation between quark to particle or antiquark to antiparticle processes
 
 To account for kinematic constraints, one final modifier has to be included at this point. Because collisions must provide
 enough energy for particle formation, charmed hadron energies cannot be lower than their rest masses, leading to
-$E_h \geq \kern+0.4pt m_h$ as a natural condition. With table \ref{tab:charm-hadrons} listing mass parameters, a cutoff
-similar to that in \cite{Kelner_2006} is introduced, rewriting \eqref{eqn:unmodified} to
+$E_h \geq \kern+0.4pt m_h$ as a natural condition. With Table \ref{tab:charm-hadrons} listing these mass parameters,
+a cutoff similar to that in \cite{Kelner_2006} is introduced, rewriting \eqref{eqn:unmodified} to
 \begin{equation}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}}
 	\bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) =
@@ -165,9 +170,9 @@ similar to that in \cite{Kelner_2006} is introduced, rewriting \eqref{eqn:unmodi
 	\label{eqn:differential}
 \end{equation}
 where $E_h \kern-0.3pt = x_h \kern+0.2pt E_p$ ensures physical kinematics are respected. It turns out that this expression
-is integrable, whereas the unmodified version \eqref{eqn:differential} is not. Shown in figure \ref{fig:charm-hadron-cross-section}
-is the $\smash{\cramped{D^0}}$ differential cross section for different incident proton energies and fixed protons as targets.
-Comparing this to figure 7 in \cite{Carpio_2020} indicates similar shapes, though our parametrizations result in less flat
+is integrable, whereas the unmodified version \eqref{eqn:differential} is not. Figure \ref{fig:charm-hadron-cross-section}
+depicts the $\smash{\cramped{D^0}}$ differential cross section for different incident proton energies and fixed protons as targets.
+Comparing this to Figure 7 in \cite{Carpio_2020} indicates similar shapes, though our parametrizations result in less flat
 distributions at low $x_h$ values.
 
 \newpage\input{amend/special-head}
@@ -177,8 +182,8 @@ distributions at low $x_h$ values.
 
 Constructing spectra $dN_h \kern+0.5pt / dE_h$ from proton injection requires folding of $F_{p \kern+0.8pt \rightarrow h}$ as
 the hadronic distribution for a single $p \kern-0.1pt p \kern+0.9pt$ interaction with the number of protons per energy interval
-given by the function $dN_p \kern+0.6pt / dE_p$ obtained from source specific modelling. An analogous approach can be applied to
-compute neutrino spectra $dN_\nu \kern+0.6pt / dE_\nu$ from $dN_h \kern+0.5pt / dE_h$ via distributions
+given by the function $dN_p \kern+0.6pt / dE_p$ obtained from source{\kern+0.1pt}-specific modeling. An analogous approach can
+be applied to compute neutrino spectra $dN_\nu \kern+0.6pt / dE_\nu$ from $dN_h \kern+0.5pt / dE_h$ via distributions
 $F_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu}$ formulated according to the involved decay modes. Equation \eqref{eqn:folding}
 describes exactly this, with the following section providing all required distributions.
 
@@ -188,35 +193,35 @@ describes exactly this, with the following section providing all required distri
 \label{sub:charm}
 
 Spectral distributions for charmed hadron production are calculated according to \cite{Carpio_2020} through
-\begin{equation*}
+\begin{equation}
 	F_{p \kern+0.8pt \rightarrow h} \bigl( E_h \kern+0.5pt , \kern-0.5pt E_p \bigr) =
 	E_p^{\kern+0.5pt -1} \sigma_{p \kern-0.1pt p}^{-1} \bigl( E_p \bigr) \kern+1.0pt
-	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} \bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr)
-\end{equation*}
-with $E_h \kern-0.2pt = x_h E_p$ translating between variables. This can be understood as weighting \eqref{eqn:differential}
-against the energies and inelastic cross section of protons scattered as described in section \ref{sub:scattering} to yield hadron
-numbers per unit energy.
+	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} \bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) \: ,
+\end{equation}
+with $E_h \kern-0.2pt = x_h E_p$ translating between variables. This can be understood as effectively normalizing term
+\eqref{eqn:differential} with respect to the energies and inelastic cross sections of protons, which are scattered as described in
+Section \ref{sub:scattering} to yield hadron numbers per unit energy and collision.
 
-To find neutrino spectra from charmed hadrons, the same approach as in \cite{Bhattacharya_2016} is used, which assumes an effective
-energy distribution approximated by three body decays for the semileptonic channel to a less massive pseudoscalar meson.
-By neglecting lepton masses, one obtains
-\begin{equation*}
+To find neutrino spectra from charmed hadrons, the same approach as in \cite{Bhattacharya_2016} is used, which assumes an
+effective energy distribution approximated by three{\kern+0.3pt}-body decays for the semileptonic channel to a less massive
+pseudoscalar meson. By neglecting lepton masses, one obtains
+\begin{equation}
 	\tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
 	- 12\lambda_h^2 a_h + 12\lambda_h^2 y - 6b_h y^2 + 4 y^3 + 12 \lambda_h^2 \ln \bigl((1 - y) / \lambda_h \bigr) \Bigr)
-\end{equation*}
+\end{equation}
 as a distribution with $y = E_\nu \kern+0.6pt / E_h$ and $F_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
 \bigl( E_\nu \kern+1.0pt , \kern-0.5pt E_h \bigr) = \mathscr{F}_h \tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
 (y) / E_h$ for conversion.
 
 Hadron specific coefficients for this equation are defined with the parameter
 $\lambda_h = \kern+0.5pt \tilde{s}_h / m_h^2 \kern+0.2pt$ as
-\begin{align*}
-	a_h = 1 - \lambda_h && b_h = 1 - 2\lambda_h &&
+\begin{align}
+	a_h = 1 - \lambda_h \: , && b_h = 1 - 2\lambda_h \: , &&
 	D_h = 1 - 8 \lambda_h - 12\lambda_h^2 \ln \bigl( \lambda_h \bigr) + 8 \lambda_h^3 - \lambda_h^4
-\end{align*}
-where both $s_h$ and $m_h$ are listed in table \ref{tab:charm-hadrons} for all included charmed hadrons. The assumption of three
-body decays like $D^+ \kern-2.5pt \rightarrow \kern+1.0pt \overline{\kern-1.5pt K \kern+1.0pt}\kern+1.0pt^0 e^+ \nu_e$ can
-be justified by consulting \cite{pdg} for information on the relevant particles and comparing branching ratios, which indicate
+\end{align}
+where both $s_h$ and $m_h$ are listed in Table \ref{tab:charm-hadrons} for all included charmed hadrons. The assumption of
+three{\kern+0.3pt}-body decays like $D^+ \kern-2.5pt \rightarrow \kern+1.0pt \overline{\kern-1.5pt K \kern+1.0pt}\kern+1.0pt^0 e^+ \nu_e$
+can be justified by consulting \cite{pdg} for information on the relevant particles and comparing branching ratios, which indicate
 that purely leptonic modes are strongly suppressed. Hadronic channels such as $D^+ \kern-2.5pt \rightarrow \pi^+ \pi^0$ or
 $D^+ \kern-2.5pt \rightarrow K^{\kern+0.5pt -} \pi^+ \pi^+$ are either very improbable as well or occur at significant rates but
 do not contribute many high-{\kern+0.2pt}energy neutrinos due to pions and kaons being subject to further cooling before decaying
@@ -232,31 +237,33 @@ to leptons. By the same logic, secondary muon decay is neglected when determinin
 \label{sub:pions}
 
 By parametrizing event generator results, a neutral pion production spectrum of the form
-\begin{equation*}
+\begin{equation}
 	\tilde{F}_\pi \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
 	\left( \frac{1 - \kern+0.2pt x_\pi^\alpha}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right)^{\kern-1.0pt 4} \left( ( 1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )^{-1} +
 	\frac{r (1 - \kern+0.2pt 2x_\pi^\alpha \kern+1.0pt )}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right) \left( 1 - \kern+0.3pt \frac{m_\pi}{\raisebox{1pt}{$x_\pi \kern+1.0pt E_p$}} \right)^{\kern-1.0pt 1/2}
 	\label{eqn:pions}
-\end{equation*}
+\end{equation}
 is found in \cite{Kelner_2006} with $m_\pi = \qty{0.135}{\giga\electronvolt}$ \cite{pdg} translated to natural units and parameters
-\begin{align*}
-	&&&& B \kern+0.5pt = \tilde{B} + C &&
-	\alpha \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{\alpha}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&
+\begin{align}
+	&&&& B \kern+0.5pt = \tilde{B} + C \: , &&
+	\alpha \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{\alpha}$}}{\displaystyle\sqrt{C \kern+1.5pt}} \: , &&
 	r \kern+1.0pt = \frac{\raisebox{-1.5pt}{$\tilde{r}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&&&
-\end{align*}
+\end{align}
 where a low energy cutoff is enforced via $E_\pi \kern-0.1pt = x_\pi \kern+1.0pt E_p$ in the mass term. From
-\begin{equation*}
+\begin{equation}
 	C = c_1 \kern-0.5pt - \kern+0.5pt c_2 \ln \bigl( E_p \bigr) + \kern+0.5pt  c_3 \ln^2 \bigl( E_p \bigr)
-\end{equation*}
+\end{equation}
 results a dependence on projectile energy for the shape of this distribution.
 
-Coefficients are specified in table \ref{tab:pion-spectrum} and recalculated for $E_p \kern+0.5pt$ in \unit{\giga\electronvolt}
-instead of \unit{\tera\electronvolt} units. Under the assumption of a $\smash{\pi^0} \kern-0.5pt$ cross section approximately
-equal to the $\smash{\pi^\pm} \kern-0.5pt$ average and with identical spectra for charged pions, it follows that
+Coefficients are specified in Table \ref{tab:pion-spectrum} and recalculated from $E_p \kern+0.5pt$ in \unit{\tera\electronvolt}
+to units of \unit{\giga\electronvolt} instead. Under the assumption of a $\smash{\pi^0} \kern-0.5pt$ cross section approximately
+equal to the $\smash{\pi^\pm} \kern-0.5pt$ average and with identical spectra between charged pions, it follows that
 $F_\pi = \tilde{F}_\pi \kern+0.5pt / E_p$ should describe pion production regardless of charge reasonably well
 for the purpose of this thesis.
+
+\enlargethispage{\baselineskip}
 
 \input{content/tables/pion-spectrum.tex}
 
@@ -267,17 +274,17 @@ at hand. Calculations of kaon spectra still employ this approach but are subject
 fixed ratios to pion spectra are unlikely to be universal. Other than this factor, the pion mass is replaced with that of kaons for
 a correct cutoff in the above expression.
 
-Decays of pions and kaons to neutrinos are approximated via the $h \rightarrow \mu^+ \nu_\mu$ two body channel with branching
-fractions of $\mathscr{F}_{\kern-0.2pt \pi \kern+0.2pt} = \qty{99.99}{\percent}$ and
+Decays of pions and kaons to neutrinos are approximated via the $h \rightarrow \mu^+ \nu_\mu$ two{\kern+0.2pt}-body channel
+with branching fractions of $\mathscr{F}_{\kern-0.2pt \pi \kern+0.2pt} = \qty{99.99}{\percent}$ and
 $\mathscr{F}_{\kern+0.3pt K \kern+0.2pt} = \qty{63.56}{\percent}$ given in the \cite{pdg}
 particle listings. By decaying, muons produced in these processes can significantly impact the neutrino spectrum. Results from
-\cite{Carpio_2020} suggest that this is particularly relevant for pions. Muonic three body decays of type
+\cite{Carpio_2020} suggest that this is particularly relevant for pions. Muonic three{\kern+0.3pt}-body decays of type
 $\mu^- \kern-2.5pt \kern+0.5pt \rightarrow e^- \kern+0.5pt \overline{\kern-0.2pt \nu \kern+0.8pt}_e \nu_\mu$ as well as
 cooling factors depend on the polarization of participating leptons due to the nature of weak force coupling. This complicates
-computations and is thus omitted in service of restricting the present thesis to a managable scope, though it should be remembered
-as an important caveat for the final results.
+computations and is thus omitted for the purpose of restricting the present thesis to a manageable scope, though it should be
+remembered as an important caveat for the final results.
 
-The remaining two body decays of ultrarelativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
+The remaining two body{\kern+0.2pt}-decays of ultra-relativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
 \begin{equation*}
 	F_{\kern+1.0pt h \kern+0.2pt \rightarrow l \kern+1.0pt} \bigl( E_l \kern+0.8pt, \kern-0.2pt E_h \bigr) =
 	\mathscr{F}_{\kern+0.2pt h \kern+0.2pt} E_h^{\kern+1.0pt -1} \bigl( 1 \kern-0.3pt - \lambda_h \bigr)^{-1}
@@ -296,32 +303,34 @@ required by \eqref{eqn:folding} for integration.
 \section{Computation}
 \label{sec:computation}
 
-Taking into account previous deliberations, this section now combines these with the contents of chapter \ref{ch:background}
-to give explicit steps for calulating the desired results.
+Taking into account previous deliberations, this section now combines these with the contents of Chapter \ref{ch:background}
+to give explicit steps for calculating the desired results.
 
 
 
 \subsection{Injection}
 \label{sub:injection}
 
-Modeling proton spectra of young magnetars described in section \ref{sub:magnetars} starts with an idealized charge density
+The proton spectrum model of young magnetars described in Section \ref{sub:magnetars} starts with an idealized charge density
 $\rho = \omega B_\text{ns} \kern+0.2pt / (2\pi c)$ derived from \cite{Goldreich_1969} and leads to $n = \kern-0.6pt \rho / \kern-0.2pt e$
 for the number of charge carriers. Integrating over the so-called polar caps defined by a radius
 $\smash{R_\text{pc} \kern-1.0pt = \kern-0.2pt R_\text{ns} \sqrt{R_\text{ns} / R_\text{lc}}}$ from which open field lines
-originate, and taking $E^M$ according to \eqref{eqn:mono} as a monochromatic energy for all times $t \kern+0.5pt$ results
+originate and taking a monochromatic energy according to \eqref{eqn:mono} for all times $t \kern+0.5pt$ results
 in a time-derivative delta-functional spectrum
 \begin{equation}
-	\frac{d\dot{N}_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( t, E_p \bigr) =
+	\frac{d\kern+0.75pt\dot{N}_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( t, E_p \bigr) =
 	\frac{B_\text{ns} R_\text{ns}^3 \omega_0^2}{ec \bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}
 	\kern+1.0pt \delta \kern+0.5pt \bigl( E_p - E^M(t) \bigr)
 	\label{eqn:delta}
 \end{equation}
 that is compatible with a $dN_p \kern+0.5pt / dE_p \propto E_p^{\kern+0.3pt -1}$ power law.
-\newpage
+
+\enlargethispage*{\baselineskip}\newpage
+
 For the AGN setting, a more general DSA scenario like in section \ref{sub:acceleration} is assumed, yielding
-\begin{equation*}
+\begin{equation}
 	\frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} = \mathscr{S} E_p^{\kern+0.2pt -2}
-\end{equation*}
+\end{equation}
 with $\kern-0.2pt \mathscr{S} \kern+0.6pt$ for an arbitrary normalization factor that does not need to be specified further,
 as this thesis is interested in relative neutrino contributions instead of absolute predictions.
 
