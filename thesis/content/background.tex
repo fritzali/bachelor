@@ -89,116 +89,122 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 
 
 
-\subsection{Reference Frames}
-\label{sub:frames}
+\begin{spacing}{0.985}
+	\subsection{Reference Frames}
+	\label{sub:frames}
 
-Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or independent from
-the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
-$p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
-\begin{align*}
-	s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 &&
-	t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 &&
-	u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
-\end{align*}
-as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
-exchanged mediating particle. Implied in this context is a Minkowski inner product, making the above quantities manifestly Lorentz
-invariant. When working with parametrizations defined for use in different subdisciplines, it regularly becomes necessary to convert
-from center of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile as viewed
-in the system of a stationary target, where vectors $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and $p = (m c^2 \kern-1.0pt , 0)$
-represent the respective particle momenta. With $\bm{P}$ denoting a classical projectile momentum and $c$ the speed of light,
-rest masses $M$ and $m$ for projectile and target lead to a relation $E^2 = \bm{P}^2 c^2 + M^2 c^4$ and
-\begin{equation*}
-	s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
-\end{equation*}
-for the invariant mass. The trailing terms in this equation become negligible at high energies, allowing for an approximation
-$s = 2E m c^2$ in the target rest frame.
-
-
-
-\subsection{Particle Collisions}
-\label{sub:collisions}
-
-Another important aspect of particle physics is the description of collision processes. For this purpose, the concept of cross
-sections $\sigma \kern+0.5pt$ should be understood. In classical mechanics, these quantities are solely related to geometric
-properties of the objects involved, assuming they only interact upon impact. If longer range forces are included, the
-cross section represents a larger effective area that measures how the trajectory of an incoming projectile is influenced by
-the target. Additionally, differential cross sections with respect to some independent variable such as solid angle
-$d\sigma \kern-0.3pt / \kern-0.6pt d\Omega$ or kinetic energy $d\sigma \kern-0.3pt / \kern-0.6pt dE$ can be defined.
-Measurements of this quantity often reveal more information about the inner structure of targets. To distinguish these cases,
-one might refer to $\sigma$ as the integrated cross section. Since QM is at the core of particle physics, cross sections in this
-context are instead interpreted as probability measures of fundamentally stochastic collision processes, such as the production
-of specific particles. It can also be useful to separate cross sections into elastic and inelastic components, especially for
-collisions in which particles lose energy, as is the case for cooling processes via scattering.
+	Depending on the application, energies in particle physics are either given as viewed from a suitable rest frame or independent from
+	the choice of coordinates altogether. One particularly convenient formulation uses incoming and outgoing momenta
+	$p_1 , \kern-1.0pt p_2$ and $p_3 \kern+0.5pt , \kern-1.0pt p_4$ to define
+	\begin{align*}
+		s = \bigl( p_1 \kern-0.5pt + p_2 \bigr)^2 \: , &&
+		t = \bigl( p_1 \kern-0.5pt - p_3 \bigr)^2 \: , &&
+		u = \bigl( p_1 \kern-0.5pt - p_4 \bigr)^2
+	\end{align*}
+	as the Mandelstam variables, which assign different channels to scattering processes based on the squared momentum carried by an
+	exchanged mediating particle. Implied in this context is a Minkowski inner product, making the above quantities manifestly Lorentz
+	invariant. When working with parametrizations defined for use in different subdisciplines, it regularly becomes necessary to convert
+	from center of mass energies $\sqrt{s \kern+1.0pt} \kern+1.0pt$ to the energy $\kern-0.5pt E \kern+1.0pt$ of a projectile as viewed
+	in the system of a stationary target, where vectors $P = (E \kern+1.0pt , \bm{P} \kern+0.75pt c)$ and $p = (m c^2 \kern-1.0pt , 0)$
+	represent the respective particle momenta. With $\bm{P}$ denoting a classical projectile momentum and $c$ the speed of light,
+	rest masses $M$ and $m$ for projectile and target lead to a relation $E^2 = \bm{P}^2 c^2 + M^2 c^4$ and
+	\begin{equation*}
+		s = (P + p)^2 = (E + m c^2)^2 - \bm{P}^2 c^2 = 2E m c^2 + \kern+1.0pt m^2 c^4 + M^2 c^4
+	\end{equation*}
+	for the invariant mass. The trailing terms in this equation become negligible at high energies, allowing for an approximation
+	$s = 2E m c^2$ in the target rest frame.
 
 
 
-\subsection{Cooling \& Decay}
-\label{sub:cooling}
+	\subsection{Particle Collisions}
+	\label{sub:collisions}
 
-Consider an infinitesimally thin slice of a target medium with particle number density $n$ and volume $V \kern-0.1pt = S \kern+1.5pt dx$
-where $S \kern+0.5pt$ and $dx$ measure surface area and thickness, respectively. Accordingly, there exist $\tilde{N} \kern-1.2pt = nV$
-targets that each have effective interaction cross sections $\tilde{\sigma}$ with a total coverage of $\tilde{S} = \tilde{\sigma} \tilde{N}$
-as viewed by an incident projectile.
+	Another important aspect of particle physics is the description of collision processes. For this purpose, the concept of cross
+	sections $\sigma \kern+0.5pt$ should be understood. In classical mechanics, these quantities are solely related to geometric
+	properties of the objects involved, assuming they only interact upon impact. If longer range forces are included, the
+	cross section represents a larger effective area that measures how the trajectory of an incoming projectile is influenced by
+	the target. Additionally, differential cross sections with respect to some independent variable such as solid angle
+	$d\sigma \kern-0.3pt / \kern-0.6pt d\Omega$ or kinetic energy $d\sigma \kern-0.3pt / \kern-0.6pt dE$ can be defined.
+	Measurements of this quantity often reveal more information about the inner structure of targets. To distinguish these cases,
+	one might refer to $\sigma$ as the integrated cross section. Since QM is at the core of particle physics, cross sections in this
+	context are instead interpreted as probability measures of fundamentally stochastic collision processes, such as the production
+	of specific particles. It can also be useful to separate cross sections into elastic and inelastic components, especially for
+	collisions in which particles lose energy, as is the case for cooling processes via scattering.
 
-The probability for dissipating these beam constituent then corresponds to the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
-explicitly $\mathscr{P} = \kern-0.5pt \tilde{\sigma} \kern+0.5pt n \kern+1.5pt dx$ in case of $dx$ as the covered distance.
-Expressing $\tilde{\sigma} = \kappa\sigma$ in terms of the inelastic scattering cross section $\sigma$ and a dimensionless factor
-$\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
-collisions. Multiplying with $\kappa$ includes the ratio of remaining to initital energy, which is taken to be constant. From this
-follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
-count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
-of first order. The solution is found to follow an exponential law
-\begin{equation*}
-	N(x) \kern+0.4pt = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}} \kern+0.5pt \Bigr)
-\end{equation*}
-where $N \kern+1.0pt$ particles remain over some distance $x \kern+0.5pt$ with $N_0$ as the initial amount. Furthermore,
-\begin{equation*}
-	P(x) \kern+0.3pt = 1 -
-	\kern+0.9pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}}\kern+0.5pt \Bigr)
-\end{equation*}
-gives the probability of a particle having been scattered after travelling $x \kern+0.5pt$ length units. Similar steps
-for time instead of distance lead to the well known equation
-\begin{equation*}
-	N(t) \kern+0.4pt = N_0 \exp \kern-2.0pt
-	\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
-	\kern+0.5pt \Bigr)\)}
-\end{equation*}
-describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons
-or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
-decays with probability
-\begin{equation*}
-	P(t) \kern+0.3pt = 1 - \kern+0.9pt \exp \kern-2.0pt
-	\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
-	\kern+0.5pt \Bigr)\)}
-\end{equation*}
-before a time $t$ has passed and for $\tau$ as the mean lifetime. Translating this from rest frame to laboratory coordinates defines
-the decay timescale $t_\text{dec} \kern-0.6pt = \tau \kern+0.4pt \varGamma$ with a Lorentz factor $\varGamma = E / m$ via
-projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
-$\lambda_\text{dec} \kern-0.5pt = v \kern+1.5pt t_\text{dec}$ where the velocity $v = c$ can be set for highly relativistic particles.
-Additionally, mean free path and cooling distance $\lambda_\text{cool} = (\kappa\sigma n)^{-1}$ refer to exchangeable concepts. Particles
-lose energy in every collision, which is the same as reducing temperature from a thermodynamics perspective. Dividing by the speed of
-light $c$ translates this expression to $t_\text{cool} = (\kappa\sigma n \kern+0.5pt c)^{-1}$ as a cooling timescale. Analogously, the
-distance $\lambda_\text{dec} \kern-0.5pt = c \kern+0.8pt \tau E / m$ can be rewritten as
-$t_\text{dec} \kern-0.6pt = \tau E / m$ in units of time. Substituting into the decay formula yields a cooling factor
+
+
+	\subsection{Cooling \& Decay}
+	\label{sub:cooling}
+
+	Consider an infinitesimally thin slice of a target medium with particle number density $n$ and volume $V \kern-0.1pt = S \kern+1.5pt dx$
+	where $S \kern+0.5pt$ and $dx$ measure surface area and thickness, respectively. Accordingly, there exist $\tilde{N} \kern-1.2pt = nV$
+	targets that each have effective interaction cross sections $\tilde{\sigma}$ with a total coverage of $\tilde{S} = \tilde{\sigma} \tilde{N}$
+	as viewed by an incident projectile.
+\end{spacing}
+
+\begin{spacing}{0.980}
+	The probability for dissipating these beam constituent then corresponds to the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
+	explicitly $\mathscr{P} = \kern-0.5pt \tilde{\sigma} \kern+0.5pt n \kern+1.5pt dx$ in case of $dx$ as the covered distance.
+	Expressing $\tilde{\sigma} = \kappa\sigma$ in terms of the inelastic scattering cross section $\sigma$ and a dimensionless factor
+	$\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
+	collisions. Multiplying with $\kappa$ includes the ratio of remaining to initital energy, which is taken to be constant. From this
+	follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
+	count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
+	of first order. The solution is found to follow an exponential law
+	\begin{equation*}
+		N(x) \kern+0.4pt = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}} \kern+0.5pt \Bigr)
+	\end{equation*}
+	where $N \kern+1.0pt$ particles remain over some distance $x \kern+0.5pt$ with $N_0$ as the initial amount. Furthermore,
+	\begin{equation*}
+		P(x) \kern+0.3pt = 1 -
+		\kern+0.9pt \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}}\kern+0.5pt \Bigr)
+	\end{equation*}
+	gives the probability of a particle having been scattered after travelling $x \kern+0.5pt$ length units. Similar steps
+	for time instead of distance lead to the well known equation
+	\begin{equation*}
+		N(t) \kern+0.4pt = N_0 \exp \kern-2.0pt
+		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
+		\kern+0.5pt \Bigr)\)}
+	\end{equation*}
+	describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons
+	or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
+	decays with probability
+	\begin{equation*}
+		P(t) \kern+0.3pt = 1 - \kern+0.9pt \exp \kern-2.0pt
+		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
+		\kern+0.5pt \Bigr)\)}
+	\end{equation*}
+	before a time $t$ has passed and for $\tau$ as the mean lifetime. Translating this from rest frame to laboratory coordinates defines
+	the decay timescale $t_\text{dec} \kern-0.6pt = \tau \kern+0.4pt \varGamma$ with a Lorentz factor $\varGamma = E / m$ via
+	projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
+	$\lambda_\text{dec} \kern-0.5pt = v \kern+1.5pt t_\text{dec}$ where the velocity $v = c$ can be set for highly relativistic particles.
+	Additionally, mean free path and cooling distance $\lambda_\text{cool} = (\kappa\sigma n)^{-1}$ refer to exchangeable concepts. Particles
+	lose energy in every collision, which is the same as reducing temperature from a thermodynamics perspective. Dividing by the speed of
+	light $c$ translates this expression to $t_\text{cool} = (\kappa\sigma n \kern+0.5pt c)^{-1}$ as a cooling timescale. Analogously, the
+	distance $\lambda_\text{dec} \kern-0.5pt = c \kern+0.8pt \tau E / m$ can be rewritten as
+	$t_\text{dec} \kern-0.6pt = \tau E / m$ in units of time. Substituting into the decay formula yields a cooling factor
+	\begin{equation}
+		\mathscr{C} = 1 - \kern+0.9pt \exp \biggl( -\frac{t_\text{cool}}{\raisebox{0.5ex}{$t_\text{dec}$}} \biggr)
+		\label{eqn:cooling}
+	\end{equation}
+	that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
+	This is an essential mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high energies.
+	While longer lived particles experience significant cooling thanks to time dilation, charmed hadrons decay promptly in comparison,
+	resulting in a neutrino flux that directly traces the underlying hadronic spectrum. One requirement for the validity of \eqref{eqn:cooling}
+	is that $\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$ holds, with $d \kern+0.5pt$ measuring the target field size to ensure decays
+	occur exclusively inside this region.
+	\enlargethispage*{\baselineskip}\newpage
+\end{spacing}
+
+Another quantity relevant to the context at hand is an optical depth $\mathscr{O} = d / \lambda$ that represents the distance $d \kern+0.5pt$
+to mean free path $\lambda$ ratio. Inserting its definition yields a factor
 \begin{equation}
-	\mathscr{C} = 1 - \kern+0.9pt \exp \biggl( -\frac{t_\text{cool}}{\raisebox{0.5ex}{$t_\text{dec}$}} \biggr)
-	\label{eqn:cooling}
-\end{equation}
-that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
-This is an essential mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high energies.
-While longer lived particles experience significant cooling thanks to time dilation, charmed hadrons decay promptly in comparison, resulting
-in a neutrino flux that directly traces the underlying hadronic spectrum. One requirement for the validity of \eqref{eqn:cooling} is that
-$\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$ holds, with $d \kern+0.5pt$ measuring the target field size to ensure decays occur exclusive
-inside this region. 
-
-
-\newpage\input{amend/special-head}
-
-
-\begin{equation}
-	\mathscr{O} = 
+	\mathscr{O} = \kappa\sigma n \kern+0.75pt d \: ,
 	\label{eqn:optical}
 \end{equation}
+which is used as a first order multiplicative modification of spectra to account for attenuation effects. This can be understood by
+considering that higher target medium densities and larger scattering cross sections over longer distances lead to more interactions
+with the projectile.
 
 
 
