@@ -21,7 +21,7 @@ In our modern view, interactions and categories of elementary particles are most
 \emph{Quantum Field Theory}~(QF{\kern+0.5pt}T{\kern+0.5pt}) that combines and generalizes properties of
 \emph{Quantum Mechanics}~(QM) and \emph{Special Relativity}~(SR) to produce a consistent description of microscopic reality.
 Excitations in the associated fields are referred to as quanta and manifest themselves as observable particles \cite{Peskin_1995}.
-Since this thesis is mostly concerned with the statistical behaviour of large quantities instead of individual particle probabilities,
+Since this thesis is mostly concerned with the statistical behaviors of large quantities instead of individual particle probabilities,
 a more detailed treatment is omitted, with the exception of certain phenomena important to the justification of some later assumptions.
 
 
@@ -144,11 +144,11 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 \end{spacing}
 
 \begin{spacing}{0.980}
-	The probability for dissipating these beam constituent then corresponds to the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
+	Probabilities for dissipating the beam constituent energy are then given by the ratio $\mathscr{P} = \tilde{S} / S$ of both areas or
 	explicitly $\mathscr{P} = \kern-0.5pt \tilde{\sigma} \kern+0.5pt n \kern+1.5pt dx$ in case of $dx$ as the covered distance.
 	Expressing $\tilde{\sigma} = \kappa\sigma$ in terms of the inelastic scattering cross section $\sigma$ and a dimensionless factor
 	$\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
-	collisions. Multiplying with $\kappa$ includes the ratio of remaining to initital energy, which is taken to be constant. From this
+	collisions. Multiplying with $\kappa$ includes the ratio of remaining to initial energy, which is taken to be constant. From this
 	follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
 	count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
 	of first order. The solution is found to follow an exponential law
@@ -188,84 +188,87 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 		\mathscr{C} = 1 - \kern+0.9pt \exp \biggl( -\frac{t_\text{cool}}{\raisebox{0.5ex}{$t_\text{dec}$}} \biggr)
 		\label{eqn:cooling}
 	\end{equation}
-	that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occured.
+	that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occurred.
 	This is an essential mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high energies.
 	While longer lived particles experience significant cooling thanks to time dilation, charmed hadrons decay promptly in comparison,
-	resulting in a neutrino flux that directly traces the underlying hadronic spectrum. One requirement for the validity of \eqref{eqn:cooling}
+	resulting in a neutrino flux that directly traces the underlying hadronic population. One requirement for the validity of \eqref{eqn:cooling}
 	is that $\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$ holds, with $d \kern+0.5pt$ measuring the target field size to ensure decays
 	occur exclusively inside this region.
 	\enlargethispage*{\baselineskip}\newpage
 \end{spacing}
 
-Another quantity relevant to the context at hand is an optical depth $\mathscr{O} = d / \lambda$ that represents the distance $d \kern+0.5pt$
-to mean free path $\lambda$ ratio. Inserting its definition yields a factor
-\begin{equation}
-	\mathscr{O} = \kappa\sigma n \kern+0.75pt d \: ,
-	\label{eqn:optical}
-\end{equation}
-which is used as a first order multiplicative modification of spectra to account for attenuation effects. This can be understood by
-considering that higher target medium densities and larger scattering cross sections over longer distances lead to more interactions
-with the projectile.
+\begin{spacing}{0.985}
+	Another quantity relevant to the context at hand is an optical depth $\mathscr{O} = d / \lambda$ that represents the distance
+	$d \kern+0.5pt$ to mean free path $\lambda$ ratio. Inserting its definition yields a factor
+	\begin{equation}
+		\mathscr{O} = \kappa\sigma n \kern+0.75pt d \: ,
+		\label{eqn:optical}
+	\end{equation}
+	which is used as a first order multiplicative modification to account for attenuation effects on spectra. This can be understood by
+	considering that higher target medium densities and larger scattering cross sections over longer distances lead to more interactions
+	with the projectile. 
+	
+	
+	
+	\section{Multimessenger Astronomy}
+	\label{sec:multimessenger}
+	
+	A recent extension of traditional astronomy, the field of multimessenger astrophysics continues to evolve whilst providing otherwise
+	inaccessible insights via the combination of complementary information carried by multiple messenger species. This section begins by
+	expanding on physical concepts alluded to in Chapter \ref{ch:introduction} before continuing to describe the available multimessenger
+	candidates in some detail. For a more extensive overview, refer to \cite{Meszaros_2019}.
+	
+	
+	
+	\subsection{Magnetic Field Scales}
+	\label{sub:fields}
+	
+	Particles carrying electrical charges $Q = Ze \kern+0.5pt$ in orthogonal motion at velocity $v \kern+1.0pt$ to a homogenous magnetic
+	field $B$ are acted on by the Lorentz force $F = QvB \kern+0.5pt$ that produces a gyrating motion. With the elementary charge $e$ and
+	$\varGamma$ as a Lorentz factor, this must balance a relativistic centripetal force $F = m \varGamma v^2 \kern-0.5pt / R$ with Larmor
+	radius $R$ on the resulting circular path. Rearranging variables and identifying $p = m \varGamma v \kern+0.5pt$ leads to the solution
+	\begin{equation}
+		R = \frac{p}{\raisebox{0.3ex}{$QB \kern+0.3pt$}}
+	\end{equation}
+	on which the magnetic field extent $D$ imposes $R < D$ as a condition. In case of highly relativistic energies, one can substitute
+	$E = \kern-0.8pt pc$ for the momentum to obtain an inequality $E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophysical
+	magnetic fields are not ordered, instead following turbulences that travel through the plasma. To include the effects of moving scattering
+	centers, a factor $\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén velocity is included, giving
+	\begin{equation}
+		E < Ze \kern-0.3pt \beta \kern+0.9pt cBD
+		\label{eqn:hillas}
+	\end{equation}
+	as the Hillas criterion. It is named after its description in \cite{Hillas_1984} and connects source region sizes to the strength of
+	prevailing magnetic fields, with observed cosmic ray energies as a constraint.
+	
+	
+	
+	\subsection{High Energy Cutoff}
+	\label{sub:cutoff}
+	
+	At very high energies, protons and nuclei interact with cosmic photons, which can be blueshifted up to extreme gamma regimes due to
+	the Doppler effect. In these processes, the photon spin is absorbed to produce a delta resonance $\Delta^+$ representing an excited
+	proton state.
+	\enlargethispage*{\baselineskip}\newpage
+\end{spacing}
 
-
-
-\section{Multimessenger Astronomy}
-\label{sec:multimessenger}
-
-An extension of traditional astronomy, the field of multimessenger astrophysics continues to evolve whilst providing otherwise inaccessible
-insights via the combination of complementary information carried by multiple messenger species. This section begins by expanding on phyiscal
-concepts alluded to in chapter \ref{ch:introduction} before continuing to describe the available multimessenger candidates in some detail.
-For a more extensive overview, reference \cite{Meszaros_2019} should be consulted.
-
-
-
-\subsection{Magnetic Field Scales}
-\label{sub:fields}
-
-Particles carrying electric charges $Q = Ze$ and moving at velocity $v \kern+1.0pt$ orthogonal to a homogenous magnetic field $B$ are
-acted on by the Lorentz force $F = QvB \kern+0.5pt$ that produces a gyrating motion. With the elementary charge $e$ and $\varGamma$
-as a Lorentz factor, this must balance a relativistic centripetal force $F = m \varGamma v^2 \kern-0.5pt / R$ on the resulting circular
-path with $R$ giving the Larmor radius. Rearranging and identifying $p = m \varGamma v \kern+0.5pt$ leads to the solution
-\begin{equation}
-	R = \frac{p}{\raisebox{0.3ex}{$QB \kern+0.3pt$}}
-\end{equation}
-on which the magnetic field extent $D$ imposes $R < D$ as a condition. In case of highly relativistic energies, one can substitute
-$E = \kern-0.8pt pc$ for the momentum to obtain an inequality $E < QcBD \kern+0.5pt$ from the above considerations. Realistic astrophyiscal
-magnetic fields are not ordered, instead following turbulences that travel through the plasma. To incorporate effects of moving scattering
-centers, a factor $\kern-0.5pt \beta \kern+0.5pt$ proportional to the Alfvén velocity is included, giving
-\begin{equation}
-	E < Ze \kern-0.3pt \beta \kern+0.9pt cBD
-	\label{eqn:hillas}
-\end{equation}
-as the Hillas criterion. It is named after its description in \cite{Hillas_1984} and connects source region sizes to the strength of
-prevailing magnetic fields, with observed cosmic ray energies as a constraint.
-
-
-
-\subsection{High Energy Cutoff}
-\label{sub:cutoff}
-
-At very high energies, protons and nuclei interact with cosmic photons, which can be blueshifted up to extreme gamma regimes due to
-the Doppler effect. In these processes, the photon spin is absorbed to produce a delta resonance $\Delta^+$ representing an excited
-proton state. This decays almost immediately to pairs of nucleons and pions, leading to $p\gamma \rightarrow \kern-0.1pt n\smash{\pi^+}$
-or $p\gamma \rightarrow \kern+0.2pt p \smash{\pi^0}$ as probable reaction channels and resulting in a change of momentum for the
-produced particles.~For the case of \emph{Cosmic Microwave Background} (CMB) radiation, a close to perfect black body spectrum
+This decays almost immediately to pairs of nucleons and pions, leading to probable reaction channels
+$p\gamma \rightarrow \kern-0.1pt n\smash{\pi^+}$ or $p\gamma \rightarrow \kern+0.2pt p \smash{\pi^0}$ and resulting in an altered
+particle momentum. For the case of \emph{Cosmic Microwave Background} (CMB) radiation, a close to perfect black
+body spectrum
 \begin{equation}
 	\frac{\raisebox{-0.3ex}{$dn$}}{\raisebox{0.15ex}{$d\epsilon$}} (\epsilon) \kern+0.2pt =
 	\frac{\raisebox{-0.3ex}{$\epsilon^2$}}{\pi^2 \hbar^3 c^3 \bigl( e^{\kern+1.0pt \epsilon / k_B T} - 1 \bigr)}
 \end{equation}
-is given by \cite{Gaisser_2016} as the number density. From a CMB temperature of $T \kern-0.5pt = \qty{2.725}{\kelvin}$ follows that
+is given by \cite{Gaisser_2016} as the number density. From CMB temperatures of $\kern+0.5pt T \kern+0.5pt = \qty{2.725}{\kelvin}$ follows that
 significant photon numbers exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$ in the CMB rest frame. 
-
-\newpage\input{amend/normal-head}
-
 To find a threshold in center of mass coordinates, the scalar product is used for
 \begin{equation}
 	s \kern+0.3pt = \bigl( p_{\kern-0.5pt p} + p_{\kern+0.5pt \gamma} \bigr)^2 =
 	p_{\kern-0.5pt p}^2 + p_{\kern+0.5pt \gamma}^2 + 2 p_{\kern-0.5pt p} p_{\kern+0.5pt \gamma} =
-	m_p^2 \kern+0.8pt c^4 \kern-0.2pt + 2 E \epsilon = \kern-0.2pt M^2c^4
+	m_p^2 \kern+0.8pt c^4 \kern-0.2pt + 2 E \epsilon = \kern-0.2pt M^2c^4 \: ,
 \end{equation}
-where $M \kern-0.3pt = m_p + \kern+0.3pt m_\pi$ and $m_\gamma = 0$ as well as head on collisions have been assumed. The solution
+where $M \kern-0.3pt = m_p + \kern+0.3pt m_\pi$ and $m_\gamma = 0$ as well as head-{\kern+0.2pt}on collisions have been assumed. The solution
 \begin{equation}
 	E = \Bigl( \kern-1.0pt \bigl( m_p + m_\pi \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
 \end{equation}
@@ -277,8 +280,8 @@ considered, one finds
 	E = \Bigl( \kern-1.0pt \bigl( m_p + 2m_e \bigr)^2 c^4 \kern-0.2pt - m_p^2 \kern+0.8pt c^4 \Bigr) / (2\epsilon)
 \end{equation}
 or approximately $E \kern+1.0pt = \kern-0.5pt \qty{e+9}{\giga\electronvolt}$ by setting $M \kern-0.3pt = m_p + \kern+0.3pt 2m_e$
-instead. For alpha particles and heavier nuclei, similar steps apply, while electrons are limited mainly through Compton
-downscattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
+instead. Similar constraints apply when considering alpha particles and heavier nuclei, while electrons are limited mainly by Compton
+down-{\kern+0.1pt}scattering. Additionally, there exist infrared and radio backgrounds as potentially relevant radiation fields. From
 the multiple competing mechanisms for energy losses and momentum isotropization, it is as a consequence extremely challenging
 to reliably interpret cosmic ray signals and practically impossible to reconstruct any information about specific sources.
 
@@ -287,7 +290,7 @@ to reliably interpret cosmic ray signals and practically impossible to reconstru
 \subsection{Stochastic Acceleration}
 \label{sub:acceleration}
 
-From the introduction of theoretical limits in sections \ref{sub:fields} and \ref{sub:cutoff} arises the question of how
+From the introduction of theoretical limits in Sections \ref{sub:fields} and \ref{sub:cutoff} arises the question of how
 particles reach these high energy regimes in the first place. Due to its relatively simple derivation and surprising accuracy
 in the description of measured spectra, probabilistic collisions are often viewed as one of the most plausible mechanisms
 responsible for cosmic ray acceleration. The general case is described in \cite{Longair_2011} and supposes that for each
@@ -298,80 +301,89 @@ $\ln x^k = k\ln x$ in
 \begin{equation}
 	\frac{\ln (N \kern+1.0pt / N_0)}{\ln (E / E_0)} = \frac{\ln(\varsigma)}{\ln(\eta)}
 \end{equation}
-eliminates the exponent and by rearranging gives the relation
-\begin{equation}
-	N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
-\end{equation}
-as a connection between energy and particle number. This incidentally follows a power law, which is an almost ubiquitous feature
-observed in cosmic ray physics.
+eliminates the exponent and allows terms to be rearranged to solve for the desired quantity.
 
-\newpage
+\enlargethispage*{\baselineskip}\newpage
 
-One can interpret the above expression as an integrated spectrum, leading to
-\begin{equation}
-	\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
-	\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
-\end{equation}
-for the differential case with a characteristic spectral index
-\begin{equation}
-	\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
-\end{equation}
-constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
+\begin{spacing}{0.990}
+	From this follows a connection between energy and number of particles
+	\begin{equation}
+		N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
+	\end{equation}
+	that incidentally obeys a power law, which is an almost ubiquitous feature
+	observed in cosmic ray physics. One can interpret the expression as an integrated spectrum, leading to
+	\begin{equation}
+		\frac{\raisebox{-0.3ex}{$dN$}}{\raisebox{0.3ex}{$dE$}} = \frac{\raisebox{-0.3ex}{$N_0$}}{\raisebox{0.3ex}{$E_0$}}
+		\left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^\alpha
+	\end{equation}
+	for the differential case with a characteristic spectral index
+	\begin{equation}
+		\alpha = \frac{\ln(\varsigma)}{\ln(\eta)} - 1
+	\end{equation}
+	constrained by $\ln(\varsigma) / \kern-0.5pt \ln(\eta) < 0$ due to $\varsigma < 1$ and $\eta > 1$ as implied per the definitions.
+	
+	The basic case of \emph{Diffusive Shock Acceleration} (DSA) considers shock fronts that propagate with velocity
+	$\kern-0.5pt \beta = v / c \kern+1.0pt$ in a fully ionized gas. Requiring momentum isotropization without significant energy losses
+	on each side of the discontinuity results in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ and a corresponding spectral dependence
+	$dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ that is discussed by \cite{Longair_2011} as well. A slightly steeper
+	index around $\alpha = \num{-2.5}$ can be derived when nonlinear effects are accounted for.
+	
+	Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads to this mechanism being categorized as first order Fermi
+	acceleration, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
+	speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios of $\beta \ll 1$
+	mean that lower order processes are much more efficient in reaching high particle energies.
 
-The basic case of \emph{Diffusive Shock Acceleration} (DSA) considers shock fronts that propagate with velocity
-$\kern-0.5pt \beta = v / c \kern+1.0pt$ in a fully ionized gas. Requiring momentum isotropization without significant energy losses
-on each side of the discontinuity results in $\ln(\varsigma) / \kern-0.5pt \ln(\eta) = -1$ and a corresponding spectral dependence
-$dN \kern+0.5pt / dE \propto \kern-0.5pt E^{\kern+0.5pt -2}$ that is discussed by \cite{Longair_2011} as well. A slightly steeper
-index around $\alpha = \num{-2.5}$ can be derived when nonlinear effects are accounted for.
 
-Energy gain increasing linearly with $\kern-0.5pt \beta \kern+1.0pt$ leads this mechanism to be categorized as Fermi type acceleration
-of first order, whereas the originally proposed formulation scales like $\beta^2$ or as second order. Though shocks exceed the local
-speed of sound in the astrophysical medium, relativistic velocities are typically not achieved. Consequently, ratios of $\beta \ll 1$
-mean that lower order processes are much more efficient in reaching high particle energies.
+	\enlargethispage*{2\baselineskip}
 
 
-
-\subsection{Cosmic Rays}
-\label{sub:rays}
-
-Consisting of charged particles with strictly non-thermal origins, cosmic rays were first detected at high altitudes over a
-century ago. Since then, they have become a foundational piece in our understanding of astrophysical sources. Although their flux
-is dominanted by protons, other nuclei as heavy as lead can contribute significant portions at high energies as well. Besides this
-baryonic component, there are also charged leptons adding to the total population. The exact ratios of these constituents contain
-information about source compositions, though any reconstruction of individual sources is likely impossible. This is a result
-of cosmic magnetic fields that scramble the directions of charged particles, leading to a largely isotropic distribution. At the
-same time, it is possible to constrain the size and field parameters of sources based on the energy of cosmic rays. For this
-purpose, section \ref{sub:fields} provides the so-called Hillas condition. In combination with the characteristic broken power
-law spectrum, one concludes that most cosmic rays are of galactic origin, except for the highest energies, which require
-extragalactic sources \cite{Tjus_2020, Drury_2012}. Beyond these ranges, there appears to be a sharp drop that agrees with
-\ref{sub:cutoff} in case of a GZK cutoff. Both the spectral shape and the extreme energies are also consistent with a slightly
-modified DSA scenario as described in section \ref{sub:acceleration} for cosmic rays \cite{Becker_2008}.
+	\subsection{Cosmic Rays}
+	\label{sub:rays}
+	
+	Consisting of charged particles with strictly non-thermal origins, cosmic rays were first detected at high altitudes over a
+	century ago. Since then, they have become a foundational piece in our understanding of astrophysical sources. Although their flux
+	is dominated by protons, other nuclei as heavy as lead can contribute significant portions at high energies as well. Besides this
+	baryonic component, there are also charged leptons adding to the total population. The exact ratios of these constituents contain
+	information about source compositions, though any reconstruction of individual sources is likely impossible. This is a result
+	of cosmic magnetic fields that scramble the directions of charged particles, leading to a largely isotropic distribution. At the
+	same time, it is possible to constrain the size and field parameters of sources based on the energy of cosmic rays. For this
+	purpose, Section \ref{sub:fields} provides the so-called Hillas condition. In combination with the characteristic broken power
+	law spectrum, one concludes that most cosmic rays are of galactic origin, except for the highest energies, which require
+	extragalactic sources \cite{Tjus_2020, Drury_2012}. Beyond these ranges, there appears to be a sharp drop that agrees well with
+	Section \ref{sub:cutoff} in the case of a GZK cutoff. Both the spectral shape and the extreme energies are also consistent with
+	a modified DSA scenario as described in Section \ref{sub:acceleration} for cosmic rays \cite{Becker_2008}.
+	\newpage
+\end{spacing}
 
 
 
 \subsection{Neutrinos}
 \label{sub:neutrinos}
 
-Their weakly interacting nature introduced by section \ref{sub:hadrons} is precisely what makes neutrinos so interesting. After
+Their weakly interacting nature introduced in Section \ref{sub:hadrons} is precisely what makes neutrinos so interesting. After
 being produced, they penetrate most obstacles that would be completely opaque to any other messenger particle. This comes at the
 cost of being notoriously difficult to detect, of course, but opens up the opportunity of measuring otherwise inaccessible processes
 occurring deep inside astrophysical sources. Several different populations are either known or hypothesized, for example
-those of solar origin, neutrinos from core-collapse supernovae, steller remnants or active galaxies that are treated in this thesis,
-as well as neutrinos from pion decay implied in section \ref{sub:cutoff} after GZK photodissociation. Additionally, a primordial
+those of solar origin, neutrinos from core-collapse supernovae, stellar remnants or active galaxies that are discussed in this thesis,
+as well as neutrinos from pion decay implied in Section \ref{sub:cutoff} after GZK photodissociation. Additionally, a primordial
 neutrino background is expected to exist with a history analogous to that of CMB formation, in which photons decoupled
-from matter during the recombination epoch. All of these astrophysical and cosmological prospects as well as the previously
-mentioned flavor oscillations make neutrino astronomy a promising field of research.
+from matter during the recombination epoch \cite{Becker_2008}. All of these astrophysical and cosmological prospects as well as the
+previously mentioned flavor oscillations make neutrino astronomy a promising field of research \cite{Meszaros_2019}.
 
 
 
 \subsection{Photons}
 \label{sub:photons}
 
-With visual observations being conducted for millenia, photonic signals undoubtedly form the most ancient form of astronomy.
+With visual observations being conducted for millennia, photonic signals undoubtedly form the most ancient type of astronomy.
 Advances in optical instrumentation have driven revolutionary progress over the last centuries, culminating in modern detectors
 unlocking wavelengths across the entire electromagnetic spectrum. Especially radio and gamma frequencies have the potential of
 contributing to multimessenger astrophysics, with radio waves having the ability to resolve regions obscured by dust, and gamma
-photons being closely associated with hadronic processes in a similar manner as neutrinos, for instance.
+photons being closely associated with hadronic processes in a similar manner as neutrinos, for instance. Fundamental limitations
+of astrophysical photon signals consist of a cutoff at very high energies from pair production with CMB photons similar to
+Section \ref{sub:cutoff} for protons and nuclei, as well as a gamma ray horizon referring to the impedance caused by
+interactions with extragalactic background light \cite{Dominguez_2013}. Detection is further constrained by the atmospheric
+window, which is not transparent for all electromagnetic wavelengths.
 
 
 
@@ -382,7 +394,7 @@ Setting aside the possibility of gravitons as hypothetical mediating particles, 
 phenomenon, in the same way as classical theories like that of electromagnetism by Maxwell. According to Einstein, masses lead to
 distortions of spacetime that propagate at the speed of light. From this perspective, it readily follows that especially massive
 systems such as black hole or neutron star binaries emit gravitational waves through their movement. These excitations have an
-advantage compared to other messengers in that they experience essentially no absorbtion or scattering by matter. Alongside unimpeded
+advantage compared to other messengers in that they experience essentially no absorption or scattering by matter. Alongside unimpeded
 insights into highly energetic merger events, there should also exist a gravitational background radiation containing information about
 the very early universe.
 
@@ -391,9 +403,7 @@ the very early universe.
 \section{Astrophysical Sources}
 \label{sec:sources}
 
-\enlargethispage{\baselineskip}
-
-The picture of particle physics building up to multimessenger astronomy will now be realised in the context of plausible astrophysical
+The picture of particle physics building up to multimessenger astronomy will now be realized in the context of plausible astrophysical
 neutrino sources \cite{Becker_2008}. In the following section, scenarios for a magnetar as well as an AGN accretion disk are developed.
 
 
@@ -431,7 +441,8 @@ velocity, one finds the ejecta radius
 as a function of time. Inside this plasma, free charge carriers weaken the otherwise strong fields, allowing synchrotron losses to be
 neglected \cite{Carpio_2020}. In vacuo, these would significantly reduce the energy of injected protons, thereby preventing production
 of highly energetic hadrons and neutrinos. Furthermore, typical densities listed in section \ref{sub:numerical} are sufficiently low for
-neutrino attenuation effects to be neglected \cite{Carpio_2020}.
+neutrino attenuation effects to be neglected, and a comparison of the optical depth \eqref{eqn:optical} for protons and photons shows that
+thermal radiation fields are unlikely to influence the overall results \cite{Carpio_2020}.
 
 
 
