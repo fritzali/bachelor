@@ -90,10 +90,10 @@ For charm quark production in proton-{\kern+0.1pt}air collisions, reference \cit
 	\label{eqn:charm}
 \end{equation}
 as the parametrized differential cross section with components
-\begin{align}
+\begin{align*}
 	&& a = a_1 \kern-0.5pt \ln\bigl(E_p\bigr) - \kern+0.5pt a_2 \: , && b = b_1 \kern-1.0pt - b_2 \ln\bigl(E_p\bigr) \: , &&
 	n = n_1 \kern-1.0pt - \kern+0.5pt n_2 \ln\bigl(E_p\bigr) &&
-\end{align}
+\end{align*}
 for which Table \ref{tab:charm-production} lists all necessary constants. Here, proton energies $E_p$ are defined as viewed
 by air nuclei at rest, while the Feynman scaling variable $x_F \kern+1.0pt = p_c \kern+1.5pt / \kern-0.5pt p_s$ specifies
 the magnitude ratio of produced charm quark longitudinal momentum to all available momentum in center mass coordinates of the
@@ -111,10 +111,10 @@ negative for energies of \qty{140}{\giga\electronvolt} and below.
 \input{content/tables/charm-production.tex}
 
 Borrowing from \cite{Bhattacharya_2015} among others, linear scaling with respect to the nucleon number gives
-\begin{equation}
+\begin{equation*}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) = \tilde{A}^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr)
-\end{equation}
+\end{equation*}
 for inclusive charm production in proton-{\kern+0.1pt}proton collisions. Approximating air as a gas mixture of roughly \qty{75}{\percent}
 nitrogen and \qty{25}{\percent} oxygen, one finds $A = \kern-0.3pt \num{14.5}$ for this factor. By integrating the charmed hadron
 cross section defined below and comparing to experimental data in \cite{lhc} for the charm mesons considered in this thesis,
@@ -193,11 +193,11 @@ describes exactly this, with the following section providing all required distri
 \label{sub:charm}
 
 Spectral distributions for charmed hadron production are calculated according to \cite{Carpio_2020} through
-\begin{equation}
+\begin{equation*}
 	F_{p \kern+0.8pt \rightarrow h} \bigl( E_h \kern+0.5pt , \kern-0.5pt E_p \bigr) =
 	E_p^{\kern+0.5pt -1} \sigma_{p \kern-0.1pt p}^{-1} \bigl( E_p \bigr) \kern+1.0pt
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_h$}} \bigl( x_h \kern+0.5pt, \kern-0.5pt E_p \bigr) \: ,
-\end{equation}
+\end{equation*}
 with $E_h \kern-0.2pt = x_h E_p$ translating between variables. This can be understood as effectively normalizing term
 \eqref{eqn:differential} with respect to the energies and inelastic cross sections of protons, which are scattered as described in
 Section \ref{sub:scattering} to yield hadron numbers per unit energy and collision.
@@ -205,20 +205,20 @@ Section \ref{sub:scattering} to yield hadron numbers per unit energy and collisi
 To find neutrino spectra from charmed hadrons, the same approach as in \cite{Bhattacharya_2016} is used, which assumes an
 effective energy distribution approximated by three{\kern+0.3pt}-body decays for the semileptonic channel to a less massive
 pseudoscalar meson. By neglecting lepton masses, one obtains
-\begin{equation}
+\begin{equation*}
 	\tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt} (y) = D_h^{-1} \kern+1.0pt \Bigl( 6b_ha_h^2 - 4a_h^3
 	- 12\lambda_h^2 a_h + 12\lambda_h^2 y - 6b_h y^2 + 4 y^3 + 12 \lambda_h^2 \ln \bigl((1 - y) / \lambda_h \bigr) \Bigr)
-\end{equation}
+\end{equation*}
 as a distribution with $y = E_\nu \kern+0.6pt / E_h$ and $F_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
 \bigl( E_\nu \kern+1.0pt , \kern-0.5pt E_h \bigr) = \mathscr{F}_h \tilde{F}_{\kern+1.0pt h \kern+0.2pt \rightarrow \nu \kern+1.0pt}
 (y) / E_h$ for conversion.
 
 Hadron specific coefficients for this equation are defined with the parameter
 $\lambda_h = \kern+0.5pt \tilde{s}_h / m_h^2 \kern+0.2pt$ as
-\begin{align}
+\begin{align*}
 	a_h = 1 - \lambda_h \: , && b_h = 1 - 2\lambda_h \: , &&
 	D_h = 1 - 8 \lambda_h - 12\lambda_h^2 \ln \bigl( \lambda_h \bigr) + 8 \lambda_h^3 - \lambda_h^4
-\end{align}
+\end{align*}
 where both $s_h$ and $m_h$ are listed in Table \ref{tab:charm-hadrons} for all included charmed hadrons. The assumption of
 three{\kern+0.3pt}-body decays like $D^+ \kern-2.5pt \rightarrow \kern+1.0pt \overline{\kern-1.5pt K \kern+1.0pt}\kern+1.0pt^0 e^+ \nu_e$
 can be justified by consulting \cite{pdg} for information on the relevant particles and comparing branching ratios, which indicate
@@ -237,31 +237,31 @@ to leptons. By the same logic, secondary muon decay is neglected when determinin
 \label{sub:pions}
 
 By parametrizing event generator results, a neutral pion production spectrum of the form
-\begin{equation}
-	\tilde{F}_\pi \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
+\begin{equation*}
+	\tilde{F}_{p \kern+0.5pt \rightarrow \pi} \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
 	\left( \frac{1 - \kern+0.2pt x_\pi^\alpha}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right)^{\kern-1.0pt 4} \left( ( 1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )^{-1} +
 	\frac{r (1 - \kern+0.2pt 2x_\pi^\alpha \kern+1.0pt )}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
 	\right) \left( 1 - \kern+0.3pt \frac{m_\pi}{\raisebox{1pt}{$x_\pi \kern+1.0pt E_p$}} \right)^{\kern-1.0pt 1/2}
 	\label{eqn:pions}
-\end{equation}
+\end{equation*}
 is found in \cite{Kelner_2006} with $m_\pi = \qty{0.135}{\giga\electronvolt}$ \cite{pdg} translated to natural units and parameters
-\begin{align}
+\begin{align*}
 	&&&& B \kern+0.5pt = \tilde{B} + C \: , &&
 	\alpha \kern+0.5pt = \frac{\raisebox{-1.5pt}{$\tilde{\alpha}$}}{\displaystyle\sqrt{C \kern+1.5pt}} \: , &&
 	r \kern+1.0pt = \frac{\raisebox{-1.5pt}{$\tilde{r}$}}{\displaystyle\sqrt{C \kern+1.5pt}} &&&&
-\end{align}
+\end{align*}
 where a low energy cutoff is enforced via $E_\pi \kern-0.1pt = x_\pi \kern+1.0pt E_p$ in the mass term. From
-\begin{equation}
+\begin{equation*}
 	C = c_1 \kern-0.5pt - \kern+0.5pt c_2 \ln \bigl( E_p \bigr) + \kern+0.5pt  c_3 \ln^2 \bigl( E_p \bigr)
-\end{equation}
+\end{equation*}
 results a dependence on projectile energy for the shape of this distribution.
 
 Coefficients are specified in Table \ref{tab:pion-spectrum} and recalculated from $E_p \kern+0.5pt$ in \unit{\tera\electronvolt}
 to units of \unit{\giga\electronvolt} instead. Under the assumption of a $\smash{\pi^0} \kern-0.5pt$ cross section approximately
 equal to the $\smash{\pi^\pm} \kern-0.5pt$ average and with identical spectra between charged pions, it follows that
-$F_\pi = \tilde{F}_\pi \kern+0.5pt / E_p$ should describe pion production regardless of charge reasonably well
-for the purpose of this thesis.
+$F_{p \kern+0.5pt \rightarrow \pi} = \tilde{F}_{p \kern+0.5pt \rightarrow \pi} \kern+1.0pt / E_p$ should describe pion
+production regardless of charge reasonably well for the purpose of this thesis.
 
 \enlargethispage{\baselineskip}
 
@@ -328,9 +328,9 @@ that is compatible with a $dN_p \kern+0.5pt / dE_p \propto E_p^{\kern+0.3pt -1}$
 \enlargethispage*{\baselineskip}\newpage
 
 For the AGN setting, a more general DSA scenario like in Section \ref{sub:acceleration} is assumed, yielding
-\begin{equation}
+\begin{equation*}
 	\frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( E_p \bigr) = \mathscr{S} E_p^{\kern+0.2pt -2}
-\end{equation}
+\end{equation*}
 with $\kern-0.2pt \mathscr{S} \kern+0.6pt$ for an arbitrary normalization factor that does not need to be specified further,
 as this thesis is interested in relative neutrino contributions instead of absolute predictions.
 
@@ -341,11 +341,11 @@ as this thesis is interested in relative neutrino contributions instead of absol
 
 Spectra of hadrons and neutrinos are generally computed as in \eqref{eqn:folding} via folding, though for the hadronic spectrum,
 a cooling factor \eqref{eqn:cooling} and optical depth \eqref{eqn:optical} are included, giving
-\begin{equation}
+\begin{equation*}
 	\frac{dN_h}{\raisebox{0.5ex}{$dE_h$}} \bigl( E_h \bigr) = \mathscr{CO} \int_{E_h}^{\mathscr{E}_{\kern-0.5pt p}}
 	\kern-0.5pt dE_p \frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( E_p \bigr) \kern+1.5pt
 	F_{p \kern+0.8pt \rightarrow h} \bigl( E_h \kern+0.5pt , \kern-0.5pt E_p \bigr)
-\end{equation}
+\end{equation*}
 with maximum proton energies $\mathscr{E}_{\kern-0.5pt p}$ as a result. Because the proton spectrum \eqref{eqn:delta}
 contains a delta function $\smash{\delta \kern+0.5pt \bigl( E_p - E^M \kern+0.5pt \bigr)}$ in the magnetar case, integration
 over $E_p$ simply substitutes $\smash{E^M}$ in place of the proton energy. Accordingly, a limit $\mathscr{E}_{\kern-0.5pt p} = \infty$
@@ -399,20 +399,20 @@ population to a neutrinos.
 
 In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
 this task allows the general case
-\begin{align}
+\begin{align*}
 	F(x, y) \kern+1.5pt &= \int_{z_{-}}^{z_{+}} dz \: G(x, z) \, H(z, y) \\
 	\intertext{to be rewritten as a Riemann sum. Assuming $G$ and $H$ are integrable over a given interval,}
 	F_{ij} \kern+1.8pt &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
-\end{align}
+\end{align*}
 converges to the exact solution for sufficiently small steps. Transforming variables
-\begin{align}
+\begin{align*}
 	&&&& x \rightarrow x_i \: , && y \rightarrow y_j \: , && z \rightarrow z_k &&&&
-\end{align}
+\end{align*}
 and defining $D_{kk} = z_{k+1} \kern-1.0pt - z_k$ leads to the above notation. It is easily shown how this expression in terms of
 indices translates to the product of corresponding matrices
-\begin{equation}
+\begin{equation*}
 	\bm{F} \kern+0.6pt = \bm{G} \, \bm{D} \, \bm{H}
-\end{equation}
+\end{equation*}
 as an equivalent formulation. Here, the output $\bm{F} \in \mathbb{R}^{m \times n}$ is obtained from the inputs
 $\bm{G} \in \mathbb{R}^{m \times l}$ as well as $\bm{H} \in \mathbb{R}^{l \times n}$ with the square matrix
 $\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal. These results enable a quick and
