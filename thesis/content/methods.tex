@@ -110,7 +110,7 @@ negative for energies of \qty{140}{\giga\electronvolt} and below.
 
 \input{content/tables/charm-production.tex}
 
-Borrowing from \cite{Bhattacharya_2015} among others, linear scaling with respect to the nucleon number gives
+Adopting linear scaling with respect to the nucleon number from \cite{Bhattacharya_2015} gives
 \begin{equation*}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_c$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr) = \tilde{A}^{-1}
 	\frac{\raisebox{-0.5ex}{$d\sigma$}}{\raisebox{0.5ex}{$dx_F$}} \bigl( x_c \kern+0.5pt, \kern-0.5pt E_p \bigr)
@@ -225,7 +225,8 @@ can be justified by consulting \cite{pdg} for information on the relevant partic
 that purely leptonic modes are strongly suppressed. Hadronic channels such as $D^+ \kern-2.5pt \rightarrow \pi^+ \pi^0$ or
 $D^+ \kern-2.5pt \rightarrow K^{\kern+0.5pt -} \pi^+ \pi^+$ are either very improbable as well or occur at significant rates but
 do not contribute many high-{\kern+0.2pt}energy neutrinos due to pions and kaons being subject to further cooling before decaying
-to leptons. By the same logic, secondary muon decay is neglected when determining the neutrino spectrum.
+to leptons. By a similar logic, secondary muon decay is neglected when determining the neutrino spectrum, as muons would experience
+additional cooling before decaying and because charm cross sections are already low compared to other mesons.
 
 \newpage\input{amend/normal-head}
 
@@ -236,7 +237,7 @@ to leptons. By the same logic, secondary muon decay is neglected when determinin
 \subsection{Pions \& Kaons}
 \label{sub:pions}
 
-By parametrizing event generator results, a neutral pion production spectrum of the form
+By parametrizing \textsc{sibyll} event generator results, a neutral pion production spectrum of the form
 \begin{equation*}
 	\tilde{F}_{p \kern+0.5pt \rightarrow \pi} \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
 	\left( \frac{1 - \kern+0.2pt x_\pi^\alpha}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}

@@ -33,6 +33,7 @@ References are sorted into the following types:
 - [Eichmann (2022)](https://arxiv.org/abs/2207.00102) &nbsp; *solution to the multimessenger puzzle of a composite starburst and corona region active galactic core*
 - [Fagundes (2012)](https://arxiv.org/abs/1112.5115) &nbsp; *model independent parametrization for ratio of elastic to total cross section in hadron scattering*
 - [Fagundes (2013)](https://arxiv.org/abs/1208.3456) &nbsp; *high energy rise of hadronic cross section and below black disc asymptotic limit*
+- [Fletcher (1994)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.50.5710) &nbsp; *introduction of a monte carlo event generator for the simulation of high energy cosmic ray cascades*
 - [Froissart (1961)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.123.1053) &nbsp; *generic constraint on increase of total hadronic scattering cross section at high energies*
 - [Gabici (2019)](https://arxiv.org/abs/1903.11584) &nbsp; *review and critique of the standard view on mainly galactic cosmic ray origins*
 - [García (2013)](https://arxiv.org/abs/1303.2112) &nbsp; *complete synthetic reflection library from illuminated accretion disk with number density values*
