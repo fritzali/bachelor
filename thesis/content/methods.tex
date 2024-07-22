@@ -327,9 +327,9 @@ that is compatible with a $dN_p \kern+0.5pt / dE_p \propto E_p^{\kern+0.3pt -1}$
 
 \enlargethispage*{\baselineskip}\newpage
 
-For the AGN setting, a more general DSA scenario like in section \ref{sub:acceleration} is assumed, yielding
+For the AGN setting, a more general DSA scenario like in Section \ref{sub:acceleration} is assumed, yielding
 \begin{equation}
-	\frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} = \mathscr{S} E_p^{\kern+0.2pt -2}
+	\frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( E_p \bigr) = \mathscr{S} E_p^{\kern+0.2pt -2}
 \end{equation}
 with $\kern-0.2pt \mathscr{S} \kern+0.6pt$ for an arbitrary normalization factor that does not need to be specified further,
 as this thesis is interested in relative neutrino contributions instead of absolute predictions.
@@ -340,7 +340,52 @@ as this thesis is interested in relative neutrino contributions instead of absol
 \label{sub:production}
 
 Spectra of hadrons and neutrinos are generally computed as in \eqref{eqn:folding} via folding, though for the hadronic spectrum,
-a cooling factor \eqref{eqn:cooling} from section \ref{sub:cooling} as well as an effective optical depth are included via multiplication.
+a cooling factor \eqref{eqn:cooling} and optical depth \eqref{eqn:optical} are included, giving
+\begin{equation}
+	\frac{dN_h}{\raisebox{0.5ex}{$dE_h$}} \bigl( E_h \bigr) = \mathscr{CO} \int_{E_h}^{\mathscr{E}_{\kern-0.5pt p}}
+	\kern-0.5pt dE_p \frac{dN_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( E_p \bigr) \kern+1.5pt
+	F_{p \kern+0.8pt \rightarrow h} \bigl( E_h \kern+0.5pt , \kern-0.5pt E_p \bigr)
+\end{equation}
+with maximum proton energies $\mathscr{E}_{\kern-0.5pt p}$ as a result. Because the proton spectrum \eqref{eqn:delta}
+contains a delta function $\smash{\delta \kern+0.5pt \bigl( E_p - E^M \kern+0.5pt \bigr)}$ in the magnetar case, integration
+over $E_p$ simply substitutes $\smash{E^M}$ in place of the proton energy. Accordingly, a limit $\mathscr{E}_{\kern-0.5pt p} = \infty$
+can be set to ensure $\smash{E^M} < \mathscr{E}_{\kern-0.5pt p}$ at all times. For the AGN accretion disk, a choice of
+$\mathscr{E}_{\kern-0.5pt p} = \smash{\qty{e12}{\giga\electronvolt}}$ is made in accordance with the maximum magnetar proton energy.
+A value exceeding that of the GZK cutoff at $E_p = \smash{10^{1 \kern-0.3pt 1}} \kern+1.5pt \unit{\giga\electronvolt}$ described in
+Section \ref{sub:cutoff} can be justified by assuming close proximity to the origin of accelerated particles. Cooling factors
+\eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec} \kern-0.5pt = \tau_h E_h / m_h$ and
+$t_\text{cool} \kern-0.5pt = \cramped{(\kappa_{h \kern-0.1pt p} \sigma_{h \kern-0.1pt p} n c)^{-1}}$ define the decay and cooling timescales,
+with parameters $\tau_h$ and $m_h$ listed in the respective tables, as well as \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} giving the
+$\sigma_{h \kern-0.1pt p}$ cross sections, which are approximated to those of kaons for charmed hadrons. The effective optical depth
+\eqref{eqn:optical} only describes proton interactions, with a mean free path
+$\lambda_{p \kern-0.1pt p} = \cramped{(\kappa_{p \kern-0.1pt p} \sigma_{p \kern-0.1pt p} n)^{-1}}$ and distance $d$ determined by the
+specific model. Inelasticity factors $\kappa_{h \kern-0.1pt p} = \num{0.8}$ and $\kappa_{p \kern-0.1pt p} = \num{0.5}$ are assumed to
+be constants as given in \cite{Carpio_2020}. For the scenario of a newborn magnetar, properties of the ejecta determine
+$n = n_\text{ej}$ \eqref{eqn:number-density} and $d \kern+0.1pt = r_\text{ej}$ \eqref{eqn:ejecta-radius} as parameters. The AGN
+accretion disk is modeled by the height parameter \eqref{eqn:height} that varies with radius and characterizes a diffuse density
+distribution, as well as the angle $\alpha$ measuring the direction of incidence relative to the disk plane. This is further
+simplified by assuming a sharply bound region of height $h$ with homogenous density, leading to $d = h / \kern-2.0pt \sin \alpha$
+as the distance travelled by a particle. Because the results are insensitive to variations in distance, one can set
+$\alpha = \pi \kern+0.25pt / 2$ to find $\sin\alpha = \kern-0.1pt 1$ and $d = h$ with $h = \kern-0.5pt \smash{\qty{e15}{\centi\meter}}$
+corresponding to roughly \qty{100}{\astronomicalunit} taken from \cite{King_2008}. Typical number densities are of the order
+\qty{e15}{\per\centi\meter\cubed} in the disk plane \cite{Garcia_2013, Garcia_2014} and are taken to be
+$n = \kern-0.5pt \smash{\qty{e14}{\per\centi\meter\cubed}}$ for the following calculations to account for
+the reduction at larger heights. 
+
+
+
+
+
+As a comparison to the scales of other AGN features, typical SMBH masses of \qty{e8}{\solarmass} roughly
+correspond to a \qty{2}{\astronomicalunit} Schwarzschild radius. Accretion disks reach \qty{10}{\milli\parsec} 
+
+
+
+
+
+\eqref{eqn:ejecta-radius}
+
+as well as an effective optical depth are included via multiplication.
 With the ratio of source size $d \kern+0.5pt$ and mean free path $\lambda$ defining this optical depth $f \kern+0.5pt = d / \lambda$ as a
 dimensionless factor, it represents a measure of proton-proton interactions taking place. Accordingly, section \ref{sub:cooling} gives
 $\smash{\lambda = (\kappa_{p \kern-0.1pt p} \kern+0.5pt \sigma_{p \kern-0.1pt p} \kern+0.5pt n)^{-1}}$ and $d = r_\text{ej}$ for a magnetar
@@ -349,7 +394,7 @@ evolution implied by $E^M(t)$ proton energies, the AGN instead depends on an ang
 to the normal vector of the accretion disk plane. The height parameter defined in section \ref{sub:nuclei} varies with radius and
 characterizes diffuse density distributions. In contrast to this, the highly simplified case considered here instead assumes a sharply
 bound disk of constant height. Cross sections and spectra are taken as presented in sections \ref{sec:cross} and \ref{sec:spectral} with
-charmed hadron scattering cross sections being approximated to that of kaons.
+charmed hadron scattering cross sections being approximated to that of kaons. 
 
 
 
@@ -396,25 +441,25 @@ may be assumed on average, with a more detailed description provided in the foll
 
 In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
 this task allows the general case
-\begin{align*}
+\begin{align}
 	F(x, y) \kern+1.5pt &= \int_{z_{-}}^{z_{+}} dz \: G(x, z) \, H(z, y) \\
 	\intertext{to be rewritten as a Riemann sum. Assuming $G$ and $H$ are integrable over a given interval,}
 	F_{ij} \kern+1.8pt &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
-\end{align*}
+\end{align}
 converges to the exact solution for sufficiently small steps. Transforming variables
-\begin{align*}
-	&&&& x \rightarrow x_i && y \rightarrow y_j && z \rightarrow z_k &&&&
-\end{align*}
+\begin{align}
+	&&&& x \rightarrow x_i \: , && y \rightarrow y_j \: , && z \rightarrow z_k &&&&
+\end{align}
 and defining $D_{kk} = z_{k+1} \kern-1.0pt - z_k$ leads to the above notation. It is easily shown how this expression in terms of
 indices translates to the product of corresponding matrices
-\begin{equation*}
+\begin{equation}
 	\bm{F} \kern+0.6pt = \bm{G} \, \bm{D} \, \bm{H}
-\end{equation*}
-as an equivalent formulation. Here the output $\bm{F} \in \mathbb{R}^{m \times n}$ is obtained from the inputs
-$\bm{G} \in \mathbb{R}^{m \times l}$ and $\bm{H} \in \mathbb{R}^{l \times n}$ as well as the square matrix
+\end{equation}
+as an equivalent formulation. Here, the output $\bm{F} \in \mathbb{R}^{m \times n}$ is obtained from the inputs
+$\bm{G} \in \mathbb{R}^{m \times l}$ as well as $\bm{H} \in \mathbb{R}^{l \times n}$ with the square matrix
 $\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal. These results enable a quick and
-efficient implementation of the required calculations as program code, where array arithmetic operations can greatly
-increase execution speed.\footnote{$\,$For the purpose of reproducability, all implementations can be viewed in
-\href{https://github.com/fritzali/bachelor}{this} repository.}
-
-Logarithmic spacing can lead to better accuracy and fewer steps...
+efficient implementation of the required calculations as program code, where arithmetic array operations can greatly
+increase execution speed. Furthermore, logarithmic spacing of $\bm{D}$ often leads to better accuracy after fewer
+iterations. To avoid redundant computations, results are stored as data tables.\footnote{
+{\kern+1.5pt}For the purpose of reproducability, all implementations can be viewed
+in \href{https://github.com/fritzali/bachelor}{this} repository.}
