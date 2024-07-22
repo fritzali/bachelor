@@ -7,22 +7,23 @@ figure.constrained_layout.w_pad : 0.09
 figure.constrained_layout.h_pad : 0.09
 
 figure.dpi : 600
-figure.figsize : 5.0 , 3.2
+figure.figsize : 6.0 , 4.0
 
 font.family : serif
 font.size : 10
 
-legend.fontsize : small
+legend.fontsize : medium
 legend.frameon : False
 
-lines.linewidth: 1
-
 lines.dash_capstyle: round
+lines.linewidth: 1
 lines.solid_capstyle: round
 
 pgf.preamble : \input{header.tex}
 pgf.rcfonts : False
 pgf.texsystem : lualatex
+
+savefig.pad_inches : 0
 
 text.usetex : True
 
