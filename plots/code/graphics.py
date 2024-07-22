@@ -19,7 +19,7 @@ plt.xscale('log')
 
 plt.xlim(1e2, 1e9)
 
-plt.legend()
+plt.legend(handlelength=1.5, loc=2)
 
 plt.savefig('build/hadron_proton_scattering.pdf')
 plt.savefig('build/hadron_proton_scattering.png')
@@ -44,7 +44,7 @@ plt.yscale('log')
 plt.xlim(1e-6, 1e0)
 plt.ylim(1e-4, 1e1)
 
-plt.legend()
+plt.legend(handlelength=1.5, loc=1)
 
 plt.savefig('build/charm_hadron_cross_section.pdf')
 plt.savefig('build/charm_hadron_cross_section.png')
@@ -92,7 +92,7 @@ plt.yscale('log')
 plt.xlim(2e2, 1e6)
 plt.ylim(1e-4, 2e0)
 
-plt.legend(handlelength=1.8, loc=2)
+plt.legend(handlelength=1.5, loc=2)
 
 plt.savefig('build/magnetar_charm_decay_comparison_without.pdf')
 plt.savefig('build/magnetar_charm_decay_comparison_without.png')
@@ -113,7 +113,7 @@ plt.yscale('log')
 plt.xlim(4e1, 4e6)
 plt.ylim(1e-6, 1e1)
 
-plt.legend(handlelength=1.8, loc=2)
+plt.legend(handlelength=1.5, loc=2)
 
 plt.savefig('build/magnetar_neutrino_spectrum_without.pdf')
 plt.savefig('build/magnetar_neutrino_spectrum_without.png')
@@ -159,7 +159,7 @@ plt.yscale('log')
 plt.xlim(3e5, 1e11)
 plt.ylim(1.6e-4, 3e3)
 
-plt.legend(handlelength=1.8, loc=1)
+plt.legend(handlelength=1.5, loc=1)
 
 plt.savefig('build/magnetar_integrated_neutrino_spectrum_without.pdf')
 plt.savefig('build/magnetar_integrated_neutrino_spectrum_without.png')
@@ -207,7 +207,7 @@ plt.yscale('log')
 plt.xlim(2e2, 1e6)
 plt.ylim(1e-4, 2e0)
 
-plt.legend(handlelength=1.8, loc=3)
+plt.legend(handlelength=1.5, loc=3)
 
 plt.savefig('build/magnetar_charm_decay_comparison_with.pdf')
 plt.savefig('build/magnetar_charm_decay_comparison_with.png')
@@ -228,7 +228,7 @@ plt.yscale('log')
 plt.xlim(4e1, 4e6)
 plt.ylim(1e-6, 1e1)
 
-plt.legend(handlelength=1.8, loc=3)
+plt.legend(handlelength=1.5, loc=3)
 
 plt.savefig('build/magnetar_neutrino_spectrum_with.pdf')
 plt.savefig('build/magnetar_neutrino_spectrum_with.png')
@@ -274,7 +274,7 @@ plt.yscale('log')
 plt.xlim(3e5, 1e11)
 plt.ylim(4.3e-4, 6e1)
 
-plt.legend(handlelength=1.8, loc=1)
+plt.legend(handlelength=1.5, loc=1)
 
 plt.savefig('build/magnetar_integrated_neutrino_spectrum_with.pdf')
 plt.savefig('build/magnetar_integrated_neutrino_spectrum_with.png')
@@ -308,7 +308,7 @@ plt.yscale('log')
 plt.xlim(3e5, 1e11)
 plt.ylim(5e-4, 2e0)
 
-plt.legend(handlelength=1.8, loc=3)
+plt.legend(handlelength=1.5, loc=3)
 
 plt.savefig('build/nucleus_charm_decay_comparison.pdf')
 plt.savefig('build/nucleus_charm_decay_comparison.png')
@@ -329,7 +329,7 @@ plt.yscale('log')
 plt.xlim(3e5, 1e11)
 plt.ylim(5e-4, 2e3)
 
-plt.legend(handlelength=1.8, loc=1)
+plt.legend(handlelength=1.5, loc=1)
 
 plt.savefig('build/nucleus_neutrino_spectrum.pdf')
 plt.savefig('build/nucleus_neutrino_spectrum.png')
