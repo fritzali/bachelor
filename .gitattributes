@@ -1,4 +1,8 @@
-* linguist-generated
+*.cff linguist-generated
+*.ipynb linguist-generated
+*.md linguist-generated
+*.rc linguist-generated
+*.yml linguist-generated
 *.py linguist-detectable
 *.tex linguist-detectable
 Makefile linguist-detectable
