@@ -6,6 +6,8 @@ Listed in this directory is the Python code used to generate the included files 
 
 <img src="build/charm_hadron_cross_section.png" alt="Charmed Hadron Cross Section" title="Charmed Hadron Cross Section" width="700"/>
 
+<img src="build/event_generator.png" alt="Event Generator Results" title="Event Generator Results" width="700"/>
+
 <img src="build/magnetar_charm_decay_comparison_with.png" alt="Magnetar: Charm Decay Comparison (with optical depth)" title="Magnetar: Charm Decay Comparison (with optical depth)" width="700"/>
 <img src="build/magnetar_charm_decay_comparison_without.png" alt="Magnetar: Charm Decay Comparison (without optical depth)" title="Magnetar: Charm Decay Comparison (without optical depth)" width="700"/>
 
