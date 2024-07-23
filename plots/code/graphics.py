@@ -4,6 +4,26 @@ import matplotlib.pyplot as plt
 from code.functional import *
 
 
+plt.figure(figsize=(5.0, 3.2))
+
+h, y = np.genfromtxt('code/tabulate/other/events.txt', unpack=True, dtype=None)
+
+plt.bar(range(len(y)), y, tick_label=h, color='b', linewidth=0, width=0.6, alpha=0.6, label=r'\textsc{sibyll} 2.3c')
+
+plt.ylabel(r'yield $\mathrel{/} \kern-0.25pt$ event')
+
+plt.yscale('log')
+
+plt.gca().tick_params(axis='x', which='minor', bottom=False)
+
+plt.legend(loc=1)
+
+plt.savefig('build/event_generator.pdf')
+plt.savefig('build/event_generator.png')
+plt.close()
+
+
+
 s, p, pi, K = np.genfromtxt('code/tabulate/other/sample_inelastic_scattering.txt', unpack=True)
 
 plt.figure(figsize=(5.0, 3.2))

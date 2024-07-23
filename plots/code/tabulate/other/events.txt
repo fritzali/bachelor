@@ -1,0 +1,20 @@
+# SIBYLL 2.3c yield @ sqrt(s) = 1 TeV (courtesy of Marcel Schroller)
+
+$\vphantom{K^0_S}p$                                           1.341377509611502
+$\vphantom{K^0_S}\pi^+$                                       2.6826957952797246
+$\vphantom{K^0_S}\pi^0$                                       3.017114810529294
+$\vphantom{K^0_S}\pi^-$                                       2.096179992453125
+$\vphantom{K^0_S}n$                                           0.7367954559661631
+$\vphantom{K^0_S}K^0_S$                                       0.16187645069182696
+$\vphantom{K^0_S}K^-$                                         0.10730309405261573
+$\vphantom{K^0_S}K^0_L$                                       0.1637893706954065
+$\vphantom{K^0_S}K^+$                                         0.20716983998953098
+$\vphantom{K^0_S}\overline{\kern-1.25pt{p}\kern+0.5pt}$        0.03514943652829657
+$\vphantom{K^0_S}\gamma$                                      0.589397328809956
+$\vphantom{K^0_S}\overline{\kern-0.25pt{n}\kern+0.1pt}$        0.04445894816234004
+$\vphantom{K^0_S}e^+$                                         0.0047148663634573994
+$\vphantom{K^0_S}e^-$                                         0.0047148663634573994
+$\vphantom{K^0_S}\nu_e$                                       0.0001011817160528318
+$\vphantom{K^0_S}\overline{\kern-0.5pt{\nu}\kern+0.5pt}_\mu$  0.000101181716052832
+$\vphantom{K^0_S}\overline{\kern-0.5pt{\nu}\kern+0.5pt}_e$    0.000101181716052832
+$\vphantom{K^0_S}\nu_\mu$                                     0.000101181716052832

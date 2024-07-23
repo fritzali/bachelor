@@ -1,4 +1,4 @@
-\begin{spacing}{0.985}
+\begin{spacing}{0.975}
 	\chapter{Methods}
 	\label{ch:methods}
 	
@@ -28,13 +28,16 @@
 	
 	By defining an effective area perpendicular to the momentum vectors of projectiles and targets, cross sections as described
 	in Section \ref{sub:collisions} measure probabilities of collision processes in particle physics and are therefore required
-	for the calculation of spectral distributions. 
+	for the calculation of spectral distributions. Distinctions of particle and antiparticle cross sections vanish at high
+	energies and are therefore omitted \cite{pdg}.
 	
 	
 	
 	\subsection{Scattering}
 	\label{sub:scattering}
 	
+	\enlargethispage*{2\baselineskip}
+
 	To model total cross sections in hadron-proton scattering, this thesis uses the formula
 	\begin{equation}
 		\sigma_{hp} = H_h \ln^2 \bigl( s \kern+1.0pt / s_h \bigr) + P_h +
@@ -47,7 +50,7 @@
 	$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} are named after Heisenberg,
 	Pomeranchuk and Regge, respectively, and have some qualitative motivation, though the formula itself is mainly a quantitative
 	result.
-	\enlargethispage{\baselineskip}\newpage
+	\newpage
 \end{spacing}
 
 \input{content/tables/hadron-scattering.tex}
@@ -237,7 +240,7 @@ additional cooling before decaying and because charm cross sections are already 
 \subsection{Pions \& Kaons}
 \label{sub:pions}
 
-By parametrizing \textsc{sibyll} event generator results, a neutral pion production spectrum of the form
+By parametrizing {\textsc{sibyll}} \cite{Fletcher_1994} results, a neutral pion production spectrum of the form
 \begin{equation*}
 	\tilde{F}_{p \kern+0.5pt \rightarrow \pi} \kern+1.5pt \bigl( x_\pi \kern+0.7pt , \kern-0.5pt E_p \bigr) = 4\alpha B x_\pi^{\alpha - 1}
 	\left( \frac{1 - \kern+0.2pt x_\pi^\alpha}{1 + \kern+0.8pt rx_\pi^\alpha (1 - \kern+0.2pt x_\pi^\alpha \kern+1.0pt )}
@@ -268,65 +271,66 @@ production regardless of charge reasonably well for the purpose of this thesis.
 
 \input{content/tables/pion-spectrum.tex}
 
-For a convenient formulation of kaon production, references \cite{Lykasov_2021} and \cite{Lykasov_2022} indicate a constant ratio
-$\pi / K$ at moderately high energies. Similar fractions are retrieved from multiplicities given in \cite{Koers_2006} and lead to
-$F_K \kern+0.5pt / F_\pi = \num{0.12}$ as a simplifying assumption, the validity of which cannot be guaranteed for the application
-at hand. Calculations of kaon spectra still employ this approach but are subject to considerable reservations as a result, because
-fixed ratios to pion spectra are unlikely to be universal. Other than this factor, the pion mass is replaced with that of kaons for
-a correct cutoff in the above expression.
-
-Decays of pions and kaons to neutrinos are approximated via the $h \rightarrow \mu^+ \nu_\mu$ two{\kern+0.2pt}-body channel
-with branching fractions of $\mathscr{F}_{\kern-0.2pt \pi \kern+0.2pt} = \qty{99.99}{\percent}$ and
-$\mathscr{F}_{\kern+0.3pt K \kern+0.2pt} = \qty{63.56}{\percent}$ given in the \cite{pdg}
-particle listings. By decaying, muons produced in these processes can significantly impact the neutrino spectrum. Results from
-\cite{Carpio_2020} suggest that this is particularly relevant for pions. Muonic three{\kern+0.3pt}-body decays of type
-$\mu^- \kern-2.5pt \kern+0.5pt \rightarrow e^- \kern+0.5pt \overline{\kern-0.2pt \nu \kern+0.8pt}_e \nu_\mu$ as well as
-cooling factors depend on the polarization of participating leptons due to the nature of weak force coupling. This complicates
-computations and is thus omitted for the purpose of restricting the present thesis to a manageable scope, though it should be
-remembered as an important caveat for the final results.
-
-The remaining two body{\kern+0.2pt}-decays of ultra-relativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
-\begin{equation*}
-	F_{\kern+1.0pt h \kern+0.2pt \rightarrow l \kern+1.0pt} \bigl( E_l \kern+0.8pt, \kern-0.2pt E_h \bigr) =
-	\mathscr{F}_{\kern+0.2pt h \kern+0.2pt} E_h^{\kern+1.0pt -1} \bigl( 1 \kern-0.3pt - \lambda_h \bigr)^{-1}
-\end{equation*}
-with $m_{\kern+0.5pt \nu} = 0$ and $m_\mu = \qty{0.106}{\giga\electronvolt}$ \cite{pdg} as well as
-$\lambda_h \kern-0.3pt = m_\mu^2 \kern+0.5pt / m_h^2$ as a parameter. This formula is the same whether
-$l = \nu \kern+0.2pt$ or $l = \kern-0.3pt \mu$ because there is one muon for each neutrino. In addition,
-kinematic considerations lead to $E_\mu \kern+0.5pt / E_h > \lambda_h$ and
-$E_{\kern+0.5pt \nu} \kern+0.5pt / E_h < 1 - \lambda_h$ for bounds
-$E_\mu < E_h < E_\mu \kern+0.5pt / \lambda_h$ in case of muons or corresponding limits
-$E_{\kern+0.5pt \nu} \kern+0.5pt / \smash{\bigl( 1 - \lambda_h \bigr)} < E_h < E_p$ when considering neutrinos, which are
-required by \eqref{eqn:folding} for integration.
-
-
-
-\section{Computation}
-\label{sec:computation}
-
-Taking into account previous deliberations, this section now combines these with the contents of Chapter \ref{ch:background}
-to give explicit steps for calculating the desired results.
-
-
-
-\subsection{Injection}
-\label{sub:injection}
-
-The proton spectrum model of young magnetars described in Section \ref{sub:magnetars} starts with an idealized charge density
-$\rho = \omega B_\text{ns} \kern+0.2pt / (2\pi c)$ derived from \cite{Goldreich_1969} and leads to $n = \kern-0.6pt \rho / \kern-0.2pt e$
-for the number of charge carriers. Integrating over the so-called polar caps defined by a radius
-$\smash{R_\text{pc} \kern-1.0pt = \kern-0.2pt R_\text{ns} \sqrt{R_\text{ns} / R_\text{lc}}}$ from which open field lines
-originate and taking a monochromatic energy according to \eqref{eqn:mono} for all times $t \kern+0.5pt$ results
-in a time-derivative delta-functional spectrum
-\begin{equation}
-	\frac{d\kern+0.75pt\dot{N}_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( t, E_p \bigr) =
-	\frac{B_\text{ns} R_\text{ns}^3 \omega_0^2}{ec \bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}
-	\kern+1.0pt \delta \kern+0.5pt \bigl( E_p - E^M(t) \bigr)
-	\label{eqn:delta}
-\end{equation}
-that is compatible with a $dN_p \kern+0.5pt / dE_p \propto E_p^{\kern+0.3pt -1}$ power law.
-
-\enlargethispage*{\baselineskip}\newpage
+\begin{spacing}{0.980}
+	For a convenient formulation of kaon production, references \cite{Lykasov_2021} and \cite{Lykasov_2022} indicate a constant ratio
+	$\pi / K$ at moderately high energies. Similar fractions are retrieved from multiplicities given in \cite{Koers_2006} and lead to
+	$F_K \kern+0.5pt / F_\pi = \num{0.12}$ as a simplifying assumption, the validity of which cannot be guaranteed for the application
+	at hand. Calculations of kaon spectra still employ this approach but are subject to considerable reservations as a result, because
+	fixed ratios to pion spectra are unlikely to be universal. Other than this factor, the pion mass is replaced with that of kaons for
+	a correct cutoff in the above expression.
+	
+	Decays of pions and kaons to neutrinos are approximated via the $h \rightarrow \mu^+ \nu_\mu$ two{\kern+0.2pt}-body channel
+	with branching fractions of $\mathscr{F}_{\kern-0.2pt \pi \kern+0.2pt} = \qty{99.99}{\percent}$ and
+	$\mathscr{F}_{\kern+0.3pt K \kern+0.2pt} = \qty{63.56}{\percent}$ given in the \cite{pdg}
+	particle listings. By decaying, muons produced in these processes can significantly impact the neutrino spectrum. Results from
+	\cite{Carpio_2020} suggest that this is particularly relevant for pions. Muonic three{\kern+0.3pt}-body decays of type
+	$\mu^- \kern-2.5pt \kern+0.5pt \rightarrow e^- \kern+0.5pt \overline{\kern-0.2pt \nu \kern+0.8pt}_e \nu_\mu$ as well as
+	cooling factors depend on the polarization of participating leptons due to the nature of weak force coupling. This complicates
+	computations and is thus omitted for the purpose of restricting the present thesis to a manageable scope, though it should be
+	remembered as an important caveat for the final results.
+	
+	The remaining two body{\kern+0.2pt}-decays of ultra-relativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
+	\begin{equation*}
+		F_{\kern+1.0pt h \kern+0.2pt \rightarrow l \kern+1.0pt} \bigl( E_l \kern+0.8pt, \kern-0.2pt E_h \bigr) =
+		\mathscr{F}_{\kern+0.2pt h \kern+0.2pt} E_h^{\kern+1.0pt -1} \bigl( 1 \kern-0.3pt - \lambda_h \bigr)^{-1}
+	\end{equation*}
+	with $m_{\kern+0.5pt \nu} = 0$ and $m_\mu = \qty{0.106}{\giga\electronvolt}$ \cite{pdg} as well as
+	$\lambda_h \kern-0.3pt = m_\mu^2 \kern+0.5pt / m_h^2$ as a parameter. This formula is the same whether
+	$l = \nu \kern+0.2pt$ or $l = \kern-0.3pt \mu$ because there is one muon for each neutrino. In addition,
+	kinematic considerations lead to $E_\mu \kern+0.5pt / E_h > \lambda_h$ and
+	$E_{\kern+0.5pt \nu} \kern+0.5pt / E_h < 1 - \lambda_h$ for bounds
+	$E_\mu < E_h < E_\mu \kern+0.5pt / \lambda_h$ in case of muons or corresponding limits
+	$E_{\kern+0.5pt \nu} \kern+0.5pt / \smash{\bigl( 1 - \lambda_h \bigr)} < E_h < E_p$ when considering neutrinos, which are
+	required by \eqref{eqn:folding} for integration.
+	
+	
+	
+	\section{Computation}
+	\label{sec:computation}
+	
+	Taking into account previous deliberations, this section now combines these with the contents of Chapter \ref{ch:background}
+	to give explicit steps for calculating the desired results, as well as numerical values for the required parameters.
+	Additionally, notes on the implementation are included.
+	
+	
+	\subsection{Injection}
+	\label{sub:injection}
+	
+	The proton spectrum model of young magnetars described in Section \ref{sub:magnetars} starts with an idealized charge density
+	$\rho = \omega B_\text{ns} \kern+0.2pt / (2\pi c)$ derived from \cite{Goldreich_1969} and leads to $n = \kern-0.6pt \rho / \kern-0.2pt e$
+	for the number of charge carriers. Integrating over the so-called polar caps defined by a radius
+	$\smash{R_\text{pc} \kern-1.0pt = \kern-0.2pt R_\text{ns} \sqrt{R_\text{ns} / R_\text{lc}}}$ from which open field lines
+	originate and taking a monochromatic energy according to \eqref{eqn:mono} for all times $t \kern+0.5pt$ results
+	in a time-derivative delta-functional spectrum
+	\begin{equation}
+		\frac{d\kern+0.75pt\dot{N}_p}{\raisebox{0.5ex}{$dE_p$}} \bigl( t, E_p \bigr) =
+		\frac{B_\text{ns} R_\text{ns}^3 \omega_0^2}{ec \bigl( 1 + \kern+1.5pt t \kern+0.1pt / \kern+0.2pt t_\text{sd} \kern+0.5pt \bigr)}
+		\kern+1.0pt \delta \kern+0.5pt \bigl( E_p - E^M(t) \bigr)
+		\label{eqn:delta}
+	\end{equation}
+	that is compatible with a $dN_p \kern+0.5pt / dE_p \propto E_p^{\kern+0.3pt -1}$ power law.
+	\enlargethispage*{\baselineskip}\newpage
+\end{spacing}
 
 For the AGN setting, a more general DSA scenario like in Section \ref{sub:acceleration} is assumed, yielding
 \begin{equation*}
@@ -338,7 +342,7 @@ as this thesis is interested in relative neutrino contributions instead of absol
 
 
 \subsection{Production \& Decay}
-\label{sub:production}
+\label{sub:decay}
 
 Spectra of hadrons and neutrinos are generally computed as in \eqref{eqn:folding} via folding, though for the hadronic spectrum,
 a cooling factor \eqref{eqn:cooling} and optical depth \eqref{eqn:optical} are included, giving
@@ -353,8 +357,11 @@ over $E_p$ simply substitutes $\smash{E^M}$ in place of the proton energy. Accor
 can be set to ensure $\smash{E^M} < \mathscr{E}_{\kern-0.5pt p}$ at all times. For the AGN accretion disk, a choice of
 $\mathscr{E}_{\kern-0.5pt p} = \smash{\qty{e12}{\giga\electronvolt}}$ is made in accordance with the maximum magnetar proton energy.
 A value exceeding that of the GZK cutoff at $E_p = \smash{10^{1 \kern-0.3pt 1}} \kern+1.5pt \unit{\giga\electronvolt}$ described in
-Section \ref{sub:cutoff} can be justified by assuming close proximity to the origin of accelerated particles. Cooling factors
-\eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec} \kern-0.5pt = \tau_h E_h / m_h$ and
+Section \ref{sub:cutoff} can be justified by assuming close proximity to the origin of accelerated particles. Proceeding from this,
+cross sections and distributions are taken from Sections \ref{sec:cross} and \ref{sec:spectral} to translate the produced hadron
+population to neutrinos.
+
+Cooling factors \eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec} \kern-0.5pt = \tau_h E_h / m_h$ and
 $t_\text{cool} \kern-0.5pt = \cramped{(\kappa_{h \kern-0.1pt p} \sigma_{h \kern-0.1pt p} n c)^{-1}}$ define the decay and cooling timescales,
 with parameters $\tau_h$ and $m_h$ listed in the respective tables, as well as \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} giving the
 $\sigma_{h \kern-0.1pt p}$ cross sections, which are approximated to those of kaons for charmed hadrons. The effective optical depth
@@ -366,14 +373,14 @@ $n = n_\text{ej}$ \eqref{eqn:number-density} and $d \kern+0.1pt = r_\text{ej}$ \
 accretion disk is modeled by the height parameter \eqref{eqn:height} that varies with radius and characterizes a diffuse density
 distribution, as well as the angle $\alpha$ measuring the direction of incidence relative to the disk plane. This is further
 simplified by assuming a sharply bound region of height $h$ with homogenous density, leading to $d = h / \kern-2.0pt \sin \alpha$
-as the distance travelled by a particle. Because the results are insensitive to variations in distance, one can set
+as the distance travelled by a particle. Because results are insensitive to variations in distance, one can set
 $\alpha = \pi \kern+0.25pt / 2$ to find $\sin\alpha = \kern-0.1pt 1$ and $d = h$ with $h = \kern-0.5pt \smash{\qty{e15}{\centi\meter}}$
-corresponding to roughly \qty{100}{\astronomicalunit} taken from \cite{King_2008}. Typical number densities of the order
-\qty{e15}{\per\centi\meter\cubed} in the disk plane \cite{Garcia_2013, Garcia_2014} are scaled down to account for the
-inhomogenous distribution and taken to be $n = \kern-0.5pt \smash{\qty{e14}{\per\centi\meter\cubed}}$ for the following calculations.
-To put this into perspective, typical SMBH masses of around \qty{e8}{\solarmass} correspond to a \qty{2}{\astronomicalunit} Schwarzschild
-radius. While accretion disks might extend up to \qty{e18}{\centi\meter} radii, jets can reach multiple \qty{100}{\kilo\parsec}
-with terminal bow shocks at \unit{\mega\parsec} distances from the core \cite{Blandford_2019, King_2008, Murase_2023}.
+taken from \cite{King_2008}. Typical number densities of the order \qty{e15}{\per\centi\meter\cubed} in the disk plane
+\cite{Garcia_2013, Garcia_2014} are scaled down to account for the inhomogenous distribution \eqref{eqn:density} and taken to be
+$n = \kern-0.5pt \smash{\qty{e14}{\per\centi\meter\cubed}}$ for the following calculations. To put this into perspective, typical
+SMBH masses of around \qty{e8}{\solarmass} lead to a \qty{e13}{\centi\meter} Schwarzschild radius. While accretion disks
+might extend up to \qty{e18}{\centi\meter} radii, jets can reach multiple \qty{100}{\kilo\parsec} with terminal bow shocks at
+\unit{\mega\parsec} distances from the core \cite{Blandford_2019, King_2008, Murase_2023}.
 
 \newpage
 
@@ -383,20 +390,18 @@ white dwarfs lead to $I_\text{ns} = \qty{e45}{\gram\centi\meter\squared}$ as the
 sphere, where relativistic effects are ignored and $\qty{1}{\solarmass} = \qty{2e33}{\gram}$ is used. Reference \cite{Haensel_1999}
 provides the minimum period of uniform rotation, beyond which the neutron star loses its structural integrity. Choosing twice this
 value yields $\omega_0 = \qty{e4}{\per\second}$~as~an~optimistic initial angular frequency. The tilt parameter $\chi$ is set to an
-angle of $\chi = \num{0.95}$ radians.~A~magnetic~field of~$B_\text{ns} = \qty{3.2e14}{\gauss}$ leads to a maximum energy
+angle of $\chi = \num{0.95}$ radians.~A~magnetic~field of~$B_\text{ns} \kern-0.75pt = \qty{3.2e14}{\gauss}$ leads to a maximum energy
 $E^M = \num{5.3} \times 10^{1 \kern-0.3pt 1} \kern+1.5pt \unit{\giga\electronvolt}$ for proton acceleration as well as
-$t_\text{sd} = \qty{3.2e3}{\second}$ as the spindown time. With the total amount of ejected mass being similar to that of the
-respective progenitor star, values between \qty{10}{\solarmass} and \qty{35}{\solarmass} are possible, with
-$M_\text{ej} = \qty{10}{\solarmass}$ being chosen for this scenario. At velocity $\beta_\text{ej} = \num{0.1}$
-of the shell, number densities $n_\text{ej} = \qty{3.1e18}{\per\centi\meter\cubed}$ are  observed after $t_\text{sd}$
-has passed. Lastly, an efficiency $\eta = \num{0.1}$ is assumed for the acceleration of protons. Proceeding from this, cross
-sections and distributions are taken from Sections \ref{sec:cross} and \ref{sec:spectral} to translate the resulting hadron
-population to a neutrinos.
+$t_\text{sd} = \qty{3.2e3}{\second}$ as the spindown time. With the total ejected mass being similar to that of the
+respective progenitor star, values between \qty{10}{\solarmass} and \qty{35}{\solarmass} are possible, from which
+the lower bound $M_\text{ej} = \qty{10}{\solarmass}$ is chosen for this scenario. At velocity $\beta_\text{ej} = \num{0.1}$
+of the shell, number densities $n_\text{ej} = \smash{\qty{3.1e18}{\per\centi\meter\cubed}}$ are  observed after $t_\text{sd}$
+has passed. Lastly, an efficiency $\eta = \num{0.1}$ is assumed for the acceleration of protons.
 
 
 
-\section{Implementation}
-\label{sec:implementation}
+\subsection{Implementation}
+\label{sub:implementation}
 
 In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
 this task allows the general case
@@ -422,3 +427,10 @@ increase execution speed. Furthermore, logarithmic spacing of $\bm{D}$ often lea
 iterations. To avoid redundant computations, results are stored as data tables.\footnote{
 {\kern+1.5pt}For the purpose of reproducability, all implementations are collected in a dedicated \emph{GitHub} repository:\\
 \href{https://github.com/fritzali/bachelor}{github.com/fritzali/bachelor}}
+
+
+
+\subsection{Event Generators}
+\label{sub:generators}
+
+\input{content/visuals/event-generator.tex}
