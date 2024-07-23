@@ -310,7 +310,7 @@ production regardless of charge reasonably well for the purpose of this thesis.
 	
 	Taking into account previous deliberations, this section now combines these with the contents of Chapter \ref{ch:background}
 	to give explicit steps for calculating the desired results, as well as numerical values for the required parameters.
-	Additionally, notes on the implementation are included.
+	Additionally, some notes on the implementation are included.
 	
 	
 	\subsection{Injection}
@@ -433,4 +433,24 @@ iterations. To avoid redundant computations, results are stored as data tables.\
 \subsection{Event Generators}
 \label{sub:generators}
 
+The description of multiple colliding particle systems constitutes an extremely complex problem, which methods like perturbative
+QF{\kern+0.5pt}T or lattice QCD mentioned in Sections \ref{sub:interactions} and \ref{sub:hadrons} are unable to resolve
+with satisfactory accuracy. Modeling of collider or air shower experiments therefore requires a different approach, realized
+by so-called event generators that fit data in well-tested regions and extrapolate to higher energies via random sampling.
+The Monte Carlo event generator \textsc{sybill} used as well by \cite{Carpio_2020} and \cite{Kelner_2006} is optimized for
+the simulation of high energy cosmic ray cascades, making it a suitable choice for the calculation of cross sections in an
+astrophysical context such as that of this thesis \cite{Fletcher_1994}.
+
 \input{content/visuals/event-generator.tex}
+
+Depicted in Figure \ref{fig:event-generator} are the yields of select particle types per proton-{\kern+0.1pt}proton collision predicted
+by \textsc{sibyll} 2.3c at $\smash{\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{1}{\tera\electronvolt}}$ center of mass energies. Other
+particles are produced as well, but omitted for better readability. This represents one step in the overall process of generating
+numerical values for the relevant cross sections. Events are generated at discrete fixed target or center of mass energies, with
+individual yield populations additionally following a separate energy distribution. Accordingly, each bar in Figure
+\ref{fig:event-generator} is an effective integral over all energies of the produced particles. Weighted energy differential cross
+sections $d\sigma \kern+0.5pt / \kern-0.1pt dx$ for specific secondary types can therefore be expressed by a histogram in two
+dimensions, with initial proton energies on one axis and energy of secondaries on the other. Normalizations are found by counting
+the yield and comparing to known values. Filling bins up to sufficient statistics is computationally intensive and consumes
+more time than is available for work on this thesis, which instead uses parametrizations as described in the previous sections.
+Event generator predictions should nevertheless be considered to verify and improve upon the following results.

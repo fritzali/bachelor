@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from code.functional import *
 
 
-plt.figure(figsize=(5.0, 3.2))
+plt.figure(figsize=(5.0, 3.0))
 
 h, y = np.genfromtxt('code/tabulate/other/events.txt', unpack=True, dtype=None)
 
