@@ -1,36 +1,43 @@
-\chapter{Conclusion \& Outlook}
-\label{ch:conclusion}
-
-\begin{spacing}{0.995}
+\begin{spacing}{0.990}
+	\chapter{Conclusion \& Outlook}
+	\label{ch:conclusion}
+	
 	Throughout this thesis, models of astrophysical sources are developed to estimate the relative neutrino contribution from
 	decays of charmed hadrons as well as pions and kaons. In order to do so, analytical parametrizations for cross sections as well as
 	spectral distributions are taken from the literature and integrated numerically to obtain the desired results.
-
+	
 	For the scenario of a young magnetar, a process following steps described in \cite{Carpio_2020} is reproduced. Significant
 	discrepancies are identified and determined to follow from including an effective optical depth. By omitting this coefficient,
 	findings better match those presented in \cite{Carpio_2020} except for a potentially erroneous maximum proton energy. Neutrinos
 	from charm generally dominate at high energies or early times due to cooling factors suppressing longer lived pions and kaons.
 	In the magnetar case, charmed hadron contributions are not clearly distinguishable from other components, which contradicts
 	the clear separation observed in \cite{Carpio_2020}. Natural extensions to this result are the inclusion of secondary muons as
-	well as the calulation of a diffuse neutrino flux as in \cite{Carpio_2020}. Potential improvements to the astrophysical modeling
+	well as the calculation of a diffuse neutrino flux similar to \cite{Carpio_2020}. Potential improvements to the astrophysical modeling
 	could be realized in terms of a more complex ejecta shell or by considering additional spindown mechanisms such as gravitational
 	waves. The optical depth introducing major inconsistencies represents the most glaring issue for which no obvious solution is
 	provided, and should therefore be investigated further, preferrably by directly comparing to the explicit implementation used in
-	\cite{Carpio_2020}. This would also require replacing the parametrizations adopted for the present thesis with event generator
-	results that are unfortunately inaccessible as well.
-
+	\cite{Carpio_2020}. This would also require replacing the parametrizations adopted for the present thesis with event
+	generator results used in \cite{Carpio_2020} that are unfortunately inaccessible. Alternatively, following the procedure
+	outlined in Section \ref{sub:generators} enables the computation of cross sections independent from external references.
+	Without these prerequisites, one cannot conclude whether the strong tension between our results and those in \cite{Carpio_2020}
+	stems from the correct implementation of differing methods or actual methodological errors. Until this has been resolved, the
+	findings of this thesis should be regarded as being of purely qualitative nature.
+	
 	Transferring the approach to an AGN accretion disk setting produces results in line with prior expectations. At high energies,
 	charm decays dominate the neutrino fluence and are cleanly separable from other contributions. This reflects the highly simplified
 	model, which basically consists of a generic proton target with some astrophysical motivation behind it. Including synchrotron
-	losses resulting from the presence of magnetic fields as well as the intense thermal radiation characteristic of AGN environments
-	almost certainly affects the aquired results in a significant manner, potentially obscuring the accretion disk as a neutrino source
-	altogether. Should this be the case, other source regions such as AGN jets might present more promising candidates for the
-	evaluation of neutrinos from charm decays \cite{Murase_2023}.
-
-	Overall, the contents of this thesis offer intriguing insights into the rich field of astroparticle physics and encourage deeper
-	exploration of the broad range of relevant topics. Implemented methods are subject to additional optimizations, both in terms
-	of more accurate parametrizations as well as better execution efficiency, although the procedures already are reasonably flexible,
-	enabling future research by being able to easily adapt to more sophisticated models. Although the presented results are not fully
-	conclusive, probing exotic decay processes via multimessenger neutrinos may well lead to novel discoveries in the study of
-	energetic astrophysical processes.
+	losses resulting from the presence of magnetic fields as well as the intense thermal radiation described in Section \ref{sub:accretion}
+	as characteristic of AGN environments almost certainly affects the aquired results in a significant manner, potentially
+	obscuring the accretion disk as a neutrino source altogether. Should this be the case, other source regions such as AGN jets
+	might present more promising candidates for detecting neutrinos from charm decays \cite{Murase_2023}. As before, results must
+	further be qualified with regard to the uncertain accuracy of underlying parametrizations. Replacing these with event generator
+	data would put the findings on a more solid foundation by sourcing cross sections via one comparatively reliable method.
+	\enlargethispage*{\baselineskip}\newpage
 \end{spacing}
+
+Overall, the contents of this thesis offer intriguing insights into the rich field of astroparticle physics and encourage deeper
+exploration of the broad range of relevant topics. Implemented methods are subject to additional optimizations, both in terms
+of more accurate parametrizations as well as better execution efficiency, although the procedures already are reasonably flexible,
+enabling future research by being able to easily adapt to more sophisticated models. Although the presented results are not fully
+conclusive, probing exotic decay processes via multimessenger neutrinos may well lead to novel discoveries in the study of
+energetic astrophysical processes.
