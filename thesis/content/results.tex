@@ -17,15 +17,6 @@ time yields the fluence,
 \end{equation*}
 which measures neutrino numbers per energy and area instead. Because $d \kern+0.5pt$ is a constant, forming ratios of
 $\dot{\phi}_\nu$ or $\phi_\nu$ eliminates it. Accordingly, the following results are distance independent.
-
-\newpage\null\vfill
-\input{content/visuals/magnetar-charm-comparison-with.tex}
-\vfill\null\newpage\null\vfill
-\input{content/visuals/magnetar-flux-with.tex}
-\vfill\null\newpage\null\vfill
-\input{content/visuals/magnetar-fluence-with.tex}
-\vfill\null\newpage
-
 As mentioned earlier, neutrinos are not distinguished by flavor, but by the particle decay from which they
 originate. Model parameters use the numerical values that Section \ref{sec:computation} provides.
 
@@ -43,6 +34,14 @@ a factor of $1 \kern-0.5pt /3 - 3$ is adopted for the charmed hadron uncertainty
 kaons generally contribute more than pions at this energy, with neutrinos from charm exceeding both by more than an order
 of magnitude until about $\cramped{t = \kern-0.25pt \qty{e5}{\second}}$ after magnetar formation.
 
+\newpage\null\vfill
+\input{content/visuals/magnetar-charm-comparison-with.tex}
+\vfill\null\newpage\null\vfill
+\input{content/visuals/magnetar-flux-with.tex}
+\vfill\null\newpage\null\vfill
+\input{content/visuals/magnetar-fluence-with.tex}
+\vfill\null\newpage
+
 In order to evaluate the significance of different time periods, Figure \ref{fig:magnetar-fluence-with} depicts integration
 results over varying intervals for pion, kaon and charm fluence. Contrary to expectations, charmed hadron decays are dominant
 at all energies by as much as one order of magnitude. Comparing Figures \ref{fig:magnetar-flux-with} and
@@ -54,14 +53,6 @@ of ejecta density $\smash{n_\text{ej} \kern-0.5pt \propto t^{-3}}$ and radius $\
 \eqref{eqn:optical} while assuming $\sigma_{p \kern-0.1pt p}$ to be constant leads to an approximate
 $\smash{\mathscr{O} \propto t^{-2}}$ dependence and results in neutrino numbers being distorted significantly towards larger values
 at earlier times. To verify this finding, calculations are repeated under omission of the optical depth.
-
-\newpage\null\vfill
-\input{content/visuals/magnetar-charm-comparison-without.tex}
-\vfill\null\newpage\null\vfill
-\input{content/visuals/magnetar-flux-without.tex}
-\vfill\null\newpage\null\vfill
-\input{content/visuals/magnetar-fluence-without.tex}
-\vfill\null\newpage
 
 As suspected, these results more closely match those in \cite{Carpio_2020}. Starting with the comparison of charmed hadrons, Figure
 \ref{fig:magnetar-charm-comparison-without} agrees with the previous statements regarding $\smash{D^0}$ and $\smash{D^+} \kern-0.5pt$
@@ -82,6 +73,14 @@ masses. Despite this, neutrino fluxes from pion or kaon decay individually fit t
 the contribution from muons is ignored, and their respective maxima are within acceptable margins compared to the charmed hadron curves in
 Figure \ref{fig:magnetar-flux-without} and reference \cite{Carpio_2020}.
 
+\newpage\null\vfill
+\input{content/visuals/magnetar-charm-comparison-without.tex}
+\vfill\null\newpage\null\vfill
+\input{content/visuals/magnetar-flux-without.tex}
+\vfill\null\newpage\null\vfill
+\input{content/visuals/magnetar-fluence-without.tex}
+\vfill\null\newpage
+
 There are, however, certain disagreements that are unlikely to arise purely from variations in the described methodologies. To begin with,
 reference \cite{Carpio_2020} provides $\cramped{E^M} = \kern-0.5pt \smash{\qty{1.3e13}{\giga\electronvolt}}$ as an initial value for the
 energy of injected protons, which disagrees with inserting the same default parameters into \eqref{eqn:mono} to find
@@ -89,7 +88,7 @@ $\cramped{E^M} = \kern-0.5pt \smash{\qty{1.7e12}{\giga\electronvolt}}$ instead, 
 units. If the larger and seemingly erroneous value is actually used, it would imply energies an order of magnitude higher than in the
 calculations presented here. Predictions from this include earlier light curve cutoffs, as energies become insufficient after less time
 has passed, and potentially smaller separation between charm, pion and kaon components, because at each point in time, only lower
-energy hadrons are available for neutrino production, resulting in a depression of otherwise possible peak values. A comparison to
+energy hadrons are available for neutrino production, resulting in a reduction of otherwise possible peak values. A comparison to
 \cite{Carpio_2020} shows that Figure \ref{fig:magnetar-flux-without} displays both of these features. Smaller injection energies
 further imply lower charm decay contributions to the total neutrino fluence, which Figure \ref{fig:magnetar-fluence-without} seems
 to support as well when compared to \cite{Carpio_2020}. Adding to this concern is the large divergence from Figures
@@ -119,6 +118,8 @@ different masses and lifetimes. Besides changing their magnitudes, flux curves m
 according to cooling and cutoff thresholds, with relative positions between individual contributions remaining mostly unaffected. 
 The findings described so far are in agreement with results from \cite{Carpio_2020}.
 
+\newpage
+
 To evaluate the fluence, Figure \ref{fig:magnetar-fluence-without} presents different time intervals, scaled by the squared neutrino
 energy. From the flux properties follows that charm decays dominate at earlier times, followed by kaons and pions. As the available
 proton energy reduces with time, each component contributes significantly at different energies, with neutrino fluence from
@@ -131,12 +132,6 @@ proton energy is $E_\nu = \kern-0.5pt \smash{\qty{e12}{\giga\electronvolt}}$ as 
 start decreasing closer to the kaon component, with kaons being approximately equal to the lower uncertainty bound for charmed
 hadrons at high energies. It is therefore unclear if a charmed neutrino component is unabiguously separable from pions and
 kaons. This discrepancy is at least partly attributable to the aforementioned larger maximum proton energy given in \cite{Carpio_2020}.
-
-\newpage\null\vfill
-\input{content/visuals/nucleus-charm-comparison.tex}
-\vfill\null\newpage\null\vfill
-\input{content/visuals/nucleus-fluence.tex}
-\vfill\null\newpage
 
 Continuing with results from an AGN accretion disk, there exists no temporal dimension, as the model
 assumes a constant neutrino spectrum at first approximation. Depicted in Figure \ref{fig:nucleus-charm-comparison}
@@ -160,3 +155,9 @@ maximum charm fluence, one can infer a power law as the underlying proton spectr
 depth including a cross section \eqref{eqn:hpr1r2} that slowly increases with energy. These results further account for decays occurring
 after hadrons have passed through the accretion disk by testing whether decay distances exceed the scale height and setting an according
 cooling factor, although no significant effects on the relative contributions are observed from including this additional step.
+
+\newpage\null\vfill
+\input{content/visuals/nucleus-charm-comparison.tex}
+\vfill\null\newpage\null\vfill
+\input{content/visuals/nucleus-fluence.tex}
+\vfill\null\newpage
