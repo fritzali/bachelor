@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 from code.functional import *
 
 
-plt.figure(figsize=(5.0, 3.0))
+plt.figure(figsize=(5.4, 3.1))
 
 h, y = np.genfromtxt('code/tabulate/other/events.txt', unpack=True, dtype=None)
 
-i = [0, 9, 4, 11, 10, 2, 1, 3, 5, 7, 8, 6, 12, 13, 14, 16, 17, 15]
+i = [3, 5, 0, 2, 8, 7, 1, 4, 10, 9, 6, 11, 14, 15, 16, 20, 21, 17, 18, 19, 13, 12, 22, 24, 25, 23]
 
 plt.bar(range(len(y)), y[i], tick_label=h[i], color='b', linewidth=0, width=0.6, alpha=0.6, label=r'\textsc{sibyll} 2.3c')
 
@@ -18,7 +18,7 @@ plt.yscale('log')
 
 plt.gca().tick_params(axis='x', which='minor', bottom=False)
 
-plt.xlim(-0.7, 17.7)
+plt.xlim(-0.7, 25.7)
 
 plt.legend(loc=1)
 
