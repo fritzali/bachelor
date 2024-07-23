@@ -1,2 +1,4 @@
-*.ipynb linguist-generated
-*.md linguist-detectable
+* linguist-generated
+*.py linguist-detectable
+*.tex linguist-detectable
+Makefile linguist-detectable
