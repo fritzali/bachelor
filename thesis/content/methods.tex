@@ -359,7 +359,8 @@ $\mathscr{E}_{\kern-0.5pt p} = \smash{\qty{e12}{\giga\electronvolt}}$ is made in
 A value exceeding that of the GZK cutoff at $E_p = \smash{10^{1 \kern-0.3pt 1}} \kern+1.5pt \unit{\giga\electronvolt}$ described in
 Section \ref{sub:cutoff} can be justified by assuming close proximity to the origin of accelerated particles. Proceeding from this,
 cross sections and distributions are taken from Sections \ref{sec:cross} and \ref{sec:spectral} to translate the produced hadron
-population to neutrinos.
+population to neutrinos, which due to their weak interactions mentioned in Section \ref{sub:hadrons} are assumed to be unaffected
+by attenuation.
 
 Cooling factors \eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec} \kern-0.5pt = \tau_h E_h / m_h$ and
 $t_\text{cool} \kern-0.5pt = \cramped{(\kappa_{h \kern-0.1pt p} \sigma_{h \kern-0.1pt p} n c)^{-1}}$ define the decay and cooling timescales,
@@ -444,8 +445,8 @@ iterations. To avoid redundant computations, results are stored as data tables.\
 	
 	\input{content/visuals/event-generator.tex}
 	
-	Depicted in Figure \ref{fig:event-generator} are the yields of select particle types per proton-{\kern+0.1pt}proton collision predicted
-	by \textsc{sibyll} 2.3c at $\smash{\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{1}{\tera\electronvolt}}$ energies. Other particles are also
+	Depicted in Figure \ref{fig:event-generator} are the yields of select particle types per proton-{\kern+0.1pt}proton collision as predicted
+	by \textsc{sibyll} 2.3c at $\smash{\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{1}{\tera\electronvolt}}$ energies. Other particles are
 	produced, but deemed irrelevant for modeling charm as well as pion and kaon production. This represents one step in the process
 	of generating numerical values for the appropriate cross sections. Events are generated at discrete fixed target or center of mass
 	energies, with individual yield populations additionally following a separate energy distribution. Accordingly, each bar in
