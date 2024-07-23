@@ -8,13 +8,17 @@ plt.figure(figsize=(5.0, 3.0))
 
 h, y = np.genfromtxt('code/tabulate/other/events.txt', unpack=True, dtype=None)
 
-plt.bar(range(len(y)), y, tick_label=h, color='b', linewidth=0, width=0.6, alpha=0.6, label=r'\textsc{sibyll} 2.3c')
+i = [0, 9, 4, 11, 10, 2, 1, 3, 5, 7, 8, 6, 12, 13, 14, 16, 17, 15]
+
+plt.bar(range(len(y)), y[i], tick_label=h[i], color='b', linewidth=0, width=0.6, alpha=0.6, label=r'\textsc{sibyll} 2.3c')
 
 plt.ylabel(r'yield $\mathrel{/} \kern-0.25pt$ event')
 
 plt.yscale('log')
 
 plt.gca().tick_params(axis='x', which='minor', bottom=False)
+
+plt.xlim(-0.7, 17.7)
 
 plt.legend(loc=1)
 
