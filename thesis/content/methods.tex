@@ -16,7 +16,7 @@
 	\end{equation}
 	as the corresponding folding integral. From this formulation, it is clear that both distributions and spectra should be assumed
 	to depend on energy, with other arguments such as time $t \kern+0.5pt$ being allowed as well. Additionally, it is always necessary
-	to specify integration bounds $\check{E}_a \leq \hat{E}_a$ that are usually dictated by kinematic constraints.
+	to specify $\check{E}_a \leq \hat{E}_a$ as integration bounds, which are usually dictated by kinematic constraints.
 	
 	To implement and compute all following parametrizations, the \emph{Python} programming language and its library \emph{NumPy}
 	are used. Graphical results are generated via the \emph{Matplotlib} package.
@@ -229,7 +229,7 @@ that purely leptonic modes are strongly suppressed. Hadronic channels such as $D
 $D^+ \kern-2.5pt \rightarrow K^{\kern+0.5pt -} \pi^+ \pi^+$ are either very improbable as well or occur at significant rates but
 do not contribute many high-{\kern+0.2pt}energy neutrinos due to pions and kaons being subject to further cooling before decaying
 to leptons. By a similar logic, secondary muon decay is neglected when determining the neutrino spectrum, as muons would experience
-additional cooling before decaying and because charm cross sections are already low compared to other mesons.
+additional cooling before decaying and charm cross sections are already low compared to other mesons.
 
 \newpage\input{amend/normal-head}
 
@@ -311,7 +311,7 @@ additional cooling before decaying and because charm cross sections are already 
 	\label{sec:computation}
 	
 	Taking into account previous deliberations, this section now combines these with the contents of Chapter \ref{ch:background}
-	to give explicit steps for calculating the results, as well as numerical values for the required parameters.
+	to give explicit steps for calculating the results as well as numerical values for the required parameters.
 	Additionally, some notes on the implementation are included.
 	
 	
@@ -360,8 +360,8 @@ can be set to ensure $\smash{E^M} < \mathscr{E}_{\kern-0.5pt p}$ at all times. F
 $\mathscr{E}_{\kern-0.5pt p} = \smash{\qty{e12}{\giga\electronvolt}}$ is made in accordance with the maximum magnetar proton energy.
 A value exceeding that of the GZK cutoff at $E_p = \smash{10^{1 \kern-0.3pt 1}} \kern+1.5pt \unit{\giga\electronvolt}$ described in
 Section \ref{sub:cutoff} can be justified by assuming close proximity to the origin of accelerated particles. Proceeding from this,
-cross sections and distributions are taken from Sections \ref{sec:cross} and \ref{sec:spectral} to translate the produced hadron
-population to neutrinos, which due to their weak interactions mentioned in Section \ref{sub:hadrons} are assumed to be unaffected
+cross sections and distributions are taken from Sections \ref{sec:cross} and \ref{sec:spectral} to translate the produced hadrons
+to neutrinos, which due to their weak interactions mentioned in Section \ref{sub:hadrons} are assumed to be unaffected
 by attenuation.
 
 Cooling factors \eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec} \kern-0.5pt = \tau_h E_h / m_h$ and
@@ -370,7 +370,7 @@ with parameters $\tau_h$ and $m_h$ listed in the respective tables, as well as \
 $\sigma_{h \kern-0.1pt p}$ cross sections, which are approximated to those of kaons for charmed hadrons. The effective optical depth
 \eqref{eqn:optical} only describes proton interactions, where the mean free path
 $\lambda_{p \kern-0.1pt p} = \cramped{(\kappa_{p \kern-0.1pt p} \sigma_{p \kern-0.1pt p} n)^{-1}}$ and distance $d$ are determined by the
-model. Inelasticity factors are assumed to be constants $\kappa_{h \kern-0.1pt p} = \num{0.8}$ and $\kappa_{p \kern-0.1pt p} = \num{0.5}$
+model. Inelasticity factors are assumed to be constants with $\kappa_{h \kern-0.1pt p} = \num{0.8}$ and $\kappa_{p \kern-0.1pt p} = \num{0.5}$
 as given in \cite{Carpio_2020}. For the scenario of a newborn magnetar, ejecta properties result in
 $n = n_\text{ej}$ \eqref{eqn:number-density} and $d \kern+0.1pt = r_\text{ej}$ \eqref{eqn:ejecta-radius} as parameters. The AGN
 accretion disk is modeled by the height parameter \eqref{eqn:height} that varies with radius and characterizes a diffuse density
@@ -381,7 +381,7 @@ $\alpha = \pi \kern+0.25pt / 2$ to find $\sin\alpha = \kern-0.1pt 1$ and $d = h$
 as stated in \cite{King_2008}. Typical number densities of the order \qty{e15}{\per\centi\meter\cubed} in the disk plane
 \cite{Garcia_2013, Garcia_2014} are scaled down to account for the inhomogeneous distribution \eqref{eqn:density} and assumed to be
 $n = \kern-0.5pt \smash{\qty{e14}{\per\centi\meter\cubed}}$ for the following calculations. To put this into perspective, typical
-SMBH masses of around \qty{e8}{\solarmass} correspong to a \qty{e13}{\centi\meter} Schwarzschild radius. While the radii of accretion disks
+SMBH masses of around \qty{e8}{\solarmass} correspond to a \qty{e13}{\centi\meter} Schwarzschild radius. While the radii of accretion disks
 can extend to \qty{e18}{\centi\meter} or more, relativistic jets can reach multiple \qty{100}{\kilo\parsec} with terminal bow shocks at
 \unit{\mega\parsec} distances from the core \cite{Blandford_2019, King_2008, Murase_2023}.
 
@@ -450,13 +450,13 @@ iterations. To avoid redundant computations, results are stored as data tables.\
 	
 	Depicted in Figure \ref{fig:event-generator} are the yields of select particle types per proton-{\kern+0.1pt}proton collision as predicted
 	by \textsc{sibyll} 2.3c at $\smash{\sqrt{s \kern+1.0pt} \kern+1.0pt = \qty{1}{\tera\electronvolt}}$ energies. Other particles are
-	produced, but deemed irrelevant for modeling charm as well as pion and kaon production. This represents one step in the process
+	produced but deemed irrelevant for modeling charm as well as pion and kaon production. This represents one step in the process
 	of generating numerical values for the appropriate cross sections. Events are generated at discrete fixed target or center of mass
 	energies, with individual yield populations additionally following a separate energy distribution. Accordingly, each bar in
 	Figure \ref{fig:event-generator} is an effective integral over all energies of the produced particles. Weighted energy
 	differential cross sections $d\sigma \kern+0.5pt / \kern-0.1pt dx$ for specific secondary types can therefore be expressed by a
 	histogram in two dimensions, with initial proton energies on one axis and energy of secondaries on the other. Normalizations are
-	found by counting the yield and comparing to known values. Creating bins at the required resolutions and with sufficient statistics
+	found by counting the yield and comparing to known values. Creating energy bins at the required resolutions and with sufficient statistics
 	is computationally intensive and consumes more time than is available for work on this thesis, which instead uses parametrizations
 	as described in the previous sections. Event generator predictions should nevertheless be considered to verify and improve upon the
 	following results.
