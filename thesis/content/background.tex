@@ -123,11 +123,11 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 
 	Another important aspect of particle physics is the description of collision processes. For this purpose, the concept of cross
 	sections $\sigma \kern+0.5pt$ should be understood. In classical mechanics, these quantities are solely related to geometric
-	properties of the objects involved, assuming they only interact upon impact. If longer range forces are included, the
+	properties of the objects involved and assume they only interact upon impact. If longer range forces are included, the
 	cross section represents a larger effective area that measures how the trajectory of an incoming projectile is influenced by
-	the target. Additionally, differential cross sections with respect to some independent variable such as solid angle
+	the target. Additionally, differential cross sections with respect to some independent variable such as the solid angle
 	$d\sigma \kern-0.3pt / \kern-0.6pt d\Omega$ or kinetic energy $d\sigma \kern-0.3pt / \kern-0.6pt dE$ can be defined.
-	Measurements of this quantity often reveal more information about the inner structure of targets. To distinguish these cases,
+	Measuring this quantity often reveals more information about the inner structure of targets. To distinguish these cases,
 	one might refer to $\sigma$ as the integrated cross section. Since QM is at the core of particle physics, cross sections in this
 	context are instead interpreted as probability measures of fundamentally stochastic collision processes, such as the production
 	of specific particles. It can also be useful to separate cross sections into elastic and inelastic components, especially for
@@ -152,7 +152,7 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 	$\kappa$ called inelasticity, one can identify a length scale $\lambda = (\kappa\sigma n)^{-1}$ as the mean free path between
 	collisions. Multiplying with $\kappa$ includes the ratio of remaining to initial energy, which is taken to be constant. From this
 	follows a reduction in beam particles $dN \kern+0.1pt = - N \lambda^{-1} dx$ proportional to $N \kern+1.0pt$ as the total projectile
-	count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability which represents an ordinary differential equation
+	count and $\mathscr{P} = \kern-0.6pt \lambda^{-1} dx$ for the reformulated probability, which represents an ordinary differential equation
 	of first order. The solution is found to follow an exponential law
 	\begin{equation*}
 		N(x) \kern+0.4pt = N_0 \exp \Bigl( -\frac{\raisebox{-0.5ex}{$x$}}{\raisebox{0.5ex}{$\lambda \kern+0.3pt$}} \kern+0.5pt \Bigr)
@@ -169,15 +169,15 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
 		\kern+0.5pt \Bigr)\)}
 	\end{equation*}
-	describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons
-	or more generally any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
+	describing exponential decay. It commonly appears in the context of radioactive materials but also applies to hadrons and leptons,
+	or more generally, any quantity which decreases at a rate proportional to itself. Analogous to the previous case, a particle
 	decays with probability
 	\begin{equation*}
 		P(t) \kern+0.3pt = 1 - \kern+0.9pt \exp \kern-2.0pt
 		\raisebox{0.25ex}{\(\Bigl( \raisebox{-0.25ex}{\(-\frac{\raisebox{-0.5ex}{$t$}}{\raisebox{1.0ex}{$\tau \kern+1.0pt$}}\)}
 		\kern+0.5pt \Bigr)\)}
 	\end{equation*}
-	before a time $t$ has passed and for $\tau$ as the mean lifetime. Translating this from rest frame to laboratory coordinates defines
+	before a time $t$ has passed and with $\tau$ as the mean lifetime. Translating this from a rest frame to laboratory coordinates defines
 	the decay timescale $t_\text{dec} \kern-0.6pt = \tau \kern+0.4pt \varGamma$ with a Lorentz factor $\varGamma = E / m$ via
 	projectile energy and invariant mass. This is equivalent to a characteristic decay length given by
 	$\lambda_\text{dec} \kern-0.5pt = v \kern+1.5pt t_\text{dec}$ where the velocity $v = c$ can be set for highly relativistic particles.
@@ -191,17 +191,17 @@ the observation of neutrino oscillations, which are, however, not relevant for t
 		\label{eqn:cooling}
 	\end{equation}
 	that rescales spectra from direct production to account for decay processes taking place after collisional energy losses have occurred.
-	This is an essential mechanism for the hypothesis that neutrinos from charm dominate pion and kaon contributions at high energies.
+	This is an essential mechanism for the hypothesis that neutrinos from charm production dominate pion and kaon contributions at high energies.
 	While longer lived particles experience significant cooling thanks to time dilation, charmed hadrons decay promptly in comparison,
-	resulting in a neutrino flux that directly traces the underlying hadronic population. One requirement for the validity of \eqref{eqn:cooling}
+	resulting in a neutrino flux that directly tracks the underlying hadronic population. One requirement for the validity of \eqref{eqn:cooling}
 	is that $\lambda_\text{dec} \kern-0.3pt \ll d \kern+0.5pt$ holds, with $d \kern+0.5pt$ measuring the target field size to ensure decays
 	occur exclusively inside this region.
 	\enlargethispage*{\baselineskip}\newpage
 \end{spacing}
 
 \begin{spacing}{0.985}
-	Another quantity relevant to the context at hand is an optical depth $\mathscr{O} = d / \lambda$ that represents the distance
-	$d \kern+0.5pt$ to mean free path $\lambda$ ratio. Inserting its definition yields a factor
+	Another quantity relevant to the context at hand is an optical depth $\mathscr{O} = d / \lambda$ that represents the ratio of this
+	distance to the mean free path. Inserting its definition yields a factor
 	\begin{equation}
 		\mathscr{O} = \kappa\sigma n \kern+0.75pt d \: ,
 		\label{eqn:optical}
@@ -262,9 +262,9 @@ body spectrum
 	\frac{\raisebox{-0.3ex}{$dn$}}{\raisebox{0.15ex}{$d\epsilon$}} (\epsilon) \kern+0.2pt =
 	\frac{\raisebox{-0.3ex}{$\epsilon^2$}}{\pi^2 \hbar^3 c^3 \bigl( e^{\kern+1.0pt \epsilon / k_B T} - 1 \bigr)}
 \end{equation*}
-is given by \cite{Gaisser_2016} as the number density. From CMB temperatures of $\kern+0.5pt T \kern+0.5pt = \qty{2.725}{\kelvin}$ follows that
-significant photon numbers exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$ in the CMB rest frame. 
-To find a threshold in center of mass coordinates, the scalar product is used for
+is given by \cite{Gaisser_2016} as the number density. With a temperature $\kern+0.5pt T \kern+0.5pt = \qty{2.725}{\kelvin}$ from CMB
+observations, it follows that large photon numbers exist with energies around $\epsilon \kern+0.5pt = \qty{e-12}{\giga\electronvolt}$
+in the CMB rest frame. To find a threshold in center of mass coordinates, the scalar product is used for
 \begin{equation*}
 	s \kern+0.3pt = \bigl( p_{\kern-0.5pt p} + p_{\kern+0.5pt \gamma} \bigr)^2 =
 	p_{\kern-0.5pt p}^2 + p_{\kern+0.5pt \gamma}^2 + 2 p_{\kern-0.5pt p} p_{\kern+0.5pt \gamma} =
@@ -308,7 +308,7 @@ eliminates the exponent and allows terms to be rearranged to solve for the desir
 \enlargethispage*{\baselineskip}\newpage
 
 \begin{spacing}{0.990}
-	From this follows a connection between energy and number of particles
+	From this follows a connection between energy and the number of particles
 	\begin{equation*}
 		N \kern+0.9pt = N_0 \left( \frac{\raisebox{-0.3ex}{$E$}}{\raisebox{0.3ex}{$E_0$}} \right)^{\ln(\varsigma) / \kern-0.5pt \ln(\eta)}
 	\end{equation*}
@@ -379,26 +379,26 @@ previously mentioned flavor oscillations make neutrino astronomy a promising fie
 
 With visual observations being conducted for millennia, photonic signals undoubtedly form the most ancient type of astronomy.
 Advances in optical instrumentation have driven revolutionary progress over the last centuries, culminating in modern detectors
-unlocking wavelengths across the entire electromagnetic spectrum. Especially radio and gamma frequencies have the potential of
-contributing to multimessenger astrophysics, with radio waves having the ability to resolve regions obscured by dust, and gamma
+unlocking wavelengths across the entire electromagnetic spectrum. Especially radio and gamma frequencies have the potential to
+contribute to multimessenger astrophysics, with radio waves having the ability to resolve regions obscured by dust, and gamma
 photons being closely associated with hadronic processes in a similar manner as neutrinos, for instance. Fundamental limitations
 of astrophysical photon signals consist of a cutoff at very high energies from pair production with CMB photons similar to
 Section \ref{sub:cutoff} for protons and nuclei, as well as a gamma ray horizon referring to the impedance caused by
 interactions with extragalactic background light \cite{Dominguez_2013}. Detection is further constrained by the atmospheric
-window, which is not transparent for all electromagnetic wavelengths.
+window, which is not transparent to all electromagnetic wavelengths.
 
 
 
 \subsection{Gravitational Waves}
 \label{sub:gravitational}
 
-Setting aside the possibility of gravitons as hypothetical mediating particles, gravitation seems to be a fundamentally continuous
-phenomenon, in the same way as classical theories like that of electromagnetism by Maxwell. According to Einstein, masses lead to
-distortions of spacetime that propagate at the speed of light. From this perspective, it readily follows that especially massive
-systems such as black hole or neutron star binaries emit gravitational waves through their movement. These excitations have an
-advantage compared to other messengers in that they experience essentially no absorption or scattering by matter. Alongside unimpeded
-insights into highly energetic merger events, there should also exist a gravitational background radiation containing information about
-the very early universe.
+Setting aside the possibility of gravitons as hypothetical mediating particles, gravitation seems to be governed by GR and therefore
+a fundamentally continuous phenomenon in the same way as classical theories like that of electromagnetism by Maxwell. According to
+Einstein, masses lead to distortions of spacetime that propagate at the speed of light. From this perspective, it readily follows that
+especially massive systems such as black hole or neutron star binaries emit gravitational waves through their movement. These excitations
+have an advantage compared to other messengers in that they experience essentially no absorption or scattering by matter. Alongside
+unimpeded insights into highly energetic merger events, there should also exist a gravitational background radiation containing
+information about the very early universe \cite{Meszaros_2019}.
 
 
 \newpage\input{amend/special-head}
@@ -421,8 +421,8 @@ contraction by degeneracy pressures. These result from the Pauli exclusion princ
 quantum states. While white dwarfs rely primarily on electrons for this mechanism, neutron stars depend on the repulsion among
 nucleons, placing them among the most dense macroscopic objects in the universe. Due to angular momentum of the progenitor
 star being conserved in the remnant, the compression of stellar material immediately before a supernova explosion leads to
-extremely fast rotational periods. In addition to that, conservation of magnetic energy implies large magnetizations as well.
-The authors in \cite{Thompson_1993} discuss this so-called fossil field hypothesis, but argue that strong convective flows
+extremely fast rotation. In addition to that, conservation of magnetic energy implies large magnetizations as well.
+The authors in \cite{Thompson_1993} discuss this possibility of so-called fossil fields, but argue that strong convective flows
 during formation or inside the very young neutron star are more likely culprits. These would also eliminate any prior correlation
 between the axis of rotation and the field orientation. Because neutron star interiors are assumed to be superconducting fluids,
 dynamo effects can amplify and sustain any initial magnetic fields \cite{Haskell_2018}. If such a magnetized rotator emits misaligned
@@ -436,7 +436,7 @@ a number density corresponding to the ratio
 	\cramped{n_\text{ej} = 3 M_\text{ej} / \bigl( 4\pi r_\text{ej}^3 m_p \bigr)} \kern+0.5pt
 	\label{eqn:number-density}
 \end{equation}
-for all ejecta mass $M_\text{ej}$ consisting of protons with $m_p$ masses. By asserting a radial expansion at constant
+for protons with masses $m_p$ constituting all mass $M_\text{ej}$ of the ejecta. By asserting radial expansion at constant
 $\beta_\text{ej}$ velocities, one finds the ejecta radius
 \begin{equation}
 	r_\text{ej} = \kern-0.4pt \beta_\text{ej} \kern+0.1pt c \kern+1.0pt t
@@ -494,7 +494,7 @@ and $t_\text{sd}$ as a characteristic timescale. Assuming exclusively rotational
 	E = \kern-0.5pt I \kern+0.5pt \omega^2 \kern-1.5pt / 2 \: ,
 	\label{eqn:quad}
 \end{equation}
-where $I \kern+0.5pt$ gives the neutron star moment of inertia, leads to
+where $I \kern+0.5pt$ gives the neutron star moment of inertia leads to
 \begin{equation}
 	\dot{E} = \kern-0.5pt I \kern+0.5pt \omega \kern+0.5pt \dot{\omega}
 	\label{eqn:quad-derivative}
@@ -506,12 +506,12 @@ $L = \kern-0.5pt K \omega^4$ by using a coefficient $K$ containing all informati
 
 Identifying this with \eqref{eqn:exp-derivative} through $\dot{E} = -L$ and evaluating at $t \kern-0.3pt= 0$ yields
 $L_0 \kern-0.3pt = \kern-0.2pt K \omega_0^4$ as well as the decay rate $\dot{E}_0 \kern-0.3pt = -I \omega_0^2 / 2 \kern+0.4pt t_\text{sd}$
-from inserting \eqref{eqn:quad} as the energy, which can be combined to find
+after inserting \eqref{eqn:quad} as the energy, which can be combined to find
 \begin{equation*}
 	t_\text{sd} = I \kern+0.5pt / 2K\omega_0^2
 	\label{eqn:spindown-time}
 \end{equation*}
-for the spindown time. It further follows from equating \eqref{eqn:quad-derivative} to the luminosity at any $t \kern+0.5pt$ that
+for the spindown time. It further follows from equating \eqref{eqn:quad-derivative} for the luminosity at any $t \kern+0.5pt$ that
 \begin{equation*}
 	I \kern+0.5pt \dot{\omega} = -K \omega^3
 \end{equation*}
@@ -525,10 +525,10 @@ one obtains
 \end{equation*}
 for the frequency as a function of time and spindown scale.
 
-Another important concept for the description of neutron star environments is the so-called light cylinder. It represents the boundary
-beyond which magnetic field lines can no longer corotate with the central body without exceeding the speed of light, defining
-$R_\text{lc} \kern-0.6pt = c / \kern-0.4pt \omega$ as its radius. Due to the resulting lag, magnetic fields
-are open, providing a potential mechanism for the acceleration of particles to high energies \cite{Goldreich_1969}.
+Another important concept for the description of neutron star environments is the so-called light cylinder. It represents a boundary
+with radius $R_\text{lc} \kern-0.6pt = c / \kern-0.4pt \omega$ that contains the region beyond which magnetic field lines can no longer
+corotate with the central body without exceeding the speed of light. Due to the resulting lag, magnetic fields are open and provide a
+potential mechanism for the acceleration of particles to high energies \cite{Goldreich_1969}.
 
 With an open field magnetic flux $\psi = \mu / R_\text{lc}$ follows $\phi = \psi / R_\text{lc}$ as the difference in potential energy.
 From this, a charge $e$ reaches energies $E^M = \eta e \phi \kern+0.5pt$ with an efficiency $\eta < 1$ limiting the acceleration.
@@ -561,7 +561,7 @@ last feature predicts the measured effects of broad and narrow line regions or t
 around the outer accretion disk. Potential sources of high-{\kern+0.3pt}energy neutrinos in the complex AGN environment are discussed
 in \cite{Murase_2023}. This thesis assumes a general DSA mechanism, which injects energetic particles onto a static accretion disk as
 the proton target. The shocks involved in this acceleration have several possible origins, such as the corona or the disk itself. Other
-options are jet shocks that travel towards the inner region or starburst events in the surrounding galaxy as tested in \cite{Eichmann_2022}.
+options are jet shocks that travel towards~the~inner~region or starburst events in the surrounding galaxy as modeled in \cite{Eichmann_2022}.
 One more critical assumption is that of vanishing magnetic fields inside the AGN disk, which is necessary to neglect synchrotron losses.
 At first order, this is justified by the same reasoning given for the magnetar setting.
 
@@ -590,7 +590,7 @@ $\sin(\vartheta) = \kern+0.3pt z / \kern-0.2pt R \kern+0.5pt$ to obtain
 	\ddot{z} = \frac{\raisebox{-0.3ex}{$GMz$}}{R^3}
 \end{equation*}
 which is related to pressure $p \kern+0.5pt$ and density $\kern-0.5pt \rho \kern+0.5pt$ via
-$d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable hysdrostatic equilibrium to exist. Using the speed
+$d \kern-0.1pt p / \kern-0.1pt dz = -\rho \ddot{z} \kern+0.5pt$ for a stable hydrostatic equilibrium to exist. Using the speed
 of sound $\smash{u^2} \kern-0.7pt = d \kern-0.1pt p / \kern-0.1pt d \kern-0.1pt \rho \kern+0.5pt$ allows reformulation to
 \begin{equation}
 	\frac{d \kern-0.1pt \rho}{\raisebox{0.2ex}{$dz \kern+1.0pt$}} =
@@ -606,7 +606,7 @@ after integration. According to this result, the height $h$ defined via
 gives the standard deviation of the density, which follows a centered Gaussian distribution.
 
 Assuming $M \gg m$ and circular Keplerian orbits, expression \eqref{eqn:newton} equals the
-acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. From writing
+acting centripetal force, leading to $\smash{v^2} \kern-1.0pt = GM / R \kern+0.2pt$ for the orbital velocity. By writing
 $\smash{h^2 \kern-0.5pt = u^2R^2 \kern-1.5pt / v^2}$ and the small angle approximation $h \ll R$ follows $u \ll v \kern+1.0pt$
 as a necessary condition, meaning that the orbital velocity must greatly exceed the speed of sound specific to the medium. This
 special case is called a thin disk and can further be extended to slim or even thick types of accretion structures.
@@ -619,14 +619,14 @@ as a function of luminosity $L \kern+0.5pt$ at distance $R \kern+0.5pt$ from the
 with masses $m$ is falling towards the same bright central mass $M \kern+0.5pt$ due to gravitational attraction. During this process,
 each particle experiences $F = \kern-0.3pt \varkappa \kern+0.7pt mP \kern+0.5pt$ as an opposing radiative force, where the opacity
 $\kern-0.3pt \varkappa \kern+0.7pt$ represents cross section per unit mass. Balancing \eqref{eqn:newton} leads to
-\begin{equation*}
+\begin{equation}
 	L = \frac{\raisebox{-0.3ex}{$4\pi GM c \kern+0.4pt$}}{\raisebox{0.8ex}{$\varkappa$}}
 	\label{eqn:eddington}
-\end{equation*}
-as the Eddington luminosity limit, beyond which additional matter is immediately blown away from the central object. By assuming that
-the infalling material consists exclusively of ionized hydrogen, one can approximate $\varkappa \kern-0.1pt = m / \kern-0.5pt \sigma \kern+0.3pt$
-with the Thomson cross section $\sigma \kern+0.5pt$ from scattering of electrons and $m$ as the proton mass. Though originally applied in the
-context of stellar structures, this approach can also be used to describe accretion disks. If a compact object increases its mass
+\end{equation}
+as the Eddington luminosity limit, beyond which additional matter is immediately blown away from the central object. By assuming
+infalling material consisting entirely of ionized hydrogen, one can approximate $\varkappa \kern-0.1pt = m / \kern-0.5pt \sigma \kern+0.3pt$
+with the proton mass $m$ and the Thomson cross section $\sigma \kern+0.5pt$ from electron scattering. Though originally applied in the
+context of stellar structures, this approach can also be used to describe accretion disks. If a compact central object increases its mass
 with rate $\dot{M} \kern+0.5pt$ due to accreting matter, some of the corresponding gravitational potential may be converted to
 radiation. In terms of rest energy, a luminosity of $L = \eta\dot{M}c^2$ is obtained where a factor $\eta$ denotes the efficiency of this
 mechanism. With \eqref{eqn:eddington} one finds

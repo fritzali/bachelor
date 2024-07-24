@@ -7,19 +7,19 @@
 	spectra are described for the previously specified astrophysical settings. To start with, a general case $a \rightarrow b$
 	is defined for the reaction. Given a spectrum $dN_a \kern+0.5pt / \kern-0.25pt dE_a$ that describes the number $N_a$ of
 	particles $a$ per $E_a$ energy interval, as well as the spectral distribution $F_{a \rightarrow b}$ for the probability
-	that particles $b$ are produced by a singular interaction, one can solve the folding integral
+	that particles $b$ are produced by a singular interaction, one can obtain their numbers $N_b$ with respect to their
+	energies $E_b$ by solving
 	\begin{equation}
 		\frac{dN_b}{\raisebox{0.5ex}{$dE_b$}} (E_b) \kern+0.5pt = \kern-1.5pt\int_{\check{E}_a}^{\hat{E}_a} dE_a
 		\kern+0.5pt \frac{dN_a}{\raisebox{0.5ex}{$dE_a$}} (E_a) \kern+1.5pt F_{a \rightarrow b} (E_b \kern+0.5pt, \kern-0.5pt E_a)
 		\label{eqn:folding}
 	\end{equation}
-	to obtain their numbers $N_b$ with respect to $E_b$ energies. From this formulation, it is clear that both distributions
-	and spectra should be assumed to depend on energy, with other arguments such as the time $t \kern+0.5pt$ being allowed as
-	well. Additionally, integration bounds $\check{E}_a \leq \hat{E}_a$ must always be specified, which are usually dictated by
-	kinematic constraints.
+	as the corresponding folding integral. From this formulation, it is clear that both distributions and spectra should be assumed
+	to depend on energy, with other arguments such as time $t \kern+0.5pt$ being allowed as well. Additionally, it is always necessary
+	to specify integration bounds $\check{E}_a \leq \hat{E}_a$ that are usually dictated by kinematic constraints.
 	
 	To implement and compute all following parametrizations, the \emph{Python} programming language and its library \emph{NumPy}
-	are used. Graphical results are created via the \emph{Matplotlib} package.
+	are used. Graphical results are generated via the \emph{Matplotlib} package.
 	
 	
 	
@@ -45,7 +45,7 @@
 		\label{eqn:hpr1r2}
 	\end{equation}
 	as given in \cite{Belousov_2016} for a universal analytic parametrization of the corresponding amplitudes.
-	All adjustable parameters are listed in table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
+	All adjustable parameters are listed in Table~\ref{tab:hadron-scattering} together with relevant meson lifetimes for
 	cooling. In this approach, the variable $M$ \kern+0.5pt relates to $H \kern+0.5pt = \pi (\hbar c / M)^2$ and
 	$s_h \kern-0.5pt = (m_h + m_p + M)^2$ as an effective mass. Coefficients in \eqref{eqn:hpr1r2} are named after Heisenberg,
 	Pomeranchuk and Regge, respectively, and have some qualitative motivation, though the formula itself is mainly a quantitative
@@ -77,7 +77,7 @@ diffraction as opposed to the black disk limit $\mathscr{A} = 1/2 \kern+0.2pt$ f
 in \cite{Fagundes_2013}. As parameters are only available in the latter case, all calculations of $\mathscr{R}$
 use a ratio \eqref{eqn:ratio} as defined by $\mathscr{A} = 1/2 \kern+0.2pt$ for this thesis. Data matching $\mathscr{A} = 1/3$
 imply that $\sigma_{\text{inel}\kern+0.5pt}(s)$ is slightly underestimated, though this is unlikely to
-noticably impact the overall results.
+noticeably impact the overall results.
 
 \input{content/visuals/hadron-proton-scattering.tex}
 
@@ -154,7 +154,7 @@ not yet been probed experimentally. Such a method has lead \cite{Kniehl_2006} to
 	{\bigl((1 - z)^{\kern+0.5pt 2} + \epsilon_h z \bigl)^{\raisebox{-1.5ex}{$^2$}}}
 	\label{eqn:fragmentation}
 \end{equation}
-with parameters from $\kern+0.5pt e^+e^- \kern-0.8pt$ data in table \ref{tab:charm-hadrons} as the charm hadron FF used
+with parameters from $\kern+0.5pt e^+e^- \kern-0.8pt$ data in Table \ref{tab:charm-hadrons} as the charm hadron FF used
 throughout this thesis. It is important to note that such functions are invariant under charge conjugation, so that there is no
 differentiation between quark to particle or antiquark to antiparticle processes.
 
@@ -289,7 +289,7 @@ production regardless of charge reasonably well for the purpose of this thesis.
 	computations and is thus omitted for the purpose of restricting the present thesis to a manageable scope, though it should be
 	remembered as an important caveat for the final results.
 	
-	The remaining two body{\kern+0.2pt}-decays of ultra-relativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
+	The remaining two{\kern+0.2pt}-body decays of ultra-relativistic hadrons $h$ to leptons $l \kern+1.0pt$ obey a distribution
 	\begin{equation*}
 		F_{\kern+1.0pt h \kern+0.2pt \rightarrow l \kern+1.0pt} \bigl( E_l \kern+0.8pt, \kern-0.2pt E_h \bigr) =
 		\mathscr{F}_{\kern+0.2pt h \kern+0.2pt} E_h^{\kern+1.0pt -1} \bigl( 1 \kern-0.3pt - \lambda_h \bigr)^{-1}
@@ -366,21 +366,21 @@ Cooling factors \eqref{eqn:cooling} vary for different hadrons, as $t_\text{dec}
 $t_\text{cool} \kern-0.5pt = \cramped{(\kappa_{h \kern-0.1pt p} \sigma_{h \kern-0.1pt p} n c)^{-1}}$ define the decay and cooling timescales,
 with parameters $\tau_h$ and $m_h$ listed in the respective tables, as well as \eqref{eqn:hpr1r2} and \eqref{eqn:ratio} giving the
 $\sigma_{h \kern-0.1pt p}$ cross sections, which are approximated to those of kaons for charmed hadrons. The effective optical depth
-\eqref{eqn:optical} only describes proton interactions, with a mean free path
-$\lambda_{p \kern-0.1pt p} = \cramped{(\kappa_{p \kern-0.1pt p} \sigma_{p \kern-0.1pt p} n)^{-1}}$ and distance $d$ determined by the
-specific model. Inelasticity factors $\kappa_{h \kern-0.1pt p} = \num{0.8}$ and $\kappa_{p \kern-0.1pt p} = \num{0.5}$ are assumed to
-be constants as given in \cite{Carpio_2020}. For the scenario of a newborn magnetar, properties of the ejecta determine
+\eqref{eqn:optical} only describes proton interactions, where the mean free path
+$\lambda_{p \kern-0.1pt p} = \cramped{(\kappa_{p \kern-0.1pt p} \sigma_{p \kern-0.1pt p} n)^{-1}}$ and distance $d$ are determined by the
+model. Inelasticity factors are assumed to be constants $\kappa_{h \kern-0.1pt p} = \num{0.8}$ and $\kappa_{p \kern-0.1pt p} = \num{0.5}$
+as given in \cite{Carpio_2020}. For the scenario of a newborn magnetar, ejecta properties result in
 $n = n_\text{ej}$ \eqref{eqn:number-density} and $d \kern+0.1pt = r_\text{ej}$ \eqref{eqn:ejecta-radius} as parameters. The AGN
 accretion disk is modeled by the height parameter \eqref{eqn:height} that varies with radius and characterizes a diffuse density
 distribution, as well as the angle $\alpha$ measuring the direction of incidence relative to the disk plane. This is further
 simplified by assuming a sharply bound region of height $h$ with homogenous density, leading to $d = h / \kern-2.0pt \sin \alpha$
 as the distance travelled by a particle. Because results are insensitive to variations in distance, one can set
 $\alpha = \pi \kern+0.25pt / 2$ to find $\sin\alpha = \kern-0.1pt 1$ and $d = h$ with $h = \kern-0.5pt \smash{\qty{e15}{\centi\meter}}$
-taken from \cite{King_2008}. Typical number densities of the order \qty{e15}{\per\centi\meter\cubed} in the disk plane
-\cite{Garcia_2013, Garcia_2014} are scaled down to account for the inhomogenous distribution \eqref{eqn:density} and taken to be
+as stated in \cite{King_2008}. Typical number densities of the order \qty{e15}{\per\centi\meter\cubed} in the disk plane
+\cite{Garcia_2013, Garcia_2014} are scaled down to account for the inhomogeneous distribution \eqref{eqn:density} and assumed to be
 $n = \kern-0.5pt \smash{\qty{e14}{\per\centi\meter\cubed}}$ for the following calculations. To put this into perspective, typical
-SMBH masses of around \qty{e8}{\solarmass} lead to a \qty{e13}{\centi\meter} Schwarzschild radius. While accretion disks
-might extend up to \qty{e18}{\centi\meter} radii, jets can reach multiple \qty{100}{\kilo\parsec} with terminal bow shocks at
+SMBH masses of around \qty{e8}{\solarmass} correspong to a \qty{e13}{\centi\meter} Schwarzschild radius. While the radii of accretion disks
+can extend to \qty{e18}{\centi\meter} or more, relativistic jets can reach multiple \qty{100}{\kilo\parsec} with terminal bow shocks at
 \unit{\mega\parsec} distances from the core \cite{Blandford_2019, King_2008, Murase_2023}.
 
 \newpage
@@ -405,13 +405,13 @@ has passed. Lastly, an efficiency $\eta = \num{0.1}$ is assumed for the accelera
 \label{sub:implementation}
 
 In order to calculate neutrino spectra from hadronic distributions, several integrals have to be computed. Discretizing
-this task allows the general case
+this computation allows the general case
 \begin{align*}
 	F(x, y) \kern+1.5pt &= \int_{z_{-}}^{z_{+}} dz \: G(x, z) \, H(z, y) \\
 	\intertext{to be rewritten as a Riemann sum. Assuming $G$ and $H$ are integrable over a given interval,}
 	F_{ij} \kern+1.8pt &= \sum\nolimits_k D_{kk} \, G_{ik} \, H_{kj}
 \end{align*}
-converges to the exact solution for sufficiently small steps. Transforming variables
+converges to the exact solution for sufficiently small subintervals. Transforming variables
 \begin{align*}
 	&&&& x \rightarrow x_i \: , && y \rightarrow y_j \: , && z \rightarrow z_k &&&&
 \end{align*}
@@ -426,7 +426,7 @@ $\bm{D} \in \mathbb{R}^{l \times l}$ that encodes all step sizes on its diagonal
 efficient implementation of the required calculations as program code, where arithmetic array operations can greatly
 increase execution speed. Furthermore, logarithmic spacing of $\bm{D}$ often leads to better accuracy after fewer
 iterations. To avoid redundant computations, results are stored as data tables.\footnote{
-{\kern+1.5pt}For the purpose of reproducability, all implementations are collected in a dedicated \emph{GitHub} repository:\\
+{\kern+1.5pt}For the purpose of reproducibility, all implementations are collected in a dedicated \emph{GitHub} repository:\\
 \href{https://github.com/fritzali/bachelor}{github.com/fritzali/bachelor}}
 
 
@@ -440,7 +440,7 @@ iterations. To avoid redundant computations, results are stored as data tables.\
 	QF{\kern+0.5pt}T or lattice QCD mentioned in Sections \ref{sub:interactions} and \ref{sub:hadrons} are unable to resolve
 	with satisfactory accuracy. Modeling of collider or air shower experiments therefore requires a different approach, realized
 	by so-called event generators that fit data in well-tested regions and extrapolate to higher energies via random sampling.
-	The Monte Carlo event generator \textsc{sybill} used as well by \cite{Carpio_2020} and \cite{Kelner_2006} is optimized for
+	The Monte Carlo event generator \textsc{sibyll} used as well by \cite{Carpio_2020} and \cite{Kelner_2006} is optimized for
 	the simulation of high energy cosmic ray cascades, making it a suitable choice for the calculation of cross sections in an
 	astrophysical context such as that of this thesis \cite{Fletcher_1994}.
 	
