@@ -1,0 +1,18 @@
+\directlua{
+  luatexbase.add_to_callback('process_rule', function(r, h, v)
+  print(r, h, h)
+    h, v = 100 * h / tex.sp'100bp', 100 * v / tex.sp'100bp'
+    print(h, v)
+    if h > 8 * v then
+      pdf.print('direct', string.format('[] 0 d 1 J \csstring\%.5f w 0 \csstring\%.5f m \csstring\%.5f \csstring\%.5f l S', v, v/2, h, v/2))
+    elseif v > 8 * h then
+      pdf.print('direct', string.format('[] 0 d 1 J \csstring\%.5f w \csstring\%.5f 0 m \csstring\%.5f \csstring\%.5f l S', h, h/2, h/2, v))
+      pdf.print('direct', string.format('[] 0 d 1 J \csstring\%.5f w 0 0 m 0 \csstring\%.5f l S', h, v))
+    else
+      pdf.print('direct', string.format('1 j \csstring\%.5f w 0 0 \csstring\%.5f \csstring\%.5f re f', math.max(h, v)/8, h, v))
+    end
+  end, 'rounded_rules')
+}
+\mathrulesmode=1
+
+% Copied from Marcel Krüger (tex.stackexchange.com/users/80496/marcel-krüger) at (tex.stackexchange.com/a/615244)

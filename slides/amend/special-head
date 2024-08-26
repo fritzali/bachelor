@@ -1,0 +1,8 @@
+\clearpairofpagestyles
+
+\ihead{\leftmark}
+\ohead{}
+
+\cfoot*{\pagemark}
+
+\pagestyle{scrheadings}

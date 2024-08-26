@@ -1,0 +1,8 @@
+\clearpairofpagestyles
+
+\ihead{\leftmark}
+\ohead{\ifstr{\leftmark}{\righttopmark}{}{\righttopmark}}
+
+\cfoot*{\pagemark}
+
+\pagestyle{scrheadings}
