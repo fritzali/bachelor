@@ -33,25 +33,25 @@
 \usepackage{calc}
 
 \newlength{\headerheight}
-\setlength{\headerheight}{0.06\paperheight}
+\setlength{\headerheight}{0.08\paperheight}
 \setbeamertemplate{headline}{
 	\vspace*{10pt}
 	\leavevmode
 	\begin{beamercolorbox}[
-	 	wd=0.25\paperwidth,
+	 	wd=0.3\paperwidth,
 	 	ht=\headerheight,
 	 	leftskip=15pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=\headerheight]{design/tudo.pdf}
+		\includegraphics[height=\headerheight]{content/tudo.pdf}
 	\end{beamercolorbox}
 	\begin{beamercolorbox}[
-	 	wd=0.25\paperwidth,
+	 	wd=0.2\paperwidth,
 	 	ht=\headerheight,
 	 	leftskip=15pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=\headerheight]{design/app.pdf}
+		\includegraphics[height=\headerheight]{content/app.pdf}
 	\end{beamercolorbox}
 	\vskip2ex
 	\ifnum\insertframenumber=0
@@ -59,7 +59,7 @@
 	\else
 		\hspace{12pt}
 		\usebeamercolor{separation line}
-		\rule{\paperwidth-30pt}{0.3pt}
+		\rule{\paperwidth-30pt}{0.4pt}
 	\fi
 	\vskip2ex
 }
@@ -107,8 +107,126 @@
 	\fi
 }
 
+\setbeamertemplate{title page}{
+	\ifx\inserttitlegraphic\empty
+		\vspace{20pt}
+	\else
+		\begin{beamercolorbox}[
+			center,
+			wd=\textwidth,
+		]{titlegraphic}
+			\inserttitlegraphic
+		\end{beamercolorbox}
+		\vspace{10pt}
+	\fi
+	\ifx\inserttitle\empty\else
+		\begin{beamercolorbox}[
+			center,
+			wd=\textwidth,
+		]{title}
+			\textcolor{TUDO}{\rule{\textwidth}{1pt}}\\[0.4\baselineskip]
+			\usebeamerfont{title}\inserttitle
+			\ifx\insertsubtitle\empty
+				\newline
+			\else
+				\\[0.4\baselineskip]
+				\usebeamerfont{subtitle}\insertsubtitle\newline
+			\fi
+			\textcolor{TUDO}{\rule{\textwidth}{1pt}}
+		\end{beamercolorbox}
+		\vspace{\fill}
+	\fi
+	\ifx\insertauthor\empty\else
+		\begin{beamercolorbox}[
+			leftskip=0.2\textwidth,
+			rightskip=0.2\textwidth,
+			wd=\textwidth,
+		]{author}
+			\centering\usebeamerfont{author}\insertauthor
+		\end{beamercolorbox}
+		\vspace{1ex}
+	\fi
+	\ifx\insertdate\empty\else
+		\begin{beamercolorbox}[
+			leftskip=0.2\textwidth,
+			rightskip=0.2\textwidth,
+			wd=\textwidth,
+		]{date}
+			\centering\usebeamerfont{date}\insertdate
+		\end{beamercolorbox}
+		\vspace{1ex}
+	\fi
+	\ifx\insertinstitute\empty\else
+		\begin{beamercolorbox}[
+			leftskip=0.2\textwidth,
+			rightskip=0.2\textwidth,
+			wd=\textwidth,
+		]{institute}
+			\centering\usebeamerfont{institute}\insertinstitute
+		\end{beamercolorbox}
+	\fi
+	\vspace{\fill}
+}
+
+\setbeamertemplate{itemize items}[square]
+
+\setbeamertemplate{frametitle}{
+	\usebeamerfont{frametitle}\insertframetitle
+}
+
+\setbeamerfont{author}{size=\Large}
+\setbeamerfont{title}{size=\huge, series=\bfseries}
+\setbeamerfont{date}{size=\large, series=\bfseries}
+
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{framenumber}{series=\bfseries}
+
+\setbeamerfont{institute}{size=\large}
+\setbeamerfont{section in head/foot}{size=\small}
+\setbeamerfont{subsection in head/foot}{size=\small}
+\setbeamerfont{institute in head/foot}{size=\large}
 
 
+\setbeamerfont{item}{series=\bfseries}
+\setbeamerfont{itemize/enumerate body}{size=\normalfont}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalfont}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalfont}
+
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{section in toc}{series=\bfseries}
+
+\usepackage{xcolor}
+\definecolor{RUB}{RGB}{0,53,96}
+\definecolor{TUDO}{RGB}{99,154,0}
+
+\colorlet{light}{TUDO!20!white}
+\colorlet{dark}{TUDO!60!black}
+
+\colorlet{back}{white}
+\colorlet{fore}{darkgray}
+
+\setbeamercolor{section in head/foot}{fg=TUDO, bg=back}
+\setbeamercolor{framenumber}{fg=TUDO, bg=back}
+
+\setbeamercolor{normal text}{fg=fore, bg=back}
+\setbeamercolor{alerted text}{fg=TUDO, bg=back}
+\setbeamercolor{palette primary}{fg=fore, bg=back}
+\setbeamercolor{palette secondary}{fg=TUDO, bg=back}
+
+\setbeamercolor{title}{fg=fore, bg=back}
+\setbeamercolor{structure}{fg=TUDO, bg=back}
+
+\setbeamercolor{frametitle}{fg=TUDO, bg=back}
+
+\setbeamercolor{item}{fg=TUDO, bg=back}
+
+\setbeamercolor{block title}{fg=back, bg=TUDO}
+\setbeamercolor{block body}{fg=fore, bg=light}
+
+\setbeamercolor{section number in toc}{fg=TUDO, bg=back}
+\setbeamercolor{section in toc}{fg=fore, bg=back}
+
+\mode<all>
 
 \usepackage{bm}
 
@@ -129,13 +247,11 @@
 \addbibresource{../literature/collaborations/pa.bib}
 \addbibresource{../literature/collaborations/pdg.bib}
 
-\usepackage{xcolor}
-\definecolor{RUB}{RGB}{0,53,96}
-\definecolor{TUDO}{RGB}{99,154,0}
-
 \hypersetup{
 	allcolors=blue,
 	colorlinks,
+	linkcolor=fore,
+	urlcolor=dark,
 	english,
 	linktocpage,
 	pdfcreator={},
