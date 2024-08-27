@@ -1,121 +1,167 @@
 \documentclass[
-%	a4paper,
-%	captions=tableheading,
-%	cleardoublepage=plain,
-%	numbers=noendperiod,
-%	open=any,
-%	headings=optiontoheadandtoc,
-%	parskip=half,
 	aspectratio=1610,
 ]{beamer}
-\usetheme{Boadilla}
 
-%\usepackage{scrhack}
-%
-%\usepackage{amsmath}
-%\usepackage{amssymb}
-%\usepackage{enumitem}
-%\usepackage{mathtools}
-%\usepackage{pdfpages}
-%\usepackage{setspace}
-%\usepackage{unicode-math}
-%
-%\renewcommand*\footnoterule{}
-%\renewcommand*{\frac}[2]{\genfrac{}{}{0.5pt}{0}{#1}{#2}}
-%\renewcommand*{\TOCLineLeaderFill}{\hfill}
-%
-%\counterwithout{equation}{chapter}
-%\counterwithout{figure}{chapter}
-%\counterwithout{table}{chapter}
-%
+%\usepackage{beamerthemetudo}
+
+\setbeamersize{text margin left=15pt, text margin right=15pt}
+\usefonttheme{professionalfonts}
+\usepackage{fontspec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{unicode-math}
+
 \input{amend/luatex-round-rule-endcaps}
 \input{amend/overline-root-spacing-thickness}
-%\input{amend/table-of-contents-dotting}
-%
-%\setkomafont{captionlabel}{\normalfont\selectfont\scshape}
-%\setkomafont{disposition}{\normalfont}
-%
-%\setcounter{tocdepth}{\subsectiontocdepth}
-%
-%\usepackage{libertinus}
-%
-%\setmathfont[
-%	range=\mathscr,
-%	StylisticSet=1,
-%]{XITS Math}
-%
-%\usepackage{bm}
-%
-%\usepackage[
-%	automark,
-%	autooneside=false,
-%]{scrlayer-scrpage}
-%
-%\usepackage[aux]{rerunfilecheck}
-%
-%\usepackage[
-%	ngerman,
-%	american,
-%]{babel}
-%
-%\usepackage[
-%	backend=biber,
-%	style=../literature/style,
-%]{biblatex}
-%\addbibresource{../literature/books.bib}
-%\addbibresource{../literature/papers.bib}
-%\addbibresource{../literature/collaborations/cern.bib}
-%\addbibresource{../literature/collaborations/ic.bib}
-%\addbibresource{../literature/collaborations/ligo.bib}
-%\addbibresource{../literature/collaborations/pa.bib}
-%\addbibresource{../literature/collaborations/pdg.bib}
-%
-%\usepackage{xcolor}
-%\definecolor{RUB}{RGB}{0,53,96}
-%\definecolor{TUDO}{RGB}{99,154,0}
-%
-%\usepackage[
-%	allcolors=blue,
-%	colorlinks,
-%	english,
-%	linktocpage,
-%	pdfcreator={},
-%	pdfproducer={},
-%	pdfusetitle,
-%	unicode,
-%]{hyperref}
-%
-%\usepackage[
-%	locale=US,
-%	per-mode=reciprocal,
-%	separate-uncertainty=true,
-%]{siunitx}
-%\DeclareSIUnit\erg{erg}
-%\DeclareSIUnit\esu{esu}
-%\DeclareSIUnit\gauss{G}
-%\DeclareSIUnit\parsec{pc}
-%\DeclareSIUnit\solarmass{M_\odot}
-%
-%\usepackage{booktabs}
-%
-%\usepackage{caption}
-%\captionsetup{width=0.9\linewidth}
-%\setcapindent{5ex}
-%
-%\usepackage{float}
-%\floatplacement{figure}{htbp}
-%\floatplacement{table}{htbp}
-%
-%\usepackage{microtype}
-%
-%\let\backupsep\footnotesep
-%\setlength\footnotesep{0.45\backupsep}
-%
-%\let\backupskip\abovecaptionskip
-%\setlength\abovecaptionskip{0.45\backupskip}
-%
-%\catcode`\%=12\relax
-%\DeclareSIUnit[number-unit-product = ]\percent{%}
-%\catcode`\%=14\relax
-%
-%\newcommand{\citelink}[2]{\hyperlink{cite.\therefsection @#1}{#2}}
+
+\setsansfont{Fira Sans Light}[
+	Scale=MatchLowercase,
+	BoldFont=Fira Sans Medium,
+	ItalicFont=Fira Sans Light Italic,
+	BoldItalicFont=Fira Sans Medium Italic,
+]
+\setmonofont{Fira Mono}[Scale=MatchLowercase]
+\setmathfont{Fira Math}[Scale=MatchLowercase]
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{calc}
+
+\newlength{\headerheight}
+\setlength{\headerheight}{0.06\paperheight}
+\setbeamertemplate{headline}{
+	\vspace*{10pt}
+	\leavevmode
+	\begin{beamercolorbox}[
+	 	wd=0.25\paperwidth,
+	 	ht=\headerheight,
+	 	leftskip=15pt,
+	 	rightskip=1em,
+	]{headline}
+		\includegraphics[height=\headerheight]{design/tudo.pdf}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[
+	 	wd=0.25\paperwidth,
+	 	ht=\headerheight,
+	 	leftskip=15pt,
+	 	rightskip=1em,
+	]{headline}
+		\includegraphics[height=\headerheight]{design/app.pdf}
+	\end{beamercolorbox}
+	\vskip2ex
+	\ifnum\insertframenumber=0
+		\vspace{0.4pt}
+	\else
+		\hspace{12pt}
+		\usebeamercolor{separation line}
+		\rule{\paperwidth-30pt}{0.3pt}
+	\fi
+	\vskip2ex
+}
+
+\newlength{\footerleftwidth}
+\setlength{\footerleftwidth}{0.2\paperwidth}
+\newlength{\footercenterwidth}
+\setlength{\footercenterwidth}{0.6\paperwidth}
+\newlength{\footerrightwidth}
+\setlength{\footerrightwidth}{0.2\paperwidth - 15pt}
+
+\setbeamertemplate{footline}{
+	\ifnum\insertframenumber=0
+	\else
+		\leavevmode
+		\begin{beamercolorbox}[
+			wd=\footerleftwidth,
+			ht=4ex,
+			dp=10pt,
+			leftskip=15pt,
+		]{author in head/foot}
+			{\usebeamerfont{author in head/foot}\insertshortauthor}~|~{\usebeamerfont{date in head/foot}\insertshortdate}
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[
+			wd=\footercenterwidth,
+			ht=3ex,
+			dp=10pt,
+			center,
+		]{section in head/foot}
+			\ifx\insertsection\empty\else
+				\usebeamerfont{section in head/foot}\insertsection
+				\ifx\insertsubsection\empty\else
+					~|~\usebeamerfont{subsection in head/foot}\insertsubsection
+				\fi
+			\fi
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[
+			wd=\footerrightwidth,
+			ht=4ex,
+			dp=10pt,
+		]{frame}
+			\raggedleft
+			\usebeamerfont{framenumber}\insertframenumber~/~\inserttotalframenumber
+		\end{beamercolorbox}
+	\fi
+}
+
+
+
+
+\usepackage{bm}
+
+\usepackage[
+	ngerman,
+	american,
+]{babel}
+
+\usepackage[
+	backend=biber,
+	style=../literature/style,
+]{biblatex}
+\addbibresource{../literature/books.bib}
+\addbibresource{../literature/papers.bib}
+\addbibresource{../literature/collaborations/cern.bib}
+\addbibresource{../literature/collaborations/ic.bib}
+\addbibresource{../literature/collaborations/ligo.bib}
+\addbibresource{../literature/collaborations/pa.bib}
+\addbibresource{../literature/collaborations/pdg.bib}
+
+\usepackage{xcolor}
+\definecolor{RUB}{RGB}{0,53,96}
+\definecolor{TUDO}{RGB}{99,154,0}
+
+\hypersetup{
+	allcolors=blue,
+	colorlinks,
+	english,
+	linktocpage,
+	pdfcreator={},
+	pdfproducer={},
+	pdfusetitle,
+	unicode,
+}
+
+\usepackage[
+	locale=US,
+	per-mode=reciprocal,
+	separate-uncertainty=true,
+]{siunitx}
+\DeclareSIUnit\erg{erg}
+\DeclareSIUnit\esu{esu}
+\DeclareSIUnit\gauss{G}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\solarmass{M_\odot}
+
+\usepackage{booktabs}
+
+\usepackage{caption}
+\captionsetup{width=0.9\linewidth}
+
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
+\usepackage{microtype}
