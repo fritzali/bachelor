@@ -14,9 +14,21 @@
 		\titlepage
 	\end{frame}
 
+	\section*{Outline}
+
 	\begin{frame}
 		\frametitle{Outline}
-		\tableofcontents
+		\begin{columns}[onlytextwidth]
+			\begin{column}{0.3\textwidth}
+				\tableofcontents
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[height=33ex]{../plots/build/nucleus_neutrino_spectrum.pdf}
+				\end{figure}
+			\end{column}
+		\end{columns}
 	\end{frame}
 
 
@@ -26,8 +38,16 @@
 
 	\begin{frame}
 		\frametitle{Particle Physics}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
+		\begin{itemize}
+		\item Point A
+		\item Point B
+		\begin{itemize}
+			\item Part 1
+			\item Part 2
+		\end{itemize}
+		\item Point C
+		\item Point D
+	\end{itemize}
 	\end{frame}
 
 

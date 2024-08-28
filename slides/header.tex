@@ -8,7 +8,6 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{pdfpages}
 \usepackage{setspace}
@@ -52,13 +51,32 @@
 	]{headline}
 		\includegraphics[height=\headerheight]{content/app.pdf}
 	\end{beamercolorbox}
+	\begin{beamercolorbox}[
+	 	wd=0.3\paperwidth,
+	 	ht=\headerheight,
+	 	leftskip=35pt,
+	 	rightskip=1em,
+	]{headline}
+		\includegraphics[height=\headerheight]{content/rub.pdf}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[
+	 	wd=0.1\paperwidth,
+	 	ht=\headerheight,
+	 	leftskip=25pt,
+	 	rightskip=1em,
+	]{headline}
+		\includegraphics[height=1.65\headerheight]{content/tp.pdf}
+		\vspace{-5.35ex}
+	\end{beamercolorbox}
 	\vskip2ex
 	\ifnum\insertframenumber=0
 		\vspace{0.4pt}
 	\else
 		\hspace{12pt}
 		\usebeamercolor{separation line}
-		\rule{\paperwidth-30pt}{0.4pt}
+		\rule{\paperwidth-57.5pt}{0.4pt}
+		\hspace{2.25pt}
+		\rule{22.25pt}{0.4pt}
 	\fi
 	\vskip2ex
 }
@@ -94,6 +112,7 @@
 					~|~\usebeamerfont{subsection in head/foot}\insertsubsection
 				\fi
 			\fi
+			\vphantom{lip}
 		\end{beamercolorbox}
 		\begin{beamercolorbox}[
 			wd=\footerrightwidth,
@@ -167,10 +186,11 @@
 	\vspace{\fill}
 }
 
-\setbeamertemplate{itemize items}[square]
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
 
 \setbeamertemplate{frametitle}{
-	\usebeamerfont{frametitle}\insertframetitle
+	\usebeamerfont{frametitle}\insertframetitle\vphantom{lip}
 }
 
 \setbeamerfont{author}{size=\Large}
@@ -185,7 +205,6 @@
 \setbeamerfont{subsection in head/foot}{size=\small}
 \setbeamerfont{institute in head/foot}{size=\large}
 
-
 \setbeamerfont{item}{series=\bfseries}
 \setbeamerfont{itemize/enumerate body}{size=\normalfont}
 \setbeamerfont{itemize/enumerate subbody}{size=\normalfont}
@@ -194,7 +213,6 @@
 \setbeamerfont{block title}{series=\bfseries}
 \setbeamerfont{section in toc}{series=\bfseries}
 
-\usepackage{xcolor}
 \definecolor{RUB}{RGB}{0,53,96}
 \definecolor{TUDO}{RGB}{99,154,0}
 
