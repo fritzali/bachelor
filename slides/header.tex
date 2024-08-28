@@ -42,7 +42,7 @@
 	 	leftskip=15pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=\headerheight]{content/tudo.pdf}
+		\includegraphics[height=\headerheight]{content/logos/tudo.pdf}
 	\end{beamercolorbox}
 	\begin{beamercolorbox}[
 	 	wd=0.2\paperwidth,
@@ -50,7 +50,7 @@
 	 	leftskip=15pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=\headerheight]{content/app.pdf}
+		\includegraphics[height=\headerheight]{content/logos/app.pdf}
 	\end{beamercolorbox}
 	\begin{beamercolorbox}[
 	 	wd=0.3\paperwidth,
@@ -58,7 +58,7 @@
 	 	leftskip=35pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=\headerheight]{content/rub.pdf}
+		\includegraphics[height=\headerheight]{content/logos/rub.pdf}
 	\end{beamercolorbox}
 	\begin{beamercolorbox}[
 	 	wd=0.1\paperwidth,
@@ -66,7 +66,7 @@
 	 	leftskip=25pt,
 	 	rightskip=1em,
 	]{headline}
-		\includegraphics[height=1.65\headerheight]{content/tp.pdf}
+		\includegraphics[height=1.65\headerheight]{content/logos/tp.pdf}
 		\vspace{-5.35ex}
 	\end{beamercolorbox}
 	\vskip2ex
@@ -293,10 +293,12 @@
 \usepackage{booktabs}
 
 \usepackage{caption}
-\captionsetup{width=0.9\linewidth}
+\usepackage{subcaption}
 
 \usepackage{float}
 \floatplacement{figure}{htbp}
 \floatplacement{table}{htbp}
 
 \usepackage{microtype}
+
+\usepackage[usestackEOL]{stackengine}
