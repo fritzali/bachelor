@@ -10,134 +10,144 @@ ACC = '#CA7406'
 
 
 
-k_x, k_sig = np.genfromtxt('code/tabulate/other/present_k_differential.txt')
-pi_x, pi_sig = np.genfromtxt('code/tabulate/other/present_pi_differential.txt')
-
-E = 10154863318.74878
-pp_sig_inel = inelastic_hadron_proton_scattering(E, 'p')
-x = np.logspace(np.log10(min(k_x)), np.log10(max(pi_x)), 1000)
-
-k_cr = E * pp_sig_inel * meson_production(x, E, 'k')
-pi_cr = E * pp_sig_inel * meson_production(x, E, 'pi')
-
-plt.plot(k_x, k_x * k_sig, c=RUB, label=r'Schroller')
-plt.plot(x, x * k_cr, c=TUDO, label=r'Kelner{\kern+0.5pt}*')
-
-plt.xscale('log')
-plt.yscale('log')
-
-plt.xlim(1e-11, 1e0)
-plt.ylim(1e-1, plt.ylim()[1])
-
-plt.xticks(np.logspace(-10, 0, 6))
-
-plt.xlabel(r'$x_E = \kern+0.1pt E_K \kern+0.4pt / E_p$')
-plt.ylabel(r'$x_E \kern+0.4pt d \kern-0.3pt \sigma / d \kern-0.3pt x_E \kern+0.1pt$ $\mathrel{/}$ $\symup{mb}$')
-
-plt.title(r'Kaon')
-
-plt.legend(loc=2)
-
-plt.savefig('build/present_kaon_weighted.pdf')
-plt.savefig('build/present_kaon_weighted.png')
-plt.close()
-
-plt.plot(pi_x, pi_x * pi_sig, c=RUB, label=r'Schroller')
-plt.plot(x, x * pi_cr, c=TUDO, label=r'Kelner{\kern+0.5pt}*')
-
-plt.xscale('log')
-plt.yscale('log')
-
-plt.xlim(1e-11, 1e0)
-plt.ylim(1e0, plt.ylim()[1])
-
-plt.xticks(np.logspace(-10, 0, 6))
-
-plt.xlabel(r'$x_E = \kern+0.1pt E_\pi \kern+0.4pt / E_p$')
-plt.ylabel(r'$x_E \kern+0.4pt d \kern-0.3pt \sigma / d \kern-0.3pt x_E \kern+0.1pt$ $\mathrel{/}$ $\symup{mb}$')
-
-plt.title(r'Pion')
-
-plt.legend(loc=2)
-
-plt.savefig('build/present_pion_weighted.pdf')
-plt.savefig('build/present_pion_weighted.png')
-plt.close()
+#k_x, k_sig = np.genfromtxt('code/tabulate/other/present_k_differential.txt')
+#pi_x, pi_sig = np.genfromtxt('code/tabulate/other/present_pi_differential.txt')
+#
+#E = 10154863318.74878
+#pp_sig_inel = inelastic_hadron_proton_scattering(E, 'p')
+#x = np.logspace(np.log10(min(k_x)), np.log10(max(pi_x)), 1000)
+#
+#k_cr = E * pp_sig_inel * meson_production(x, E, 'k')
+#pi_cr = E * pp_sig_inel * meson_production(x, E, 'pi')
+#
+#plt.plot(k_x, k_x * k_sig, c=RUB, label=r'Schroller')
+#plt.plot(x, x * k_cr, c=TUDO, label=r'Kelner{\kern+0.5pt}*')
+#
+#plt.xscale('log')
+#plt.yscale('log')
+#
+#plt.xlim(1e-11, 1e0)
+#plt.ylim(1e-1, plt.ylim()[1])
+#
+#plt.xticks(np.logspace(-10, 0, 6))
+#
+#plt.xlabel(r'$x_E = \kern+0.1pt E_K \kern+0.4pt / E_p$')
+#plt.ylabel(r'$x_E \kern+0.4pt d \kern-0.3pt \sigma / d \kern-0.3pt x_E \kern+0.1pt$ $\mathrel{/}$ $\symup{mb}$')
+#
+#plt.title(r'$pp \rightarrow K^+ X$ $( E_p \kern-0.3pt = \kern-0.2pt 10^{10}$ $\symup{GeV} \kern+0.7pt )$', pad=7)
+#
+#plt.legend(loc=2)
+#
+#plt.savefig('build/present_kaon_weighted.pdf')
+#plt.savefig('build/present_kaon_weighted.png')
+#plt.close()
+#
+#plt.plot(pi_x, pi_x * pi_sig, c=RUB, label=r'Schroller')
+#plt.plot(x, x * pi_cr, c=TUDO, label=r'Kelner{\kern+0.5pt}*')
+#
+#plt.xscale('log')
+#plt.yscale('log')
+#
+#plt.xlim(1e-11, 1e0)
+#plt.ylim(1e0, plt.ylim()[1])
+#
+#plt.xticks(np.logspace(-10, 0, 6))
+#
+#plt.xlabel(r'$x_E = \kern+0.1pt E_\pi \kern+0.4pt / E_p$')
+#plt.ylabel(r'$x_E \kern+0.4pt d \kern-0.3pt \sigma / d \kern-0.3pt x_E \kern+0.1pt$ $\mathrel{/}$ $\symup{mb}$')
+#
+#plt.title(r'$pp \rightarrow \pi^+ X$ $( E_p \kern-0.3pt = \kern-0.2pt 10^{10}$ $\symup{GeV} \kern+0.7pt )$', pad=7)
+#
+#plt.legend(loc=2)
+#
+#plt.savefig('build/present_pion_weighted.pdf')
+#plt.savefig('build/present_pion_weighted.png')
+#plt.close()
+#
+#
+#
+#plt.figure(figsize=(5.5, 3.5))
+#
+#h, y = np.genfromtxt('code/tabulate/other/present_events.txt', unpack=True, dtype=None)
+#
+#i = [3, 5, 0, 2, 8, 7, 1, 4, 10, 9, 6, 11, 14, 15, 16, 20, 21, 17, 18, 19, 13, 12, 22, 24, 25, 23]
+#
+#plt.bar(range(len(y)), y[i], tick_label=h[i], color=TUDO, linewidth=0, width=0.75, label=r'\textsc{sibyll} 2.3c')
+#
+#plt.ylabel(r'yield / \kern-0.15pt event')
+#
+#plt.yscale('log')
+#
+#plt.gca().tick_params(axis='x', which='minor', bottom=False)
+#
+#plt.xlim(-0.625, 25.625)
+#
+#plt.legend(loc=1)
+#
+#plt.savefig('build/present_event_generator.pdf')
+#plt.savefig('build/present_event_generator.png')
+#plt.close()
 
 
 
 plt.figure(figsize=(5.5, 3.5))
 
-h, y = np.genfromtxt('code/tabulate/other/present_events.txt', unpack=True, dtype=None)
+s, p, pi, K = np.genfromtxt('code/tabulate/other/sample_inelastic_scattering.txt', unpack=True)
 
-i = [3, 5, 0, 2, 8, 7, 1, 4, 10, 9, 6, 11, 14, 15, 16, 20, 21, 17, 18, 19, 13, 12, 22, 24, 25, 23]
+plt.plot(s, p, label=r'$p p$', c=TUDO)
+plt.plot(s, pi, label=r'$\pi^+ \kern-0.5pt p$', c=ACC)
+plt.plot(s, K, label=r'$K^+ \kern-0.5pt p$', c='k')
 
-plt.bar(range(len(y)), y[i], tick_label=h[i], color=TUDO, linewidth=0, width=0.75, label=r'\textsc{sibyll} 2.3c')
+plt.xlabel(r'$s$ $\mathrel{/} \kern-0.1pt$ $\symup{GeV}^2$')
+plt.ylabel(r'$\sigma_{h \kern-0.1pt p}$ $\mathrel{/}$ $\symup{mb}$')
 
-plt.ylabel(r'yield / \kern-0.15pt event')
+plt.xscale('log')
 
-plt.yscale('log')
+plt.xlim(1e2, 1e9)
 
-plt.gca().tick_params(axis='x', which='minor', bottom=False)
+plt.legend(loc=2)
 
-plt.xlim(-0.625, 25.625)
-
-plt.legend(loc=1)
-
-plt.savefig('build/present_event_generator.pdf')
-plt.savefig('build/present_event_generator.png')
+plt.savefig('build/present_hadron_scattering.pdf')
+plt.savefig('build/present_hadron_scattering.png')
 plt.close()
 
 
 
-#s, p, pi, K = np.genfromtxt('code/tabulate/other/sample_inelastic_scattering.txt', unpack=True)
-#
-#plt.figure(figsize=(5.0, 3.2))
-#
-#plt.plot(s, p, 'b', label=r'$p \kern-0.1pt p$')
-#plt.plot(s, pi, 'r', label=r'$\pi \kern-0.1pt p$')
-#plt.plot(s, K, 'k', label=r'$K \kern-0.2pt p$')
-#
-#plt.xlabel(r'$s$ $\mathrel{/} \kern-0.1pt$ GeV$^2$')
-#plt.ylabel(r'$\sigma_{h \kern-0.1pt p}$ $\mathrel{/}$ mb')
-#
-#plt.xscale('log')
-#
-#plt.xlim(1e2, 1e9)
-#
-#plt.legend(handlelength=1.6, loc=2)
-#
-#plt.savefig('build/hadron_proton_scattering.pdf')
-#plt.savefig('build/hadron_proton_scattering.png')
-#plt.close()
-#
-#
-#
-#x, y1, y2, y3 = np.genfromtxt('code/tabulate/other/sample_charm_hadron.txt', unpack=True)
-#
-#plt.figure(figsize=(5.0, 3.2))
-#
-#plt.plot(x, x * y1, 'b', label=r'$E_p = 10^{12}$ GeV')
-#plt.plot(x, x * y2, 'r', label=r'$E_p = 10^{10}$ GeV')
-#plt.plot(x, x * y3, 'k', label=r'$E_p = 10^{8}$ GeV')
-#
-#plt.xlabel(r'$x_h \kern-0.8pt = \kern-0.5pt E_h \kern+0.5pt / E_p$')
-#plt.ylabel(r'$x_h \kern+0.5pt d\sigma \kern-0.3pt / \kern-0.8pt dx_h \kern+0.2pt$ $\mathrel{/}$ mb')
-#
-#plt.xscale('log')
-#plt.yscale('log')
-#
-#plt.xlim(1e-6, 1e0)
-#plt.ylim(1e-4, 1e1)
-#
-#plt.legend(handlelength=1.6, loc=1)
-#
-#plt.savefig('build/charm_hadron_cross_section.pdf')
-#plt.savefig('build/charm_hadron_cross_section.png')
-#plt.close()
-#
-#
-#
+plt.figure(figsize=(5.7, 3.8))
+
+x, y1, y2, y3 = np.genfromtxt('code/tabulate/other/sample_charm_hadron.txt', unpack=True)
+
+E = 1e10
+pp_sig_inel = inelastic_hadron_proton_scattering(E, 'p')
+x = np.logspace(-6.1, -0.001, 1000)
+
+pi = E * pp_sig_inel * meson_production(x, E, 'pi')
+K = E * pp_sig_inel * meson_production(x, E, 'k')
+D = charmed_hadron_differential_production(x, E, 'd0')
+
+plt.plot(x, x * pi, label=r'$h = \pi^+$', c=ACC)
+plt.plot(x, x * K, label=r'$h = K^+$', c='k')
+plt.plot(x, x * D, label=r'$h = D^0$', c=TUDO)
+
+plt.xlabel(r'$x_E = \kern+0.1pt E_h \kern+0.4pt / E_p$')
+plt.ylabel(r'$x_E \kern+0.4pt d \kern-0.3pt \sigma / d \kern-0.3pt x_E \kern+0.1pt$ $\mathrel{/}$ $\symup{mb}$')
+
+plt.title(r'$pp \rightarrow hX$ $( E_p \kern-0.3pt = \kern-0.2pt 10^{10}$ $\symup{GeV} \kern+0.7pt )$', pad=7)
+
+plt.xscale('log')
+plt.yscale('log')
+
+plt.xlim(1e-6, 1e0)
+plt.ylim(1e-4, 1e3)
+
+plt.legend(loc=3)
+
+plt.savefig('build/present_hadron_weighted.pdf')
+plt.savefig('build/present_hadron_weighted.png')
+plt.close()
+
+
+
 #t = np.genfromtxt('code/tabulate/magnetar/without/neutrinos/axes.txt', skip_footer=1)
 #E = np.genfromtxt('code/tabulate/magnetar/without/neutrinos/axes.txt', skip_header=15)
 #
