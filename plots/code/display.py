@@ -5,7 +5,7 @@ from code.functional import *
 
 
 RUB = '#17365C'
-TUDO = '#639A00'
+TUDO = '#83B818'
 ACC = '#D98207'
 
 

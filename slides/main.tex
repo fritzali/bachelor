@@ -14,61 +14,27 @@
 		\titlepage
 	\end{frame}
 
+	\begin{frame}[noframenumbering]
+		\input{draw/chart.tex}
+	\end{frame}
+
 
 
 	\section{Background}
-	\subsection{Particle Physics}
-
-	\begin{frame}
-		\frametitle{Particle Physics}
-		\begin{itemize}
-		\item Point A
-		\item Point B
-		\begin{itemize}
-			\item Part 1
-			\item Part 2
-		\end{itemize}
-		\item Point C
-		\item Point D
-	\end{itemize}
-	\end{frame}
-
-
-
-	\subsection{Multimessenger Astronomy}
-
-	\begin{frame}
-		\frametitle{Multimessenger Astronomy}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-	\end{frame}
-
-
-
-	\subsection{Astrophysical Sources}
-
-	\begin{frame}
-		\frametitle{Astrophysical Sources}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-	\end{frame}
 
 
 
 	\section{Methods}
-	\subsection{Cross Sections}
-
-	\begin{frame}
-		\frametitle{Cross Sections}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-	\end{frame}
+	\subsection{Parametrizations}
 
 	\begin{frame}
 		\frametitle{Hadron Inelastic Scattering Cross Section}
 		\begin{figure}
 			\centering
 			\includegraphics[height=0.80\textheight]{../plots/build/present_hadron_scattering.pdf}
+			\rlap{\scriptsize\Longstack[l]{Combined Parametrizations\\\\\\\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-0.6ex}\Longstack[l]{V. I. Belousov et. al.\\{\slshape{Phys. Atom. Nuclei}} (2016)\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-1.5ex}\Longstack[l]{D. A. Fagundes, M. J. Menon\\{\slshape{Nucl. Phys. A}} (2012)\\\\}}
 		\end{figure}
 	\end{frame}
 
@@ -77,6 +43,9 @@
 		\begin{figure}
 			\centering
 			\includegraphics[height=0.84\textheight]{../plots/build/present_hadron_weighted.pdf}
+			\rlap{\scriptsize\Longstack[l]{Derived Parametrizations\\\\\\\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-0.6ex}\Longstack[l]{S. R. Kelner et al.\\{\slshape{Phys. Rev. D}} (2006)\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-1.5ex}\Longstack[l]{V. P. Gonçalves et. al.\\{\slshape{JHEP}} (2007)\\\\}}
 		\end{figure}
 	\end{frame}
 
@@ -84,28 +53,104 @@
 
 	\subsection{Spectral Distributions}
 
-	\begin{frame}
-		\frametitle{Spectral Distributions}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-	\end{frame}
-
 
 
 	\subsection{Computation}
 
+
+
+	\section{Results}
+	\subsection{Magnetar Neutrinos}
+
 	\begin{frame}
-		\frametitle{Computation}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
+		\frametitle{Normalized Magnetar Charm Contributions}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.80\textheight]{../plots/build/present_magnetar_charm_with.pdf}
+			\rlap{\scriptsize\Longstack[l]{$E_\nu \kern+0.2pt = 10^9$ $\symup{GeV}$\\\\}}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Normalized Magnetar Neutrino Flux \& Fluence}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.68\textheight]{../plots/build/present_magnetar_flux_with.pdf}
+			\end{subfigure}
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.68\textheight]{../plots/build/present_magnetar_fluence_with.pdf}
+			\end{subfigure}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Comparison: Published Estimated Magnetar Neutrinos}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.72\textheight]{content/Carpio_et_al_Phys_Rev_D_2020_a.pdf}
+			\end{subfigure}
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.72\textheight]{content/Carpio_et_al_Phys_Rev_D_2020_b.pdf}
+			\end{subfigure}
+			\\\scriptsize\Longstack[l]{J. A. Carpio et. al. {\slshape{Phys. Rev. D}} (2020)\\}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Modified Magnetar Charm Contributions}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.80\textheight]{../plots/build/present_magnetar_charm_without.pdf}
+			\rlap{\scriptsize\Longstack[l]{$E_\nu \kern+0.2pt = 10^9$ $\symup{GeV}$\\\\}}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Modified Magnetar Neutrino Flux \& Fluence}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.68\textheight]{../plots/build/present_magnetar_flux_without.pdf}
+			\end{subfigure}
+			\begin{subfigure}{0.48\textwidth}
+				\centering
+				\includegraphics[height=0.68\textheight]{../plots/build/present_magnetar_fluence_without.pdf}
+			\end{subfigure}
+		\end{figure}
+	\end{frame}
+
+	\subsection{AGN Neutrinos}
+
+	\begin{frame}
+		\frametitle{Normalized AGN Charm Contributions}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.80\textheight]{../plots/build/present_nucleus_charm.pdf}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Normalized AGN Neutrino Fluence}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.80\textheight]{../plots/build/present_nucleus_fluence.pdf}
+		\end{figure}
 	\end{frame}
 
 
-	
+
+	\section{Conclusion \& Outlook}
 	\subsection{Event Generation}
 
 	\begin{frame}
-		\frametitle{Event Generation}
+		\frametitle{Monte Carlo Event Generation}
 		\begin{figure}
 			\centering
 			\includegraphics[height=0.84\textheight]{../plots/build/present_event_generator.pdf}
@@ -114,7 +159,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Weighted Energy Pion \& Kaon Differential Cross Section}
+		\frametitle{Comparison: Differential Cross Section}
 		\begin{figure}
 			\centering
 			\begin{subfigure}{0.48\textwidth}
@@ -128,27 +173,6 @@
 			\\\scriptsize\Longstack[l]{\\Derived Parametrization S. R. Kelner et. al. {\slshape{Phys. Rev. D}} (2006)\\
 			Event Data (\textsc{sibyll 2.3c}) Courtesy M. Schroller}
 		\end{figure}
-	\end{frame}
-
-
-
-	\section{Results}
-
-	\begin{frame}
-		\frametitle{Results}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-	\end{frame}
-
-
-
-	\section{Conclusion \& Outlook}
-
-	\begin{frame}
-		\frametitle{Conclusion \& Outlook}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua.
-		\cite{Carpio_2020}
 	\end{frame}
 
 
@@ -217,26 +241,6 @@
 				\includegraphics[height=0.68\textheight]{content/Goldreich_Julian_ApJ_1969_b.jpg}
 			\end{subfigure}
 			\\\scriptsize\Longstack[l]{P. Goldreich, W. H. Julian {\slshape{ApJ}} (1969)}
-		\end{figure}
-	\end{frame}
-
-
-
-	\subsection{\texorpdfstring{$\nu$}{Neutrino} Comparison}
-
-	\begin{frame}
-		\frametitle{Magnetar Neutrino Flux \& Fluence Comparison}
-		\begin{figure}
-			\centering
-			\begin{subfigure}{0.48\textwidth}
-				\centering
-				\includegraphics[height=0.72\textheight]{content/Carpio_et_al_Phys_Rev_D_2020_a.pdf}
-			\end{subfigure}
-			\begin{subfigure}{0.48\textwidth}
-				\centering
-				\includegraphics[height=0.72\textheight]{content/Carpio_et_al_Phys_Rev_D_2020_b.pdf}
-			\end{subfigure}
-			\\\scriptsize\Longstack[l]{J. A. Carpio et. al. {\slshape{Phys. Rev. D}} (2020)\\}
 		\end{figure}
 	\end{frame}
 
