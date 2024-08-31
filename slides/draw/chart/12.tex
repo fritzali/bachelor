@@ -28,26 +28,26 @@
 \centering
 \begin{tikzpicture}
 	\node (proc1) [process, draw=black, text=black, fill=light] {Astrophysical\\Modeling};
-	\node (proc2) [process, right = 10ex of proc1] {Source\\Spectrum};
+	\node (proc2) [process, draw=black, text=black, fill=light, right = 10ex of proc1] {Source\\Spectrum};
 	\node (proc3) [process, right = 10ex of proc2] {Hadron\\Spectrum};
 	\node (proc4) [process, right = 10ex of proc3] {Neutrino\\Spectrum};
 
-	\node (proc5) [process, above = 4ex of proc2] {Target Field};
+	\node (proc5) [process, draw=black, text=black, fill=light, above = 4ex of proc2] {Target Field};
 
 	\node (test1) [below = 1.7ex of proc1] {};
 
 	\node (in1) [input, draw=black, text=black, fill=high, left = -1ex of test1] {SNR\vphantom{pi}};
-	\node (in2) [input, right = -1ex of test1] {AGN\vphantom{pi}};
-	\node (in3) [input, below = 1.1ex of test1] {...};
+	\node (in2) [input, draw=black, text=black, fill=high, right = -1ex of test1] {AGN\vphantom{pi}};
+	\node (in3) [input, draw=black, text=black, fill=high, below = 1.1ex of test1] {...};
 
-	\draw [arrow] (proc1) -- node (arr1) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
-	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Production} (proc3);
+	\draw [arrow, draw=dark] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
+	\draw [arrow, draw=dark] (proc2) -- node (arr2) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Production} (proc3);
 	\draw [arrow] (proc3) -- node (arr3) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Decay} (proc4);
 
-	\node (in4) [input, below = 7ex of arr2] {Parametrized\\Distributions\vphantom{pi}};
+	\node (in4) [input, draw=black, text=black, fill=high, below = 7ex of arr2] {Parametrized\\Distributions\vphantom{pi}};
 
-	\draw [arrow] (proc1) to[out=90, in=180] (proc5);
+	\draw [arrow, draw=dark] (proc1) to[out=90, in=180] (proc5);
 	\draw [arrow] (proc5) to[out=0, in=90] node [pos=0.9, anchor=east, text=fore!50, font=\scriptsize] {\vphantom{pi}Cooling\kern+1pt} (proc3);
 
-	\draw [arrow, draw=fore!50] (in4) -- ($ (arr2) - (0, 10pt) $);
+	\draw [arrow, draw=low] (in4) -- ($ (arr2) - (0, 10pt) $);
 \end{tikzpicture}
