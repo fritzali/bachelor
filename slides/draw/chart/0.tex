@@ -1,5 +1,27 @@
-\tikzstyle{process} = [rectangle, rounded corners=1, text centered, inner sep=7pt, outer sep=3pt, draw=black, text=black, fill=light, font=\footnotesize, align=center]
-\tikzstyle{input} = [rectangle, rounded corners=2, text centered, inner sep=5pt, outer sep=3pt, draw=black, text=black, fill=high, font=\footnotesize, align=center]
+\tikzstyle{process} = [
+	rectangle,
+	rounded corners=1,
+	text centered,
+	inner sep=7pt,
+	outer sep=3pt,
+	draw=black,
+	text=black,
+	fill=light,
+	font=\footnotesize,
+	align=center
+]
+\tikzstyle{input} = [
+	rectangle,
+	rounded corners=2,
+	text centered,
+	inner sep=5pt,
+	outer sep=3pt,
+	draw=black,
+	text=black,
+	fill=high,
+	font=\footnotesize,
+	align=center
+]
 
 \tikzstyle{arrow} = [thick, -{Triangle[length=6pt, width=3pt]}, draw=dark]
 
@@ -16,8 +38,9 @@
 
 	\node (in1) [input, left = -1ex of test1] {SNR\vphantom{pi}};
 	\node (in2) [input, right = -1ex of test1] {AGN\vphantom{pi}};
+	\node (in3) [input, below = 1.1ex of test1] {...};
 
-	\node (in3) [input, below = 5ex of proc3] {Parametrized\\Distributions\vphantom{pi}};
+	\node (in4) [input, below = 3ex of proc3] {Parametrized\\Distributions\vphantom{pi}};
 
 	\draw [arrow] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
 	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Production} (proc3);
@@ -27,6 +50,6 @@
 	\draw [arrow] (proc5) to[out=355, in=90] node [pos=0.6, anchor=west, text=dark, font=\scriptsize] {\vphantom{pi}Collision} (arr2);
 	\draw [arrow] (proc5) to[out=0, in=95] node [pos=0.6, anchor=west, text=dark, font=\scriptsize] {\vphantom{pi}\hspace{1.3ex}Cooling} (proc3);
 
-	\draw [arrow, draw=low] (in3) to[out=175, in=270] ($ (arr2) - (0, 10pt) $);
-	\draw [arrow, draw=low] (in3) to[out=5, in=270] ($ (arr3) - (0, 10pt) $);
+	\draw [arrow, draw=low] (in4) to[out=175, in=270] ($ (arr2) - (0, 10pt) $);
+	\draw [arrow, draw=low] (in4) to[out=5, in=270] ($ (arr3) - (0, 10pt) $);
 \end{tikzpicture}
