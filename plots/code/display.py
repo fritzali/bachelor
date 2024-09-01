@@ -202,7 +202,7 @@ plt.plot(t, pi / N, label=r'Pion Decay', zorder=1, c=ACC)
 plt.plot(t, K / N, label=r'Kaon Decay', zorder=1, c='k')
 plt.plot(t, c / N, label=r'Charm Decay', zorder=0, c=TUDO)
 
-plt.xlabel(r'$t$ $\mathrel{/}$ $\symup{s}$')
+plt.xlabel(r'$\vphantom{E_\nu}t$ $\mathrel{/}$ $\symup{s}$')
 plt.ylabel(r'$\dot{\phi}_{\kern-0.3pt \nu}$ $\mathrel{/} \kern-0.7pt$ $\symup{max} \kern+0.5pt \bigl( \dot{\phi}^c_\nu \kern+0.2pt \bigr)$')
 
 plt.xscale('log')
@@ -298,7 +298,7 @@ plt.plot(t, Dplus / N, '-', label=r'$D^+$ Decay', zorder=1, c=ACC)
 plt.plot(t, DplusS / N, '--', label=r'$D^+_s$ Decay', zorder=1, c=ACC)
 plt.plot(t, LAMplusC / N, 'k-', label=r'$\Lambda^{\kern-0.5pt +}_{\kern+0.5pt c}$ Decay', zorder=0)
 
-plt.xlabel(r'$t$ $\mathrel{/}$ $\symup{s}$')
+plt.xlabel(r'$\vphantom{E_\nu}t$ $\mathrel{/}$ $\symup{s}$')
 plt.ylabel(r'$\dot{\phi}_{\kern-0.3pt \nu}$ $\mathrel{/} \kern-0.7pt$ $\symup{max} \kern+0.5pt \bigl( \dot{\phi}^c_\nu \kern+0.2pt \bigr)$')
 
 plt.xscale('log')
