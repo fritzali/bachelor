@@ -38,10 +38,10 @@
 
 	\node (in1) [input, draw=black, text=black, fill=high, left = -1ex of test1] {SNR\vphantom{pi}};
 	\node (in2) [input, draw=black, text=black, fill=high, right = -1ex of test1] {AGN\vphantom{pi}};
-	\node (in3) [input, draw=black, text=black, fill=high, below = 1.1ex of test1] {...};
+	\node (in3) [input, below = 1.1ex of test1] {...};
 
 	\draw [arrow, draw=dark] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
-	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Production} (proc3);
+	\draw [arrow, draw=dark] (proc2) -- node (arr2) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Production} (proc3);
 	\draw [arrow] (proc3) -- node (arr3) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Decay} (proc4);
 
 	\node (in4) [input, below = 7ex of arr2] {Parametrized\\Distributions\vphantom{pi}};

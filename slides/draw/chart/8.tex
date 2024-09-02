@@ -32,13 +32,13 @@
 	\node (proc3) [process, right = 10ex of proc2] {Hadron\\Spectrum};
 	\node (proc4) [process, right = 10ex of proc3] {Neutrino\\Spectrum};
 
-	\node (proc5) [process, above = 4ex of proc2] {Target Field};
+	\node (proc5) [process, draw=black, text=black, fill=light, above = 4ex of proc2] {Target Field};
 
 	\node (test1) [below = 1.7ex of proc1] {};
 
 	\node (in1) [input, draw=black, text=black, fill=high, left = -1ex of test1] {SNR\vphantom{pi}};
 	\node (in2) [input, draw=black, text=black, fill=high, right = -1ex of test1] {AGN\vphantom{pi}};
-	\node (in3) [input, draw=black, text=black, fill=high, below = 1.1ex of test1] {...};
+	\node (in3) [input, below = 1.1ex of test1] {...};
 
 	\draw [arrow, draw=dark] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
 	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Production} (proc3);

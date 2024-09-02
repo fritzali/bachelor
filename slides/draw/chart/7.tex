@@ -38,7 +38,7 @@
 
 	\node (in1) [input, draw=black, text=black, fill=high, left = -1ex of test1] {SNR\vphantom{pi}};
 	\node (in2) [input, draw=black, text=black, fill=high, right = -1ex of test1] {AGN\vphantom{pi}};
-	\node (in3) [input, draw=black, text=black, fill=high, below = 1.1ex of test1] {...};
+	\node (in3) [input, below = 1.1ex of test1] {...};
 
 	\draw [arrow, draw=dark] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
 	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=fore!50, font=\scriptsize] {\vphantom{pi}Production} (proc3);
@@ -46,7 +46,7 @@
 
 	\node (in4) [input, below = 7ex of arr2] {Parametrized\\Distributions\vphantom{pi}};
 
-	\draw [arrow] (proc1) to[out=90, in=180] (proc5);
+	\draw [arrow, draw=dark] (proc1) to[out=90, in=180] (proc5);
 	\draw [arrow] (proc5) to[out=0, in=90] node [pos=0.9, anchor=east, text=fore!50, font=\scriptsize] {\vphantom{pi}Cooling\kern+1pt} (proc3);
 
 	\draw [arrow, draw=fore!50] (in4) -- ($ (arr2) - (0, 10pt) $);

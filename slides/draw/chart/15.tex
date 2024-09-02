@@ -30,7 +30,7 @@
 	\node (proc1) [process] {Astrophysical\\Modeling};
 	\node (proc2) [process, right = 10ex of proc1] {Source\\Spectrum};
 	\node (proc3) [process, right = 10ex of proc2] {Hadron\\Spectrum};
-	\node (proc4) [process, draw=fore!80, text=fore!80, fill=gray!20, right = 10ex of proc3] {Neutrino\\Spectrum};
+	\node (proc4) [process, right = 10ex of proc3] {Neutrino\\Spectrum};
 
 	\node (proc5) [process, above = 4ex of proc2] {Target Field};
 
@@ -38,7 +38,7 @@
 
 	\node (in1) [input, left = -1ex of test1] {SNR\vphantom{pi}};
 	\node (in2) [input, right = -1ex of test1] {AGN\vphantom{pi}};
-	\node (in3) [input, below = 1.1ex of test1] {...};
+	\node (in3) [input, draw=fore!80, text=fore!80, fill=gray!20, below = 1.1ex of test1] {...};
 
 	\draw [arrow] (proc1) -- node (arr1) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Injection} (proc2);
 	\draw [arrow] (proc2) -- node (arr2) [anchor=south, text=dark, font=\scriptsize] {\vphantom{pi}Production} (proc3);
