@@ -421,8 +421,28 @@
 		\input{draw/chart/9.tex}
 	\end{frame}
 
+	\subsection{Hadron Production}
+
 	\begin{frame}
-		\frametitle{}
+		\frametitle{Produced Hadron Spectrum}
+		\begin{itemize}
+			\item<1-> Single Interaction Distribution
+		\end{itemize}
+			\only<2->{
+			\begin{equation*}
+				F_{pp \rightarrow h} \kern-0.5pt = E_p^{-1} \sigma_{pp}^{-1} \kern+1pt \frac{d \sigma}{d x_E}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<3-> Proton Number Convolution
+		\end{itemize}
+			\only<4->{
+			\begin{equation*}
+				\frac{d N_h}{d E_h} \kern+1pt = \kern-1pt \int_{E_h}^\infty dE_{\raisebox{1pt}{\scriptsize$p$}} \kern+1pt
+				\frac{\raisebox{-2pt}{\(d N_{\raisebox{1.5pt}{\scriptsize$p$}}\)}}{d E_{\raisebox{1pt}{\scriptsize$p$}}}
+				\kern+1.5pt F_{pp \rightarrow h}
+			\end{equation*}
+			}
 	\end{frame}
 
 
@@ -446,14 +466,24 @@
 	\subsection{Parametrizations}
 
 	\begin{frame}
-		\frametitle{Hadron Inelastic Scattering Cross Section}
-		\begin{figure}
-			\centering
-			\includegraphics[height=0.80\textheight]{../plots/build/present_hadron_scattering.pdf}
-			\rlap{\scriptsize\Longstack[l]{Combined Parametrizations\\\\\\\\\\\\\\\\}}
-			\rlap{\scriptsize\hspace{-0.6ex}\Longstack[l]{V. I. Belousov et al.\\{\slshape{Phys. Atom. Nuclei}} (2016)\\\\\\\\\\}}
-			\rlap{\scriptsize\hspace{-1.5ex}\Longstack[l]{D. A. Fagundes, M. J. Menon\\{\slshape{Nucl. Phys. A}} (2012)\\\\}}
-		\end{figure}
+		\frametitle{Unweighted Energy Differential Cross Section}
+		\begin{itemize}
+			\item<1-> Fragmentation Function
+		\end{itemize}
+			\only<2->{
+			\begin{equation*}
+				D_c^h = \frac{N_h z \kern+1pt (1 - z)^2}{\bigl( (1 - z)^2 + \epsilon_h z \bigr)^2}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<3-> Charmed Hadron Spectra
+		\end{itemize}
+			\only<4->{
+			\begin{equation*}
+				\frac{d\sigma}{d x_E} = \kern+0.5pt \left( 1 \kern-0.5pt - \frac{m_h}{x_E E_p} \right)^{1/2}
+				\kern-2pt \int_{x_E}^1 \kern-1pt dz \kern+1.5pt z^{\kern+0.5pt -1} \frac{d \sigma}{d x_c} \kern+1pt D_c^h
+			\end{equation*}
+			}
 	\end{frame}
 
 	\begin{frame}
@@ -464,6 +494,17 @@
 			\rlap{\scriptsize\Longstack[l]{Derived Parametrizations\\\\\\\\\\\\\\\\}}
 			\rlap{\scriptsize\hspace{-0.6ex}\Longstack[l]{S. R. Kelner et al.\\{\slshape{Phys. Rev. D}} (2006)\\\\\\\\\\}}
 			\rlap{\scriptsize\hspace{-1.5ex}\Longstack[l]{V. P. Gonçalves et al.\\{\slshape{JHEP}} (2007)\\\\}}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Hadron Inelastic Scattering Cross Section}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.80\textheight]{../plots/build/present_hadron_scattering.pdf}
+			\rlap{\scriptsize\Longstack[l]{Combined Parametrizations\\\\\\\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-0.6ex}\Longstack[l]{V. I. Belousov et al.\\{\slshape{Phys. Atom. Nuclei}} (2016)\\\\\\\\\\}}
+			\rlap{\scriptsize\hspace{-1.5ex}\Longstack[l]{D. A. Fagundes, M. J. Menon\\{\slshape{Nucl. Phys. A}} (2012)\\\\}}
 		\end{figure}
 	\end{frame}
 
