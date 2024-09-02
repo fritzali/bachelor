@@ -323,7 +323,7 @@
 		\end{itemize}
 			\only<2->{
 			\begin{equation*}
-				r_{\kern-0.5pt ej} = \beta_{\kern-0.5pt ej \kern+0.5pt} ct
+				R_{ej} = \beta_{\kern-0.5pt ej \kern+0.5pt} ct
 			\end{equation*}
 			}
 		\begin{itemize}
@@ -424,7 +424,7 @@
 	\subsection{Hadron Production}
 
 	\begin{frame}
-		\frametitle{Produced Hadron Spectrum}
+		\frametitle{Direct Hadron Spectrum}
 		\begin{itemize}
 			\item<1-> Single Interaction Distribution
 		\end{itemize}
@@ -478,7 +478,19 @@
 		\begin{itemize}
 			\item<3-> Charmed Hadron Spectra
 		\end{itemize}
-			\only<4->{
+			\only<4>{
+			\begin{equation*}
+				\frac{d\sigma}{d x_E} = \kern+0.5pt \left( 1 \kern-0.5pt - \frac{m_h}{x_E E_p} \right)^{1/2}
+				\kern-2pt \int_{x_E}^1 \kern-1pt dz \kern+1.5pt z^{\kern+0.5pt -1} \frac{d \sigma}{d x_c} \kern+1pt D_c^h
+			\end{equation*}
+			}
+			\only<5>{
+			\begin{equation*}
+				\frac{d\sigma}{d x_E} = \kern+0.5pt {\color{TUDO} \left( 1 \kern-0.5pt - \frac{m_h}{x_E E_p} \right)^{1/2}}
+				\kern-2pt \int_{x_E}^1 \kern-1pt dz \kern+1.5pt z^{\kern+0.5pt -1} \frac{d \sigma}{d x_c} \kern+1pt D_c^h
+			\end{equation*}
+			}
+			\only<6->{
 			\begin{equation*}
 				\frac{d\sigma}{d x_E} = \kern+0.5pt \left( 1 \kern-0.5pt - \frac{m_h}{x_E E_p} \right)^{1/2}
 				\kern-2pt \int_{x_E}^1 \kern-1pt dz \kern+1.5pt z^{\kern+0.5pt -1} \frac{d \sigma}{d x_c} \kern+1pt D_c^h
@@ -521,8 +533,41 @@
 		\input{draw/chart/12.tex}
 	\end{frame}
 
+	\subsection{Attenuation \& Decay}
+
 	\begin{frame}
-		\frametitle{Cooling \& Optical Depth}
+		\frametitle{Hadronic Cooling \& Decay}
+		\begin{itemize}
+			\item<1-> Characteristic Timescales
+		\end{itemize}
+			\only<2>{
+			\begin{equation*}
+				t_{cool} = (\kappa_{hp} \sigma_{hp} n c)^{-1}
+			\end{equation*}
+			}
+			\only<3->{
+			\vspace{-1em}
+			\begin{align*}
+				t_{cool} &= (\kappa_{hp} \sigma_{hp} n c)^{-1} \\
+				t_{dec} &= \tau_h E_h / m_h
+			\end{align*}
+			}
+		\begin{itemize}
+			\item<4-> Cooling Factor
+		\end{itemize}
+			\only<5->{
+			\begin{equation*}
+				C = 1 \kern-0.5pt - \symup{exp} \left( - \frac{t_{\symup{cool}}}{t_{\symup{dec}}} \right)
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<6-> Optical Depth
+		\end{itemize}
+			\only<7->{
+			\begin{equation*}
+				O = \kappa_{pp} \sigma_{pp} n d
+			\end{equation*}
+			}
 	\end{frame}
 
 
@@ -538,8 +583,42 @@
 		\input{draw/chart/13.tex}
 	\end{frame}
 
+	\subsection{Hadron Spectrum}
+
 	\begin{frame}
-		\frametitle{}
+		\frametitle{Produced Hadron Spectrum}
+		\begin{itemize}
+			\item<1-> Modification Factors
+		\end{itemize}
+			\only<2>{
+			\begin{equation*}
+				\frac{d N_h}{d E_h} = \kern+0.2pt CO \kern-1pt \int_{E_h}^\infty dE_{\raisebox{1pt}{\scriptsize$p$}} \kern+1pt
+				\frac{\raisebox{-2pt}{\(d N_{\raisebox{1.5pt}{\scriptsize$p$}}\)}}{d E_{\raisebox{1pt}{\scriptsize$p$}}}
+				\kern+1.5pt F_{pp \rightarrow h}
+			\end{equation*}
+			}
+			\only<3>{
+			\begin{equation*}
+				\frac{d N_h}{d E_h} = \kern+0.2pt {\color{TUDO} CO} \kern-1pt \int_{E_h}^\infty dE_{\raisebox{1pt}{\scriptsize$p$}} \kern+1pt
+				\frac{\raisebox{-2pt}{\(d N_{\raisebox{1.5pt}{\scriptsize$p$}}\)}}{d E_{\raisebox{1pt}{\scriptsize$p$}}}
+				\kern+1.5pt F_{pp \rightarrow h}
+			\end{equation*}
+			}
+			\only<4->{
+			\begin{equation*}
+				\frac{d N_h}{d E_h} = \kern+0.2pt CO \kern-1pt \int_{E_h}^\infty dE_{\raisebox{1pt}{\scriptsize$p$}} \kern+1pt
+				\frac{\raisebox{-2pt}{\(d N_{\raisebox{1.5pt}{\scriptsize$p$}}\)}}{d E_{\raisebox{1pt}{\scriptsize$p$}}}
+				\kern+1.5pt F_{pp \rightarrow h}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<5-> Temporal Evolution
+		\end{itemize}
+			\only<6->{
+			\begin{equation*}
+				CO \propto t^{-3} \kern+1pt \bigl( 1 \kern-1pt - e^{-t^{\kern+0.5pt 3}} \bigr)
+			\end{equation*}
+			}
 	\end{frame}
 
 
@@ -555,8 +634,33 @@
 		\input{draw/chart/14.tex}
 	\end{frame}
 
+	\subsection{Hadron Decay}
+
 	\begin{frame}
-		\frametitle{}
+		\frametitle{Resulting Neutrino Spectrum}
+		\begin{itemize}
+			\item<1-> Complex Three Body Decay
+			\item<2-> Simple Two Body Decay
+		\end{itemize}
+			\only<3->{
+			\begin{equation*}
+				\lambda_h \kern-0.5pt = \kern+0.5pt m_\mu^2 / m_h^2
+			\end{equation*}
+			}
+			\only<4->{
+			\begin{equation*}
+				F_{h \rightarrow \nu} = B_{h \rightarrow \nu} \kern+1pt E_h^{-1} (1 \kern-0.5pt - \lambda_h)^{-1}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<5-> Hadron Number Convolution
+		\end{itemize}
+			\only<6->{
+			\begin{equation*}
+				\frac{d N_\nu}{d E_\nu} \kern+1pt = \kern-1pt \int_{E_\nu}^\infty d E_h \kern+1pt
+				\frac{d N_h}{d E_h} \kern+1.5pt F_{h \rightarrow \nu}
+			\end{equation*}
+			}
 	\end{frame}
 
 
