@@ -180,7 +180,7 @@
 		\end{itemize}
 			\only<8->{
 			\begin{equation*}
-				t_{sd} = \frac{2 I c^3}{B_{ns}^2 R_{ns}^6 \omega_0^2 \bigl( 1 \kern-0.5pt + \kern+0.5pt \symup{sin}^2 \kern+1pt \chi \bigr)}
+				t_{sd} = \frac{2 I_{ns} c^3}{B_{ns}^2 R_{ns}^6 \omega_0^2 \bigl( 1 \kern-0.5pt + \kern+0.5pt \symup{sin}^2 \kern+1pt \chi \bigr)}
 			\end{equation*}
 			}
 		\begin{itemize}
@@ -317,7 +317,95 @@
 	\subsection{Target Field}
 
 	\begin{frame}
-		\frametitle{Target Field}
+		\frametitle{Magnetar Environment}
+		\begin{itemize}
+			\item<1-> Supernova Shell Radius
+		\end{itemize}
+			\only<2->{
+			\begin{equation*}
+				r_{\kern-0.5pt ej} = \beta_{\kern-0.5pt ej \kern+0.5pt} ct
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<3-> Ejecta Number Density
+		\end{itemize}
+			\only<4>{
+			\begin{equation*}
+				n_{ej} = \frac{3 M_{\raisebox{1pt}{\scriptsize$ej$}}}
+				{4 \pi R_{\raisebox{1pt}{\scriptsize$ej$}}^3 m_{\raisebox{1pt}{\scriptsize$p$}}}
+			\end{equation*}
+			}
+			\only<5>{
+			\begin{equation*}
+				n_{ej} = \frac{{\color{TUDO} 3} M_{\raisebox{1pt}{\scriptsize$ej$}}}
+				{{\color{TUDO} 4 \pi R_{\raisebox{1pt}{\scriptsize$ej$}}^3} m_{\raisebox{1pt}{\scriptsize$p$}}}
+			\end{equation*}
+			}
+			\only<6->{
+			\begin{equation*}
+				n_{ej} = \frac{3 M_{\raisebox{1pt}{\scriptsize$ej$}}}
+				{4 \pi R_{\raisebox{1pt}{\scriptsize$ej$}}^3 m_{\raisebox{1pt}{\scriptsize$p$}}}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<7-> Numerical Setup
+		\end{itemize}
+			\only<8->{
+			\vspace{-1ex}
+			\centering
+			\begin{align*}
+				&&&&&& I_{ns} &= 10^{45} \kern+2pt \symup{g} \kern+1.5pt \symup{cm}^2 &
+				R_{ns} &= 10^6 \kern+2pt \symup{cm} &
+				B_{ns} &= 10^{14.5} \kern+2pt \symup{G} &
+				t_{sd} &= 10^{3.5} \kern+2pt \symup{s} &&&&&& \\
+				&&&&&& M_{ej} &= 10 \kern+2.5pt \symup{M}_{\raisebox{0pt}{\(\odot\)}} &
+				\beta_{ej} &= 0.1 &
+				\eta &= 0.1
+			\end{align*}
+			}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Accretion Disk}
+		\begin{itemize}
+			\item<1-> Thin Limit Scale Height
+		\end{itemize}
+			\only<2->{
+			\begin{equation*}
+				h^2 = \frac{u_{sn}^2 R_{dc}^3}{G M_{bh}}
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<3-> Gaussian Density Profile
+		\end{itemize}
+			\only<4>{
+			\begin{equation*}
+				\rho \propto \kern+1pt \symup{exp}
+				\left( - \frac{G M_{bh} \kern+0.5pt z^2}{2 u_{\vphantom{dc}sn}^2 R_{dc}^3} \right)
+			\end{equation*}
+			}
+			\only<5>{
+			\begin{equation*}
+				\rho \propto \kern+1pt \symup{exp}
+				\left( - \frac{{\color{TUDO} G M_{bh}} \kern+0.5pt z^2}{2 {\color{TUDO} u_{\vphantom{dc}sn}^2 R_{dc}^3}} \right)
+			\end{equation*}
+			}
+			\only<6->{
+			\begin{equation*}
+				\rho \propto \kern+1pt \symup{exp}
+				\left( - \frac{G M_{bh} \kern+0.5pt z^2}{2 u_{\vphantom{dc}sn}^2 R_{dc}^3} \right)
+			\end{equation*}
+			}
+		\begin{itemize}
+			\item<7-> Parameter Choice
+		\end{itemize}
+			\only<8->{
+			\vspace{-1ex}
+			\centering
+			\begin{align*}
+				&&&&&& n_{dc} = 10^{14} \kern+2pt \symup{cm}^{-14} && h = 10^{15} \kern+2pt \symup{cm} &&&&&&
+			\end{align*}
+			}
 	\end{frame}
 
 
