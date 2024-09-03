@@ -978,6 +978,7 @@
 	\end{frame}
 
 	\begin{frame}
+		\addtocounter{framenumber}{-1}
 		\frametitle{Spindown Derivation}
 		\begin{itemize}
 			\item Spindown Time
@@ -997,6 +998,52 @@
 			\begin{equation*}
 				\omega = \omega_0 \bigl( 1 \kern-0.5pt + \kern+0.5pt  t / t_{sd} \bigr)^{-1 \kern-0.3pt / \kern+0.2pt 2}
 			\end{equation*}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Acceleration Mechanisms}
+		\begin{itemize}
+			\item Wakefield Acceleration
+		\end{itemize}
+			\begin{equation*}
+				E^M = \eta e \phi_{rc} = \eta e \psi_{rc} \kern+0.7pt / R_{lc} = \eta e \mu_{ns} \kern+0.7pt / R_{lc}^2
+			\end{equation*}
+		\begin{itemize}
+			\item Diffusive Shock Acceleration
+		\end{itemize}
+			\vspace{-1em}
+			\begin{align*}
+				&&&&&&&&&& N = N_0 \varsigma^k && E = E_0 \eta^k &&&&&&&&&&
+			\end{align*}
+			\begin{align*}
+				&&&& \frac{\symup{ln}(N / N_0)}{\symup{ln}(E / E_0)} = \frac{\symup{ln}(\varsigma)}{\symup{ln}(\eta)} &&
+				N = N_0 \left( \frac{E}{E_0} \right)^{\symup{ln} (\varsigma) / \symup{ln} (\eta)} &&
+				\frac{dN}{dE} = \frac{N_0}{E_0} \left( \frac{E}{E_0} \right)^{\symup{ln} (\varsigma) / \symup{ln} (\eta) \kern+0.8pt - 1}
+				&&&&
+			\end{align*}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Hydrostatic Disk Equilibrium}
+		\begin{itemize}
+			\item Gravitational Force
+		\end{itemize}
+			\begin{equation*}
+				F = \frac{G M_{bh} m_p}{R_{dc}^2}
+			\end{equation*}
+		\begin{itemize}
+			\item Small Angle Approximation
+		\end{itemize}
+			\begin{equation*}
+				\frac{d \rho}{d z} = -\rho \ddot{z} = -\frac{\rho G M_{bh} z}{u_{\vphantom{d}sn}^2 R_{dc}^3}
+			\end{equation*}
+		\begin{itemize}
+			\item Sound \& Orbital Velocity
+		\end{itemize}
+			\begin{align*}
+				&&&&&& \rho = \rho_0 \symup{exp} \bigl( - z^2 \kern-1pt / \kern+0.5pt 2h^2 \bigr) &&
+				h^2 \kern-0.2pt = \frac{u_{\vphantom{d}sn}^2 R_{dc}^3}{GM_{bh}} = \frac{u_{\vphantom{d}sn}^2 R_{dc}^2}{v_{or}^2} &&&&&&
+			\end{align*}
 	\end{frame}
 
 	\begin{frame}
