@@ -1,5 +1,5 @@
 > [!WARNING]
-> A recheck in November 2026 found errors in the cross section units, charm normalization and optical depth. The magnetar conclusions hold and become stronger, while the accretion disk result changes. Refer to [this](https://github.com/fritzali/notes/tree/main/BACHELOR) directory for corrections, including a [document](https://cdn.jsdelivr.net/gh/fritzali/notes@main/BACHELOR/pages/revision.pdf) summarizing the findings.
+> A recheck in November 2026 found errors in the cross section units, charm normalization, and optical depth. The magnetar conclusions hold and become stronger, while the accretion disk result changes. Refer to the [corrections](https://github.com/fritzali/notes/tree/main/BACHELOR) directory for more information, including a [document](https://cdn.jsdelivr.net/gh/fritzali/notes@main/BACHELOR/pages/revision.pdf) summarizing the findings.
 
 ## Neutrinos via Charm Decays in Astrophysical Sources
 
